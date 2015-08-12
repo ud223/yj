@@ -10,7 +10,7 @@
         <div class="form-group">
             <label>微信ID：</label>
             <span>暂未微信登录及指定用户</span>
-            <a id="btn-link-user" class="btn btn-success" href="javascript:void(0)">绑定微信用户</a>
+            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">绑定微信用户</button>
         </div>
         <div class="form-group">
             <label>微信昵称：</label>
@@ -167,8 +167,32 @@
             <button class="btn-skill-remove" type="button">删除评估</button>
         </div>
     </div>
-    <div id="user-list" style="display: none">
-
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close"
+                            data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        模态框（Modal）标题
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    在这里添加一些文本
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal">关闭
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                        提交更改
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
     </div>
 </div>
 <script type="text/javascript">

@@ -145,7 +145,7 @@
             var thumbnail = obj.find('.thumbnail').prop('checked') ? 1 : 0;
             var scale = obj.find("#scale").val();
             var data = {tmp: tmp, title: title, description: description, phototype: phototype, thumbnail: thumbnail, scale: scale};
-            alert(JSON.stringify(data));
+
             $.ajax({
                 url: '<?php echo $this->url(array(), 'manage-photo-create') ?>',
                 dataType: 'json',

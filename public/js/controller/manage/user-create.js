@@ -1,6 +1,12 @@
 $(document).ready(function() {
+    initDialog();
+
     initBtn();
 });
+
+function initDialog() {
+    initCustomerListDialog();
+}
 
 function initBtn() {
     //初始化添加技能评估按钮事件

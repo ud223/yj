@@ -122,7 +122,7 @@ class Angel_ManageController extends Angel_Controller_Action {
                     $regions[] = $r;
                 }
             }
-            
+
             try {
                 $result = $teacherModel->addTeacher($name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $categorys, $regions);
             }

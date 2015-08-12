@@ -71,47 +71,58 @@ class Angel_ManageController extends Angel_Controller_Action {
             $regions_id = $this->getParam('region');
 
             //获取拥有课程集合ID
-            $tmp_lessons = $this->getLessonByIds($lessons_id);
-
             $lessons = array();
 
-            foreach ($tmp_lessons as $t) {
-                $lessons[] = $t;
+            if ($lessons_id) {
+                $tmp_lessons = $this->getLessonByIds($lessons_id);
+
+                foreach ($tmp_lessons as $t) {
+                    $lessons[] = $t;
+                }
             }
+
 
             //获取拥有瑜伽分类ID
-            $tmp_categorys = $this->getCategoryByIds($categorys_id);
-
             $categorys = array();
 
-            foreach ($tmp_categorys as $c) {
-                $categorys[] = $c;
+            if ($categorys_id) {
+                $tmp_categorys = $this->getCategoryByIds($categorys_id);
+
+                foreach ($tmp_categorys as $c) {
+                    $categorys[] = $c;
+                }
             }
+
 
             //获取技能集合
-            $tmp_skill_node = explode(";", $skills_id);
-
             $skills = array();
 
-            foreach ($tmp_skill_node as $s) {
-                $tmp_skill = explode(":", $s);
+            if ($skills_id) {
+                $tmp_skill_node = explode(";", $skills_id);
 
-                $skill_id = $this->skillAdd($tmp_skill[0], $tmp_skill[1], null, 1);
+                foreach ($tmp_skill_node as $s) {
+                    $tmp_skill = explode(":", $s);
 
-                $skill = $skillModel->getById($skill_id);
+                    $skill_id = $this->skillAdd($tmp_skill[0], $tmp_skill[1], null, 1);
 
-                $skills[] = $skill;
+                    $skill = $skillModel->getById($skill_id);
+
+                    $skills[] = $skill;
+                }
             }
+
 
             //获取授权区域
-            $tmp_regions = $this->getRegionByIds($regions_id);
-
             $regions = array();
 
-            foreach ($tmp_regions as $r) {
-                $regions[] = $r;
-            }
+            if ($regions_id) {
+                $tmp_regions = $this->getRegionByIds($regions_id);
 
+                foreach ($tmp_regions as $r) {
+                    $regions[] = $r;
+                }
+            }
+            
             try {
                 $result = $teacherModel->addTeacher($name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $categorys, $regions);
             }

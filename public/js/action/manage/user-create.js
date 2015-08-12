@@ -2,7 +2,9 @@ function skillAddNode() {
     var node = $("#skill-model").find(".form-group").clone();
 
     node.find(".btn-skill-remove").click(function() {
-        removeSkill($(this).parent());
+        if (confirm("确定删除该项评分吗?")) {
+            removeSkill($(this).parent());
+        }
     });
 
     $("#skill-list").append(node);

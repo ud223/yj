@@ -4412,3 +4412,287 @@ Stack trace:
 [12-Aug-2015 10:49:43 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
 [12-Aug-2015 10:49:54 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
 [12-Aug-2015 10:49:54 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 11:10:18 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 11:10:18 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 11:10:18 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 11:10:18 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 11:10:18 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 11:10:18 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 11:10:18 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 11:10:18 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:00:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:00:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:00:44 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:00:44 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:00:44 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:00:44 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:00:44 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:00:44 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:01:17 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:01:17 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:01:17 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:01:17 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:01:17 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:01:17 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:01:17 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:01:17 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:01:32 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:01:32 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:01:32 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:01:32 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:01:32 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:01:32 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:01:32 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:01:32 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:02:12 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:02:12 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:02:12 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:02:12 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:02:12 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:02:12 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:02:12 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:02:12 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:04:05 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:04:05 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:04:05 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:04:05 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:04:05 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:04:05 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:04:05 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:04:05 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:04:16 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:04:16 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:04:16 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:04:16 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:04:21 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:04:21 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:04:21 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:04:21 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:06:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:06:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:06:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:06:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:06:59 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:06:59 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:02 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:02 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:02 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:02 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:02 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:02 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:02 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:02 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:05 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:05 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:05 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:05 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:06 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:06 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:06 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:06 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:06 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:06 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:06 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:06 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:06 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:06 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:10 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:10 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:11 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:11 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:11 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:11 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:12 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:12 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:12 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:12 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:12 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:12 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:12 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:12 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:16 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:16 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:16 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:16 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:18 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:18 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:19 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:19 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:19 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:19 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:19 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:19 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:19 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:19 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:22 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:22 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:22 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:22 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:23 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:23 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:24 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:24 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:24 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:24 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:24 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:24 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:24 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:24 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:29 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:29 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:29 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:29 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:30 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:30 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:31 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:31 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:31 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:31 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:31 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:31 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:31 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:31 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:33 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:33 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:33 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:33 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:34 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:34 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:35 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:35 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:35 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:35 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:35 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:35 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:35 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:35 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:42 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:42 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:42 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:42 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:45 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:45 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:45 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:45 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:45 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:45 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:45 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:45 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:48 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:48 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:48 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:48 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:49 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:49 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:50 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:50 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:50 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:50 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:50 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:50 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:50 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:50 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:56 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:56 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:56 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:56 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:57 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:57 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:07:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:07:58 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:58 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:58 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:58 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:58 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:07:58 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:08:01 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:08:01 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:08:01 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:08:01 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:08:02 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:08:02 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:08:03 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:08:03 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:08:03 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:08:03 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:08:03 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:08:03 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:08:03 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:08:03 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:08:06 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:08:06 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:08:06 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:08:06 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:08:07 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:08:07 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:08:08 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:08:08 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:08:08 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:08:08 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:08:08 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:08:08 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:08:08 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:08:08 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:08:11 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:08:11 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:08:11 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:08:11 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:08:12 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:08:12 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:08:13 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:08:13 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:08:13 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:08:13 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:08:13 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:08:13 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:08:13 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:08:13 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:08:15 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:08:15 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:08:15 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:08:15 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:08:16 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:08:16 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:08:17 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:08:17 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:08:17 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:08:17 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:08:17 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:08:17 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:08:17 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:08:17 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:08:20 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:08:20 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:08:20 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:08:20 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:08:21 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:08:21 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:08:24 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:08:24 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:08:26 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:08:26 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:08:28 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:08:28 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:08:29 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:08:29 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:08:30 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:08:30 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:08:30 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:08:30 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:08:30 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:08:30 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:08:30 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:08:30 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 110
+[12-Aug-2015 15:08:33 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:08:33 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:08:33 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:08:33 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:08:34 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:08:34 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:08:36 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:08:36 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[12-Aug-2015 15:08:38 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[12-Aug-2015 15:08:38 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43

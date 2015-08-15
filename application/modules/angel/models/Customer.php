@@ -3,28 +3,11 @@
 class Angel_Model_Customer extends Angel_Model_AbstractModel {
     protected $_document_class = '\Documents\UserInfo';
 
-    public function addCustomer($name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $categorys, $regions) {
-        $data = array('usertype' => 2,
-            'name'=>$name,
-            'birthday'=>$birthday,
-            'place'=>$place,
-            'educational'=>$educational,
-            'certificate'=>$certificate,
-            'phone'=>$phone,
-            'code'=>$code,
-            'email'=>$email,
-            'qq'=>$qq,
-            'wechat'=>$wechat,
-            'location'=>$location,
-            'region'=>$regions,
-            'lesson'=>$lessons,
-            'bank'=>$bank,
-            'bank_code'=>$bank_code,
-            'description'=>$description,
-            'skill'=>$skills,
-            'photo'=>$photo,
-            'region'=>$regions,
-            'category'=>$categorys);
+    public function addCustomer($nickname, $sex, $openid) {
+        $data = array('usertype' => 1,
+            'nickname'=>$nickname,
+            'sex'=>$sex,
+            'openid'=>$openid);
 
         $result = $this->add($data);
 

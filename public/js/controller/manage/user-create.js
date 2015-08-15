@@ -1,12 +1,6 @@
 $(document).ready(function() {
-    initDialog();
-
     initBtn();
 });
-
-function initDialog() {
-    initCustomerListDialog();
-}
 
 function initBtn() {
     //初始化添加技能评估按钮事件
@@ -15,5 +9,7 @@ function initBtn() {
     initSkillRemove();
     //初始化表单提交
     initFormSubmit();
+
+    initBangCustomer();
 }
 

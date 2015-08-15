@@ -37,15 +37,20 @@
         background: #FFF;
     }
 </style>
-
+<script src="<?php echo $this->jsPath("action/manage/teacher-list.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("delegate/manage/teacher-list.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("controller/manage/teacher-list.js"); ?>"></script>
 <h1 class="page-title"><?php echo $this->title ?></h1>
 <div class="btb">
     <a id="clear-cache" class="btn btn-success" href="<?php echo $this->url(array(), 'manage-teacher-create') ?>">新建老师信息</a>
 </div>
 <div class="row">
+    <label>姓名：</label>
+    <input type="text" id="wx-name" data-toggle="popover" value="">&nbsp;<button id="btn-search" type="button">查询</button>
     <table class="table table-bordered table-hover wb mbtable table-striped">
         <thead>
         <tr>
+<!--            <th>编号</th>-->
             <th>姓名</th>
             <th>性别</th>
             <th>出生日期</th>
@@ -66,8 +71,9 @@
         <?php if ($this->paginator):?>
             <?php foreach ($this->paginator as $p): ?>
                 <tr>
+<!--                    <td>--><?php //echo $p->id ?><!--</td>-->
                     <td><?php echo $p->name ?></td>
-                    <td><?php echo $p->sex ?></td>
+                    <td><?php if ($p->sex == 1) { echo "男"; } else if($p->sex) { echo "女"; } else { echo "未知"; } ?></td>
                     <td><?php echo $p->birthday ?></td>
                     <td><?php echo $p->place ?></td>
                     <td><?php echo $p->educational ?></td>
@@ -92,6 +98,7 @@
             <?php endforeach; ?>
         <?php else:?>
             <tr>
+<!--                <td></td>-->
                 <td></td>
                 <td></td>
                 <td></td>
@@ -140,25 +147,43 @@
                 }
             }
             ?>
-            <li>
-                <a href="/manage/teacher/list/<?php echo $pre_page ?>" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                </a>
-            </li>
+            <?php if ($this->name):?>
+                <li>
+                    <a href="/manage/teacher/list/<?php echo $this->name ?>/<?php echo $pre_page ?>" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+            <?php else:?>
+                <li>
+                    <a href="/manage/teacher/list/<?php echo $pre_page ?>" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+            <?php endif;?>
             <?php for ($i = 0; $i < $page_count; $i++) { ?>
                 <?php
                 $page_index = $i + 1;
-                $cls = "";
-                if ($current_page_no == $page_index) {
-                    $cls = 'active';
-                }
+                    $cls = "";
+                    if ($current_page_no == $page_index) {
+                        $cls = 'active';
+                    }
                 ?>
-                <li class="<?php echo $cls ?>"><a href="/manage/teacher/list/<?php echo $page_index ?>" ><?php echo $page_index ?></a></li>
+                <?php if ($this->name):?>
+                    <li class="<?php echo $cls ?>"><a href="/manage/teacher/list/<?php echo $this->name ?>/<?php echo $page_index ?>" ><?php echo $page_index ?></a></li>
+                <?php else:?>
+                    <li class="<?php echo $cls ?>"><a href="/manage/teacher/list/<?php echo $page_index ?>" ><?php echo $page_index ?></a></li>
+                <?php endif;?>
             <?php } ?>
             <li>
-                <a href="/manage/teacher/list/<?php echo $next_page ?>" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
+                <?php if ($this->name):?>
+                    <a href="/manage/teacher/list/<?php echo $this->name ?>/<?php echo $next_page ?>" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                <?php else:?>
+                    <a href="/manage/teacher/list/<?php echo $next_page ?>" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                <?php endif;?>
             </li>
         </ul>
     </nav>

@@ -2,6 +2,8 @@
 <style>
 </style>
 <script src="<?php echo $this->jsPath("action/manage/user-create.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("api/manage/customer.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("entity/manage/customer.js"); ?>"></script>
 <script src="<?php echo $this->jsPath("delegate/manage/user-create.js"); ?>"></script>
 <script src="<?php echo $this->jsPath("controller/manage/user-create.js"); ?>"></script>
 <h1 class="page-title"><?php echo $this->title ?></h1>
@@ -9,63 +11,64 @@
     <div class="col-md-8">
         <div class="form-group">
             <label>微信ID：</label>
-            <span>暂未微信登录及指定用户</span>
+            <span class="span-openid">暂未微信登录及指定用户</span>
             <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#customer-list">绑定微信用户</button>
         </div>
         <div class="form-group">
             <label>微信昵称：</label>
-            <span>暂未微信登录及指定用户</span>
+            <span class="span-nickname">暂未微信登录及指定用户</span>
         </div>
         <div class="form-group">
             <label>性别：</label>
-            <span>暂未微信登录及指定用户</span>
+            <span class="span-sex">暂未微信登录及指定用户</span>
         </div>
     </div>
     <div class="col-md-8">
-        <form role="form" method="post" >
+        <form role="form" method="post">
+            <input type="hidden" id="wxid" name="wxid">
             <div class="form-group">
                 <label>姓名：</label>
-                <input type="text" class="form-control" id="name" name="name" data-toggle="popover" value="">
+                <input type="text" class="form-control" id="name" name="name" data-toggle="popover" value="" required="required" oninvalid="setCustomValidity('必须填写老师姓名!');" oninput="setCustomValidity('');">
             </div>
             <div class="form-group">
                 <label>出生日期：</label>
-                <input type="text" class="form-control" id="birthday" name="birthday" data-toggle="popover" value="">
+                <input type="date" class="form-control" id="birthday" name="birthday" data-toggle="popover" value="1985-01-01" required="required" oninvalid="setCustomValidity('必须填写出生日期!');" oninput="setCustomValidity('');">
             </div>
             <div class="form-group">
                 <label>籍贯：</label>
-                <input type="text" class="form-control" id="place" name="place" data-toggle="popover" value="">
+                <input type="text" class="form-control" id="place" name="place" data-toggle="popover" value="" required="required" oninvalid="setCustomValidity('必须填写籍贯!');" oninput="setCustomValidity('');">
             </div>
             <div class="form-group">
                 <label>学历：</label>
-                <input type="text" class="form-control" id="educational" name="educational" data-toggle="popover" value="">
+                <input type="text" class="form-control" id="educational" name="educational" data-toggle="popover" value="" required="required" oninvalid="setCustomValidity('必须填写学历!');" oninput="setCustomValidity('');">
             </div>
             <div class="form-group">
                 <label>证书：</label>
-                <input type="text" class="form-control" id="certificate" name="certificate" data-toggle="popover" value="">
+                <input type="text" class="form-control" id="certificate" name="certificate" data-toggle="popover" value="" required="required" oninvalid="setCustomValidity('必须填写证书!');" oninput="setCustomValidity('');">
             </div>
             <div class="form-group">
                 <label>联系电话：</label>
-                <input type="text" class="form-control" id="phone" name="phone" data-toggle="popover" value="">
+                <input type="text" class="form-control" id="phone" name="phone" data-toggle="popover" value="" required="required" oninvalid="setCustomValidity('必须填写联系电话!');" oninput="setCustomValidity('');">
             </div>
             <div class="form-group">
                 <label>身份证号：</label>
-                <input type="text" class="form-control" id="code" name="code" data-toggle="popover" value="">
+                <input type="number" class="form-control" id="code" name="code" data-toggle="popover" value="" required="required" oninvalid="setCustomValidity('必须填写身份证号!');" oninput="setCustomValidity('');">
             </div>
             <div class="form-group">
                 <label>电子邮箱：</label>
-                <input type="text" class="form-control" id="email" name="email" data-toggle="popover" value="">
+                <input type="email" class="form-control" id="email" name="email" data-toggle="popover" value="" required="required" oninvalid="setCustomValidity('必须填写电子邮箱!');" oninput="setCustomValidity('');">
             </div>
             <div class="form-group">
                 <label>微信：</label>
-                <input type="text" class="form-control" id="wechat" name="wechat" data-toggle="popover" value="">
+                <input type="text" class="form-control" id="wechat" name="wechat" data-toggle="popover" value="" required="required" oninvalid="setCustomValidity('必须填写微信号!');" oninput="setCustomValidity('');">
             </div>
             <div class="form-group">
                 <label>QQ：</label>
-                <input type="text" class="form-control" id="qq" name="qq" data-toggle="popover" value="">
+                <input type="number" class="form-control" id="qq" name="qq" data-toggle="popover" value="" required="required" oninvalid="setCustomValidity('必须填写QQ号!');" oninput="setCustomValidity('');">
             </div>
             <div class="form-group">
                 <label>所在城市：</label>
-                <input type="text" class="form-control" id="location" name="location" data-toggle="popover" value="">
+                <input type="text" class="form-control" id="location" name="location" data-toggle="popover" value="" required="required" oninvalid="setCustomValidity('必须填写所在城市!');" oninput="setCustomValidity('');">
             </div>
             <div class="form-group">
                 <label>授课区域：</label>
@@ -73,7 +76,7 @@
             <div class="form-group">
                 <?php foreach ($this->regions as $region): ?>
                     <div  style="float:left" >
-                        <input id="<?php echo $region->id ?>" type="checkbox" name="region[]" value="<?php echo $region->id ?>"/> <label class="marginright10px" for="<?php echo $region->id ?>"><?php echo $region->name ?></label>
+                        <input id="<?php echo $region->id ?>" type="checkbox" name="region[]" value="<?php echo $region->id ?>"  /> <label class="marginright10px" for="<?php echo $region->id ?>"><?php echo $region->name ?></label>
                     </div>
                 <?php endforeach; ?>
                 <?php
@@ -104,7 +107,7 @@
             </div>
             <div class="form-group">
                 <?php foreach ($this->lessons as $lesson): ?>
-                    <div  style="float:left" >
+                    <div style="float:left" >
                         <input id="<?php echo $lesson->id ?>" type="checkbox" name="lesson[]" value="<?php echo $lesson->id ?>"
                             <?php
                             foreach ($this->model->lesson as $p) {
@@ -126,11 +129,11 @@
             <div class="clear-10"></div>
             <div class="form-group">
                 <label>银行：</label>
-                <input type="text" class="form-control" id="bank" name="bank" data-toggle="popover" value="">
+                <input type="text" class="form-control" id="bank" name="bank" data-toggle="popover" value="" required="required" oninvalid="setCustomValidity('必须填写开户银行!');" oninput="setCustomValidity('');">
             </div>
             <div class="form-group">
                 <label>帐号：</label>
-                <input type="text" class="form-control" id="bank_code" name="bank_code" data-toggle="popover" value="">
+                <input type="number" class="form-control" id="bank_code" name="bank_code" data-toggle="popover" value="" required="required" oninvalid="setCustomValidity('必须填写银行账号!');" oninput="setCustomValidity('');">
             </div>
             <div class="form-group">
                 <label>老师照片：</label>
@@ -177,22 +180,52 @@
                         &times;
                     </button>
                     <h4 class="modal-title" id="myModalLabel">
-                        模态框（Modal）标题
+                        用户列表
                     </h4>
                 </div>
                 <div class="modal-body">
-                    在这里添加一些文本
+                    <label>微信昵称：</label>
+                    <input type="text" id="wx-name" data-toggle="popover" value=""><button type="button" id="bang-customer" >查询</button>
+                    <table id="customer-list" class="table table-bordered table-hover wb mbtable table-striped">
+                        <thead>
+                        <tr>
+                            <th>昵称</th>
+                            <th>性别</th>
+                            <th>登录城市</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody id="customer-body">
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <nav id="page-controller" class="clearfix">
+                        <ul class="pagination pull-right">
+
+                        </ul>
+                    </nav>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default"
-                            data-dismiss="modal">关闭
-                    </button>
-                    <button type="button" class="btn btn-primary">
-                        提交更改
-                    </button>
+                    <button type="button" class="btn btn-default modal-close" data-dismiss="modal">关闭</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal -->
+    </div>
+    <div id="table-row" style="display: none">
+        <tr class="customer-row">
+            <td class="nickname"></td>
+            <td class="sex"></td>
+            <td class="city"></td>
+            <td class="status"></td>
+            <td class="opt"></td>
+        </tr>
     </div>
 </div>
 <script type="text/javascript">

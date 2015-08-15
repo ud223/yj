@@ -10,7 +10,7 @@
         <div class="form-group">
             <label>微信ID：</label>
             <span>暂未微信登录及指定用户</span>
-            <a id="btn-link-user" class="btn btn-success" href="javascript:void(0)">绑定微信用户</a>
+            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#customer-list">绑定微信用户</button>
         </div>
         <div class="form-group">
             <label>微信昵称：</label>
@@ -25,47 +25,47 @@
         <form role="form" method="post" >
             <div class="form-group">
                 <label>姓名：</label>
-                <input type="text" class="form-control" id="name" name="name" data-toggle="popover" value="<?php echo $this->model->name ?>">
+                <input type="text" class="form-control" id="name" name="name" data-toggle="popover" value="<?php echo $this->model->name ?>" required="required" oninvalid="setCustomValidity('必须填写老师姓名!');" oninput="setCustomValidity('');">
             </div>
             <div class="form-group">
                 <label>出生日期：</label>
-                <input type="text" class="form-control" id="birthday" name="birthday" data-toggle="popover" value="<?php echo $this->model->birthday ?>">
+                <input type="date" class="form-control" id="birthday" name="birthday" data-toggle="popover" value="<?php echo $this->model->birthday ?>" required="required" oninvalid="setCustomValidity('必须填写出生日期!');" oninput="setCustomValidity('');">
             </div>
             <div class="form-group">
                 <label>籍贯：</label>
-                <input type="text" class="form-control" id="place" name="place" data-toggle="popover" value="<?php echo $this->model->place ?>">
+                <input type="text" class="form-control" id="place" name="place" data-toggle="popover" value="<?php echo $this->model->place ?>" required="required" oninvalid="setCustomValidity('必须填写籍贯!');" oninput="setCustomValidity('');">
             </div>
             <div class="form-group">
                 <label>学历：</label>
-                <input type="text" class="form-control" id="educational" name="educational" data-toggle="popover" value="<?php echo $this->model->educational ?>">
+                <input type="text" class="form-control" id="educational" name="educational" data-toggle="popover" value="<?php echo $this->model->educational ?>" required="required" oninvalid="setCustomValidity('必须填写学历!');" oninput="setCustomValidity('');">
             </div>
             <div class="form-group">
                 <label>证书：</label>
-                <input type="text" class="form-control" id="certificate" name="certificate" data-toggle="popover" value="<?php echo $this->model->certificate ?>">
+                <input type="text" class="form-control" id="certificate" name="certificate" data-toggle="popover" value="<?php echo $this->model->certificate ?>" required="required" oninvalid="setCustomValidity('必须填写证书!');" oninput="setCustomValidity('');">
             </div>
             <div class="form-group">
                 <label>联系电话：</label>
-                <input type="text" class="form-control" id="phone" name="phone" data-toggle="popover" value="<?php echo $this->model->phone ?>">
+                <input type="text" class="form-control" id="phone" name="phone" data-toggle="popover" value="<?php echo $this->model->phone ?>" required="required" oninvalid="setCustomValidity('必须填写联系电话!');" oninput="setCustomValidity('');">
             </div>
             <div class="form-group">
                 <label>身份证号：</label>
-                <input type="text" class="form-control" id="code" name="code" data-toggle="popover" value="<?php echo $this->model->code ?>">
+                <input type="text" class="form-control" id="code" name="code" data-toggle="popover" value="<?php echo $this->model->code ?>" required="required" oninvalid="setCustomValidity('必须填写身份证号!');" oninput="setCustomValidity('');">
             </div>
             <div class="form-group">
                 <label>电子邮箱：</label>
-                <input type="text" class="form-control" id="email" name="email" data-toggle="popover" value="<?php echo $this->model->email ?>">
+                <input type="email" class="form-control" id="email" name="email" data-toggle="popover" value="<?php echo $this->model->email ?>" required="required" oninvalid="setCustomValidity('必须填写电子邮箱!');" oninput="setCustomValidity('');">
             </div>
             <div class="form-group">
                 <label>微信：</label>
-                <input type="text" class="form-control" id="wechat" name="wechat" data-toggle="popover" value="<?php echo $this->model->wechat ?>">
+                <input type="text" class="form-control" id="wechat" name="wechat" data-toggle="popover" value="<?php echo $this->model->wechat ?>" required="required" oninvalid="setCustomValidity('必须填写微信号!');" oninput="setCustomValidity('');">
             </div>
             <div class="form-group">
                 <label>QQ：</label>
-                <input type="text" class="form-control" id="qq" name="qq" data-toggle="popover" value="<?php echo $this->model->qq ?>">
+                <input type="number" class="form-control" id="qq" name="qq" data-toggle="popover" value="<?php echo $this->model->qq ?>" required="required" oninvalid="setCustomValidity('必须填写QQ号!');" oninput="setCustomValidity('');">
             </div>
             <div class="form-group">
                 <label>所在城市：</label>
-                <input type="text" class="form-control" id="location" name="location" data-toggle="popover" value="<?php echo $this->model->location ?>">
+                <input type="text" class="form-control" id="location" name="location" data-toggle="popover" value="<?php echo $this->model->location ?>" required="required" oninvalid="setCustomValidity('必须填写所在城市!');" oninput="setCustomValidity('');">
             </div>
             <div class="form-group">
                 <label>授课区域：</label>
@@ -146,11 +146,11 @@
             <div class="clear-10"></div>
             <div class="form-group">
                 <label>银行：</label>
-                <input type="text" class="form-control" id="bank" name="bank" data-toggle="popover" value="<?php echo $this->model->bank ?>">
+                <input type="text" class="form-control" id="bank" name="bank" data-toggle="popover" value="<?php echo $this->model->bank ?>" required="required" oninvalid="setCustomValidity('必须填写银行账号!');" oninput="setCustomValidity('');">
             </div>
             <div class="form-group">
                 <label>帐号：</label>
-                <input type="text" class="form-control" id="bank_code" name="bank_code" data-toggle="popover" value="<?php echo $this->model->bank_code ?>">
+                <input type="number" class="form-control" id="bank_code" name="bank_code" data-toggle="popover" value="<?php echo $this->model->bank_code ?>" required="required" oninvalid="setCustomValidity('必须填写银行账号!');" oninput="setCustomValidity('');">
             </div>
             <div class="form-group">
                 <label>老师照片：</label>
@@ -195,6 +195,49 @@
             <input type="text" class="skill-value" data-toggle="popover" value="">
             <button class="btn-skill-remove" type="button">删除评估</button>
         </div>
+    </div>
+    <div class="modal fade" id="customer-list" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close"
+                            data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        用户列表
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <label>微信昵称：</label>
+                    <input type="text" class="wx-name" data-toggle="popover" value=""><button type="button">查询</button>
+                    <table class="table table-bordered table-hover wb mbtable table-striped">
+                        <thead>
+                        <tr>
+                            <th>昵称</th>
+                            <th>性别</th>
+                            <th>登录城市</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
     </div>
 </div>
 <script type="text/javascript">

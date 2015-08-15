@@ -47,7 +47,7 @@
         <thead>
         <tr>
             <th>区域名称</th>
-            <th>区域坐标</th>
+<!--            <th>区域坐标</th>-->
             <th>详细</th>
             <th>操作</th>
         </tr>
@@ -57,7 +57,7 @@
             <?php foreach ($this->paginator as $p): ?>
                 <tr>
                     <td><?php echo $p->name ?></td>
-                    <td><?php echo $p->coordinate ?></td>
+<!--                    <td>--><?php //echo $p->coordinate ?><!--</td>-->
                     <td>
                         <a href="/manage/region/save/<?php echo $p->id ?>">查看<span class="glyphicon glyphicon-link"></span></a>
                     </td>

@@ -1,7 +1,6 @@
 <?php
 
 class Angel_ManageController extends Angel_Controller_Action {
-
     protected $login_not_required = array(
         'login',
         'register',
@@ -49,6 +48,7 @@ class Angel_ManageController extends Angel_Controller_Action {
         $regionModel = $this->getModel('region');
 
         if ($this->request->isPost()) {
+            $wxid = $this->getParam('wxid');
             $name = $this->getParam('name');
             $birthday = $this->getParam('birthday');
             $place = $this->getParam('place');
@@ -81,7 +81,6 @@ class Angel_ManageController extends Angel_Controller_Action {
                 }
             }
 
-
             //获取拥有瑜伽分类ID
             $categorys = array();
 
@@ -92,7 +91,6 @@ class Angel_ManageController extends Angel_Controller_Action {
                     $categorys[] = $c;
                 }
             }
-
 
             //获取技能集合
             $skills = array();
@@ -111,7 +109,6 @@ class Angel_ManageController extends Angel_Controller_Action {
                 }
             }
 
-
             //获取授权区域
             $regions = array();
 
@@ -124,7 +121,12 @@ class Angel_ManageController extends Angel_Controller_Action {
             }
 
             try {
-                $result = $teacherModel->addTeacher($name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $categorys, $regions);
+                if ($wxid) {
+                    $result = $teacherModel->ModifyTeacher($wxid, $name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, 0, 0, $categorys, $regions);
+                }
+                else {
+                    $result = $teacherModel->addTeacher($name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $categorys, $regions);
+                }
             }
             catch (Exception $e) {
                 $error = $e->getMessage();
@@ -157,6 +159,7 @@ class Angel_ManageController extends Angel_Controller_Action {
 
         if ($this->request->isPost()) {
             $result = 0;
+            $wxid = $this->getParam('wxid');
             $id = $this->getParam('id');
             // POST METHOD
             $name = $this->getParam('name');
@@ -226,6 +229,10 @@ class Angel_ManageController extends Angel_Controller_Action {
 
             try {
                 $result = $teacherModel->ModifyTeacher($id, $name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $result->frozen, $result->delete, $categorys, $regions);
+
+                if ($wxid) {
+                    $result = $teacherModel->ModifyTeacher($wxid, $name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $result->frozen, $result->delete, $categorys, $regions);
+                }
             } catch (Exception $e) {
                 $error = $e->getMessage();
             }
@@ -282,17 +289,29 @@ class Angel_ManageController extends Angel_Controller_Action {
     public function teacherListAction() {
         $teacherModel = $this->getModel('teacher');
 
-        $page = $this->request->getParam('page');
+        $page = $this->getParam('page');
+        $name = $this->getParam('name');
 
         if (!$page) {
             $page = 1;
         }
 
-        $paginator = $teacherModel->getBy(true, array("usertype"=> "2"));
+        if ($name) {
+            $param = new MongoRegex("/" . $name . "/i");
 
-        $paginator->setItemCountPerPage($this->bootstrap_options['default_page_size']);
-        $paginator->setCurrentPageNumber($page);
+            $paginator = $teacherModel->getBy(true, array("usertype"=> "2", "name"=>$param));
 
+            $paginator->setItemCountPerPage($this->bootstrap_options['default_page_size']);
+            $paginator->setCurrentPageNumber($page);
+        }
+        else {
+            $paginator = $teacherModel->getBy(true, array("usertype"=> "2"));
+
+            $paginator->setItemCountPerPage($this->bootstrap_options['default_page_size']);
+            $paginator->setCurrentPageNumber($page);
+        }
+
+        $this->view->name = $name;
         $this->view->title = "老师列表";
         $this->view->paginator = $paginator;
     }
@@ -479,6 +498,32 @@ class Angel_ManageController extends Angel_Controller_Action {
         $this->view->customer_id = $id;
         $this->view->title = "用户订单历史";
         $this->view->paginator = $paginator;
+    }
+
+    public function customerCreateAction() {
+        $customerModel = $this->getModel('customer');
+
+        if ($this->request->isPost()) {
+            $nickname = $this->getParam('nickname');
+            $sex = $this->getParam('sex');
+            $openid = $this->getParam('openid');
+
+            try {
+                $result = $customerModel->addCustomer($nickname, $sex, $openid);
+            }
+            catch (Exception $e) {
+                $error = $e->getMessage();
+            }
+
+            if ($result) {
+                $this->_redirect($this->view->url(array(), 'manage-result') . '?redirectUrl=' . $this->view->url(array(), 'manage-customer-list-home'));
+            } else {
+                $this->_redirect($this->view->url(array(), 'manage-result') . '?error=' . $error);
+            }
+        }
+        else {
+            $this->view->title = "新增普通用户(测试)";
+        }
     }
 
     /**********************************************************

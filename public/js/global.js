@@ -1,4 +1,37 @@
 
+
+function removPhoto($this, url, containerSelector, valSelector) {
+    if (!confirm('确认删除该对象？')) {
+        return;
+    }
+    if (!containerSelector) {
+        containerSelector = '.itm';
+    }
+    if (!valSelector) {
+        valSelector = '.tmp';
+    }
+
+    var container = $this.closest(containerSelector);
+    var id = container.find(valSelector).val();
+    var data = {id: id};
+
+    $.ajax({
+        url: url,
+        dataType: 'json',
+        data: data,
+        type: 'POST',
+        success: function(response) {
+            if (response) {
+                container.fadeOut(400, function() {
+                    container.remove();
+                });
+            } else {
+                alert('删除失败');
+            }
+        }
+    });
+}
+
 function removeObject($this, url, containerSelector, valSelector) {
     if (!confirm('确认删除该对象？')) {
         return;

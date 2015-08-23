@@ -9,7 +9,7 @@
 class Angel_Model_Teacher extends Angel_Model_AbstractModel {
     protected $_document_class = '\Documents\UserInfo';
 
-    public function addTeacher($name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $categorys, $regions) {
+    public function addTeacher($name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $categorys, $regions, $experience) {
         $data = array('usertype' => 2,
             'name'=>$name,
             'birthday'=>$birthday,
@@ -30,6 +30,7 @@ class Angel_Model_Teacher extends Angel_Model_AbstractModel {
             'skill'=>$skills,
             'photo'=>$photo,
             'region'=>$regions,
+            'experience'=>$experience,
             'category'=>$categorys);
 
         $result = $this->add($data);
@@ -37,7 +38,7 @@ class Angel_Model_Teacher extends Angel_Model_AbstractModel {
         return $result;
     }
 
-    public function ModifyTeacher($id, $name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $frozen, $delete, $categorys, $regions) {
+    public function ModifyTeacher($id, $name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $frozen, $delete, $categorys, $regions, $experience) {
         $data = array('usertype' => 2,
             'name'=>$name,
             'birthday'=>$birthday,
@@ -60,6 +61,7 @@ class Angel_Model_Teacher extends Angel_Model_AbstractModel {
             'frozen'=>$frozen,
             'delete'=>$delete,
             'region'=>$regions,
+            'experience'=>$experience,
             'category'=>$categorys);
 
         $result = $this->save($id, $data);

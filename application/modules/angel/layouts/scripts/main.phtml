@@ -1,55 +1,28 @@
-<?php
-$user = null;
-$username = "";
-if ($this->me) {
-    $user = $this->me->getUser();
-    $username = $user->username;
-}
-?>
-
 <!DOCTYPE html>
-<html>
-    <head>
-        <title></title>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link href="<?php echo $this->cssPath("bootstrap.css"); ?>" rel="stylesheet" type="text/css" />
-        <link href="<?php echo $this->cssPath("global.css"); ?>" rel="stylesheet" type="text/css" />
-        <link href="<?php echo $this->cssPath("global.show.css"); ?>" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="<?php echo $this->jsPath('jquery.1.10.2.min.js'); ?>"></script>
-        <script type="text/javascript" src="<?php echo $this->jsPath('bootstrap.min.js'); ?>"></script>
-        <script type="text/javascript" src="<?php echo $this->jsPath('validation.js'); ?>"></script>
-        <script type="text/javascript" src="<?php echo $this->jsPath('global.js'); ?>"></script>
-        <script type="text/javascript" src="<?php echo $this->jsPath('plugin.js'); ?>"></script>
-        <script type="text/javascript" src="<?php echo $this->jsPath('jquery.qrcode.min.js'); ?>"></script>
-        <script type="text/javascript" src="<?php echo $this->jsPath('share.js'); ?>"></script>
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
-            <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+<html lang="zh-cn">
 
-        <script type="text/javascript">
-            $('document').ready(function() {
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>瑜家</title>
 
-            });
-        </script>
-    </head>
+    <!-- Bootstrap -->
+    <link href="css/yj.global.css" rel="stylesheet">
+</head>
 
-    <body>
+<body ontouchstart="">
+<!-- $.waiting()（START） -->
+<div class="rotatedivwrapper">
+    <div class="rotatediv"></div>
+    <div class="msg"></div>
+</div>
+<!-- $.waiting()（END） -->
+<!-- $.waiting()（END） -->
+<?php echo $this->layout()->content; ?>
+<script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+<script type="text/javascript" src="js/jquery-mobile.js"></script>
+<script type="text/javascript" src="js/yj.global.js"></script>
+</body>
 
-        <div id="tv">
-
-            <?php echo $this->layout()->content; ?>
-        </div>
-
-
-
-
-
-    </body>
 </html>
-
-
-

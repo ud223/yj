@@ -104,6 +104,9 @@ class UserInfo extends AbstractDocument {
     /** @ODM\String */
     protected $description;
 
+    /** @ODM\String */
+    protected $experience;
+
     /** @ODM\ReferenceMany(targetDocument="\Documents\Skill") */
     protected $skill = array();
     //账号是否冻结 0为没有冻结 1为冻结

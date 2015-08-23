@@ -60,7 +60,6 @@ class Angel_ManageController extends Angel_Controller_Action {
             $qq = $this->getParam('qq');
             $wechat = $this->getParam('wechat');
             $location = $this->getParam('location');
-            $region = $this->getParam('region');
             $lessons_id = $this->getParam('lesson');
             $bank = $this->getParam('bank');
             $bank_code = $this->getParam('bank_code');
@@ -69,6 +68,7 @@ class Angel_ManageController extends Angel_Controller_Action {
             $photo = $this->decodePhoto();
             $categorys_id = $this->getParam('category');
             $regions_id = $this->getParam('region');
+            $experience = $this->getParam('experience');
 
             //获取拥有课程集合ID
             $lessons = array();
@@ -122,10 +122,10 @@ class Angel_ManageController extends Angel_Controller_Action {
 
             try {
                 if ($wxid) {
-                    $result = $teacherModel->ModifyTeacher($wxid, $name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, 0, 0, $categorys, $regions);
+                    $result = $teacherModel->ModifyTeacher($wxid, $name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, 0, 0, $categorys, $regions, $experience);
                 }
                 else {
-                    $result = $teacherModel->addTeacher($name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $categorys, $regions);
+                    $result = $teacherModel->addTeacher($name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $categorys, $regions, $experience);
                 }
             }
             catch (Exception $e) {
@@ -173,7 +173,6 @@ class Angel_ManageController extends Angel_Controller_Action {
             $qq = $this->getParam('qq');
             $wechat = $this->getParam('wechat');
             $location = $this->getParam('location');
-            $region = $this->getParam('region');
             $lessons_id = $this->getParam('lesson');
             $bank = $this->getParam('bank');
             $bank_code = $this->getParam('bank_code');
@@ -182,6 +181,7 @@ class Angel_ManageController extends Angel_Controller_Action {
             $photo = $this->decodePhoto();
             $categorys_id = $this->getParam('category');
             $regions_id = $this->getParam('region');
+            $experience = $this->getParam('experience');
 
             //获取拥有课程集合ID
             $tmp_lessons = $this->getLessonByIds($lessons_id);
@@ -228,10 +228,10 @@ class Angel_ManageController extends Angel_Controller_Action {
             $result = $teacherModel->getById($id);
 
             try {
-                $result = $teacherModel->ModifyTeacher($id, $name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $result->frozen, $result->delete, $categorys, $regions);
+                $result = $teacherModel->ModifyTeacher($id, $name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $result->frozen, $result->delete, $categorys, $regions, $experience);
 
                 if ($wxid) {
-                    $result = $teacherModel->ModifyTeacher($wxid, $name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $result->frozen, $result->delete, $categorys, $regions);
+                    $result = $teacherModel->ModifyTeacher($wxid, $name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $result->frozen, $result->delete, $categorys, $regions, $experience);
                 }
             } catch (Exception $e) {
                 $error = $e->getMessage();

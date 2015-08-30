@@ -9,7 +9,10 @@ class Angel_ApiController extends Angel_Controller_Action {
         'confirm-order',
         'set-value',
         'remove-order',
-        'get-order'
+        'get-order',
+        'set-day',
+        'get-busy',
+        'is-busy'
     );
     protected $SEPARATOR = ';';
 
@@ -314,7 +317,7 @@ class Angel_ApiController extends Angel_Controller_Action {
         $orders = array();
 
         foreach ($tmp_orders as $o) {
-            $orders[] = array("id"=>$o->id, "rundate"=>$o->rundate, "time"=>$o->time, "state"=>$o->state, "created_date"=>date_format($o->created_at, 'Y-m-d h:i:s'), "update_at"=>date_format($o->updated_at, 'Y-m-d h:i:s'));
+            $orders[] = array("id"=>$o->id, "rundate"=>$o->rundate, "time"=>$o->time, "state"=>$o->state, "created_date"=>date_format($o->created_at, 'Y-m-d H:i:s'), "update_at"=>date_format($o->updated_at, 'Y-m-d H:i:s'));
         }
 
         $this->_helper->json(array('data' => $orders, 'code' => 200));
@@ -347,6 +350,105 @@ class Angel_ApiController extends Angel_Controller_Action {
      * 工具方法
      *
      * *****************************************************************************/
+
+    public function setDayAction() {
+        $calendarModel = $this->getModel('calendar');
+        $teacherModel = $this->getModel('teacher');
+
+        $teacher_id = $this->getParam('teacher_id');
+        $tmp_date = $this->getParam('date');
+        $opt = $this->getParam('opt');
+        $result = true;
+
+        $dates = explode(",", $tmp_date);
+//        $this->_helper->json(array('data' => $opt, 'code' => 0)); exit;
+        if ($opt == "0") {
+//            $this->_helper->json(array('data' => $dates, 'code' => 0)); exit;
+            foreach ($dates as $d) {
+                $conditions = array('teacher.$id'=>new MongoId($teacher_id), 'busy_date'=>$d);
+//                $this->_helper->json(array('data' => $teacher_id .'|'. $d, 'code' => 0)); exit;
+                $busy_date = $calendarModel->getOneBy($conditions);
+
+                $result = $calendarModel->remove($busy_date->id);
+
+                if (!$result) {
+                    break;
+                }
+            }
+        }
+        else {
+//            $this->_helper->json(array('data' => "2", 'code' => 0)); exit;
+            foreach ($dates as $d) {
+                $teacher = $teacherModel->getById($teacher_id);
+
+                $result = $calendarModel->addCalendar($d, $teacher);
+
+                if (!$result) {
+                    break;
+                }
+            }
+        }
+
+        if ($result) {
+            $this->_helper->json(array('data' => "设置成功!", 'code' => 200)); exit;
+        }
+        else {
+            $this->_helper->json(array('data' => "设置失败!", 'code' => 0)); exit;
+        }
+    }
+
+    public function getBusyAction() {
+        $calendarModel = $this->getModel('calendar');
+
+        $teacher_id = $this->getParam('teacher_id');
+
+        if (!$teacher_id) {
+            $this->_helper->json(array('data' => "没有获取到老师信息!", 'code' => 0)); exit;
+        }
+
+        $conditions = array('teacher.$id'=>new MongoId($teacher_id));
+
+        $result = $calendarModel->getBy($conditions);
+
+        if ($result) {
+            $calendar = array();
+
+            foreach ($result as $r) {
+                $calendar[] = array("busy_date"=>$r->busy_date);
+            }
+
+            $this->_helper->json(array('data' => $calendar, 'code' => 200));
+        }
+        else {
+            $this->_helper->json(array('data' => "获取失败!", 'code' => 0));
+        }
+    }
+
+    public function isBusyAction() {
+        $calendarModel = $this->getModel('calendar');
+
+        $teacher_id = $this->getParam('teacher_id');
+        $date = $this->getParam('date');
+
+        if (!$teacher_id) {
+            $this->_helper->json(array('data' => "没有获取到老师信息!", 'code' => 0)); exit;
+        }
+
+        if (!$date) {
+            $this->_helper->json(array('data' => "没有获取判断的日期!", 'code' => 0)); exit;
+        }
+
+        $conditions = array('teacher.$id'=>new MongoId($teacher_id), 'busy_date'=>$date);
+
+        $result = $calendarModel->getOneBy($conditions);
+
+        if ($result) {
+            $this->_helper->json(array('data' => "老师那天很忙!", 'code' => 0));
+        }
+        else {
+            $this->_helper->json(array('data' => "可以预约!", 'code' => 200));
+        }
+    }
 
     public function setValueAction() {
         $id = $this->getParam('id');

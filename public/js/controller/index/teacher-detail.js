@@ -21,7 +21,7 @@ function initInput() {
 }
 
 function loadData() {
-
+    todayIsBusy();
 }
 
 function initControls() {

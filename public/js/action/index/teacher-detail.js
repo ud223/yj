@@ -23,7 +23,6 @@ function initWeek() {
             week_html = week_html + '<div class="td  week-td" val="'+ full_date +'">'+ month +'月'+ day +'日</div>';
         }
 
-
         date.setDate(date.getDate() + 1);
     }
 
@@ -32,6 +31,8 @@ function initWeek() {
     var order = new Order();
 
     order.getByDay(teacher_id, today, setUseTime);
+
+    todayIsBusy();
 }
 
 
@@ -155,6 +156,10 @@ function chooseDay(week) {
     order.getByDay(teacher_id, $(week).attr("val"), setUseTime);
 }
 
+function busyDay() {
+    $(".time-space").addClass("unclickable");
+}
+
 function setUseTime(response) {
     var tmp_now = new Date();
 
@@ -182,12 +187,40 @@ function setUseTime(response) {
             if (tmp_date_time_2) {
                 var t_time = new Date(tmp_date_time_2);
 
-                alert(tmp_now - t_time);
+                var diff_time = parseInt((tmp_now - t_time) / (60 * 1000));
+
+                if (diff_time < 3) {
+                    $.each(list, function() {
+                        var value = parseInt($(this).attr("val"));
+
+                        if (value + 1 == time_value[0] || value - 1 == time_value[1]) {
+                            $(this).addClass("unclickable")
+                        }
+
+                        if (value >= time_value[0] && value <= time_value[1]) {
+                            $(this).addClass("unclickable")
+                        }
+                    })
+                }
             }
             else {
                 var t_time = new Date(tmp_date_time_1);
 
-                alert(tmp_now - t_time);
+                var diff_time = parseInt((tmp_now - t_time) / (60 * 1000));
+
+                if (diff_time < 3) {
+                    $.each(list, function() {
+                        var value = parseInt($(this).attr("val"));
+
+                        if (value + 1 == time_value[0] || value - 1 == time_value[1]) {
+                            $(this).addClass("unclickable")
+                        }
+
+                        if (value >= time_value[0] && value <= time_value[1]) {
+                            $(this).addClass("unclickable")
+                        }
+                    })
+                }
             }
         }
     });
@@ -207,5 +240,13 @@ function submitOrder() {
 
 function addOrderSuccess(response) {
     location.href = "/confirmation/order/"+ response.data;
+}
+
+function todayIsBusy() {
+    var week = $(".time-day-select").find(".selected");
+    //alert(week.h/**/tml());
+    var date = $(week).attr("val");
+    //alert(date); //return;
+    getTeacherBusy(teacher_id, date, week, chooseDay, busyDay);
 }
 

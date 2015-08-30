@@ -1,6 +1,9 @@
 function chooseDayClick() {
     $(".time-day-select").find(".week-td").tap(function() {
-        chooseDay(this);
+        var date = $(this).attr("val");
+
+        getTeacherBusy(teacher_id, date, this, chooseDay, busyDay);
+        //chooseDay(this);
     });
 }
 

@@ -21,7 +21,8 @@ class Angel_IndexController extends Angel_Controller_Action {
         'pay-success',
         'start-lesson',
         'end-lesson',
-        'lesson-success'
+        'lesson-success',
+        'my-calendar'
         );
 
     public function init() {
@@ -146,6 +147,12 @@ class Angel_IndexController extends Angel_Controller_Action {
         $this->view->user_id = $id;
         $this->view->count = count($paginator);
         $this->view->order_list = $paginator;
+    }
+
+    public function myCalendarAction() {
+        $teacher_id = $this->getParam('id');
+
+        $this->view->teacher_id = $teacher_id;
     }
 
     public function startLessonAction() {

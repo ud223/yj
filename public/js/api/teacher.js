@@ -23,3 +23,32 @@ function queryTeacherList(search, sort, page) {
         }
     });
 }
+
+function getTeacherBusy(teacher_id, date, control, fun, fun1) {
+    var url = '/api/teacher/is/busy';
+
+    var  data = { 'teacher_id':teacher_id, 'date':date }
+    //alert(JSON.stringify(data));
+    $.ajax({
+        url: url,
+        dataType: 'json',
+        data: data,
+        method: 'post',
+        success: function (response) {
+            //alert(JSON.stringify(response)); //return;
+            if (response.code == 200) {
+                if (fun) {
+                    fun(control);
+                }
+            }
+            else {
+                if (fun1) {
+                    fun1();
+                }
+            }
+        },
+        error: function () {
+
+        }
+    });
+}

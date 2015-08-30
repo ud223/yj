@@ -1,0 +1,125 @@
+<script src="<?php echo $this->jsPath("swipe.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("tools/sms.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("tools/String.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("api/tools.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("api/order.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("entity/order.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("action/index/order-detail.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("delegate/index/order-detail.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("controller/index/order-detail.js"); ?>"></script>
+<?php if ($this->model->state == 20):?>
+    <div class="status-for-order completed">
+        已预约
+    </div>
+<?php endif;?>
+<!-- case 2: completed付款完成状态时（START） -->
+
+<!-- case 1: pending等待支付状态时（START） -->
+<!-- 该按钮点击了也是跳转至付款页面 -->
+<?php if ($this->model->state < 20):?>
+    <div class="status-for-order pending">
+        待付款，现在支付
+    </div>
+<?php endif;?>
+<!-- case 1: pending等待支付状态时（START） -->
+
+<div class="blackrowgall">
+    <div class="row">
+        <span class="tt">授课老师</span>
+        <span class="holder"><?php echo $this->model->teacher->name ?><span class="lightgray">（<?php echo $this->model->teacher->teacher_score ?>分）</span><img src="/img/user04.jpg" width="25" /></span>
+    </div>
+    <div class="row">
+        <span class="tt">手机</span>
+        <div class="holder">
+            <span><?php echo $this->model->teacher->phone ?></span>
+        </div>
+    </div>
+</div>
+
+<div class="blackrowgall">
+    <div class="txtbox">
+        <div class="t1">授课时间</div>
+        <div class="t2"><?php
+            $tmp_date = explode("-", $this->model->rundate);
+
+            $tmp_text = "";
+
+            if (substr($tmp_date[1], 0, 1) == "0") {
+                $tmp_text = substr($tmp_date[1], 1, 1) . "月";
+            }
+            else {
+                $tmp_text = $tmp_date[1] . "月";
+            }
+
+            if (substr($tmp_date[2], 0, 1) == "0") {
+                $tmp_text = $tmp_text . substr($tmp_date[2], 1, 1) . "日";
+            }
+            else {
+                $tmp_text = $tmp_text . $tmp_date[2] . "日";
+            }
+
+            echo  $tmp_text;
+            ?> <?php echo explode("|", $this->model->time)[0] ?></div>
+    </div>
+    <div class="txtbox">
+        <div class="t1">授课地址</div>
+        <div class="t2"><?php echo $this->model->address ?></div>
+    </div>
+    <div class="txtbox">
+        <div class="t1">联系人信息</div>
+        <div class="t2"><?php echo $this->model->customer->name ?>  <?php echo $this->model->phone ?></div>
+    </div>
+</div>
+
+<div class="blackrowgall">
+    <div class="row">
+        <span class="tt">总价</span>
+        <span class="holder">￥<?php echo $this->model->pay_amount ?></span>
+    </div>
+</div>
+<?php if ($this->model->state < 20):?>
+<!-- case 1: pending等待支付状态时（START） -->
+<div class="clear-15"></div>
+<div class="fullbtn cd_hottap" hottap="/confirmation/order/<?php echo $this->model->id ?>">继续支付</div>
+<!-- case 1: pending等待支付状态时（END） -->
+<?php endif; ?>
+<div class="clear-15"></div>
+<div class="fullbtn normal cd_hottap" hottap="/my/order/<?php echo $this->model->customer->id ?>">返回</div>
+<?php if ($this->model->state < 20):?>
+    <!-- case 1: pending等待支付状态时（START） -->
+    <div class="clear-15"></div>
+    <div id="remove-order" class="fullbtn dangerbtn">删除该订单</div>
+    <!-- case 1: pending等待支付状态时（END） -->
+<?php endif; ?>
+<div class="bt-distance"></div>
+<script type="text/javascript">
+    var order_id = '<?php echo $this->model->id ?>';
+</script>
+
+<!--<div class="loc-ddl-bd">-->
+<!--    <div class="loc-ddl-itm">-->
+<!--        <p class="t1">江汉路中心百货</p>-->
+<!--        <div class="t2">江汉路保成路口2003号</div>-->
+<!--        <i class="ico"></i>-->
+<!--    </div>-->
+<!--    <div class="loc-ddl-itm">-->
+<!--        <p class="t1">江汉路中心百货</p>-->
+<!--        <div class="t2">江汉路保成路口2003号</div>-->
+<!--        <i class="ico"></i>-->
+<!--    </div>-->
+<!--    <div class="loc-ddl-itm">-->
+<!--        <p class="t1">江汉路中心百货</p>-->
+<!--        <div class="t2">江汉路保成路口2003号</div>-->
+<!--        <i class="ico"></i>-->
+<!--    </div>-->
+<!--    <div class="loc-ddl-itm">-->
+<!--        <p class="t1">江汉路中心百货</p>-->
+<!--        <div class="t2">江汉路保成路口2003号</div>-->
+<!--        <i class="ico"></i>-->
+<!--    </div>-->
+<!--    <div class="loc-ddl-itm">-->
+<!--        <p class="t1">江汉路中心百货</p>-->
+<!--        <div class="t2">江汉路保成路口2003号</div>-->
+<!--        <i class="ico"></i>-->
+<!--    </div>-->
+<!--</div>-->

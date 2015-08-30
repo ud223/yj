@@ -1,3 +1,11 @@
+<style>
+</style>
+<script src="<?php echo $this->jsPath("tools/String.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("action/index/index.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("api/teacher.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("entity/teacher.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("delegate/index/index.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("controller/index/index.js"); ?>"></script>
 <div class="tcfilter-fix">
     <div class="nothing-btn loc-bt">
         <i class="ico"></i>
@@ -25,8 +33,8 @@
         <div class="wp">
             <p class="p1">请选择排序方式</p>
             <div>
-                <button class="itmbtn selected" type="button">授课多</button>
-                <button class="itmbtn" type="button">评价高</button>
+                <button class="itmbtn selected" sort="score" type="button">评分高</button>
+                <button class="itmbtn" sort="lesson" type="button">授课多</button>
             </div>
         </div>
     </div>
@@ -35,14 +43,9 @@
         <div class="wp">
             <p class="p1">选择区</p>
             <div>
-                <button class="itmbtn selected" type="button">罗湖</button>
-                <button class="itmbtn" type="button">福田</button>
-                <button class="itmbtn" type="button">南山</button>
-                <button class="itmbtn" type="button">宝安</button>
-                <button class="itmbtn" type="button">盐田</button>
-                <button class="itmbtn" type="button">龙岗</button>
-                <button class="itmbtn" type="button">光明</button>
-                <button class="itmbtn" type="button">坪山</button>
+                <?php foreach ($this->region as $r):?>
+                    <button class="itmbtn" type="button" id="<?php echo $r->id?>"><?php echo $r->name ?></button>
+                <?php endforeach;?>
             </div>
         </div>
     </div>
@@ -50,74 +53,35 @@
 
 <div class="menu-fix">
     <div class="menu-fix-itm cd_hottap selected" hottap="/">预约老师</div>
-    <div class="menu-fix-itm cd_hottap" hottap="/me">我</div>
+    <div id="to-me" class="menu-fix-itm cd_hottap" hottap="">我</div>
 </div>
 
 <div class="tcfilter-container">
-    <div class="teacher-itm">
-        <div class="pad-15">
-            <div class="user-intro cd_hottap" hottap="p02_mentordetail.html">
-                <div class="li">
-                    <img class="user-intro-img" src="img/user01.jpg" />
-                </div>
-                <div class="li">
-                    <div class="user-intro-txt">张三丰<span class="teacher-score"> · 4.5分</span></div>
-                    <div class="user-intro-skill">阴瑜伽 / 哈他瑜伽 / 活力瑜伽</div>
-                </div>
-                <div class="user-intro-tag">
-                    <span class="t1">￥422</span>
-                    <span class="t2">每小时</span>
-                </div>
-            </div>
-        </div>
-        <div>
-            <img src="img/user01-big.jpg" class="teacher-img-big cd_hottap" hottap="p02_mentordetail.html" />
-        </div>
-    </div>
 
-    <div class="teacher-itm">
-        <div class="pad-15">
-            <div class="user-intro cd_hottap" hottap="http://www.facebook.com">
-                <div class="li">
-                    <img class="user-intro-img" src="img/user02.jpg" />
-                </div>
-                <div class="li">
-                    <div class="user-intro-txt">李世民<span class="teacher-score"> · 4.5分</span></div>
-                    <div class="user-intro-skill">阴瑜伽 / 哈他瑜伽 / 活力瑜伽</div>
-                </div>
-                <div class="user-intro-tag">
-                    <span class="t1">￥422</span>
-                    <span class="t2">每小时</span>
-                </div>
-            </div>
-        </div>
-        <div>
-            <img src="img/user02-big.jpg" class="teacher-img-big cd_hottap" hottap="http://www.facebook.com" />
-        </div>
-    </div>
-
-    <div class="teacher-itm">
-        <div class="pad-15">
-            <div class="user-intro cd_hottap" hottap="http://www.facebook.com">
-                <div class="li">
-                    <img class="user-intro-img" src="img/user03.jpg" />
-                </div>
-                <div class="li">
-                    <div class="user-intro-txt">努尔哈赤<span class="teacher-score"> · 4.1分</span></div>
-                    <div class="user-intro-skill">阴瑜伽 / 哈他瑜伽 / 活力瑜伽</div>
-                </div>
-                <div class="user-intro-tag">
-                    <span class="t1">￥422</span>
-                    <span class="t2">每小时</span>
-                </div>
-            </div>
-        </div>
-        <div>
-            <img src="img/user03-big.jpg" class="teacher-img-big cd_hottap" hottap="http://www.facebook.com" />
-        </div>
-    </div>
 </div>
 
 <div class="list-end-loadmore">
     <span>正在加载更多，请稍候 ...</span>
+</div>
+<div id="teacher-item" style="display: none">
+    <div class="teacher-itm">
+        <div class="pad-15">
+            <div class="user-intro cd_hottap" hottap="">
+                <div class="li">
+                    <img class="user-intro-img" src="img/user01.jpg" />
+                </div>
+                <div class="li">
+                    <div class="user-intro-txt"><span class="teacher-name"></span><span class="teacher-score"> · <span class="this-teacher-score"></span>分</span></div>
+                    <div class="user-intro-skill"></div>
+                </div>
+                <div class="user-intro-tag">
+                    <span class="t1">￥<span class="price"></span></span>
+                    <span class="t2">每小时</span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <img src="" class="teacher-img-big cd_hottap" hottap="" />
+        </div>
+    </div>
 </div>

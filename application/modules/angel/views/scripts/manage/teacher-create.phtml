@@ -1,11 +1,12 @@
 
 <style>
 </style>
-<script src="<?php echo $this->jsPath("action/manage/user-create.js"); ?>"></script>
-<script src="<?php echo $this->jsPath("api/manage/customer.js"); ?>"></script>
-<script src="<?php echo $this->jsPath("entity/manage/customer.js"); ?>"></script>
-<script src="<?php echo $this->jsPath("delegate/manage/user-create.js"); ?>"></script>
-<script src="<?php echo $this->jsPath("controller/manage/user-create.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("tools/String.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("action/manage/teacher-create.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("api/customer.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("entity/customer.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("delegate/manage/teacher-create.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("controller/manage/teacher-create.js"); ?>"></script>
 <h1 class="page-title"><?php echo $this->title ?></h1>
 <div class="row">
     <div class="col-md-8">
@@ -26,6 +27,10 @@
     <div class="col-md-8">
         <form role="form" method="post">
             <input type="hidden" id="wxid" name="wxid">
+            <input type="hidden" id="wxname" name="wxname">
+            <input type="hidden" id="wxsex" name="wxsex">
+            <input type="hidden" id="wxcity" name="wxcity">
+            <input type="hidden" id="wxheadimgurl" name="wxheadimgurl">
             <div class="form-group">
                 <label>姓名：</label>
                 <input type="text" class="form-control" id="name" name="name" data-toggle="popover" value="" required="required" oninvalid="setCustomValidity('必须填写老师姓名!');" oninput="setCustomValidity('');">
@@ -48,11 +53,11 @@
             </div>
             <div class="form-group">
                 <label>联系电话：</label>
-                <input type="text" class="form-control" id="phone" name="phone" data-toggle="popover" value="" required="required" oninvalid="setCustomValidity('必须填写联系电话!');" oninput="setCustomValidity('');">
+                <input type="number" class="form-control" id="phone" name="phone" maxlength="11" data-toggle="popover" value="" required="required" oninvalid="setCustomValidity('必须填写联系电话!');" oninput="setCustomValidity('');">
             </div>
             <div class="form-group">
                 <label>身份证号：</label>
-                <input type="number" class="form-control" id="code" name="code" data-toggle="popover" value="" required="required" oninvalid="setCustomValidity('必须填写身份证号!');" oninput="setCustomValidity('');">
+                <input type="text" class="form-control" id="code" name="code" maxlength="18" data-toggle="popover" value="" required="required" oninvalid="setCustomValidity('必须填写身份证号!');" oninput="setCustomValidity('');">
             </div>
             <div class="form-group">
                 <label>电子邮箱：</label>
@@ -64,7 +69,15 @@
             </div>
             <div class="form-group">
                 <label>QQ：</label>
-                <input type="number" class="form-control" id="qq" name="qq" data-toggle="popover" value="" required="required" oninvalid="setCustomValidity('必须填写QQ号!');" oninput="setCustomValidity('');">
+                <input type="number" class="form-control" id="qq" name="qq" maxlength="15" data-toggle="popover" value="" required="required" oninvalid="setCustomValidity('必须填写QQ号!');" oninput="setCustomValidity('');">
+            </div>
+            <div class="form-group">
+                <label>教学年数：</label>
+                <input type="number" class="form-control" id="years" name="years" maxlength="15" data-toggle="popover" value="" required="required" oninvalid="setCustomValidity('必须填写教学年数!');" oninput="setCustomValidity('');">
+            </div>
+            <div class="form-group">
+                <label>授课价格(小时)：</label>
+                <input type="text" class="form-control money" id="price" name="price" data-toggle="popover" value="" required="required" oninvalid="setCustomValidity('必须填写授课价格!');" oninput="setCustomValidity('');">
             </div>
             <div class="form-group">
                 <label>所在城市：</label>
@@ -174,8 +187,7 @@
             <button class="btn-skill-remove" type="button">删除评估</button>
         </div>
     </div>
-    <div class="modal fade" id="customer-list" tabindex="-1" role="dialog"
-         aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="customer-list" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">

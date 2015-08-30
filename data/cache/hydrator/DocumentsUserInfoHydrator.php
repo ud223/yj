@@ -203,6 +203,14 @@ class DocumentsUserInfoHydrator implements HydratorInterface
             $hydratedData['qq'] = $return;
         }
 
+        /** @Field(type="int") */
+        if (isset($data['years'])) {
+            $value = $data['years'];
+            $return = (int) $value;
+            $this->class->reflFields['years']->setValue($document, $return);
+            $hydratedData['years'] = $return;
+        }
+
         /** @Field(type="string") */
         if (isset($data['wechat'])) {
             $value = $data['wechat'];
@@ -277,6 +285,30 @@ class DocumentsUserInfoHydrator implements HydratorInterface
             $return = (string) $value;
             $this->class->reflFields['description']->setValue($document, $return);
             $hydratedData['description'] = $return;
+        }
+
+        /** @Field(type="string") */
+        if (isset($data['experience'])) {
+            $value = $data['experience'];
+            $return = (string) $value;
+            $this->class->reflFields['experience']->setValue($document, $return);
+            $hydratedData['experience'] = $return;
+        }
+
+        /** @Field(type="string") */
+        if (isset($data['price'])) {
+            $value = $data['price'];
+            $return = (string) $value;
+            $this->class->reflFields['price']->setValue($document, $return);
+            $hydratedData['price'] = $return;
+        }
+
+        /** @Field(type="int") */
+        if (isset($data['teacher_count'])) {
+            $value = $data['teacher_count'];
+            $return = (int) $value;
+            $this->class->reflFields['teacher_count']->setValue($document, $return);
+            $hydratedData['teacher_count'] = $return;
         }
 
         /** @Many */

@@ -72,7 +72,9 @@
     </div>
     <div class="row">
         <span class="tt">授课区域</span>
-        <input placeholder="请填写授课区域" value="" type="text" class="holder" />
+        <?php foreach ($this->region as $r):?>
+            <button class="itmbtn" type="button" id="<?php echo $r->id?>"><?php echo $r->name ?></button>
+        <?php endforeach;?>
     </div>
     <div class="row">
         <span class="tt">授课类别</span>

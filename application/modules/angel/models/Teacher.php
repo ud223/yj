@@ -9,7 +9,7 @@
 class Angel_Model_Teacher extends Angel_Model_AbstractModel {
     protected $_document_class = '\Documents\UserInfo';
 
-    public function addTeacher($name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $categorys, $regions, $experience) {
+    public function addTeacher($name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $years, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $categorys, $regions, $experience, $price) {
         $data = array('usertype' => 2,
             'name'=>$name,
             'birthday'=>$birthday,
@@ -20,6 +20,7 @@ class Angel_Model_Teacher extends Angel_Model_AbstractModel {
             'code'=>$code,
             'email'=>$email,
             'qq'=>$qq,
+            'years'=>$years,
             'wechat'=>$wechat,
             'location'=>$location,
             'region'=>$regions,
@@ -31,6 +32,7 @@ class Angel_Model_Teacher extends Angel_Model_AbstractModel {
             'photo'=>$photo,
             'region'=>$regions,
             'experience'=>$experience,
+            'price'=>$price,
             'category'=>$categorys);
 
         $result = $this->add($data);
@@ -38,7 +40,7 @@ class Angel_Model_Teacher extends Angel_Model_AbstractModel {
         return $result;
     }
 
-    public function ModifyTeacher($id, $name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $frozen, $delete, $categorys, $regions, $experience) {
+    public function ModifyTeacher($id, $name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $years, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $frozen, $delete, $categorys, $regions, $experience, $price) {
         $data = array('usertype' => 2,
             'name'=>$name,
             'birthday'=>$birthday,
@@ -49,6 +51,7 @@ class Angel_Model_Teacher extends Angel_Model_AbstractModel {
             'code'=>$code,
             'email'=>$email,
             'qq'=>$qq,
+            'years'=>$years,
             'wechat'=>$wechat,
             'location'=>$location,
             'region'=>$regions,
@@ -62,7 +65,16 @@ class Angel_Model_Teacher extends Angel_Model_AbstractModel {
             'delete'=>$delete,
             'region'=>$regions,
             'experience'=>$experience,
+            'price'=>$price,
             'category'=>$categorys);
+
+        $result = $this->save($id, $data);
+
+        return $result;
+    }
+
+    public function returnToCustomer($id) {
+        $data = array('usertype' => 1);
 
         $result = $this->save($id, $data);
 
@@ -95,6 +107,14 @@ class Angel_Model_Teacher extends Angel_Model_AbstractModel {
 
     public function frozenTeachar($id) {
         $data = array('frozen'=>1);
+
+        $result = $this->save($id, $data);
+
+        return $result;
+    }
+
+    public  function initTeacherCount($id) {
+        $data = array("teacher_count"=>0);
 
         $result = $this->save($id, $data);
 

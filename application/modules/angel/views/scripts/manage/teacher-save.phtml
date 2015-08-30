@@ -1,28 +1,59 @@
 
 <style>
 </style>
-<script src="<?php echo $this->jsPath("action/manage/user-create.js"); ?>"></script>
-<script src="<?php echo $this->jsPath("delegate/manage/user-create.js"); ?>"></script>
-<script src="<?php echo $this->jsPath("controller/manage/user-create.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("tools/String.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("action/manage/teacher-save.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("api/customer.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("entity/customer.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("delegate/manage/teacher-save.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("controller/manage/teacher-save.js"); ?>"></script>
 <h1 class="page-title"><?php echo $this->title ?></h1>
 <div class="row">
     <div class="col-md-8">
         <div class="form-group">
             <label>微信ID：</label>
-            <span>暂未微信登录及指定用户</span>
+            <span class="span-openid">
+                <?php
+                    if ($this->model->openid) {
+                        echo $this->model->openid;
+                    }
+                    else {
+                        echo "暂未微信登录及指定用户";
+                    }
+                ?>
+            </span>
             <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#customer-list">绑定微信用户</button>
         </div>
         <div class="form-group">
             <label>微信昵称：</label>
-            <span>暂未微信登录及指定用户</span>
+            <span class="span-nickname">
+                <?php
+                    if ($this->model->openid) {
+                        echo $this->model->nickname;
+                    }
+                    else {
+                        echo "暂未微信登录及指定用户";
+                    }
+                ?>
+            </span>
         </div>
         <div class="form-group">
             <label>性别：</label>
-            <span>暂未微信登录及指定用户</span>
+            <span class="span-sex">
+                <?php
+                    if ($this->model->openid) {
+                        echo $this->sex;
+                    }
+                    else {
+                        echo "暂未微信登录及指定用户";
+                    }
+                ?>
+            </span>
         </div>
     </div>
     <div class="col-md-8">
         <form role="form" method="post" >
+            <input type="hidden" id="wxid" name="wxid">
             <div class="form-group">
                 <label>姓名：</label>
                 <input type="text" class="form-control" id="name" name="name" data-toggle="popover" value="<?php echo $this->model->name ?>" required="required" oninvalid="setCustomValidity('必须填写老师姓名!');" oninput="setCustomValidity('');">
@@ -45,11 +76,11 @@
             </div>
             <div class="form-group">
                 <label>联系电话：</label>
-                <input type="text" class="form-control" id="phone" name="phone" data-toggle="popover" value="<?php echo $this->model->phone ?>" required="required" oninvalid="setCustomValidity('必须填写联系电话!');" oninput="setCustomValidity('');">
+                <input type="number" class="form-control" id="phone" name="phone" data-toggle="popover" maxlength="11" value="<?php echo $this->model->phone ?>" required="required" oninvalid="setCustomValidity('必须填写联系电话!');" oninput="setCustomValidity('');">
             </div>
             <div class="form-group">
                 <label>身份证号：</label>
-                <input type="text" class="form-control" id="code" name="code" data-toggle="popover" value="<?php echo $this->model->code ?>" required="required" oninvalid="setCustomValidity('必须填写身份证号!');" oninput="setCustomValidity('');">
+                <input type="text" class="form-control" id="code" name="code" data-toggle="popover" maxlength="18" value="<?php echo $this->model->code ?>" required="required" oninvalid="setCustomValidity('必须填写身份证号!');" oninput="setCustomValidity('');">
             </div>
             <div class="form-group">
                 <label>电子邮箱：</label>
@@ -62,6 +93,14 @@
             <div class="form-group">
                 <label>QQ：</label>
                 <input type="number" class="form-control" id="qq" name="qq" data-toggle="popover" value="<?php echo $this->model->qq ?>" required="required" oninvalid="setCustomValidity('必须填写QQ号!');" oninput="setCustomValidity('');">
+            </div>
+            <div class="form-group">
+                <label>教学年数：</label>
+                <input type="number" class="form-control" id="years" name="years" maxlength="15" data-toggle="popover" value="<?php echo $this->model->years ?>" required="required" oninvalid="setCustomValidity('必须填写教学年数!');" oninput="setCustomValidity('');">
+            </div>
+            <div class="form-group">
+                <label>授课价格(小时)：</label>
+                <input type="text" class="form-control money" id="price" name="price" data-toggle="popover" value="<?php echo $this->model->price ?>" required="required" oninvalid="setCustomValidity('必须填写授课价格!');" oninput="setCustomValidity('');">
             </div>
             <div class="form-group">
                 <label>所在城市：</label>
@@ -200,8 +239,7 @@
             <button class="btn-skill-remove" type="button">删除评估</button>
         </div>
     </div>
-    <div class="modal fade" id="customer-list" tabindex="-1" role="dialog"
-         aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="customer-list" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -215,8 +253,8 @@
                 </div>
                 <div class="modal-body">
                     <label>微信昵称：</label>
-                    <input type="text" class="wx-name" data-toggle="popover" value=""><button type="button">查询</button>
-                    <table class="table table-bordered table-hover wb mbtable table-striped">
+                    <input type="text" id="wx-name" data-toggle="popover" value=""><button type="button" id="bang-customer" >查询</button>
+                    <table id="customer-list" class="table table-bordered table-hover wb mbtable table-striped">
                         <thead>
                         <tr>
                             <th>昵称</th>
@@ -226,7 +264,7 @@
                             <th>操作</th>
                         </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="customer-body">
                         <tr>
                             <td></td>
                             <td></td>
@@ -236,9 +274,14 @@
                         </tr>
                         </tbody>
                     </table>
+                    <nav id="page-controller" class="clearfix">
+                        <ul class="pagination pull-right">
+
+                        </ul>
+                    </nav>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-default modal-close" data-dismiss="modal">关闭</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal -->

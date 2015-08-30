@@ -9,8 +9,20 @@ class Order extends AbstractDocument {
     /** @ODM\String */
     protected $rundate;
 
+    /** @ODM\String */
+    protected $time;
+
     /** @ODM\Int */
     protected $hour;
+
+    /** @ODM\String */
+    protected $customer_name;
+
+    /** @ODM\String */
+    protected $address;
+
+    /** @ODM\String */
+    protected $phone;
 
     /** @ODM\ReferenceOne(targetDocument="\Documents\UserInfo") */
     protected $customer;
@@ -18,9 +30,9 @@ class Order extends AbstractDocument {
     /** @ODM\ReferenceOne(targetDocument="\Documents\UserInfo") */
     protected $teacher;
 
-    //1：下单 2： 已接单 3：授课中 4：评分 5：完成
+    //0：创建订单 10：下单(最终修改日期，时间段，等待支付) 20： 已接单（已支付） 30：授课中(老师点击开始授课) 40：评分(授课结束等待评分) 50：完成（评分完成，结束）
     /** @ODM\Int */
-    protected $state;
+    protected $state = 0;
 
     /** @ODM\Int */
     protected $user_score;
@@ -38,5 +50,16 @@ class Order extends AbstractDocument {
 
     //订单金额
     /** @ODM\String */
+    protected $price;
+
+    //订单金额
+    /** @ODM\String */
     protected $amount;
+
+    //实付金额
+    /** @ODM\String */
+    protected $pay_amount;
+
+    /** @ODM\Int */
+    protected $delete = 0;
 }

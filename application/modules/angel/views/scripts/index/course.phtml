@@ -1,3 +1,4 @@
+<script src="<?php echo $this->jsPath("controller/index/course.js"); ?>"></script>
 <div class="tcfilter-fix">
     <!--<div class="nothing-btn loc-bt">
         <i class="ico"></i>
@@ -35,14 +36,9 @@
         <div class="wp">
             <p class="p1">选择区</p>
             <div>
-                <button class="itmbtn selected" type="button">罗湖</button>
-                <button class="itmbtn" type="button">福田</button>
-                <button class="itmbtn" type="button">南山</button>
-                <button class="itmbtn" type="button">宝安</button>
-                <button class="itmbtn" type="button">盐田</button>
-                <button class="itmbtn" type="button">龙岗</button>
-                <button class="itmbtn" type="button">光明</button>
-                <button class="itmbtn" type="button">坪山</button>
+                <?php foreach ($this->region as $r):?>
+                    <button class="itmbtn" type="button" id="<?php echo $r->id?>"><?php echo $r->name ?></button>
+                <?php endforeach;?>
             </div>
         </div>
     </div>
@@ -50,7 +46,7 @@
 
 <div class="menu-fix">
     <div class="menu-fix-itm cd_hottap selected" hottap="/">预约老师</div>
-    <div class="menu-fix-itm cd_hottap" hottap="/me">我</div>
+    <div id="to-me" class="menu-fix-itm cd_hottap" hottap="/me">我</div>
 </div>
 
 <style>
@@ -59,37 +55,44 @@
     }
 </style>
 <div class="tcfilter-container padt50">
-    <div class="cc-itm cd_hottap" hottap='/coursedetail' style="background-image:url(img/ts1.jpg)">
-        <div class="cv"></div>
-        <div class="tt">大自然瑜伽</div>
-        <div class="stt">一句话对于大自然瑜伽的简介</div>
-    </div>
-
-    <div class="cc-itm" style="background-image:url(img/ts2.jpg)">
-        <div class="cv"></div>
-        <div class="tt">大自然瑜伽</div>
-        <div class="stt">一句话对于大自然瑜伽的简介</div>
-    </div>
-
-    <div class="cc-itm" style="background-image:url(img/ts3.jpg)">
-        <div class="cv"></div>
-        <div class="tt">大自然瑜伽</div>
-        <div class="stt">一句话对于大自然瑜伽的简介</div>
-    </div>
-
-    <div class="cc-itm" style="background-image:url(img/ts4.jpg)">
-        <div class="cv"></div>
-        <div class="tt">大自然瑜伽</div>
-        <div class="stt">一句话对于大自然瑜伽的简介</div>
-    </div>
-
-    <div class="cc-itm" style="background-image:url(img/ts5.jpg)">
-        <div class="cv"></div>
-        <div class="tt">大自然瑜伽</div>
-        <div class="stt">一句话对于大自然瑜伽的简介</div>
-    </div>
+    <?php foreach($this->lessons as $lesson):?>
+        <div class="cc-itm cd_hottap" hottap='/coursedetail/<?php echo $lesson->id ?>' style="background-image:url(/photo/image/<?php echo $lesson->photo[0]->name . $lesson->photo[0]->type?>)">
+            <div class="cv"></div>
+            <div class="tt"><?php echo $lesson->name ?></div>
+            <div class="stt"><?php echo $lesson->description ?></div>
+        </div>
+    <?php endforeach; ?>
+<!--    <div class="cc-itm cd_hottap" hottap='/coursedetail' style="background-image:url(img/ts1.jpg)">-->
+<!--        <div class="cv"></div>-->
+<!--        <div class="tt">大自然瑜伽</div>-->
+<!--        <div class="stt">一句话对于大自然瑜伽的简介</div>-->
+<!--    </div>-->
+<!---->
+<!--    <div class="cc-itm" style="background-image:url(img/ts2.jpg)">-->
+<!--        <div class="cv"></div>-->
+<!--        <div class="tt">大自然瑜伽</div>-->
+<!--        <div class="stt">一句话对于大自然瑜伽的简介</div>-->
+<!--    </div>-->
+<!---->
+<!--    <div class="cc-itm" style="background-image:url(img/ts3.jpg)">-->
+<!--        <div class="cv"></div>-->
+<!--        <div class="tt">大自然瑜伽</div>-->
+<!--        <div class="stt">一句话对于大自然瑜伽的简介</div>-->
+<!--    </div>-->
+<!---->
+<!--    <div class="cc-itm" style="background-image:url(img/ts4.jpg)">-->
+<!--        <div class="cv"></div>-->
+<!--        <div class="tt">大自然瑜伽</div>-->
+<!--        <div class="stt">一句话对于大自然瑜伽的简介</div>-->
+<!--    </div>-->
+<!---->
+<!--    <div class="cc-itm" style="background-image:url(img/ts5.jpg)">-->
+<!--        <div class="cv"></div>-->
+<!--        <div class="tt">大自然瑜伽</div>-->
+<!--        <div class="stt">一句话对于大自然瑜伽的简介</div>-->
+<!--    </div>-->
 </div>
 
-<div class="list-end-loadmore">
-    <span>正在加载更多，请稍候 ...</span>
-</div>
+<!--<div class="list-end-loadmore">-->
+<!--    <span>正在加载更多，请稍候 ...</span>-->
+<!--</div>-->

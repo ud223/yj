@@ -43,6 +43,7 @@
     <table class="table table-bordered table-hover wb mbtable table-striped">
         <thead>
         <tr>
+            <th>用户ID</th>
             <th>昵称</th>
             <th>性别</th>
             <th>登录城市</th>
@@ -56,6 +57,7 @@
         <?php if ($this->paginator):?>
             <?php foreach ($this->paginator as $p): ?>
                 <tr>
+                    <td><?php echo $p->id ?></td>
                     <td><?php echo $p->nickname ?></td>
                     <td><?php if ($p->sex == 1) { echo "男"; } else if($p->sex) { echo "女"; } else { echo "未知"; } ?></td>
                     <td><?php echo $p->city ?></td>

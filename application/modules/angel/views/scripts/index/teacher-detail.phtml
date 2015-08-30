@@ -1,0 +1,215 @@
+<script src="<?php echo $this->jsPath("swipe.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("tools/String.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("api/teacher.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("entity/teacher.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("api/order.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("entity/order.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("action/index/teacher-detail.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("delegate/index/teacher-detail.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("controller/index/teacher-detail.js"); ?>"></script>
+<script type="text/javascript">
+    // 此处是php代码渲染输出而成，一次性把该导师所有的图片路径都加载至此。
+    var imgs_json = [{
+        url: '/img/user01-big.jpg'
+    }, {
+        url: '/img/user02-big.jpg'
+    }, {
+        url: '/img/user03-big.jpg'
+    }];
+</script>
+
+<!--此段为滑动多图的html部分，写死在这里-->
+<div id="cd_mentor_img_slider" class="swipe">
+    <div class="swipe-wrap">
+        <!--<div class="figure"></div>-->
+    </div>
+    <!-- 放置索引标签的地方 -->
+    <div class="gl">
+        <!--<div class="pgitm"></div>-->
+    </div>
+</div>
+<div class="mentor-intro-blk">
+    <img src="/img/female.png" class="usrgener">
+    <img src="/img/male.png" class="usrgener selected">
+    <img src="/img/user04.jpg" class="usrimg" />
+
+    <div class="user-tt">
+        <!--有认证就有 has_cert这个class-->
+        <!--未认证就没有 has_cert这个class， 并且没有下方class="cert"的span-->
+        <div class="nm has_cert">
+            <?php echo $this->model->name ?>
+            <span class="cert">已认证</span>
+        </div>
+    </div>
+    <div class="user3-desc">
+        <div>授课类型： <span class="dt">
+                <?php
+                    $lesson_text = "";
+
+                    foreach($this->model->lesson as $lesson) {
+                        if ($lesson_text != "") {
+                            $lesson_text = $lesson_text . " / ";
+                        }
+
+                        $lesson_text = $lesson_text. $lesson->name;
+                    }
+
+                    echo $lesson_text;
+                ?>
+        </span></div>
+        <div>授课区域： <span class="dt">
+                <?php
+                    $region_text = "";
+
+                    foreach($this->model->region as $region) {
+                        if ($region_text != "") {
+                            $region_text = $region_text . " / ";
+                        }
+
+                        $region_text = $region_text. $region->name;
+                    }
+
+                    echo $region_text;
+                ?>
+        </span></div>
+    </div>
+
+    <div class="t3col-group">
+        <div class="t1col">
+            <div class="wp">
+                <div class="t1">价格</div>
+                <div class="t2"><?php echo $this->model->price ?><span>小时</span></div>
+            </div>
+        </div>
+        <div class="t1col">
+            <div class="wp">
+                <div class="t1">教学年限</div>
+                <div class="t2"><?php echo $this->model->years ?><span>年</span></div>
+            </div>
+        </div>
+        <div class="t1col">
+            <div class="wp">
+                <div class="t1">评分</div>
+                <div class="t2"><?php echo $this->model->teacher_score ?><span>分</span></div>
+            </div>
+        </div>
+        <div class="t1col">
+            <div class="wp">
+                <div class="t1">授课次数</div>
+                <div class="t2"><?php echo $this->model->teacher_count ?><span>次</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="dipu1">
+    <div class="dipu2">
+        <div class="dipu3">个人简介</div>
+        <div class="dipu4"><?php echo $this->model->description ?></div>
+    </div>
+    <div class="dipu2">
+        <div class="dipu3">执教经历</div>
+        <div class="dipu4"><?php echo $this->model->experience ?></div>
+    </div>
+    <div class="dipu3-att">
+        <div class="dipu3">选择授课时间</div>
+        <div class="dipu4 time-dfrm">
+            <div class="wp">
+                <!--<div class="cvr"></div>-->
+                <div class="time-day-select">
+                    <div class="table">
+
+                    </div>
+                </div>
+            </div>
+            <div id="time-panel" class="time-tb">
+                <div class="tr">
+                    <div class="td time-space" val="6">6:00</div>
+                    <div class="td time-space" val="7">7:00</div><!--unclickable-->
+                    <div class="td time-space" val="8">8:00</div>
+                    <div class="td time-space" val="9">9:00</div>
+                </div>
+                <div class="tr">
+                    <div class="td time-space" val="10">10:00</div><!--selected-->
+                    <div class="td time-space" val="11">11:00</div>
+                    <div class="td time-space" val="12">12:00</div>
+                    <div class="td time-space" val="13">13:00</div>
+                </div>
+                <div class="tr">
+                    <div class="td time-space" val="14">14:00</div>
+                    <div class="td time-space" val="15">15:00</div>
+                    <div class="td time-space" val="16">16:00</div>
+                    <div class="td time-space" val="17">17:00</div>
+                </div>
+                <div class="tr">
+                    <div class="td time-space" val="18">18:00</div>
+                    <div class="td time-space" val="19">19:00</div>
+                    <div class="td time-space" val="20">20:00</div>
+                    <div class="td time-space" val="21">21:00</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dipu2 nbb">
+        <div class="dipu3 mmbe">最新评论</div>
+        <div class="dipu4">
+            <div class="mgi-b1">
+                <img src="/img/user03.jpg" class="b4ee" />
+                <div class="b5ee">小甜甜布兰妮</div>
+                <div class="b6ee">2015年5月5日</div>
+                <div class="b7ee">
+                    经典诵读实打实的服务诶我发额，文件哦if为温热感觉哦。
+                </div>
+            </div>
+            <div class="mgi-b2">
+                查看更多
+                <span class="arr-r"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="btfixbar">
+    <div class="rtselectedtime selected">
+        <span class="t1" id="show-view-time"></span>
+        <span class="t2">授课时间</span>
+    </div>
+    <button id="submit-order" type="button" class="btbookbtn selected">预约老师</button>
+</div>
+<input type="hidden" id="select_date" >
+<input type="hidden" id="time_range" >
+<input type="hidden" id="price" value="<?php echo $this->model->price ?>">
+<script>
+    var teacher_id = '<?php echo $this->model->id ?>';
+    $('document').ready(function() {
+        if (imgs_json.length) {
+            // 根据imgs_json的长度和内容循环加载图片
+            $.each(imgs_json, function() {
+                var new_img = $('<div>').addClass('figure');
+                new_img.css('background-image', 'url(' + this.url + ')');
+                $('#cd_mentor_img_slider .swipe-wrap').append(new_img);
+            });
+            // 初始化swipe
+            var slider = Swipe(document.getElementById('cd_mentor_img_slider'), {
+                startSlide: 0,
+                speed: 400,
+                auto: false,
+                continuous: false,
+                disableScroll: false,
+                stopPropagation: false,
+                callback: function(index, elem) {},
+                transitionEnd: function(index, elem) {
+                    $('.gl .pgitm.selected').removeClass('selected');
+                    $('.gl .pgitm[index="' + index + '"]').addClass('selected');
+                }
+            });
+            // 初始化pager
+            var n = slider.getNumSlides();
+            for (var i = 0; i < n; i++) {
+                var new_pager = $('<div>').addClass('pgitm').attr('index', i);
+                if(i === 0) {
+                    new_pager.addClass('selected');
+                }
+                $('.swipe .gl').append(new_pager);
+            }
+        }
+    });
+</script>

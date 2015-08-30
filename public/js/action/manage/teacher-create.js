@@ -160,7 +160,7 @@ function chooseCustomer(id, nickname, sex, openid) {
     $(".span-openid").html(openid);
     $(".span-nickname").html(nickname);
     $(".span-sex").html(sex);
-    $(".wxid").val(id);
+    $("#wxid").val(id);
 
     $(".modal-close").click();
 }

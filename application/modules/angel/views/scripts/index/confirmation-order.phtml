@@ -1,0 +1,183 @@
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=8TN0gC5Rqo6cec2jroKOkNpE&v=2.0"></script>
+<script src="<?php echo $this->jsPath("swipe.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("tools/map.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("tools/sms.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("tools/String.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("api/teacher.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("entity/teacher.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("api/order.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("entity/order.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("action/index/confirmation-order.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("delegate/index/confirmation-order.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("controller/index/confirmation-order.js"); ?>"></script>
+<div class="blackrowgall">
+    <div class="row">
+        <span class="tt">授课老师</span>
+        <span class="holder"><?php echo $this->model->teacher->name ?><span class="lightgray">（<?php echo $this->model->teacher->teacher_score ?>分）</span><img src="/img/user04.jpg" width="25" /></span>
+    </div>
+</div>
+<div class="blackrowgall">
+    <div class="row actbtn cd-slideoutbtn" rel="#pp-change-time">
+        <span class="tt">授课时间</span>
+        <div class="holder arr">
+            <span id="date-time" rundate="<?php echo $this->model->rundate ?>" time="<?php echo explode("|", $this->model->time)[1] ?>"><?php echo $this->model->rundate ?> <?php echo explode("|", $this->model->time)[0] ?></span>
+            <img src="/img/arr-r.png" class="icoin" />
+        </div>
+    </div>
+    <div class="row actbtn cd-slideoutbtn" rel="#pp-change-addr">
+        <span class="tt">授课地址</span>
+        <div class="holder arr">
+            <span id="address-view"></span>
+            <img src="/img/arr-r.png" class="icoin" />
+        </div>
+    </div>
+</div>
+
+<div class="blackrowgall">
+    <div class="row">
+        <span class="tt">联系人</span>
+        <input id="customer_name" placeholder="请填写真实姓名" type="text" class="holder" value="<?php echo $this->model->customer->name ?>" />
+    </div>
+    <div class="row actbtn cd-slideoutbtn" rel="#pp-change-tel">
+        <span class="tt">手机</span>
+        <div class="holder arr">
+            <span id="customer-phone">15927094025<?php echo $this->model->phone ?></span></span>
+            <img src="/img/arr-r.png" class="icoin" />
+        </div>
+    </div>
+</div>
+
+<div class="blackrowgall">
+    <div class="row">
+        <span class="tt">原价（<span id="hour"><?php echo $this->model->hour ?></span>小时）</span>
+        <span class="holder"><del class="lightgray">￥<span id="amount"><?php echo $this->model->amount ?></span><del></span>
+    </div>
+    <div class="row actbtn cd-slideoutbtn" rel="#pp-change-coupon">
+        <span class="tt">优惠券</span>
+        <div class="holder arr">
+            <span>200元优惠券</span>
+            <img src="/img/arr-r.png" class="icoin" />
+        </div>
+    </div>
+    <div class="row">
+        <span class="tt">优惠价</span>
+        <span class="holder"><strong class="green">￥<span id="pay-amount"><?php echo $this->model->amount - 200 ?></span></strong></span><!--这里减200只是做一个测试-->
+    </div>
+</div>
+<div class="clear-15"></div>
+<div id="submit-order" class="fullbtn">
+    微信支付
+</div>
+<div class="bt-distance"></div>
+
+<div class="slidepopup cd-slidepopup" id="pp-change-time">
+    <div class="tt">更改授课时间<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+    <div class="time-dfrm">
+        <div class="wp">
+            <!--<div class="cvr"></div>-->
+            <div class="time-day-select">
+                <div class="table">
+
+                </div>
+            </div>
+        </div>
+        <div  id="time-panel" class="time-tb">
+            <div class="tr">
+                <div class="td time-space" val="6">6:00</div>
+                <div class="td time-space" val="7">7:00</div>
+                <div class="td time-space" val="8">8:00</div>
+                <div class="td time-space" val="9">9:00</div>
+            </div>
+            <div class="tr">
+                <div class="td time-space" val="10">10:00</div>
+                <div class="td time-space" val="11">11:00</div>
+                <div class="td time-space" val="12">12:00</div>
+                <div class="td time-space" val="13">13:00</div>
+            </div>
+            <div class="tr">
+                <div class="td time-space" val="14">14:00</div>
+                <div class="td time-space" val="15">15:00</div>
+                <div class="td time-space" val="16">16:00</div>
+                <div class="td time-space" val="17">17:00</div>
+            </div>
+            <div class="tr">
+                <div class="td time-space" val="18">18:00</div>
+                <div class="td time-space" val="19">19:00</div>
+                <div class="td time-space" val="20">20:00</div>
+                <div class="td time-space" val="21">21:00</div>
+            </div>
+        </div>
+    </div>
+    <div class="clear-15"></div>
+    <input type="hidden" id="select_date" value="<?php echo $this->model->rundate?>">
+    <input type="hidden" id="time_range" value="<?php echo $this->model->time ?>">
+    <div id="btn-accept-time" class="fullbtn">
+        确认
+    </div>
+</div>
+
+<div class="slidepopup cd-slidepopup" id="pp-change-tel">
+    <div class="tt">更改电话号码<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+    <div class="blackrowgall">
+        <div class="row">
+            <input placeholder="请填写手机号码" id="phone-num" type="tel" maxlength="11" class="fulltxtinput" />
+            <button id="send-code" class="sendvalcodbt">发送验证码</button>
+        </div>
+        <div class="row">
+            <input placeholder="验证码" id="phone-code" type="tel" maxlength="4" class="fulltxtinput" />
+        </div>
+    </div>
+    <div class="clear-15"></div>
+    <div id="valid-phone-code" class="fullbtn">
+        确认
+    </div>
+</div>
+
+<div class="slidepopup cd-slidepopup" id="pp-change-coupon">
+    <div class="tt">我的优惠券<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+    <div class="blackrowgall">
+        <div class="row cd-coupon-itm selected">
+            <span class="coupon-tt1">100元优惠券</span>
+            <span class="coupon-tt2">9月1日过期</span>
+            <span class="coupon-chk"></span>
+        </div>
+        <div class="row cd-coupon-itm">
+            <span class="coupon-tt1">200元优惠券</span>
+            <span class="coupon-tt2">9月5日过期</span>
+            <span class="coupon-chk"></span>
+        </div>
+    </div>
+    <div class="clear-15"></div>
+    <div class="fullbtn">
+        选择
+    </div>
+</div>
+
+<div class="slidepopup cd-slidepopup" id="pp-change-addr">
+    <div class="tt">更改授课地址<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+    <div class="address-list">
+        <div class="row">
+            <input id="edit-addr" placeholder="请输入详细地址" type="text" class="fulltxtinput" />
+            <button id="btn-addr-query" class="sendvalcodbt">查询</button>
+        </div>
+        <div class="clear-15"></div>
+        <div class="row">
+            <div id="addr-list" class="loc-ddl-bd">
+            </div>
+        </div>
+    </div>
+    <div class="clear-15"></div>
+    <button id="apply-addr" class="fullbtn">确定</button>
+</div>
+
+<div id="div-addr-node" style="display: none">
+    <div class="loc-ddl-itm">
+        <p class="t1"></p>
+        <div class="t2"></div>
+        <i class="ico"></i>
+    </div>
+</div>
+<script type="text/javascript">
+    var order_id = '<?php echo $this->model->id ?>';
+    var order_price =  <?php echo $this->model->price ?>;
+</script>

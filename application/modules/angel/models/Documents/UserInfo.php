@@ -80,6 +80,10 @@ class UserInfo extends AbstractDocument {
     /** @ODM\String */
     protected $qq;
 
+    //练习多少年
+    /** @ODM\Int */
+    protected $years = 0;
+
     /** @ODM\String */
     protected $wechat;
     //所在城市
@@ -106,6 +110,12 @@ class UserInfo extends AbstractDocument {
 
     /** @ODM\String */
     protected $experience;
+
+    /** @ODM\String */
+    protected $price;
+
+    /** @ODM\Int */
+    protected $teacher_count = 0;
 
     /** @ODM\ReferenceMany(targetDocument="\Documents\Skill") */
     protected $skill = array();

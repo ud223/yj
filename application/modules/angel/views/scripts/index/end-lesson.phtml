@@ -1,0 +1,27 @@
+<div class="blackrowgall">
+    <div class="row">
+        <span class="tt">学员</span>
+        <span class="holder">><?php echo $this->model->customer->name ?> <img src="/img/user04.jpg" width="25" /></span>
+    </div>
+    <div class="row">
+        <span class="tt">手机</span>
+        <div class="holder">
+            <span><?php echo $this->model->phone ?></span>
+        </div>
+    </div>
+</div>
+
+<div class="blackrowgall">
+    <div class="txtbox">
+        <div class="t1">授课地址</div>
+        <div class="t2"><?php echo $this->model->address ?></div>
+    </div>
+</div>
+
+<div class="pwboard doing">
+    正在上课
+</div>
+
+<div class="clear-15"></div>
+<div class="fullbtn cd_hottap" hottap="/lesson/success/<?php echo $this->model->id ?>">下课</div>
+<div class="bt-distance"></div>

@@ -141,6 +141,31 @@ abstract class Angel_Model_AbstractModel {
         }
         return $result;
     }
+
+    public function getByAndSort($return_as_paginator = true, $condition = false, $sort = false) {
+//        $this->_helper->json(array('data' => "111", 'code' => 0)); exit;
+        $query = $this->_dm->createQueryBuilder($this->_document_class);
+        if (is_array($condition)) {
+            foreach ($condition as $key => $val) {
+                $query = $query->field($key)->equals($val);
+            }
+        }
+//        $this->_helper->json(array('data' => $sort, 'code' => 0)); exit;
+        if ($sort) {
+            $query = $query->sort($sort, -1);
+        }
+        else {
+            $query = $query->sort('created_at', -1);
+        }
+
+        $result = null;
+        if ($return_as_paginator) {
+            $result = $this->paginator($query);
+        } else {
+            $result = $query->getQuery()->execute();
+        }
+        return $result;
+    }
     
     public function getOneBy($condition = false) {
         $query = $this->_dm->createQueryBuilder($this->_document_class);

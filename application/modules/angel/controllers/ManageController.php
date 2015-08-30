@@ -58,6 +58,7 @@ class Angel_ManageController extends Angel_Controller_Action {
             $code = $this->getParam('code');
             $email = $this->getParam('email');
             $qq = $this->getParam('qq');
+            $years = $this->getParam('years');
             $wechat = $this->getParam('wechat');
             $location = $this->getParam('location');
             $lessons_id = $this->getParam('lesson');
@@ -69,6 +70,7 @@ class Angel_ManageController extends Angel_Controller_Action {
             $categorys_id = $this->getParam('category');
             $regions_id = $this->getParam('region');
             $experience = $this->getParam('experience');
+            $price = $this->getParam('price');
 
             //获取拥有课程集合ID
             $lessons = array();
@@ -122,10 +124,10 @@ class Angel_ManageController extends Angel_Controller_Action {
 
             try {
                 if ($wxid) {
-                    $result = $teacherModel->ModifyTeacher($wxid, $name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, 0, 0, $categorys, $regions, $experience);
+                    $result = $teacherModel->ModifyTeacher($wxid, $name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $years, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, 0, 0, $categorys, $regions, $experience, $price);
                 }
                 else {
-                    $result = $teacherModel->addTeacher($name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $categorys, $regions, $experience);
+                    $result = $teacherModel->addTeacher($name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $years, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $categorys, $regions, $experience, $price);
                 }
             }
             catch (Exception $e) {
@@ -160,6 +162,7 @@ class Angel_ManageController extends Angel_Controller_Action {
         if ($this->request->isPost()) {
             $result = 0;
             $wxid = $this->getParam('wxid');
+
             $id = $this->getParam('id');
             // POST METHOD
             $name = $this->getParam('name');
@@ -171,6 +174,7 @@ class Angel_ManageController extends Angel_Controller_Action {
             $code = $this->getParam('code');
             $email = $this->getParam('email');
             $qq = $this->getParam('qq');
+            $years = $this->getParam('years');
             $wechat = $this->getParam('wechat');
             $location = $this->getParam('location');
             $lessons_id = $this->getParam('lesson');
@@ -182,58 +186,84 @@ class Angel_ManageController extends Angel_Controller_Action {
             $categorys_id = $this->getParam('category');
             $regions_id = $this->getParam('region');
             $experience = $this->getParam('experience');
+            $price = $this->getParam('price');
 
             //获取拥有课程集合ID
-            $tmp_lessons = $this->getLessonByIds($lessons_id);
-
             $lessons = array();
 
-            foreach ($tmp_lessons as $t) {
-                $lessons[] = $t;
-            }
+            if ($lessons_id) {
+                $tmp_lessons = $this->getLessonByIds($lessons_id);
 
-            //获取拥有瑜伽分类ID
-            $tmp_categorys = $this->getCategoryByIds($categorys_id);
+                if ($tmp_lessons) {
+
+                    foreach ($tmp_lessons as $t) {
+                        $lessons[] = $t;
+                    }
+                }
+            }
 
             $categorys = array();
 
-            foreach ($tmp_categorys as $c) {
-                $categorys[] = $c;
+            if ($categorys_id) {
+                //获取拥有瑜伽分类ID
+                $tmp_categorys = $this->getCategoryByIds($categorys_id);
+
+                foreach ($tmp_categorys as $c) {
+                    $categorys[] = $c;
+                }
             }
 
             //获取技能集合
-            $tmp_skill_node = explode(";", $skills_id);
-
             $skills = array();
 
-            foreach ($tmp_skill_node as $s) {
-                $tmp_skill = explode(":", $s);
+            if ($skills_id) {
+                $tmp_skill_node = explode(";", $skills_id);
 
-                $skill_id = $this->skillAdd($tmp_skill[0], $tmp_skill[1], null, 1);
+                foreach ($tmp_skill_node as $s) {
+                    $tmp_skill = explode(":", $s);
 
-                $skill = $skillModel->getById($skill_id);
+                    $skill_id = $this->skillAdd($tmp_skill[0], $tmp_skill[1], null, 1);
 
-                $skills[] = $skill;
+                    $skill = $skillModel->getById($skill_id);
+
+                    $skills[] = $skill;
+                }
             }
-
-            //获取授权区域
-            $tmp_regions = $this->getRegionByIds($regions_id);
 
             $regions = array();
 
-            foreach ($tmp_regions as $r) {
-                $regions[] = $r;
-            }
+            if ($regions_id) {
+                //获取授权区域
+                $tmp_regions = $this->getRegionByIds($regions_id);
 
+                foreach ($tmp_regions as $r) {
+                    $regions[] = $r;
+                }
+            }
+            //获取之前输入的老师数据
             $result = $teacherModel->getById($id);
 
             try {
-                $result = $teacherModel->ModifyTeacher($id, $name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $result->frozen, $result->delete, $categorys, $regions, $experience);
-
                 if ($wxid) {
-                    $result = $teacherModel->ModifyTeacher($wxid, $name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $result->frozen, $result->delete, $categorys, $regions, $experience);
+                    if ($result->openid) {
+                        //将之前的老师数据迁移到微信用户号的数据中
+                        $result = $teacherModel->ModifyTeacher($wxid, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, $result->frozen, $result->delete, null, null, null, null);
+
+                        $result = $teacherModel->returnToCustomer($result->id);
+                    }
+                    else {
+                        //将之前的老师数据迁移到微信用户号的数据中
+                        $result = $teacherModel->ModifyTeacher($wxid, $name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $years, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $result->frozen, $result->delete, $categorys, $regions, $experience, $price);
+                    }
+
+                    //--------------------这里涉及数据迁移的问题-----------------------------------
+                    $teacherModel->deleteTeacher($id);
+                }
+                else {
+                    $result = $teacherModel->ModifyTeacher($id, $name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $years, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $result->frozen, $result->delete, $categorys, $regions, $experience, $price);
                 }
             } catch (Exception $e) {
+                $result = false;
                 $error = $e->getMessage();
             }
             if ($result) {
@@ -299,13 +329,13 @@ class Angel_ManageController extends Angel_Controller_Action {
         if ($name) {
             $param = new MongoRegex("/" . $name . "/i");
 
-            $paginator = $teacherModel->getBy(true, array("usertype"=> "2", "name"=>$param));
+            $paginator = $teacherModel->getBy(true, array("usertype"=> "2", "delete"=>"0", "name"=>$param));
 
             $paginator->setItemCountPerPage($this->bootstrap_options['default_page_size']);
             $paginator->setCurrentPageNumber($page);
         }
         else {
-            $paginator = $teacherModel->getBy(true, array("usertype"=> "2"));
+            $paginator = $teacherModel->getBy(true, array("usertype"=> "2", "delete"=>0));
 
             $paginator->setItemCountPerPage($this->bootstrap_options['default_page_size']);
             $paginator->setCurrentPageNumber($page);
@@ -408,7 +438,7 @@ class Angel_ManageController extends Angel_Controller_Action {
             $page = 1;
         }
 
-        $paginator = $orderModel->getBy(true, array("teacher.$id"=>new MongoId($id)));
+        $paginator = $orderModel->getBy(true, array('teacher.$id'=>new MongoId($id)));
         $paginator->setItemCountPerPage($this->bootstrap_options['default_page_size']);
         $paginator->setCurrentPageNumber($page);
 
@@ -491,7 +521,7 @@ class Angel_ManageController extends Angel_Controller_Action {
             $page = 1;
         }
 
-        $paginator = $orderModel->getBy(true, array("customer.$id"=>new MongoId($id)));
+        $paginator = $orderModel->getBy(true, array('customer.$id'=>new MongoId($id)));
         $paginator->setItemCountPerPage($this->bootstrap_options['default_page_size']);
         $paginator->setCurrentPageNumber($page);
 
@@ -983,6 +1013,85 @@ class Angel_ManageController extends Angel_Controller_Action {
 
         return $result;
     }
+
+    /*********************************************************************************
+     * 最大工时
+     *
+     * *******************************************************************************/
+    public function workCreateAction() {
+        $workModel = $this->getModel('work');
+
+        if ($this->request->isPost()) {
+            $result = 0;
+            // POST METHOD
+            $hour = $this->request->getParam('hour');
+
+            try {
+                $result = $workModel->addWork($hour);
+            } catch (Exception $e) {
+                $error = $e->getMessage();
+            }
+            if ($result) {
+                $this->_redirect($this->view->url(array(), 'manage-result') . '?redirectUrl=' . $this->view->url(array(), 'manage-work-list-home'));
+            } else {
+                $this->_redirect($this->view->url(array(), 'manage-result') . '?error=' . $error);
+            }
+        } else {
+            // GET METHOD
+            $this->view->title = "创建最大工时";
+        }
+    }
+
+    public function workListAction() {
+        $workModel = $this->getModel('work');
+
+        $paginator = $workModel->getAll(false);
+
+        $this->view->title = "最大工时";
+        $this->view->resource = $paginator;
+    }
+
+    public function workSaveAction() {
+        $notFoundMsg = '未找到目标分类';
+        $workModel = $this->getModel('work');
+
+        if ($this->request->isPost()) {
+            $result = 0;
+            // POST METHOD
+            $id = $this->request->getParam('id');
+            $hour = $this->request->getParam('hour');
+
+            try {
+                $result = $workModel->saveWork($id,$hour);
+            } catch (Angel_Exception_Category $e) {
+                $error = $e->getDetail();
+            } catch (Exception $e) {
+                $error = $e->getMessage();
+            }
+            if ($result) {
+                $this->_redirect($this->view->url(array(), 'manage-result') . '?redirectUrl=' . $this->view->url(array(), 'manage-work-list-home'));
+            } else {
+                $this->_redirect($this->view->url(array(), 'manage-result') . '?error=' . $error);
+            }
+        } else {
+            // GET METHOD
+            $this->view->title = "编辑最大工时";
+
+            $id = $this->request->getParam("id");
+
+            if ($id) {
+                $target = $workModel->getById($id);
+
+                if (!$target) {
+                    $this->_redirect($this->view->url(array(), 'manage-result') . '?error=' . $notFoundMsg);
+                }
+                $this->view->model = $target;
+            } else {
+                $this->_redirect($this->view->url(array(), 'manage-result') . '?error=' . $notFoundMsg);
+            }
+        }
+    }
+
 
     /********************************************************
      * 其他代码action部分

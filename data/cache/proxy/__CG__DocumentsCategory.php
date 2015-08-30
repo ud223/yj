@@ -78,7 +78,7 @@ class Category extends \Documents\Category implements \Doctrine\ODM\MongoDB\Prox
 
     public function __sleep()
     {
-        return array('__isInitialized__', 'name', 'description', 'parent', 'level', 'view', 'id', 'created_at', 'updated_at');
+        return array('__isInitialized__', 'name', 'name_en', 'description', 'parent', 'level', 'view', 'id', 'created_at', 'updated_at');
     }
 
     public function __clone()

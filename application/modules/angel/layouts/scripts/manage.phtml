@@ -98,6 +98,14 @@
 <!--                                <li><a href="--><?php //echo $this->url(array(), 'manage-phototype-list-home') ?><!--">管理图片分类</a></li>-->
                             </ul>
                         </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">工时 <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<?php echo $this->url(array(), 'manage-work-list-home') ?>">工时列表</a></li>
+                                <!--                                <li class="divider"></li>-->
+                                <!--                                <li><a href="--><?php //echo $this->url(array(), 'manage-phototype-list-home') ?><!--">管理图片分类</a></li>-->
+                            </ul>
+                        </li>
 
                     </ul>
                     <?php if (isset($this->me)): ?>
@@ -119,6 +127,9 @@
         <div class="container">
             <?php echo $this->layout()->content; ?>
         </div> <!-- /container -->
+        <div style="text-align: center; z-index: 1000000; background:#FFF; color:#333;padding:20px">
+            网络备案号：粤ICP备15073557号
+        </div>
         <div class='marginbottom50px'>
 
         </div>

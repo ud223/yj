@@ -1,21 +1,38 @@
+<script src="<?php echo $this->jsPath("tools/String.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("action/index/course-detail.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("api/teacher.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("entity/teacher.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("delegate/index/course-detail.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("controller/index/course-detail.js"); ?>"></script>
 <script type="text/javascript">
     // 此处是php代码渲染输出而成，一次性把该导师所有的图片路径都加载至此。
-    var imgs_json = [{
-        url: 'img/user01-big.jpg'
-    }, {
-        url: 'img/user02-big.jpg'
-    }, {
-        url: 'img/user03-big.jpg'
-    }];
+    var imgs_json = [
+
+                {
+                    url: '/photo/image/<?php echo $this->model->photo[0]->name . $this->model->photo[0]->type?>'
+                }
+       ];
+
+    <!--        --><?php //for ($i = 0; $i < count($this->model->photo); $i++):?>
+    <!--            --><?php //if($i > 0):?>
+    //                ,{
+    //                    url: '/photo/image/<?php //echo $this->model->photo[$i]->name . $this->model->photo[$i]->type?>//'
+    //                }
+    //            <?php //else: ?>
+    //                {
+    //                    url: '/photo/image/<?php //echo $this->model->photo[$i]->name . $this->model->photo[$i]->type?>//'
+    //                }
+    //            <?php //endif;?>
+    <!--        --><?php //endfor;?>
 </script>
 
-<div class="p09-gallery" style="background-image:url(img/ts2.jpg);"></div>
+<div class="p09-gallery" style="background-image:url(/photo/image/<?php echo $this->model->photo[0]->name . $this->model->photo[0]->type?>);"></div>
 <div class="p09-t1">
-    产后瑜家
+<?php echo $this->model->name ?>
     <span class="l"></span>
 </div>
 <div class="p09-t2">
-    产后瑜家是瑜伽去精心为大家准备的系列课程，主要帮助刚刚当上麻麻的你轻松快速恢复到从前傲人的身材。 我们的老师均有过针对这一块训练的经验，请大家放心参与！
+    <?php echo $this->model->description ?>
 </div>
 
 <div class="tcfilter-fix" style="position: relative;">
@@ -46,97 +63,109 @@
         <div class="wp">
             <p class="p1">选择区</p>
             <div>
-                <button class="itmbtn selected" type="button">罗湖</button>
-                <button class="itmbtn" type="button">福田</button>
-                <button class="itmbtn" type="button">南山</button>
-                <button class="itmbtn" type="button">宝安</button>
-                <button class="itmbtn" type="button">盐田</button>
-                <button class="itmbtn" type="button">龙岗</button>
-                <button class="itmbtn" type="button">光明</button>
-                <button class="itmbtn" type="button">坪山</button>
+                <?php foreach ($this->region as $r):?>
+                    <button class="itmbtn" type="button" id="<?php echo $r->id?>"><?php echo $r->name ?></button>
+                <?php endforeach;?>
             </div>
         </div>
     </div>
 </div>
 
 <div class="tcfilter-container" style="padding-top:0;">
-    <div class="teacher-itm">
-        <div class="pad-15">
-            <div class="user-intro cd_hottap" hottap="p02_mentordetail.html">
-                <div class="li">
-                    <img class="user-intro-img" src="img/user01.jpg" />
-                </div>
-                <div class="li">
-                    <div class="user-intro-txt">张三丰<span class="teacher-score"> · 4.5分</span></div>
-                    <div class="user-intro-skill">阴瑜伽 / 哈他瑜伽 / 活力瑜伽</div>
-                </div>
-
-                <div class="user-intro-tag">
-                    <span class="t1">￥422</span>
-                    <span class="t2">每小时</span>
-                </div>
-            </div>
-        </div>
-        <div>
-            <img src="img/user01-big.jpg" class="teacher-img-big cd_hottap" hottap="p02_mentordetail.html" />
-        </div>
-    </div>
-
-    <div class="teacher-itm">
-        <div class="pad-15">
-            <div class="user-intro cd_hottap" hottap="http://www.facebook.com">
-                <div class="li">
-                    <img class="user-intro-img" src="img/user02.jpg" />
-                </div>
-                <div class="li">
-                    <div class="user-intro-txt">李世民<span class="teacher-score"> · 4.5分</span></div>
-                    <div class="user-intro-skill">阴瑜伽 / 哈他瑜伽 / 活力瑜伽</div>
-                </div>
-
-                <div class="user-intro-tag">
-                    <span class="t1">￥422</span>
-                    <span class="t2">每小时</span>
-                </div>
-            </div>
-        </div>
-        <div>
-            <img src="img/user02-big.jpg" class="teacher-img-big cd_hottap" hottap="http://www.facebook.com" />
-        </div>
-    </div>
-
-    <div class="teacher-itm">
-        <div class="pad-15">
-            <div class="user-intro cd_hottap" hottap="http://www.facebook.com">
-                <div class="li">
-                    <img class="user-intro-img" src="img/user03.jpg" />
-                </div>
-                <div class="li">
-                    <div class="user-intro-txt">努尔哈赤<span class="teacher-score"> · 4.1分</span></div>
-                    <div class="user-intro-skill">阴瑜伽 / 哈他瑜伽 / 活力瑜伽</div>
-                </div>
-                <div class="user-intro-tag">
-                    <span class="t1">￥422</span>
-                    <span class="t2">每小时</span>
-                </div>
-
-            </div>
-        </div>
-        <div>
-            <img src="img/user03-big.jpg" class="teacher-img-big cd_hottap" hottap="http://www.facebook.com" />
-        </div>
-    </div>
+<!--    <div class="teacher-itm">-->
+<!--        <div class="pad-15">-->
+<!--            <div class="user-intro cd_hottap" hottap="p02_mentordetail.html">-->
+<!--                <div class="li">-->
+<!--                    <img class="user-intro-img" src="img/user01.jpg" />-->
+<!--                </div>-->
+<!--                <div class="li">-->
+<!--                    <div class="user-intro-txt">张三丰<span class="teacher-score"> · 4.5分</span></div>-->
+<!--                    <div class="user-intro-skill">阴瑜伽 / 哈他瑜伽 / 活力瑜伽</div>-->
+<!--                </div>-->
+<!---->
+<!--                <div class="user-intro-tag">-->
+<!--                    <span class="t1">￥422</span>-->
+<!--                    <span class="t2">每小时</span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <img src="img/user01-big.jpg" class="teacher-img-big cd_hottap" hottap="p02_mentordetail.html" />-->
+<!--        </div>-->
+<!--    </div>-->
+<!---->
+<!--    <div class="teacher-itm">-->
+<!--        <div class="pad-15">-->
+<!--            <div class="user-intro cd_hottap" hottap="http://www.facebook.com">-->
+<!--                <div class="li">-->
+<!--                    <img class="user-intro-img" src="img/user02.jpg" />-->
+<!--                </div>-->
+<!--                <div class="li">-->
+<!--                    <div class="user-intro-txt">李世民<span class="teacher-score"> · 4.5分</span></div>-->
+<!--                    <div class="user-intro-skill">阴瑜伽 / 哈他瑜伽 / 活力瑜伽</div>-->
+<!--                </div>-->
+<!---->
+<!--                <div class="user-intro-tag">-->
+<!--                    <span class="t1">￥422</span>-->
+<!--                    <span class="t2">每小时</span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <img src="img/user02-big.jpg" class="teacher-img-big cd_hottap" hottap="http://www.facebook.com" />-->
+<!--        </div>-->
+<!--    </div>-->
+<!---->
+<!--    <div class="teacher-itm">-->
+<!--        <div class="pad-15">-->
+<!--            <div class="user-intro cd_hottap" hottap="http://www.facebook.com">-->
+<!--                <div class="li">-->
+<!--                    <img class="user-intro-img" src="img/user03.jpg" />-->
+<!--                </div>-->
+<!--                <div class="li">-->
+<!--                    <div class="user-intro-txt">努尔哈赤<span class="teacher-score"> · 4.1分</span></div>-->
+<!--                    <div class="user-intro-skill">阴瑜伽 / 哈他瑜伽 / 活力瑜伽</div>-->
+<!--                </div>-->
+<!--                <div class="user-intro-tag">-->
+<!--                    <span class="t1">￥422</span>-->
+<!--                    <span class="t2">每小时</span>-->
+<!--                </div>-->
+<!---->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <img src="img/user03-big.jpg" class="teacher-img-big cd_hottap" hottap="http://www.facebook.com" />-->
+<!--        </div>-->
+<!--    </div>-->
 </div>
 
 
 <div class="list-end-loadmore">
     <span>正在加载更多，请稍候 ...</span>
 </div>
-<!--<div class="tcfilter-sort">
-    <div class="wp">
-        <p class="p1">请选择排序方式</p>
-        <br />
-        <button class="itmbtn selected" type="button">距离近</button>
-        <button class="itmbtn" type="button">授课多</button>
-        <button class="itmbtn" type="button">评价高</button>
+
+<div id="teacher-item" style="display: none">
+    <div class="teacher-itm">
+        <div class="pad-15">
+            <div class="user-intro cd_hottap" hottap="">
+                <div class="li">
+                    <img class="user-intro-img" src="/img/user01.jpg" />
+                </div>
+                <div class="li">
+                    <div class="user-intro-txt"><span class="teacher-name"></span><span class="teacher-score"> · <span class="this-teacher-score"></span>分</span></div>
+                    <div class="user-intro-skill"></div>
+                </div>
+                <div class="user-intro-tag">
+                    <span class="t1">￥<span class="price"></span></span>
+                    <span class="t2">每小时</span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <img src="" class="teacher-img-big cd_hottap" hottap="" />
+        </div>
     </div>
-</div>-->
+</div>
+<script type="text/javascript">
+    var lesson_id = '<?php echo $this->model->id?>';
+</script>

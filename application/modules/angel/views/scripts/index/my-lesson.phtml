@@ -1,0 +1,68 @@
+<div class="p16-xeet">
+    以下是确认需要您和学员联系并前往授课的订单
+</div>
+
+<div>
+    <?php foreach ($this->order_list as $order):?>
+        <div class="p23-itm waiting">
+            <img src="/img/user02.jpg" class="usrium" />
+            <div class="ct">
+                <div class="t t1">客户：<span class="rx"><?php echo $order->customer->name ?></span></div>
+                <div class="t t2">手机：<span class="rx"><?php echo $order->phone ?></span></div>
+                <div class="t t4">日期：<span class="rx"><?php
+                        $tmp_date = explode("-", $order->rundate);
+
+                        $tmp_text = "";
+
+                        if (substr($tmp_date[1], 0, 1) == "0") {
+                            $tmp_text = substr($tmp_date[1], 1, 1) . "月";
+                        }
+                        else {
+                            $tmp_text = $tmp_date[1] . "月";
+                        }
+
+                        if (substr($tmp_date[2], 0, 1) == "0") {
+                            $tmp_text = $tmp_text . substr($tmp_date[2], 1, 1) . "日";
+                        }
+                        else {
+                            $tmp_text = $tmp_text . $tmp_date[2] . "日";
+                        }
+
+                        echo  $tmp_text;
+                        ?></span></div>
+                <div class="t t4">时间：<span class="rx"><?php echo explode("|",$order->time)[0] ?></span></div>
+                <div class="t t3">地址：<span class="rx"><?php echo $order->address ?></span></div>
+            </div>
+            <div class="slag">
+                <?php
+                    switch($order->state) {
+                        case "20": {
+                            echo "已付款"; break;
+                        }
+                        case "30": {
+                            echo "上课中"; break;
+                        }
+                        case "40": {
+                            echo "等待评价"; break;
+                        }
+                        case "50": {
+                            echo "已完成"; break;
+                        }
+                        default: {
+                            echo "未付款"; break;
+                        }
+                    }
+                ?>
+            </div>
+            <?php if ($order->state == "20"):?>
+                <div class="btb cd_hottap" hottap="/lesson/start/<?php echo $order->id ?>">
+                    点击开始上课
+                </div>
+            <?php endif; ?>
+        </div>
+    <?php endforeach; ?>
+</div>
+
+<div class="clear-15"></div>
+<div class="fullbtn normal cd_hottap" hottap="/me/<?php echo $this->user_id ?>">返回</div>
+<div class="bt-distance"></div>

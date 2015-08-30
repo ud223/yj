@@ -1,7 +1,7 @@
-function queryCustomerList(page, name) {
-    var url = '/api/customer/list';
+function queryTeacherList(search, sort, page) {
+    var url = '/api/teacher/get';
 
-    var  data = { 'page': page, 'nickname': name }
+    var  data = { 'page': page, 'search': search, 'sort': sort }
     //alert(JSON.stringify(data));
     $.ajax({
         url: url,
@@ -9,10 +9,10 @@ function queryCustomerList(page, name) {
         data: data,
         method: 'post',
         success: function (response) {
-            //alert(JSON.stringify(response))
+            //alert(JSON.stringify(response)); //return;
             if (response.code == 200) {
                 //加载活动集合
-                loadCustomerRow(response.data, response.current_page_no, response.page_count, name);
+                loadTeacher(response.data, response.current_page_no, response.page_count);
             }
             else {
                 alert(response.data);

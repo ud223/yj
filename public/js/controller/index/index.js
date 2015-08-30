@@ -34,7 +34,7 @@ function initUser() {
 
     $(regions[6]).addClass("selected");
 
-    localStorage.setItem('user_id', '55d53896d53de421048b456f');//55ced8b3d53de429048b456b
+    localStorage.setItem('user_id', '55e307d17406f725038b4679');//55ced8b3d53de429048b456b//55d53896d53de421048b456f
 
     var user_id = localStorage.getItem('user_id')
 

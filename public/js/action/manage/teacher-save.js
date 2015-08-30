@@ -157,7 +157,7 @@ function loadCustomerRow(data, page, pagecount, name) {
     }
 }
 function chooseCustomer(id, nickname, sex, openid) {
-    alert(id);
+    //alert(id);
 
     $(".span-openid").html(openid);
     $(".span-nickname").html(nickname);

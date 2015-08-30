@@ -1,0 +1,48 @@
+<script src="<?php echo $this->jsPath("swipe.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("tools/sms.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("tools/String.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("api/tools.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("action/index/my-calendar.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("delegate/index/my-calendar.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("controller/index/my-calendar.js"); ?>"></script>
+<div class="p16-xeet">
+    点击日期，然后设置状态
+</div>
+
+<div id="week-day" class="p22-tx1">
+</div>
+
+<div class="p22-tx2">
+    <div id="set-free" class="ssbt s1">
+        设为 可上课
+    </div>
+    <div id="set-busy" class="ssbt s2">
+        设为 不可上课
+    </div>
+</div>
+
+<div class="clear-15"></div>
+<div class="fullbtn normal cd_hottap" hottap="/me/<?php echo $this->teacher_id?>">返回</div>
+<div class="bt-distance"></div>
+
+<script>
+    var teacher_id = '<?php echo $this->teacher_id?>';
+
+    $('document').ready(function() {
+        $('.p22-tx1 .td').tap(function(){
+            var obj = $(this).closest('.td');
+            obj.toggleClass('selected');
+            return false;
+        });
+        $('.p22-tx2 .ssbt.s1').tap(function(){
+            $('.p22-tx1 .td.selected').removeClass('unselectable').removeClass('selected');
+
+            // ajax here
+        });
+        $('.p22-tx2 .ssbt.s2').tap(function(){
+            $('.p22-tx1 .td.selected').addClass('unselectable').removeClass('selected');
+
+            // ajax here
+        });
+    });
+</script>

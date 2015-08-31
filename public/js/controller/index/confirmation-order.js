@@ -19,7 +19,7 @@ function initBtn() {
 
     initTimeClick();
 
-    chooseDay();
+    chooseDayClick();
 
     acceptTimeClick();
 

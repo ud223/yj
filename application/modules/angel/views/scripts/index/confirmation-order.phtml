@@ -52,7 +52,7 @@
         <span class="tt">原价（<span id="hour"><?php echo $this->model->hour ?></span>小时）</span>
         <span class="holder"><del class="lightgray">￥<span id="amount"><?php echo $this->model->amount ?></span><del></span>
     </div>
-    <div class="row actbtn cd-slideoutbtn" rel="#pp-change-coupon">
+    <div class="row actbtn cd-slideoutbtn" rel="#pp-change-coupon" style="display: none">
         <span class="tt">优惠券</span>
         <div class="holder arr">
             <span>200元优惠券</span>
@@ -61,7 +61,7 @@
     </div>
     <div class="row">
         <span class="tt">优惠价</span>
-        <span class="holder"><strong class="green">￥<span id="pay-amount"><?php echo $this->model->amount - 200 ?></span></strong></span><!--这里减200只是做一个测试-->
+        <span class="holder"><strong class="green">￥<span id="pay-amount"><?php echo $this->model->amount ?></span></strong></span><!--这里减200只是做一个测试-->
     </div>
 </div>
 <div class="clear-15"></div>
@@ -180,4 +180,6 @@
 <script type="text/javascript">
     var order_id = '<?php echo $this->model->id ?>';
     var order_price =  <?php echo $this->model->price ?>;
+    var teacher_id = '<?php echo $this->model->teacher->id ?>';
+    var customer_id = '<?php echo $this->model->customer->id ?>';
 </script>

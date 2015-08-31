@@ -32,19 +32,26 @@ function validPhoneCodeClick() {
     });
 }
 
-function chooseDay() {
+function chooseDayClick() {
+    //$(".time-day-select").find(".week-td").tap(function() {
+    //    if ($(this).hasClass("selected")) {
+    //        return;
+    //    }
+    //
+    //    $(".time-day-select").find(".table").find(".selected").removeClass("selected");
+    //
+    //    $(this).addClass("selected");
+    //
+    //    $(".time-space").removeClass("selected");
+    //
+    //    $("#select_date").val($(this).attr("val"));
+    //});
+
     $(".time-day-select").find(".week-td").tap(function() {
-        if ($(this).hasClass("selected")) {
-            return;
-        }
+        var date = $(this).attr("val");
 
-        $(".time-day-select").find(".table").find(".selected").removeClass("selected");
-
-        $(this).addClass("selected");
-
-        $(".time-space").removeClass("selected");
-
-        $("#select_date").val($(this).attr("val"));
+        getTeacherBusy(teacher_id, date, this, chooseDay, busyDay);
+        //chooseDay(this);
     });
 }
 

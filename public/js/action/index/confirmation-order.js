@@ -70,6 +70,13 @@ function validPhoneCode() {
 
 function initWeek() {
     var date = new Date();
+
+    var t_year = date.getFullYear();
+    var t_month = date.getMonth() + 1;
+    var t_day = date.getDate();
+
+    var today = t_year + "-" + singleDateCheck(t_month) + "-" + singleDateCheck(t_day);
+
     var week_html = "";
 
     for (var i = 0; i < 7; i++) {
@@ -123,7 +130,7 @@ function acceptTime() {
     selected_time = $("#time-panel").find(".selected");
 
     if (selected_time.length == 0) {
-        $("#show-view-time").val("");
+        $("#date-time").val("");
         $("#time_range").val("");
         $("#hour").html("0");
         $("#amount").html("0");
@@ -137,7 +144,7 @@ function acceptTime() {
 
             var date = $(".time-day-select").find(".table").find(".selected").html();
 
-            $("#show-view-time").html(date +" "+ first_html);
+            $("#date-time").html(date +" "+ first_html);
             $("#time_range").val(first_html + "|" + first_time);
             $("#hour").html("1");
             $("#amount").html(order_price);
@@ -151,7 +158,7 @@ function acceptTime() {
 
             var date = $(".time-day-select").find(".table").find(".selected").html();
 
-            $("#show-view-time").html(date +" "+ first_html +" - "+ last_html);
+            $("#date-time").html(date +" "+ first_html +" - "+ last_html);
             $("#time_range").val(first_html +" - "+ last_html + "|" + first_time +"-"+last_time);
 
             var hour = parseInt(last_time) - parseInt(first_time) + 1;
@@ -234,6 +241,10 @@ function initSelectTime() {
             setTimeSelected(i);
         }
     }
+
+    var order = new Order();
+
+    order.getByDay(teacher_id, rundate, setUseTime);
 }
 
 function setTimeSelected(time) {
@@ -252,6 +263,102 @@ function toPay() {
     location.href = "/pay/success/"+ order_id;
 }
 
+function chooseDay(week) {
+    if ($(week).hasClass("selected")) {
+        return;
+    }
+
+    $(".time-day-select").find(".table").find(".selected").removeClass("selected");
+
+    $(week).addClass("selected");
+    $(".time-space").removeClass("selected");
+    $(".time-space").removeClass("unclickable");
+    $("#select_date").val($(week).attr("val"));
+    $("#show-view-time").html(dateToMonthAndDay($(week).attr("val")))
+
+    var order = new Order();
+
+    order.getByDay(teacher_id, $(week).attr("val"), setUseTime);
+
+    var tmp_rundate = $(week).attr("val");
+    var rundate = $("#date-time").attr("rundate");
+
+    if (rundate == tmp_rundate) {
+        initSelectTime();
+    }
+}
+
+function setUseTime(response) {
+    var tmp_now = new Date();
+    var user_id = localStorage.getItem('user_id');
+
+    $.each(response.data, function() {
+        var tmp_time = this.time.split("|")[1];
+        var time_value = tmp_time.split("-");
+        var list = $("#time-panel").find(".time-space");
+        var tmp_date_time_1 = this.created_date;
+        var tmp_date_time_2 = this.updated_at;
+
+        if (this.state > 10) {
+            $.each(list, function() {
+                var value = parseInt($(this).attr("val"));
+
+                if (value + 1 == time_value[0] || value - 1 == time_value[1]) {
+                    $(this).addClass("unclickable")
+                }
+
+                if (value >= time_value[0] && value <= time_value[1]) {
+                    $(this).addClass("unclickable")
+                }
+            })
+        }
+        else {
+            if (tmp_date_time_2) {
+                if ($(this).hasClass("selected") && user_id == customer_id) {
+                    return;
+                }
+
+                var t_time = new Date(tmp_date_time_2);
+
+                var diff_time = parseInt((tmp_now - t_time) / (60 * 1000));
+
+                if (diff_time < 3) {
+                    $.each(list, function() {
+                        var value = parseInt($(this).attr("val"));
+
+                        if (value + 1 == time_value[0] || value - 1 == time_value[1]) {
+                            $(this).addClass("unclickable")
+                        }
+
+                        if (value >= time_value[0] && value <= time_value[1]) {
+                            $(this).addClass("unclickable")
+                        }
+                    })
+                }
+            }
+            else {
+                var t_time = new Date(tmp_date_time_1);
+
+                var diff_time = parseInt((tmp_now - t_time) / (60 * 1000));
+
+                if (diff_time < 3) {
+                    $.each(list, function() {
+                        var value = parseInt($(this).attr("val"));
+
+                        if (value + 1 == time_value[0] || value - 1 == time_value[1]) {
+                            $(this).addClass("unclickable")
+                        }
+
+                        if (value >= time_value[0] && value <= time_value[1]) {
+                            $(this).addClass("unclickable")
+                        }
+                    })
+                }
+            }
+        }
+    });
+}
+
 function submitOrder() {
     var order = new Order();
 
@@ -265,6 +372,11 @@ function submitOrder() {
     var pay_amount = $("#pay-amount").html();
 
     order.confrim(rundate, time, hour, amount, pay_amount, address, phone, customer_name, address, phone, toPay);
+}
+
+
+function busyDay() {
+    $(".time-space").addClass("unclickable");
 }
 
 

@@ -1,0 +1,90 @@
+<div class="p16-xeet">
+    我参与了<span id="class-count"><?php echo $this->count ?></span>个课程标签
+</div>
+<script src="<?php echo $this->jsPath("tools/String.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("api/lesson.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("action/index/my-class.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("delegate/index/my-class.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("controller/index/my-class.js"); ?>"></script>
+<div class="blackrowgall nmt">
+<!--    <div class="row actbtn cd-slideoutbtn" rel="#pp-show-cld">-->
+<!--        <div class="tt">产后瑜伽</div>-->
+<!--        <div class="holder arr">-->
+<!--            <img src="img/arr-r.png" class="icoin" />-->
+<!--            <div class="p27-t1">已参加</div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <!--pp-show-cld2 只是一个事例，表达已参与某个课程的弹出框-->
+<!--    <div class="row actbtn cd-slideoutbtn" rel="#pp-show-cld2">-->
+<!--        <div class="tt">腹肌针对训练</div>-->
+<!--        <div class="holder arr">-->
+<!--            <img src="img/arr-r.png" class="icoin" />-->
+<!--        </div>-->
+<!--    </div>-->
+    <?php foreach ($this->lessons as $lesson):?>
+        <div class="row actbtn cd-slideoutbtn class-btn" img="<?php echo $lesson->photo[0]->name . $lesson->photo[0]->type; ?>" val="<?php echo $lesson->id ?>" rel="#pp-show-cld">
+            <div class="tt lesson-name"><?php echo $lesson->name ?></div>
+            <div class="lesson-description" style="display: none"><?php echo $lesson->description ?></div>
+            <div class="holder arr">
+                <img src="/img/arr-r.png" class="icoin" />
+                <?php foreach ($this->model->lesson as $l):?>
+                    <?php if ($l->id == $lesson->id): ?>
+                        <div class="p27-t1 is-join">已参加</div>
+                    <?php endif;?>
+                <?php endforeach;?>
+            </div>
+        </div>
+    <?php endforeach; ?>
+</div>
+
+<div class="clear-30"></div>
+<div class="fullbtn normal cd_hottap" hottap="/me/<?php echo $this->model->id ?>">返回</div>
+<div class="bt-distance"></div>
+
+
+<div class="slidepopup cd-slidepopup p27-t3" id="pp-show-cld">
+    <div class="tt"><span id="pal-name"></span><span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+    <img id="big-img" src="" class="p27-t4" />
+    <div class="p27-t2" id="pal-content">
+
+    </div>
+    <div class="clear-15"></div>
+    <div id="is-join-lesson" opt="1" val="" class="fullbtn">
+        参加该课程
+    </div>
+</div>
+
+<!--<div class="slidepopup cd-slidepopup p27-t3" id="pp-show-cld2">-->
+<!---->
+<!--    <div class="tt">产后瑜伽<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>-->
+<!--    <img src="img/ts2.jpg" class="p27-t4" />-->
+<!--    <div class="p27-t2">-->
+<!--        sdds斯蒂芬双方的发生的方式得到放松房贷首付的 发生的电风扇 发生的发生的地方 地方分时等待方式 分时等待方式发生的-->
+<!--    </div>-->
+<!--    <div class="clear-15"></div>-->
+<!--    <div class="fullbtn normal">-->
+<!--      退出该课程  -->
+<!--    </div>-->
+<!--</div>-->
+
+
+<script>
+    var teacher_id = '<?php echo $this->model->id ?>';
+    $('document').ready(function() {
+        $('.p22-tx1 .td').tap(function(){
+            var obj = $(this).closest('.td');
+            obj.toggleClass('selected');
+            return false;
+        });
+        $('.p22-tx2 .ssbt.s1').tap(function(){
+            $('.p22-tx1 .td.selected').removeClass('unselectable').removeClass('selected');
+
+            // ajax here
+        });
+        $('.p22-tx2 .ssbt.s2').tap(function(){
+            $('.p22-tx1 .td.selected').addClass('unselectable').removeClass('selected');
+
+            // ajax here
+        });
+    });
+</script>

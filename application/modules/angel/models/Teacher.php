@@ -133,6 +133,14 @@ class Angel_Model_Teacher extends Angel_Model_AbstractModel {
         return $result;
     }
 
+    public function modifyLesson($id, $lesson) {
+        $data = array('lesson'=>$lesson);
+
+        $result = $this->save($id, $data);
+
+        return $result;
+    }
+
     public function applyTeacher($id) {
         $data = array('usertype'=>2);
 

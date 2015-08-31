@@ -22,7 +22,8 @@ class Angel_IndexController extends Angel_Controller_Action {
         'start-lesson',
         'end-lesson',
         'lesson-success',
-        'my-calendar'
+        'my-calendar',
+        'my-class'
         );
 
     public function init() {
@@ -153,6 +154,25 @@ class Angel_IndexController extends Angel_Controller_Action {
         $teacher_id = $this->getParam('id');
 
         $this->view->teacher_id = $teacher_id;
+    }
+
+    public function myClassAction() {
+        $teacherModel = $this->getModel('teacher');
+        $lessonModel = $this->getModel('lesson');
+
+        $id = $this->getParam('id');
+
+        $lessons = $lessonModel->getAll(false);
+        $teacher = $teacherModel->getById($id);
+        $count = 0;
+
+        foreach ($teacher->lesson as $p) {
+            $count++;
+        }
+
+        $this->view->count = $count;
+        $this->view->model = $teacher;
+        $this->view->lessons = $lessons;
     }
 
     public function startLessonAction() {

@@ -12,7 +12,8 @@ class Angel_ApiController extends Angel_Controller_Action {
         'get-order',
         'set-day',
         'get-busy',
-        'is-busy'
+        'is-busy',
+        'join-lesson'
     );
     protected $SEPARATOR = ';';
 
@@ -350,6 +351,56 @@ class Angel_ApiController extends Angel_Controller_Action {
      * 工具方法
      *
      * *****************************************************************************/
+
+    public function joinLessonAction() {
+        $teacherModel = $this->getModel('teacher');
+        $lessonModel = $this->getModel('lesson');
+
+        $teacher_id = $this->getParam('teacher_id');
+        $lesson_id = $this->getParam('lesson_id');
+        $opt = $this->getParam('opt');
+
+        $teacher = $teacherModel->getById($teacher_id);
+        $lessons = array();
+
+        if ($opt == 1) {
+            $lesson = $lessonModel->getById($lesson_id);
+
+            foreach ($teacher->lesson as $l) {
+                $lessons[] = $l;
+            }
+
+            $lessons[] = $lesson;
+        }
+        else {
+            foreach ($teacher->lesson as $l) {
+                if ($l->id == $lesson_id) {
+                    continue;
+                }
+
+                $lessons[] = $l;
+            }
+        }
+
+        $result = $teacherModel->modifyLesson($teacher_id, $lessons);
+
+        if ($result) {
+            if ($opt == 1) {
+                $this->_helper->json(array('data' => "加入课程成功!", 'code' => 200));
+            }
+           else {
+               $this->_helper->json(array('data' => "退出课程成功!", 'code' => 200));
+           }
+        }
+        else {
+            if ($opt == 1) {
+                $this->_helper->json(array('data' => "加入课程失败!", 'code' => 0));
+            }
+            else {
+                $this->_helper->json(array('data' => "退出课程失败!", 'code' => 0));
+            }
+        }
+    }
 
     public function setDayAction() {
         $calendarModel = $this->getModel('calendar');

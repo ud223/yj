@@ -4,7 +4,7 @@ function saveName() {
     var value = $("#user-name").val();
 
     if (!value) {
-        alert("姓名不能为空!");
+        $.toastMsg("姓名不能为空!", 3000);
 
         return;
     }
@@ -14,6 +14,8 @@ function saveName() {
 
 function setName(response) {
     $("#my-name").html(response.data)
+
+    $("#pp-change-name").find('.cd-slidepopupback').tap();
 }
 
 //-----------------------手机短信验证------------------------------------------
@@ -26,7 +28,7 @@ function getPhoneValidCode() {
     var phone_num = $("#phone-num").val();
 
     if (!phone_num || phone_num.length != 11) {
-        alert("请输入正确手机号码!");
+        $.toastMsg("请输入正确手机号码!", 3000);
 
         return;
     }
@@ -39,7 +41,7 @@ function validPhoneCode() {
     var tmp_2 = $("#phone-num").attr("code");
 
     if (tmp_1 != tmp_2) {
-        alert("验证码输入错误!");
+        $.toastMsg("验证码输入错误!", 3000);
 
         return;
     }
@@ -51,6 +53,8 @@ function validPhoneCode() {
     var value = $("#phone-num").val();
 
     modifyValie(user_id, model, key, value, null);
+
+    $("#pp-change-tel").find('.cd-slidepopupback').tap();
 }
 
 //修改个人备注
@@ -64,6 +68,8 @@ function saveDescription() {
 
 function setDescription(response) {
     $("#my-description").html(response.data)
+
+    $("#pp-my-intro").find('.cd-slidepopupback').tap();
 }
 
 //修改个人练习年份
@@ -77,4 +83,6 @@ function saveYears() {
 
 function setYears(response) {
     $("#my-years").html(response.data)
+
+    $("#pp-change-years").find('.cd-slidepopupback').tap();
 }

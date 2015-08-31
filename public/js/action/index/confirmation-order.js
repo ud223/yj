@@ -1,14 +1,17 @@
 //----------------------地址------------------------------------------
 
 function initAddress() {
-    var lng = "114.308585";
-    var lat = "30.646429";
+    var lng = "114.081278";
+    var lat = "22.531413";
 
     getAddressByCoordinate(lng, lat, setAddressList);
 }
 
 function chooseAddr(text) {
-    $("#edit-addr").val(text);
+    //$("#edit-addr").val(text);
+    $("#address-view").html(text);
+
+    $("#pp-change-addr").find(".cd-slidepopupback").tap();
 }
 
 function setAddressList(response) {
@@ -45,7 +48,7 @@ function getPhoneValidCode() {
     var phone_num = $("#phone-num").val();
 
     if (!phone_num || phone_num.length != 11) {
-        alert("请输入正确手机号码!");
+        $.toastMsg("请输入正确手机号码!", 3000);
 
         return;
     }
@@ -57,13 +60,21 @@ function validPhoneCode() {
     var tmp_1 = $("#phone-code").val();
     var tmp_2 = $("#phone-num").attr("code");
 
+    if ($("#phone-num").val() == "") {
+        $.toastMsg("电话号码不能为空!", 3000);
+
+        return;
+    }
+
     if (tmp_1 != tmp_2) {
-        alert("验证码输入错误!");
+        $.toastMsg("验证码输入错误!", 3000);
 
         return;
     }
 
     $("#customer-phone").html($("#phone-num").val());
+
+    $("#pp-change-tel").find(".cd-slidepopupback").tap();
 }
 
 //----------选择日期和时间段-----------------------------------------------------
@@ -158,8 +169,8 @@ function acceptTime() {
 
             var date = $(".time-day-select").find(".table").find(".selected").html();
 
-            $("#date-time").html(date +" "+ first_html +" - "+ last_html);
-            $("#time_range").val(first_html +" - "+ last_html + "|" + first_time +"-"+last_time);
+            $("#date-time").html(date +" "+ first_html +"-"+ last_html);
+            $("#time_range").val(first_html +"-"+ last_html + "|" + first_time +"-"+last_time);
 
             var hour = parseInt(last_time) - parseInt(first_time) + 1;
 
@@ -169,6 +180,8 @@ function acceptTime() {
         }
 
         $("#select-timespan").show();
+
+        $("#pp-change-time").find(".cd-slidepopupback").tap();
     }
 }
 

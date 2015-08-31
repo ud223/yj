@@ -55,7 +55,7 @@ var Order = function() {
 
     obj.add = function(customer_id, teacher_id, rundate, time, price, fun) {
         if (!obj.check(rundate, time)) {
-            alert(obj.message);
+            $.toastMsg(obj.message, 3000);
 
             return;
         }
@@ -63,7 +63,7 @@ var Order = function() {
         var hour = obj.getHour(time);
 
         if (hour == 0) {
-            alert(obj.message);
+            $.toastMsg(obj.message, 3000);
 
             return;
         }
@@ -76,7 +76,7 @@ var Order = function() {
 
     obj.confrim = function(rundate, time, hour, amount, pay_amount, address, phone, customer_name, address, phone,  fun) {
         if (!obj.confrimCheck(rundate, time, customer_name, phone, address)) {
-            alert(obj.message);
+            $.toastMsg(obj.message, 3000);
 
             return;
         }

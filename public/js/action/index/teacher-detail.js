@@ -85,8 +85,8 @@ function timeChoose(time) {
 
             var date = $(".time-day-select").find(".table").find(".selected").html();
 
-            $("#show-view-time").html(date +" "+ first_html +" - "+ last_html);
-            $("#time_range").val(first_html +" - "+ last_html + "|" + first_time +"-"+last_time);
+            $("#show-view-time").html(date +" "+ first_html +"-"+ last_html);
+            $("#time_range").val(first_html +"-"+ last_html + "|" + first_time +"-"+last_time);
         }
 
         $("#select-timespan").show();
@@ -156,7 +156,11 @@ function chooseDay(week) {
     order.getByDay(teacher_id, $(week).attr("val"), setUseTime);
 }
 
-function busyDay() {
+function busyDay(week) {
+    $(".time-day-select").find(".table").find(".selected").removeClass("selected");
+
+    $(week).addClass("selected");
+
     $(".time-space").addClass("unclickable");
 }
 

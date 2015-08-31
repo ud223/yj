@@ -11,7 +11,27 @@ $.endWaiting = function() {
 };
 
 /* LOADING (END) */
-
+$.toastMsg = function(msg, duration){
+    if(!duration) {
+        duration = 2000;
+    }
+    if(!msg) {
+        msg="操作成功";
+    }
+    if($('.toastmsg-wp').length) {
+        $('.toastmsg-wp').remove();
+    }
+    var fadeDuration = 200;
+    var div = $('<div></div>').addClass('toastmsg').append(msg);
+    var divwp = $('<div></div>').addClass('toastmsg-wp');
+    divwp.append(div);
+    $('body').append(divwp);
+    divwp.fadeIn(fadeDuration, function(){
+        setTimeout(function(){
+            divwp.fadeOut(fadeDuration);
+        }, duration);
+    });
+};
 
 
 
@@ -35,12 +55,14 @@ $.endWaiting = function() {
         var $this = $(this);
         var container = $this.closest('.cd-slidepopup');
         container.addClass('hide').removeClass('show');
+        $('html').removeClass('html-no-scroll');
     });
     $('body').on('tap', '.cd-slideoutbtn', function() {
         var $this = $(this).closest('.cd-slideoutbtn');
         var target = $($this.attr('rel'));
         if (target.length) {
             target.addClass('show').removeClass('hide');
+            $('html').addClass('html-no-scroll');
         }
     });
     $('body').on('tap', '.cd-coupon-itm', function(){
@@ -96,6 +118,11 @@ $.endWaiting = function() {
 
 
 })(jQuery);
+
+/* TOAST(START) */
+
+
+/* TOAST(END) */
 
 
 /* POPUP (START) */

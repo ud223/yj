@@ -155,19 +155,19 @@
 
 <div class="slidepopup cd-slidepopup" id="pp-change-addr">
     <div class="tt">更改授课地址<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
-    <div class="address-list">
+    <div class="address-list" style="position:absolute;left:0;right:0;top:60px;bottom:0;overflow-y:auto">
         <div class="row">
             <input id="edit-addr" placeholder="请输入详细地址" type="text" class="fulltxtinput" />
             <button id="btn-addr-query" class="sendvalcodbt">查询</button>
         </div>
         <div class="clear-15"></div>
-        <div class="row">
-            <div id="addr-list" class="loc-ddl-bd">
-            </div>
+        <div id="addr-list" class="loc-ddl-bd">
         </div>
+
+        <button id="apply-addr" class="fullbtn" style="display: none">确定</button>
+        <div class="clear-15"></div>
     </div>
     <div class="clear-15"></div>
-    <button id="apply-addr" class="fullbtn">确定</button>
 </div>
 
 <div id="div-addr-node" style="display: none">

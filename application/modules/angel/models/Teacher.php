@@ -141,8 +141,24 @@ class Angel_Model_Teacher extends Angel_Model_AbstractModel {
         return $result;
     }
 
+    public function submitRating($id, $teacher_score) {
+        $data = array('teacher_score'=>$teacher_score);
+
+        $result = $this->save($id, $data);
+
+        return $result;
+    }
+
     public function applyTeacher($id) {
         $data = array('usertype'=>2);
+
+        $result = $this->save($id, $data);
+
+        return $result;
+    }
+
+    public function updateMoney($id, $amount, $use_amount, $teacher_count) {
+        $data = array('amount'=>$amount, 'use_amount'=>$use_amount, 'teacher_count'=>$teacher_count);
 
         $result = $this->save($id, $data);
 

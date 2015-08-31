@@ -23,8 +23,10 @@ class Angel_IndexController extends Angel_Controller_Action {
         'end-lesson',
         'lesson-success',
         'my-calendar',
-        'my-class'
-        );
+        'my-class',
+        'rating',
+        'rating-success'
+    );
 
     public function init() {
         $this->_helper->layout->setLayout('main');
@@ -41,12 +43,18 @@ class Angel_IndexController extends Angel_Controller_Action {
 
     public function teacherDetailAction() {
         $teacherModel = $this->getModel('teacher');
+        $orderModel = $this->getModel('order');
 
         $id = $this->getParam('id');
 
         $result = $teacherModel->getById($id);
 
+        $conditions = array('teacher.$id'=>new MongoId($id), 'state'=>50);
+
+        $orders = $orderModel->getBy(false, $conditions);
+
         $this->view->model = $result;
+        $this->view->orders = $orders;
     }
 
     public function confirmationOrderAction() {
@@ -122,7 +130,7 @@ class Angel_IndexController extends Angel_Controller_Action {
 
         $id = $this->getParam('id');
 
-        $paginator = $orderModel->getBy(false, array('delete'=>0,'custmoer.$id'=>new MongoId($id)));
+        $paginator = $orderModel->getBy(false, array('delete'=>0, 'customer.$id'=>new MongoId($id)));
 
         $this->view->count = count($paginator);
         $this->view->order_list = $paginator;
@@ -207,6 +215,42 @@ class Angel_IndexController extends Angel_Controller_Action {
         $order = $orderModel->getById($id);
 
         $this->view->model = $order;
+    }
+
+    public function ratingAction() {
+        $orderModel = $this->getModel('order');
+
+        $id = $this->getParam('id');
+
+        $order = $orderModel->getById($id);
+
+        if ($order->state != 40) {
+            header("location:/me/". $order->customer->id);
+        }
+
+        $this->view->model = $order;
+    }
+
+    public function ratingSuccessAction() {
+        $orderModel = $this->getModel('order');
+        $teacherModel = $this->getModel('teacher');
+
+        $id = $this->getParam('id');
+
+        $orderModel->updateState($id, 50);
+
+        $order = $orderModel->getById($id);
+
+        $teacher_id = $order->teacher->id;
+
+        $teacher = $teacherModel->getById($teacher_id);
+//        exit($order->pay_amount);
+        $amount = floatval($teacher->amount) + floatval($order->pay_amount);
+        $use_amount = floatval($teacher->use_amount) + floatval($order->pay_amount);
+        $teacher_count = intval($teacher->teacher_count) + 1;
+
+        $result = $teacherModel->updateMoney($teacher_id, $amount, $use_amount, $teacher_count);
+        //失败没有页面。。。
     }
 
     public function  applyAction() {

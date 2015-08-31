@@ -15,7 +15,7 @@ function queryCustomerList(seacher, sort, page) {
                 loadCustomerRow(response.data, response.current_page_no, response.page_count, name);
             }
             else {
-                alert(response.data);
+                $.toastMsg(response.data, 3000);
             }
         },
         error: function () {

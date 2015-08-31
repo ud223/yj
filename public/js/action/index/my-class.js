@@ -36,10 +36,22 @@ function submitLater(opt, lesson_id) {
            if (opt == 1) {
                $(this).find(".holder").html("");
                $(this).find(".holder").html('<img src="/img/arr-r.png" class="icoin" /><div class="p27-t1 is-join">已参加</div>');
+
+               var count = parseInt($("#class-count").html());
+
+               count = count + 1;
+
+               $("#class-count").html(count)
            }
            else {
                $(this).find(".holder").html("");
                $(this).find(".holder").html('<img src="/img/arr-r.png" class="icoin" />');
+
+               var count = parseInt($("#class-count").html());
+
+               count = count - 1;
+
+               $("#class-count").html(count)
            }
        }
     });
@@ -54,4 +66,6 @@ function submitLater(opt, lesson_id) {
         $("#is-join-lesson").html("参加该课程");
         $("#is-join-lesson").attr("opt", "1");
     }
+
+    $("#pp-show-cld").find('.cd-slidepopupback').tap();
 }

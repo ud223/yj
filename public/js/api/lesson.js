@@ -11,13 +11,13 @@ function joinLesson(teacher_id, lesson_id, opt,  fun) {
         success: function (response) {
             //alert(JSON.stringify(response)); //return;
             if (response.code == 200) {
-                alert(response.data);
+                //alert(response.data);
                 if (fun) {
                     fun(opt, lesson_id);
                 }
             }
             else {
-                alert(response.data);
+                $.toastMsg(response.data, 3000);
             }
         },
         error: function () {

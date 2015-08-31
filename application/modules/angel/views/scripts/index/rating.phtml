@@ -1,0 +1,82 @@
+<script src="<?php echo $this->jsPath("api/order.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("action/index/rating.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("delegate/index/rating.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("controller/index/rating.js"); ?>"></script>
+<div class="blackrowgall">
+    <div class="row">
+        <span class="tt">授课老师</span>
+        <span class="holder"><?php echo $this->model->teacher->name ?><span class="lightgray">（<?php echo $this->model->teacher->teacher_score ?>分）</span><img src="/img/user04.jpg" width="25" /></span>
+    </div>
+</div>
+<div class="blackrowgall">
+    <div class="row">
+        <span class="tt">授课时间</span>
+        <span class="holder"><?php echo $this->model->rundate ?> <?php echo explode("|", $this->model->time)[0] ?></span>
+    </div>
+</div>
+<div class="blackrowgall">
+    <div class="row">
+        <span class="tt">打分</span>
+    </div>
+    <div class="row">
+        <div class="holder">
+            <span class="rating-sub-tt">按时到达</span>
+            <div id="time-score" class="rating-stars">
+                <div class="rating-star empty" val="1"><i class="ico"></i></div>
+                <div class="rating-star empty" val="2"><i class="ico"></i></div>
+                <div class="rating-star empty" val="3"><i class="ico"></i></div>
+                <div class="rating-star empty" val="4"><i class="ico"></i></div>
+                <div class="rating-star empty" val="5"><i class="ico"></i></div>
+                <input type="hidden" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="holder">
+            <span class="rating-sub-tt">授课内容</span>
+            <div id="content-score" class="rating-stars">
+                <div class="rating-star empty" val="1"><i class="ico"></i></div>
+                <div class="rating-star empty" val="2"><i class="ico"></i></div>
+                <div class="rating-star empty" val="3"><i class="ico"></i></div>
+                <div class="rating-star empty" val="4"><i class="ico"></i></div>
+                <div class="rating-star empty" val="5"><i class="ico"></i></div>
+                <input type="hidden" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="holder">
+            <span class="rating-sub-tt">授课方法</span>
+            <div id="way-score" class="rating-stars">
+                <div class="rating-star empty" val="1"><i class="ico"></i></div>
+                <div class="rating-star empty" val="2"><i class="ico"></i></div>
+                <div class="rating-star empty" val="3"><i class="ico"></i></div>
+                <div class="rating-star empty" val="4"><i class="ico"></i></div>
+                <div class="rating-star empty" val="5"><i class="ico"></i></div>
+                <input type="hidden" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="blackrowgall">
+    <div class="row">
+        <span class="tt">评论</span>
+    </div>
+    <div>
+        <textarea id="teacher-appraise" class="sismoe" placeholder="本次授课体验的感受"></textarea>
+    </div>
+</div>
+
+<div class="clear-15"></div>
+<div id="btn-submit-score" class="fullbtn">提交</div>
+<script type="text/javascript">
+    var order_id = '<?php echo $this->model->id ?>';
+//    var state = '<?php //echo $this->model->state ?>//';
+
+    $('document').ready(function() {
+//        if (state != "40") {
+//            location.href = "/me/<?php //echo $this->model->customer->id ?>//";
+//        }
+    });
+</script>

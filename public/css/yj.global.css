@@ -310,6 +310,9 @@ a {
 .ntb {
     border-top: 0 !important;
 }
+.html-no-scroll {
+    overflow-y: hidden;
+}
 div:after,
 p:after {
     display: block;
@@ -1761,4 +1764,22 @@ p:after {
     left: 10px;
     top: 50%;
     margin-top: -15px;
+}
+.toastmsg-wp {
+    width:100%;
+    left:0;
+    position:fixed;
+    z-index: 101;
+    text-align:center;
+    bottom:30px;
+    display:none;
+}
+.toastmsg {
+    padding:8px 15px;
+    background:rgba(0,0,0,.8);
+    text-align:center;
+    color:#FFF;
+    border-radius: 5px;
+    display:inline-block;
+    box-shadow:0 0 4px rgba(0,0,0,.2);
 }

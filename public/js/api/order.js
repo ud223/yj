@@ -16,7 +16,7 @@ function addOrder(customer_id, teacher_id, rundate, time, hour, price, amount, f
                 }
             }
             else {
-                alert(response.data);
+                $.toastMsg(response.data, 3000);
             }
         },
         error: function () {
@@ -43,7 +43,7 @@ function confirmOrder(rundate, time, hour, amount, pay_amount, customer_name, ad
                 }
             }
             else {
-                alert(response.data);
+                $.toastMsg(response.data, 3000);
             }
         },
         error: function () {
@@ -65,14 +65,14 @@ function removeOrder(id, fun) {
         success: function (response) {
             //alert(JSON.stringify(response)); //return;
             if (response.code == 200) {
-                alert("删除成功!");
+                $.toastMsg("删除成功!");
 
                 if (fun) {
                     fun(response);
                 }
             }
             else {
-                alert(response.data);
+                $.toastMsg(response.data, 3000);
             }
         },
         error: function () {
@@ -99,7 +99,35 @@ function getOrderBy(teacher_id, rundate, fun) {
                 }
             }
             else {
-                alert(response.data);
+                $.toastMsg(response.data, 3000);
+            }
+        },
+        error: function () {
+
+        }
+    });
+}
+
+function submitScore(order_id, time_score, content_score, way_score, teacher_appraise, fun) {
+    var url = '/api/rating/order';
+
+    var  data = { 'id':order_id, 'time_score':time_score, 'content_score':content_score, 'way_score':way_score, 'teacher_appraise':teacher_appraise }
+    //alert(JSON.stringify(data));
+    // return;
+    $.ajax({
+        url: url,
+        dataType: 'json',
+        data: data,
+        method: 'post',
+        success: function (response) {
+            //alert(JSON.stringify(response)); //return;
+            if (response.code == 200) {
+                if (fun) {
+                    fun(order_id);
+                }
+            }
+            else {
+                $.toastMsg(response.data, 3000);
             }
         },
         error: function () {

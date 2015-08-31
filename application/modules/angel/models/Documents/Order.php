@@ -34,17 +34,26 @@ class Order extends AbstractDocument {
     /** @ODM\Int */
     protected $state = 0;
 
-    /** @ODM\Int */
+    /** @ODM\String */
     protected $user_score;
 
-    //用户评价
+    //老师给用户评价
     /** @ODM\String */
     protected $user_appraise;
 
-    /** @ODM\Int */
+    /** @ODM\String */
     protected $teacher_score;
 
-    //老师评价
+    /** @ODM\String */
+    protected $time_score;
+
+    /** @ODM\String */
+    protected $content_score;
+
+    /** @ODM\String */
+    protected $way_score;
+
+    //用户给老师评价
     /** @ODM\String */
     protected $teacher_appraise;
 

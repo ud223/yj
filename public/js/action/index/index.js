@@ -5,7 +5,7 @@ function load() {
     var tmp_region= $(".tcfilter-filter").find(".selected");
     var tmp_sort = $(".tcfilter-sort").find(".selected");
 
-    var search = "region.id="+ $(tmp_region).attr("id");
+    var search = "region.$id="+ $(tmp_region).attr("id");
     var sort = $(tmp_sort).attr("sort");
 
     var tmp_search = localStorage.getItem("teacher_search");

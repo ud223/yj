@@ -13,7 +13,8 @@ class Angel_ApiController extends Angel_Controller_Action {
         'set-day',
         'get-busy',
         'is-busy',
-        'join-lesson'
+        'join-lesson',
+        'rating-order'
     );
     protected $SEPARATOR = ';';
 
@@ -39,13 +40,13 @@ class Angel_ApiController extends Angel_Controller_Action {
             if (count($tmp_search) == 1) {
                 $tmp_condition = explode("=", $tmp_search[0]);
 
-                $condition[] = array($tmp_condition[0] => new MongoId($tmp_condition[1]));
+                $condition[] = array('region.$id' => new MongoId($tmp_condition[1]), 'delete'=>0);
             }
             else {
                 $tmp_condition = explode("=", $tmp_search[0]);
                 $tmp_condition1 = explode("=", $tmp_search[1]);
 
-                $condition[] = array($tmp_condition[0] => new MongoId($tmp_condition[1]), $tmp_condition1[0] => new MongoId($tmp_condition1[1]));
+                $condition[] = array('region.$id' => new MongoId($tmp_condition[1]), 'lesson.$id' => new MongoId($tmp_condition1[1]), 'delete'=>0);
 //            foreach ($tmp_search as $tmp) {
 //                $tmp_condition = explode("=", $tmp);
 //
@@ -59,19 +60,15 @@ class Angel_ApiController extends Angel_Controller_Action {
             }
 
         }
-
+//        $this->_helper->json(array('data' => $condition, 'code' => 0)); exit;
         if (!$sort) {
             $sort = false;
         }
 
-//        $this->_helper->json(array('data' => $condition, 'code' => 0)); exit;
-
-//        $condition = array("usertype"=> "2", "region.id"=>new MongoId("55d9543ed53de430048b456a"));
-
         $paginator = $teacherModel->getByAndSort(true, $condition, $sort);
 
-        $paginator->setItemCountPerPage(3);
-        $paginator->setCurrentPageNumber($page);
+        $paginator->setItemCountPerPage(100);
+        $paginator->setCurrentPageNumber(1);
 
         if ($paginator) {
             $current_page_no = $paginator->getCurrentPageNumber();
@@ -265,7 +262,6 @@ class Angel_ApiController extends Angel_Controller_Action {
             $this->_helper->json(array('data' => $msg, 'code' => 0)); exit;
         }
 
-
         if ($order) {
             $result = $orderModel->saveOrder($id, $rundate, $time, $hour, $order->customer, $order->teacher, 10, $order->user_score, $order->user_appraise, $order->teacher_score, $order->teacher_appraise, $price, $amount, $pay_amount, $customer_name, $phone, $address);
 
@@ -304,11 +300,11 @@ class Angel_ApiController extends Angel_Controller_Action {
         $rundate = $this->getParam('rundate');
 
         if (!$teacher_id) {
-
+            $this->_helper->json(array('data' => "老师信息获取错误!", 'code' => 0)); exit;
         }
 
         if (!$rundate) {
-
+            $this->_helper->json(array('data' => "日期获取错误!!", 'code' => 0)); exit;
         }
 
         $condition[] = array('teacher.id' => new MongoId($teacher_id), 'rundate'=>$rundate);
@@ -322,6 +318,50 @@ class Angel_ApiController extends Angel_Controller_Action {
         }
 
         $this->_helper->json(array('data' => $orders, 'code' => 200));
+    }
+
+    public function ratingOrderAction() {
+        $orderModel = $this->getModel('order');
+        $teacherModel = $this->getModel('teacher');
+
+        $id = $this->getParam('id');
+        $time_score = $this->getParam('time_score');
+        $content_score = $this->getParam('content_score');
+        $way_score = $this->getParam('way_score');
+        $teacher_appraise = $this->getParam('teacher_appraise');
+
+        $tmp_score = ($time_score + $content_score + $way_score) / 3;
+
+        $result = $orderModel->submitRating($id, $time_score, $content_score, $way_score, $tmp_score, $teacher_appraise);
+
+        if ($result) {
+            $order = $orderModel->getById($id);
+
+            $teacher_id = $order->teacher->id;
+
+            $teacher = $teacherModel->getById($teacher_id);
+
+            $teacher_score = $teacher->teacher_score;
+
+            if (!$teacher_score) {
+                $teacher_score = $tmp_score;
+            }
+            else {
+                $teacher_score = ($teacher_score + $tmp_score) / 2;
+            }
+
+            $result = $teacherModel->submitRating($teacher_id, $teacher_score);
+
+            if ($result) {
+                $this->_helper->json(array('data' => "评分成功!", 'code' => 200));
+            }
+            else {
+                $this->_helper->json(array('data' => "老师评分更新失败!", 'code' => 0));
+            }
+        }
+        else {
+            $this->_helper->json(array('data' => "订单评分更新失败!", 'code' => 0));
+        }
     }
 
     /********************************************************************************

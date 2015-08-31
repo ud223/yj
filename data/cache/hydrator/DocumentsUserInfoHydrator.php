@@ -311,6 +311,22 @@ class DocumentsUserInfoHydrator implements HydratorInterface
             $hydratedData['teacher_count'] = $return;
         }
 
+        /** @Field(type="string") */
+        if (isset($data['amount'])) {
+            $value = $data['amount'];
+            $return = (string) $value;
+            $this->class->reflFields['amount']->setValue($document, $return);
+            $hydratedData['amount'] = $return;
+        }
+
+        /** @Field(type="string") */
+        if (isset($data['use_amount'])) {
+            $value = $data['use_amount'];
+            $return = (string) $value;
+            $this->class->reflFields['use_amount']->setValue($document, $return);
+            $hydratedData['use_amount'] = $return;
+        }
+
         /** @Many */
         $mongoData = isset($data['skill']) ? $data['skill'] : null;
         $return = new \Doctrine\ODM\MongoDB\PersistentCollection(new \Doctrine\Common\Collections\ArrayCollection(), $this->dm, $this->unitOfWork, '$');

@@ -152,18 +152,23 @@
     <div class="dipu2 nbb">
         <div class="dipu3 mmbe">最新评论</div>
         <div class="dipu4">
-            <div class="mgi-b1">
-                <img src="/img/user03.jpg" class="b4ee" />
-                <div class="b5ee">小甜甜布兰妮</div>
-                <div class="b6ee">2015年5月5日</div>
-                <div class="b7ee">
-                    经典诵读实打实的服务诶我发额，文件哦if为温热感觉哦。
+            <?php foreach($this->orders as $order):?>
+                <div class="mgi-b1">
+                    <img src="/img/user03.jpg" class="b4ee" />
+                    <div class="b5ee"><?php echo $order->customer->name ?></div>
+                    <div class="b6ee"><?php
+                            $tmp_date = explode("-", $order->rundate);
+                            echo $tmp_date[0] .'年'. $tmp_date[1] .'月'. $tmp_date[2] .'日';
+                        ?></div>
+                    <div class="b7ee">
+                        <?php echo $order->teacher_appraise ?>
+                    </div>
                 </div>
-            </div>
-            <div class="mgi-b2">
-                查看更多
-                <span class="arr-r"></span>
-            </div>
+            <?php endforeach; ?>
+<!--            <div class="mgi-b2">-->
+<!--                查看更多-->
+<!--                <span class="arr-r"></span>-->
+<!--            </div>-->
         </div>
     </div>
 </div>

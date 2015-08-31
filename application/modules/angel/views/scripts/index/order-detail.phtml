@@ -84,13 +84,17 @@
 <!-- case 1: pending等待支付状态时（END） -->
 <?php endif; ?>
 <div class="clear-15"></div>
-<div class="fullbtn normal cd_hottap" hottap="/my/order/<?php echo $this->model->customer->id ?>">返回</div>
 <?php if ($this->model->state < 20):?>
     <!-- case 1: pending等待支付状态时（START） -->
     <div class="clear-15"></div>
     <div id="remove-order" class="fullbtn dangerbtn">删除该订单</div>
     <!-- case 1: pending等待支付状态时（END） -->
 <?php endif; ?>
+<?php if ($this->model->state == 40):?>
+    <div class="fullbtn cd_hottap" hottap="/rating/order/<?php echo $this->model->id ?>">授课评分</div>
+<?php endif;?>
+<div class="clear-15"></div>
+<div class="fullbtn normal cd_hottap" hottap="/my/order/<?php echo $this->model->customer->id ?>">返回</div>
 <div class="bt-distance"></div>
 <script type="text/javascript">
     var order_id = '<?php echo $this->model->id ?>';

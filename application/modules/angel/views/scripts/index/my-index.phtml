@@ -10,7 +10,7 @@
 <script src="<?php echo $this->jsPath("controller/index/my-index.js"); ?>"></script>
 <div class="menu-fix">
     <div class="menu-fix-itm cd_hottap" hottap="/">预约老师</div>
-    <div class="menu-fix-itm cd_hottap selected" hottap="/me">我</div>
+    <div class="menu-fix-itm cd_hottap selected" hottap="/me/<?php echo $this->model->id ?>">我</div>
 </div>
 <?php if (!$this->model->phone): ?>
     <div class="p10-head-warning" id="didntsettel">
@@ -78,13 +78,13 @@
         <div class="row actbtn">
             <span class="tt">我的总收入</span>
             <div class="holder">
-                <span class="gold">￥0</span>
+                <span class="gold">￥<?php echo $this->model->amount ?></span>
             </div>
         </div>
         <div class="row actbtn">
             <span class="tt">未提现金额</span>
             <div class="holder">
-                <span class="gold">￥0</span>
+                <span class="gold">￥<?php echo $this->model->use_amount ?></span>
             </div>
         </div>
     </div>
@@ -111,7 +111,7 @@
     </div>
 <?php endif;?>
 <?php if ($this->model->usertype == "1"):?>
-    <div class="blackrowgall">
+    <div class="blackrowgall" style="display: none">
         <div class="row actbtn cd_hottap" hottap="/apply">
             <span class="tt">申请成为老师</span>
             <div class="holder arr">

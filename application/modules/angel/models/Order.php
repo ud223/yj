@@ -31,8 +31,7 @@ class Angel_Model_Order extends Angel_Model_AbstractModel
     }
 
     //保存课程信息
-    public function saveOrder($id, $rundate, $time, $hour, $customer, $teacher, $state, $user_score, $user_appraise, $teacher_score, $teacher_appraise, $price, $amount, $pay_amount, $customer_name, $phone, $address)
-    {
+    public function saveOrder($id, $rundate, $time, $hour, $customer, $teacher, $state, $user_score, $user_appraise, $teacher_score, $teacher_appraise, $price, $amount, $pay_amount, $customer_name, $phone, $address) {
         $data = array('rundate' => $rundate,
             'time' => $time,
             'hour' => $hour,
@@ -57,6 +56,14 @@ class Angel_Model_Order extends Angel_Model_AbstractModel
 
     public function updateState($id, $state) {
         $data = array('state' => $state);
+
+        $result = $this->save($id, $data);
+
+        return $result;
+    }
+
+    public function submitRating($id, $time_score, $content_score, $way_score, $teacher_score, $teacher_appraise) {
+        $data = array('time_score'=>$time_score, 'content_score'=>$content_score, 'way_score'=>$way_score, 'teacher_score'=>$teacher_score, 'teacher_appraise'=>$teacher_appraise);
 
         $result = $this->save($id, $data);
 

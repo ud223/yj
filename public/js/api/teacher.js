@@ -9,13 +9,14 @@ function queryTeacherList(search, sort, page) {
         data: data,
         method: 'post',
         success: function (response) {
-            //alert(JSON.stringify(response)); //return;
+            //alert(JSON.stringify(response));
+            // return;
             if (response.code == 200) {
                 //加载活动集合
                 loadTeacher(response.data, response.current_page_no, response.page_count);
             }
             else {
-                alert(response.data);
+                $.toastMsg(response.data, 3000);
             }
         },
         error: function () {
@@ -43,7 +44,7 @@ function getTeacherBusy(teacher_id, date, control, fun, fun1) {
             }
             else {
                 if (fun1) {
-                    fun1();
+                    fun1(control);
                 }
             }
         },

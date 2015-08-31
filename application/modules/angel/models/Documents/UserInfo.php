@@ -117,6 +117,12 @@ class UserInfo extends AbstractDocument {
     /** @ODM\Int */
     protected $teacher_count = 0;
 
+    /** @ODM\String */
+    protected $amount = 0;
+
+    /** @ODM\String */
+    protected $use_amount = 0;
+
     /** @ODM\ReferenceMany(targetDocument="\Documents\Skill") */
     protected $skill = array();
     //账号是否冻结 0为没有冻结 1为冻结

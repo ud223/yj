@@ -15,7 +15,7 @@ function editAddressName() {
 }
 
 function applyAddrClick() {
-    $("#apply-addr").click(function() {
+    $("#apply-addr").tapA(function() {
         applyAddress();
     });
 }

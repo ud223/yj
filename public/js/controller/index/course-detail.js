@@ -32,7 +32,7 @@ function initControls() {
 function initTest() {
     var regions = $(".tcfilter-filter").find(".itmbtn");
 
-    $(regions[6]).addClass("selected");
+    $(regions[1]).addClass("selected");
 
     //localStorage.setItem('user_id', '55d53896d53de421048b456f');//55ced8b3d53de429048b456b
     //

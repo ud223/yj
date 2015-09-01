@@ -9,6 +9,9 @@ function regionClick() {
         $(this).addClass("selected");
 
         load();
+
+        $('.loc-bt').removeClass('selected');
+        $('.tcfilter-filter').slideUp(150);
     });
 }
 
@@ -23,5 +26,8 @@ function sortClick() {
         $(this).addClass("selected");
 
         load();
+
+        $('.sort-bt').removeClass('selected');
+        $('.tcfilter-sort').slideUp(150);
     });
 }

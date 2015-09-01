@@ -45,10 +45,16 @@ $.toastMsg = function(msg, duration){
     $('.sort-bt').tap(function() {
         $(this).toggleClass('selected');
         $('.tcfilter-sort').slideToggle(150);
+        // 收缩 位置筛选
+        $('.loc-bt').removeClass('selected');
+        $('.tcfilter-filter').slideUp(150);
     });
     $('.loc-bt').tap(function() {
         $(this).toggleClass('selected');
         $('.tcfilter-filter').slideToggle(150);
+        // 收缩 分类筛选
+        $('.sort-bt').removeClass('selected');
+        $('.tcfilter-sort').slideUp(150);
     });
 
     $('body').on('tap', '.cd-slidepopupback', function() {

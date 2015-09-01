@@ -63,7 +63,7 @@ $.toastMsg = function(msg, duration){
         container.addClass('hide').removeClass('show');
         $('html').removeClass('html-no-scroll');
     });
-    $('body').on('tap', '.cd-slideoutbtn', function() {
+    $('body').on('click', '.cd-slideoutbtn', function() {
         var $this = $(this).closest('.cd-slideoutbtn');
         var target = $($this.attr('rel'));
         if (target.length) {

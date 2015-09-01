@@ -503,7 +503,7 @@ class Angel_ApiController extends Angel_Controller_Action {
 
         $conditions = array('teacher.$id'=>new MongoId($teacher_id));
 
-        $result = $calendarModel->getBy($conditions);
+        $result = $calendarModel->getBy(false, $conditions);
 
         if ($result) {
             $calendar = array();

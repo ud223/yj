@@ -154,6 +154,7 @@ function acceptTime() {
     else {
         if (selected_time.length == 1) {
             var first_html = $(selected_time[0]).html();
+            var last_html = (parseInt($(selected_time[0]).attr("val")) + 1) + ":00";
             var first_time = $(selected_time[0]).attr("val");
             var last_time = $(selected_time[selected_time.length - 1]).attr("val");
 
@@ -167,7 +168,8 @@ function acceptTime() {
         }
         else if (selected_time.length > 1) {
             var first_html = $(selected_time[0]).html();
-            var last_html = $(selected_time[selected_time.length - 1]).html();
+            //var last_html = $(selected_time[selected_time.length - 1]).html();
+            var last_html = (parseInt($(selected_time[selected_time.length - 1]).attr("val")) + 1) + ":00";
             var first_time = $(selected_time[0]).attr("val");
             var last_time = $(selected_time[selected_time.length - 1]).attr("val");
 
@@ -312,6 +314,7 @@ function chooseDay(week) {
     $(week).addClass("selected");
     $(".time-space").removeClass("selected");
     $(".time-space").removeClass("unclickable");
+    $(".time-space").removeClass("use-time");
     $("#select_date").val($(week).attr("val"));
     $("#show-view-time").html(dateToMonthAndDay($(week).attr("val")))
 
@@ -347,11 +350,12 @@ function setUseTime(response) {
                 }
 
                 if (value >= time_value[0] && value <= time_value[1]) {
-                    $(this).addClass("unclickable")
+                    $(this).addClass("unclickable");
+                    $(this).addClass("use-time");
                 }
             })
         }
-        else {
+        else {//判断修改订单时间跟现在的时间差
             if (tmp_date_time_2) {
                 if ($(this).hasClass("selected") && user_id == customer_id) {
                     return;
@@ -362,34 +366,48 @@ function setUseTime(response) {
                 var diff_time = parseInt((tmp_now - t_time) / (60 * 1000));
 
                 if (diff_time < 3) {
-                    $.each(list, function() {
+                    $.each(list, function () {
+                        if ($(this).hasClass("selected") && user_id == customer_id) {
+                            return;
+                        }
+
                         var value = parseInt($(this).attr("val"));
 
                         if (value + 1 == time_value[0] || value - 1 == time_value[1]) {
-                            $(this).addClass("unclickable")
+                            if (user_id != customer_id) {
+                                $(this).addClass("unclickable")
+                            }
                         }
 
                         if (value >= time_value[0] && value <= time_value[1]) {
-                            $(this).addClass("unclickable")
+                            $(this).addClass("unclickable");
+                            $(this).addClass("use-time");
                         }
                     })
                 }
             }
-            else {
+            else {//判断创建订单时间跟现在的时间差
                 var t_time = new Date(tmp_date_time_1);
 
                 var diff_time = parseInt((tmp_now - t_time) / (60 * 1000));
 
                 if (diff_time < 3) {
-                    $.each(list, function() {
+                    $.each(list, function () {
+                        if ($(this).hasClass("selected") && user_id == customer_id) {
+                            return;
+                        }
+
                         var value = parseInt($(this).attr("val"));
 
                         if (value + 1 == time_value[0] || value - 1 == time_value[1]) {
-                            $(this).addClass("unclickable")
+                            if (user_id != customer_id) {
+                                $(this).addClass("unclickable")
+                            }
                         }
 
                         if (value >= time_value[0] && value <= time_value[1]) {
-                            $(this).addClass("unclickable")
+                            $(this).addClass("unclickable");
+                            $(this).addClass("use-time");
                         }
                     })
                 }
@@ -401,7 +419,7 @@ function setUseTime(response) {
 }
 
 function initUseHours() {
-    var use_hours = $("#time-panel").find(".unclickable");
+    var use_hours = $("#time-panel").find(".use-time");
 
     tmp_max_hours = max_hours;
 

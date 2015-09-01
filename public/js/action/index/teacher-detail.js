@@ -74,17 +74,20 @@ function timeChoose(time) {
     else {
         if (selected_time.length == 1) {
             var first_html = $(selected_time[0]).html();
+            var last_html = (parseInt($(selected_time[0]).attr("val")) + 1) + ":00";
             var first_time = $(selected_time[0]).attr("val");
             var last_time = $(selected_time[selected_time.length - 1]).attr("val");
 
+            //var last_time = (parseInt($(selected_time[0]).attr("val")) + 1) + ":00";
+
             var date = $(".time-day-select").find(".table").find(".selected").html();
 
-            $("#show-view-time").html(date +" "+ first_html);
+            $("#show-view-time").html(date +" "+ first_html +"-"+ last_html);
             $("#time_range").val(first_html + "|" + first_time);
         }
         else if (selected_time.length > 1) {
             var first_html = $(selected_time[0]).html();
-            var last_html = $(selected_time[selected_time.length - 1]).html();
+            var last_html = (parseInt($(selected_time[selected_time.length - 1]).attr("val")) + 1) + ":00";//$(selected_time[selected_time.length - 1]).html();
             var first_time = $(selected_time[0]).attr("val");
             var last_time = $(selected_time[selected_time.length - 1]).attr("val");
 
@@ -175,6 +178,7 @@ function chooseDay(week) {
     $(week).addClass("selected");
     $(".time-space").removeClass("selected");
     $(".time-space").removeClass("unclickable");
+    $(".time-space").removeClass("use-time");
     $("#select_date").val($(week).attr("val"));
     $("#show-view-time").html(dateToMonthAndDay($(week).attr("val")))
 
@@ -192,7 +196,7 @@ function busyDay(week) {
 }
 
 function initUseHours() {
-    var use_hours = $("#time-panel").find(".unclickable");
+    var use_hours = $("#time-panel").find(".use-time");
 
     tmp_max_hours = max_hours;
 
@@ -218,7 +222,8 @@ function setUseTime(response) {
                 }
 
                 if (value >= time_value[0] && value <= time_value[1]) {
-                    $(this).addClass("unclickable")
+                    $(this).addClass("unclickable");
+                    $(this).addClass("unclickable use-time");
                 }
             })
         }
@@ -238,6 +243,7 @@ function setUseTime(response) {
 
                         if (value >= time_value[0] && value <= time_value[1]) {
                             $(this).addClass("unclickable")
+                            $(this).addClass("unclickable use-time");
                         }
                     })
                 }
@@ -256,7 +262,8 @@ function setUseTime(response) {
                         }
 
                         if (value >= time_value[0] && value <= time_value[1]) {
-                            $(this).addClass("unclickable")
+                            $(this).addClass("unclickable");
+                            $(this).addClass("unclickable use-time");
                         }
                     })
                 }

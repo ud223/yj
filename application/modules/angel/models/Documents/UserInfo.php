@@ -135,9 +135,9 @@ class UserInfo extends AbstractDocument {
     /** @ODM\ReferenceMany(targetDocument="\Documents\Photo") */
     protected $photo = array();
 
-    /** @ODM\Int */
-    protected $user_score = 0;
+    /** @ODM\String */
+    protected $user_score = 5;
 
-    /** @ODM\Int */
-    protected $teacher_score = 0;
+    /** @ODM\String */
+    protected $teacher_score = 5;
 }

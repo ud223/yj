@@ -367,18 +367,18 @@ class DocumentsUserInfoHydrator implements HydratorInterface
         $this->class->reflFields['photo']->setValue($document, $return);
         $hydratedData['photo'] = $return;
 
-        /** @Field(type="int") */
+        /** @Field(type="string") */
         if (isset($data['user_score'])) {
             $value = $data['user_score'];
-            $return = (int) $value;
+            $return = (string) $value;
             $this->class->reflFields['user_score']->setValue($document, $return);
             $hydratedData['user_score'] = $return;
         }
 
-        /** @Field(type="int") */
+        /** @Field(type="string") */
         if (isset($data['teacher_score'])) {
             $value = $data['teacher_score'];
-            $return = (int) $value;
+            $return = (string) $value;
             $this->class->reflFields['teacher_score']->setValue($document, $return);
             $hydratedData['teacher_score'] = $return;
         }

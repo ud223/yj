@@ -314,7 +314,7 @@ class Angel_ApiController extends Angel_Controller_Action {
         $orders = array();
 
         foreach ($tmp_orders as $o) {
-            $orders[] = array("id"=>$o->id, "rundate"=>$o->rundate, "time"=>$o->time, "state"=>$o->state, "created_date"=>date_format($o->created_at, 'Y-m-d H:i:s'), "update_at"=>date_format($o->updated_at, 'Y-m-d H:i:s'));
+            $orders[] = array("id"=>$o->id, "rundate"=>$o->rundate, "time"=>$o->time, "state"=>$o->state, "customer_id"=> $o->customer->id, "teacher_id"=> $o->teacher->id, "created_date"=>date_format($o->created_at, 'Y-m-d H:i:s'), "update_at"=>date_format($o->updated_at, 'Y-m-d H:i:s'));
         }
 
         $this->_helper->json(array('data' => $orders, 'code' => 200));
@@ -330,7 +330,9 @@ class Angel_ApiController extends Angel_Controller_Action {
         $way_score = $this->getParam('way_score');
         $teacher_appraise = $this->getParam('teacher_appraise');
 
-        $tmp_score = ($time_score + $content_score + $way_score) / 3;
+        $tmp_score = (floatval($time_score) + floatval($content_score) + floatval($way_score)) / 3.0;
+
+        $tmp_score = number_format($tmp_score, 1);
 
         $result = $orderModel->submitRating($id, $time_score, $content_score, $way_score, $tmp_score, $teacher_appraise);
 
@@ -347,7 +349,9 @@ class Angel_ApiController extends Angel_Controller_Action {
                 $teacher_score = $tmp_score;
             }
             else {
-                $teacher_score = ($teacher_score + $tmp_score) / 2;
+                $teacher_score = (floatval($teacher_score) + floatval($tmp_score)) / 2.0;
+
+                $teacher_score = number_format($teacher_score, 1);
             }
 
             $result = $teacherModel->submitRating($teacher_id, $teacher_score);

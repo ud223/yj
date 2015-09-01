@@ -10,11 +10,11 @@
 <script type="text/javascript">
     // 此处是php代码渲染输出而成，一次性把该导师所有的图片路径都加载至此。
     var imgs_json = [{
-        url: '/img/user01-big.jpg'
-    }, {
-        url: '/img/user02-big.jpg'
-    }, {
-        url: '/img/user03-big.jpg'
+        url: '/photo/image/<?php echo $this->model->photo[0]->name . $this->model->photo[0]->type ?>'
+//    }, {
+//        url: '/img/user02-big.jpg'
+//    }, {
+//        url: '/img/user03-big.jpg'
     }];
 </script>
 

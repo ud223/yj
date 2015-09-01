@@ -11,7 +11,7 @@ function chooseAddr(text) {
     //$("#edit-addr").val(text);
     $("#address-view").html(text);
 
-    $("#pp-change-addr").find(".cd-slidepopupback").click();
+    $("#pp-change-addr").find(".cd-slidepopupback").tap();
 }
 
 function setAddressList(response) {

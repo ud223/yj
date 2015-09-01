@@ -2,8 +2,8 @@
 //深圳 114.081278 22.531413
 //武汉 114.308168,30.646992
 
-var lng = "114.308168";
-var lat = "30.646992";
+var lng = "114.081278";
+var lat = "22.531413";
 
 function locationError(error){
     getAddressByCoordinate(lng, lat, setAddressList);

@@ -6,6 +6,7 @@ var lng = "114.308168";
 var lat = "30.646992";
 
 function locationError(error){
+    alert(1);
     getAddressByCoordinate(lng, lat, setAddressList);
 }
 
@@ -17,7 +18,7 @@ function showPosition(data) {
 
     lng = data.result[0].x;
     lat = data.result[0].y;
-
+    alert("正确读取坐标");
     getAddressByCoordinate(lng, lat, setAddressList);
 }
 

@@ -1,5 +1,5 @@
 function regionClick() {
-    $(".tcfilter-filter").find(".itmbtn").tap(function() {
+    $(".tcfilter-filter").find(".itmbtn").click(function() {
         if ($(this).hasClass("selected")) {
             return;
         }
@@ -16,7 +16,7 @@ function regionClick() {
 }
 
 function sortClick() {
-    $(".tcfilter-sort").find(".itmbtn").tap(function() {
+    $(".tcfilter-sort").find(".itmbtn").click(function() {
         if ($(this).hasClass("selected")) {
             return;
         }

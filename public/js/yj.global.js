@@ -36,7 +36,7 @@ $.toastMsg = function(msg, duration){
 
 
 (function() {
-    $('body').on('click', '.cd_hottap', function() {
+    $('body').on('tap', '.cd_hottap', function() {
         var url = $(this).attr('hottap');
         location.href = url;
         $.waiting('加载中 ...');
@@ -57,13 +57,13 @@ $.toastMsg = function(msg, duration){
         $('.tcfilter-sort').slideUp(150);
     });
 
-    $('body').on('click', '.cd-slidepopupback', function() {
+    $('body').on('tap', '.cd-slidepopupback', function() {
         var $this = $(this);
         var container = $this.closest('.cd-slidepopup');
         container.addClass('hide').removeClass('show');
         $('html').removeClass('html-no-scroll');
     });
-    $('body').on('click', '.cd-slideoutbtn', function() {
+    $('body').on('tap', '.cd-slideoutbtn', function() {
         var $this = $(this).closest('.cd-slideoutbtn');
         var target = $($this.attr('rel'));
         if (target.length) {
@@ -71,7 +71,7 @@ $.toastMsg = function(msg, duration){
             $('html').addClass('html-no-scroll');
         }
     });
-    $('body').on('click', '.cd-coupon-itm', function(){
+    $('body').on('tap', '.cd-coupon-itm', function(){
         var $this = $(this).closest('.cd-coupon-itm');
         if(!$this.hasClass('selected')) {
             var container = $this.closest('.cd-slidepopup');
@@ -81,7 +81,7 @@ $.toastMsg = function(msg, duration){
 
     });
 
-    $('body').on('click', '.rating-star', function(){
+    $('body').on('tap', '.rating-star', function(){
         var $this = $(this).closest('.rating-star');
         var val = parseInt($this.attr('val'));
         var container = $this.closest('.rating-stars');

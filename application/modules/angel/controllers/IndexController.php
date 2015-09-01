@@ -44,6 +44,7 @@ class Angel_IndexController extends Angel_Controller_Action {
     public function teacherDetailAction() {
         $teacherModel = $this->getModel('teacher');
         $orderModel = $this->getModel('order');
+        $workModel = $this->getModel('work');
 
         $id = $this->getParam('id');
 
@@ -53,17 +54,32 @@ class Angel_IndexController extends Angel_Controller_Action {
 
         $orders = $orderModel->getBy(false, $conditions);
 
+        $works = $workModel->getAll(false);
+
+        foreach ($works as $w) {
+            $work = $w;
+        }
+
+        $this->view->max_hours = $work->hour;
         $this->view->model = $result;
         $this->view->orders = $orders;
     }
 
     public function confirmationOrderAction() {
         $orderModel = $this->getModel('order');
+        $workModel = $this->getModel('work');
 
         $id = $this->getParam('id');
 
         $order = $orderModel->getById($id);
 
+        $works = $workModel->getAll(false);
+
+        foreach ($works as $w) {
+            $work = $w;
+        }
+
+        $this->view->max_hours = $work->hour;
         $this->view->model = $order;
     }
 

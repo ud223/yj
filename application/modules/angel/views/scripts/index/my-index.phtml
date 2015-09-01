@@ -133,7 +133,7 @@
     <div class="tt">更改真实姓名<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
     <div class="blackrowgall">
         <div class="row">
-            <input placeholder="请填写" id="user-name" type="text" maxlength="11" value="" class="fulltxtinput" />
+            <input placeholder="请填写" id="user-name" type="text" maxlength="11" value="<?php echo $this->model->name ?>" class="fulltxtinput" />
         </div>
     </div>
     <div class="clear-15"></div>
@@ -146,7 +146,7 @@
     <div class="tt">更改瑜伽年限<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
     <div class="blackrowgall">
         <div class="row">
-            <input placeholder="请填写练习瑜伽的年限" id="edit-years" type="number" maxlength="11" value="" class="fulltxtinput" />
+            <input placeholder="请填写练习瑜伽的年限" id="edit-years" type="number" maxlength="11" value="<?php echo $this->model->years ?>" class="fulltxtinput" />
         </div>
     </div>
     <div class="clear-15"></div>
@@ -159,7 +159,7 @@
     <div class="tt">更改个人介绍<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
     <div class="blackrowgall">
         <div class="row auto">
-            <textarea id="edit-description" class="fulltxtinput" placeholder="请填写"></textarea>
+            <textarea id="edit-description" class="fulltxtinput" placeholder="请填写"><?php echo $this->model->description ?></textarea>
         </div>
     </div>
     <div class="clear-15"></div>
@@ -172,7 +172,7 @@
     <div class="tt">更改电话号码<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
     <div class="blackrowgall">
         <div class="row">
-            <input placeholder="请填写手机号码"  id="phone-num" type="tel" maxlength="11" value="" class="fulltxtinput" />
+            <input placeholder="请填写手机号码"  id="phone-num" type="tel" maxlength="11" value="<?php echo $this->model->phone ?>" class="fulltxtinput" />
             <button id="send-code" class="sendvalcodbt">发送验证码</button>
         </div>
         <div class="row">

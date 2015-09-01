@@ -18,6 +18,7 @@ function initWeek() {
             week_html = week_html + '<div class="td week-td selected" val="'+ full_date +'">'+ month +'月'+ day +'日</div>';
             //给提交的选择日期赋初值
             $("#select_date").val(full_date);
+            $("#show-view-time").html( month +'月'+ day +'日');
         }
         else {
             week_html = week_html + '<div class="td  week-td" val="'+ full_date +'">'+ month +'月'+ day +'日</div>';
@@ -41,6 +42,10 @@ function timeChoose(time) {
     var selected_time = $("#time-panel").find(".selected");
 
     if (selected_time.length == 0) {
+        if (!checkMaxHour()) {
+            return;
+        }
+
         $(time).addClass("selected");
 
         var date = $(".time-day-select").find(".table").find(".selected").html();
@@ -93,12 +98,34 @@ function timeChoose(time) {
     }
 }
 
+function checkMaxHour() {
+    var selected_time = $("#time-panel").find(".selected");
+
+    if (selected_time.length > 2) {
+        $.toastMsg("单次预约不能超过3小时!", 3000);
+
+        return false;
+    }
+
+    if (tmp_max_hours - selected_time.length < 1) {
+        $.toastMsg("今天预约满了!", 3000);
+
+        return false;
+    }
+
+    return true;
+}
+
 function checkTime(use_times, time) {
     var first_time = parseInt($(use_times[0]).attr("val"));
     var last_time = parseInt($(use_times[use_times.length - 1]).attr("val"));
     var tmp_time = parseInt($(time).attr("val"));
 
     if (first_time - 1 == tmp_time || last_time + 1 == tmp_time) {
+        if (!checkMaxHour()) {
+            return;
+        }
+
         $(time).addClass("selected");
     }
     else {
@@ -162,6 +189,14 @@ function busyDay(week) {
     $(week).addClass("selected");
 
     $(".time-space").addClass("unclickable");
+}
+
+function initUseHours() {
+    var use_hours = $("#time-panel").find(".unclickable");
+
+    tmp_max_hours = max_hours;
+
+    tmp_max_hours = tmp_max_hours - use_hours.length;
 }
 
 function setUseTime(response) {
@@ -228,6 +263,8 @@ function setUseTime(response) {
             }
         }
     });
+
+    initUseHours();
 }
 
 function submitOrder() {

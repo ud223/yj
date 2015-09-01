@@ -9,13 +9,23 @@
 <script src="<?php echo $this->jsPath("controller/index/teacher-detail.js"); ?>"></script>
 <script type="text/javascript">
     // 此处是php代码渲染输出而成，一次性把该导师所有的图片路径都加载至此。
-    var imgs_json = [{
-        url: '/photo/image/<?php echo $this->model->photo[0]->name . $this->model->photo[0]->type ?>'
+    var imgs_json = [
+        <?php $index = 0; ?>
+        <?php foreach($this->model->photo as $p) :?>
+            <?php if($index > 0) :?>
+                <?php echo "," ?>
+            <?php endif; ?>
+            {url: '/photo/image/<?php echo $p->name . $p->type ?>'}
+        <?php $index++; ?>
+        <?php endforeach; ?>
+//        {
+//        url: '/photo/image/<?php //echo $this->model->photo[0]->name . $this->model->photo[0]->type ?>//'
 //    }, {
 //        url: '/img/user02-big.jpg'
 //    }, {
 //        url: '/img/user03-big.jpg'
-    }];
+//    }
+    ];
 </script>
 
 <!--此段为滑动多图的html部分，写死在这里-->
@@ -184,6 +194,9 @@
 <input type="hidden" id="price" value="<?php echo $this->model->price ?>">
 <script>
     var teacher_id = '<?php echo $this->model->id ?>';
+    var max_hours = <?php echo $this->max_hours ?>;
+    var tmp_max_hours = <?php echo $this->max_hours ?>;
+
     $('document').ready(function() {
         if (imgs_json.length) {
             // 根据imgs_json的长度和内容循环加载图片

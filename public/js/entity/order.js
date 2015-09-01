@@ -5,13 +5,13 @@ var Order = function() {
 
     obj.check = function(rundate, time) {
         if (!rundate) {
-            obj.message = "授课日期不能为空!";
+            obj.message = "请选择授课日期!";
 
             return false;
         }
 
         if (!time) {
-            obj.message = "授课时间段不能为空!";
+            obj.message = "请选择授课时间段!";
 
             return false;
         }
@@ -21,31 +21,31 @@ var Order = function() {
 
     obj.confrimCheck = function(rundate, time, customer_name, phone, address) {
         if (!rundate) {
-            obj.message = "授课日期不能为空!";
+            obj.message = "请选择授课日期!";
 
             return false;
         }
 
         if (!time) {
-            obj.message = "授课时间段不能为空!";
+            obj.message = "请选择授课时间段!";
 
             return false;
         }
 
         if (!customer_name) {
-            obj.message = "联系姓名不能为空!!";
+            obj.message = "请输入联系人姓名!!";
 
             return false;
         }
 
         if (!phone) {
-            obj.message = "联系电话不能为空!";
+            obj.message = "请输入联系电话!";
 
             return false;
         }
 
         if (!address) {
-            obj.message = "授课地址不能为空!";
+            obj.message = "请输入授课地址!";
 
             return false;
         }

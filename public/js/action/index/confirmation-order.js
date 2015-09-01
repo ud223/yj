@@ -61,7 +61,7 @@ function validPhoneCode() {
     var tmp_2 = $("#phone-num").attr("code");
 
     if ($("#phone-num").val() == "") {
-        $.toastMsg("电话号码不能为空!", 3000);
+        $.toastMsg("请输入电话号码!", 3000);
 
         return;
     }
@@ -117,6 +117,10 @@ function timeChoose(time) {
     var selected_time = $("#time-panel").find(".selected");
 
     if (selected_time.length == 0) {
+        if (!checkMaxHour()) {
+            return;
+        }
+
         $(time).addClass("selected");
 
         var date = $(".time-day-select").find(".table").find(".selected").html();
@@ -185,12 +189,34 @@ function acceptTime() {
     }
 }
 
+function checkMaxHour() {
+    var selected_time = $("#time-panel").find(".selected");
+
+    if (selected_time.length > 2) {
+        $.toastMsg("单次预约不能超过3小时!", 3000);
+
+        return false;
+    }
+
+    if (tmp_max_hours - selected_time.length < 1) {
+        $.toastMsg("已超出最大预约数!", 3000);
+
+        return false;
+    }
+
+    return true;
+}
+
 function checkTime(use_times, time) {
     var first_time = parseInt($(use_times[0]).attr("val"));
     var last_time = parseInt($(use_times[use_times.length - 1]).attr("val"));
     var tmp_time = parseInt($(time).attr("val"));
 
     if (first_time - 1 == tmp_time || last_time + 1 == tmp_time) {
+        if (!checkMaxHour()) {
+            return;
+        }
+
         $(time).addClass("selected");
     }
     else {
@@ -370,6 +396,16 @@ function setUseTime(response) {
             }
         }
     });
+
+    initUseHours();
+}
+
+function initUseHours() {
+    var use_hours = $("#time-panel").find(".unclickable");
+
+    tmp_max_hours = max_hours;
+
+    tmp_max_hours = tmp_max_hours - use_hours.length;
 }
 
 function submitOrder() {

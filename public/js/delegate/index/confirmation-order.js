@@ -1,5 +1,5 @@
 function addrClick(node) {
-    $(node).tap(function() {
+    $(node).tapA(function() {
         chooseAddr($(this).find(".t1").html());
     })
 }
@@ -15,7 +15,7 @@ function editAddressName() {
 }
 
 function applyAddrClick() {
-    $("#apply-addr").tapA(function() {
+    $("#apply-addr").tap(function() {
         applyAddress();
     });
 }

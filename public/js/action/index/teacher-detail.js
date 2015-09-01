@@ -18,7 +18,7 @@ function initWeek() {
             week_html = week_html + '<div class="td week-td selected" val="'+ full_date +'">'+ month +'月'+ day +'日</div>';
             //给提交的选择日期赋初值
             $("#select_date").val(full_date);
-            $("#show-view-time").html( month +'月'+ day +'日');
+            //$("#show-view-time").html( month +'月'+ day +'日');
         }
         else {
             week_html = week_html + '<div class="td  week-td" val="'+ full_date +'">'+ month +'月'+ day +'日</div>';
@@ -70,8 +70,14 @@ function timeChoose(time) {
     if (selected_time.length == 0) {
         $("#show-view-time").val("");
         $("#time_range").val("");
+
+        $(".rtselectedtime").removeClass("selected");
     }
     else {
+        if (!$(".rtselectedtime").hasClass("selected")) {
+            $(".rtselectedtime").addClass("selected");
+        }
+
         if (selected_time.length == 1) {
             var first_html = $(selected_time[0]).html();
             var last_html = (parseInt($(selected_time[0]).attr("val")) + 1) + ":00";
@@ -205,6 +211,11 @@ function initUseHours() {
 
 function setUseTime(response) {
     var tmp_now = new Date();
+    var temp = $("#time-panel").find(".selected");
+
+    if (temp.length == 0) {
+        $(".rtselectedtime").removeClass("selected");
+    }
 
     $.each(response.data, function() {
         var tmp_time = this.time.split("|")[1];

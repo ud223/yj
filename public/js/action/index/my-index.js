@@ -15,7 +15,7 @@ function saveName() {
 function setName(response) {
     $("#my-name").html(response.data)
 
-    $("#pp-change-name").find('.cd-slidepopupback').tap();
+    $("#pp-change-name").find('.cd-slidepopupback').click();
 }
 
 //-----------------------手机短信验证------------------------------------------
@@ -54,7 +54,7 @@ function validPhoneCode() {
 
     modifyValie(user_id, model, key, value, null);
 
-    $("#pp-change-tel").find('.cd-slidepopupback').tap();
+    $("#pp-change-tel").find('.cd-slidepopupback').click();
 }
 
 //修改个人备注
@@ -69,7 +69,7 @@ function saveDescription() {
 function setDescription(response) {
     $("#my-description").html(response.data)
 
-    $("#pp-my-intro").find('.cd-slidepopupback').tap();
+    $("#pp-my-intro").find('.cd-slidepopupback').click();
 }
 
 //修改个人练习年份
@@ -84,5 +84,5 @@ function saveYears() {
 function setYears(response) {
     $("#my-years").html(response.data)
 
-    $("#pp-change-years").find('.cd-slidepopupback').tap();
+    $("#pp-change-years").find('.cd-slidepopupback').click();
 }

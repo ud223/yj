@@ -546,6 +546,9 @@ class Angel_ApiController extends Angel_Controller_Action {
     }
 
     public function setValueAction() {
+        $regionModel = $this->getModel('region');
+        $categoryModel = $this->getModel('category');
+
         $id = $this->getParam('id');
         $model_name = $this->getParam('model');
         $key = $this->getParam('key');
@@ -559,6 +562,61 @@ class Angel_ApiController extends Angel_Controller_Action {
 
         if (!$model) {
             $this->_helper->json(array('data' => "model类没有找到", 'code' => 0)); exit;
+        }
+
+        if ($key == "region") {
+            $return_msg = "";
+            $regions = array();
+
+            if ($value) {
+                $regions_id = explode(",", $value);
+
+                $tmp_regions = $regionModel->getByIds($regions_id);
+
+                foreach ($tmp_regions as $r) {
+                    $regions[] = $r;
+
+                    if ($return_msg != "") {
+                        $return_msg = $return_msg . " / ";
+                    }
+
+                    $return_msg = $return_msg . $r->name;
+                }
+            }
+
+            $data = array($key=>$regions);
+
+            $model->save($id, $data, $model_name, $model_name ."异常: 没有找到保存的数据!");
+
+            $this->_helper->json(array('data' => $return_msg, 'code' => 200)); exit;
+        }
+
+        if ($key == "category") {
+            $return_msg = "";
+            $categorys = array();
+
+            if ($value) {
+                $categorys_id = explode(",", $value);
+
+                $tmp_category = $categoryModel->getByIds($categorys_id);
+
+                foreach ($tmp_category as $r) {
+                    $categorys[] = $r;
+
+                    if ($return_msg != "") {
+                        $return_msg = $return_msg . " / ";
+                    }
+
+                    $return_msg = $return_msg . $r->name;
+                }
+            }
+
+
+            $data = array($key=>$categorys);
+
+            $model->save($id, $data, $model_name, $model_name ."异常: 没有找到保存的数据!");
+
+            $this->_helper->json(array('data' => $return_msg, 'code' => 200)); exit;
         }
 
         $data = array($key=>$value);

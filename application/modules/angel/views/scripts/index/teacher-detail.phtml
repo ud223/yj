@@ -53,19 +53,26 @@
     </div>
     <div class="user3-desc">
         <div>授课类型： <span class="dt">
-                <?php
-                    $lesson_text = "";
+            <?php
+                $category_text = "";
 
-                    foreach($this->model->lesson as $lesson) {
-                        if ($lesson_text != "") {
-                            $lesson_text = $lesson_text . " / ";
-                        }
-
-                        $lesson_text = $lesson_text. $lesson->name;
+                foreach($this->model->category as $category) {
+                    if ($category_text != "") {
+                        $category_text = $category_text . " / ";
                     }
 
-                    echo $lesson_text;
-                ?>
+                    $category_text = $category_text. $category->name;
+                }
+
+                $category_text = $category_text;
+
+                if (strlen($category_text) > 35) {
+                    echo substr($category_text, 0, 34) . "...";
+                }
+                else {
+                    echo $category_text;
+                }
+            ?>
         </span></div>
         <div>授课区域： <span class="dt">
                 <?php
@@ -196,6 +203,7 @@
     var teacher_id = '<?php echo $this->model->id ?>';
     var max_hours = <?php echo $this->max_hours ?>;
     var tmp_max_hours = <?php echo $this->max_hours ?>;
+    var page_type = 0;
 
     $('document').ready(function() {
         if (imgs_json.length) {

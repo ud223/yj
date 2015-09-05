@@ -44,6 +44,30 @@ class Angel_Model_Customer extends Angel_Model_AbstractModel {
         return $result;
     }
 
+    public function applyTeacher($id, $name, $sex, $birthday, $place, $educational, $phone, $code, $email, $qq, $wechat, $location, $lessons, $bank, $bank_code, $description, $regions) {
+        $data = array(
+            'name'=>$name,
+            'sex'=>$sex,
+            'birthday'=>$birthday,
+            'place'=>$place,
+            'educational'=>$educational,
+            'phone'=>$phone,
+            'code'=>$code,
+            'email'=>$email,
+            'qq'=>$qq,
+            'wechat'=>$wechat,
+            'location'=>$location,
+            'region'=>$regions,
+            'lesson'=>$lessons,
+            'bank'=>$bank,
+            'bank_code'=>$bank_code,
+            'description'=>$description);
+
+        $result = $this->save($id, $data);
+
+        return $result;
+    }
+
     public function unDeleteCustomer($id) {
         $data = array('delete'=>0);
 

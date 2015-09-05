@@ -25,12 +25,17 @@ class Angel_IndexController extends Angel_Controller_Action {
         'my-calendar',
         'my-class',
         'rating',
-        'rating-success'
+        'rating-success',
+        'about'
     );
 
     public function init() {
         $this->_helper->layout->setLayout('main');
         parent::init();
+    }
+
+    public function aboutAction() {
+
     }
 
     public function indexAction() {
@@ -270,15 +275,44 @@ class Angel_IndexController extends Angel_Controller_Action {
     }
 
     public function  applyAction() {
+        $categoryModel = $this->getModel('category');
+        $regionModel = $this->getModel('region');
+        $customerModel = $this->getModel('customer');
 
+        $id = $this->getParam('id');
+
+        $customer = $customerModel->getById($id);
+
+        $regions = $regionModel->getAll(false);
+        $categorys = $categoryModel->getAll(false);
+
+        $this->view->model = $customer;
+        $this->view->region = $regions;
+        $this->view->category = $categorys;
     }
 
     public function applyHistoryAction() {
+        $applicaitonModel = $this->getModel('application');
 
+        $id = $this->getParam('id');
+
+        $applicaitons = $applicaitonModel->getBy(false, array('customer.$id'=>new MongoId($id)));
+
+        $this->view->application = $applicaitons;
+        $this->view->user_id = $id;
     }
 
     public function applySuccessAction() {
+        $customerModel = $this->getModel('customer');
+        $applicaitonModel = $this->getModel('application');
 
+        $id = $this->getParam('id');
+
+        $customer = $customerModel->getById($id);
+
+        $result = $applicaitonModel->addApplication($customer);
+
+        $this->view->user_id = $id;
     }
 
     /***************************************************************
@@ -311,7 +345,7 @@ class Angel_IndexController extends Angel_Controller_Action {
      */
     public function loginAction() {
         if ($this->request->isPost()) {
-            $this->userLogin('show-play', "登录芝士电视");
+            $this->userLogin('show-play', "登录瑜伽去");
         }
         else {
             //第一次请求先判断是否移动端浏览器,如果是移动端浏览器就跳转到移动端注册页面
@@ -328,7 +362,7 @@ class Angel_IndexController extends Angel_Controller_Action {
      */
     public function registerAction() {
         if ($this->request->isPost()) {
-            $this->userRegister('login', "注册芝士电视", "user");
+            $this->userRegister('login', "注册瑜伽去", "user");
         }
         else {
             //第一次请求先判断是否移动端浏览器,如果是移动端浏览器就跳转到移动端注册页面

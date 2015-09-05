@@ -404,7 +404,7 @@ class Angel_ManageController extends Angel_Controller_Action {
 
                     if ($result) {
                         //更新用户身份为授课老师
-                        $result = $teacherModel->applyTeacher($result->teacher->id);
+                        $result = $teacherModel->applyTeacher($result->customer->id);
                     }
                 }
             }

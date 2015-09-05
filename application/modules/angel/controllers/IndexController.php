@@ -39,7 +39,6 @@ class Angel_IndexController extends Angel_Controller_Action {
     }
 
     public function indexAction() {
-        exit("xixi");
         $regionModel = $this->getModel('region');
 
         $region = $regionModel->getAll(false);

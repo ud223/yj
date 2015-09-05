@@ -21,7 +21,7 @@ function initInput() {
 }
 
 function loadData() {
-    load();
+    //load();
 }
 
 function initControls() {

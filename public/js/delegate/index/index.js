@@ -34,12 +34,15 @@ function sortClick() {
 
 function toMeClick() {
     $("#to-me").tap(function() {
+        alert(0);
        var user_id = localStorage.getItem('user_id');
 
         if (!user_id) {
+            alert(1);
             location.href = "/me/"+ user_id;
         }
         else {
+            alert(2);
             userLogin();
         }
     });

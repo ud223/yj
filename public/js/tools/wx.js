@@ -1,3 +1,4 @@
+alert('load');
 function validEnvironment() {
     var ua = window.navigator.userAgent.toLowerCase();
 
@@ -11,7 +12,7 @@ function validEnvironment() {
 }
 
 function userLogin() {
-    alert(1);
+    alert(2);
     var user_id = localStorage.getItem('user_id');
     var url = "http://www.yujiaqu.com/reg";
 

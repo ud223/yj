@@ -166,7 +166,7 @@
         <div class="dipu4">
             <?php foreach($this->orders as $order):?>
                 <div class="mgi-b1">
-                    <img src="/img/user03.jpg" class="b4ee" />
+                    <img src="<?php echo $order->customer->headimgurl ?>" style="width: 100px" class="b4ee" />
                     <div class="b5ee"><?php echo $order->customer->name ?></div>
                     <div class="b6ee"><?php
                             $tmp_date = explode("-", $order->rundate);

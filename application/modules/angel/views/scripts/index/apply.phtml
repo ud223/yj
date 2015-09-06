@@ -44,25 +44,27 @@
         <div class="holder arr">
             <span id="my-birthday">
                 <?php
-                    $tmp_birthday = explode("-", $this->model->birthday);
-                    $tmp_month = "";
-                    $tmp_day = "";
+                    if ($this->model->birthday) {
+                        $tmp_birthday = explode("-", $this->model->birthday);
+                        $tmp_month = "";
+                        $tmp_day = "";
 
-                    if (substr($tmp_birthday[1], 0, 1) == "0") {
-                        $tmp_month = substr($tmp_birthday[1], 1, 1);
-                    }
-                    else {
-                        $tmp_month = $tmp_birthday[1];
-                    }
+                        if (substr($tmp_birthday[1], 0, 1) == "0") {
+                            $tmp_month = substr($tmp_birthday[1], 1, 1);
+                        }
+                        else {
+                            $tmp_month = $tmp_birthday[1];
+                        }
 
-                    if (substr($tmp_birthday[2], 0, 1) == "0") {
-                        $tmp_day = substr($tmp_birthday[2], 1, 1);
-                    }
-                    else {
-                        $tmp_day = $tmp_birthday[2];
-                    }
+                        if (substr($tmp_birthday[2], 0, 1) == "0") {
+                            $tmp_day = substr($tmp_birthday[2], 1, 1);
+                        }
+                        else {
+                            $tmp_day = $tmp_birthday[2];
+                        }
 
-                    echo $tmp_birthday[0] ."年". $tmp_month ."月" . $tmp_day ."日";
+                        echo $tmp_birthday[0] ."年". $tmp_month ."月" . $tmp_day ."日";
+                    }
                 ?></span>
             <img src="/img/arr-r.png" class="icoin" />
         </div>

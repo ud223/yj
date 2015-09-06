@@ -31,3 +31,16 @@ function sortClick() {
         $('.tcfilter-sort').slideUp(150);
     });
 }
+
+function toMeClick() {
+    $("#to-me").tap(function() {
+       var user_id = localStorage.getItem('user_id');
+
+        if (!user_id) {
+            location.href = "/me/"+ user_id;
+        }
+        else {
+            userLogin();
+        }
+    });
+}

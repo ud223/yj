@@ -1,4 +1,3 @@
-alert('load');
 function validEnvironment() {
     var ua = window.navigator.userAgent.toLowerCase();
 

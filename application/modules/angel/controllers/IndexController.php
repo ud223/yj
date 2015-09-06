@@ -182,6 +182,7 @@ class Angel_IndexController extends Angel_Controller_Action {
     }
 
     public function  regAction() {
+        exit("xixi");
         $code = $_GET['code'];
         $id = $this->getParam('id');
 

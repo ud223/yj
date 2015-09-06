@@ -19,8 +19,6 @@ function userLogin() {
     if (!user_id) {
         var toUrl = "https://open.weixin.qq.com/connect/oauth2/authorize?appid="+ appid +"&redirect_uri="+ url +"&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect";
 
-        alert(toUrl);
-
         location.href = toUrl;
     }
     else {

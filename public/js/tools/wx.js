@@ -11,6 +11,7 @@ function validEnvironment() {
 }
 
 function userLogin() {
+    alert(1);
     var user_id = localStorage.getItem('user_id');
     var url = "http://www.yujiaqu.com/reg";
 

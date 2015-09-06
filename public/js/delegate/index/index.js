@@ -33,7 +33,7 @@ function sortClick() {
 }
 
 function toMeClick() {
-    $("#to-me").tapA(function() {
+    $("#to-me").click(function() {
        var user_id = localStorage.getItem('user_id');
         if (user_id) {
             location.href = "/me/"+ user_id;

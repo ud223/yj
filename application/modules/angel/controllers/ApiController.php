@@ -655,6 +655,4 @@ class Angel_ApiController extends Angel_Controller_Action {
         }
         return $hash;
     }
-
-
 }

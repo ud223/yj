@@ -32,12 +32,11 @@ function getPhoneValidCode() {
 
         return;
     }
-    alert(2);
+
     getPhoneValid(phone_num, setPhoneCode);
 }
 
 function validPhoneCode() {
-    alert(3);
     var tmp_1 = $("#phone-code").val();
     var tmp_2 = $("#phone-num").attr("code");
 
@@ -46,13 +45,13 @@ function validPhoneCode() {
 
         return;
     }
-    alert(4);
+
     $("#my-phone").html($("#phone-num").val());
 
     var model = "customer";
     var key = "phone";
     var value = $("#phone-num").val();
-    alert(5);
+
     modifyValie(user_id, model, key, value, null);
 
     $("#pp-change-tel").find('.cd-slidepopupback').tap();

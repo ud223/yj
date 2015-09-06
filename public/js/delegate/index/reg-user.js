@@ -6,6 +6,7 @@ function setNameClick() {
 
 function phoneValidClick() {
     $("#send-code").tap(function() {
+        alert(0);
         getPhoneValidCode();
     });
 }

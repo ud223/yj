@@ -73,18 +73,29 @@ function setDescription(response) {
     $("#pp-change-description").find('.cd-slidepopupback').tap();
 }
 
-//---------------------设置个人介绍------------------------
-function submitReg() {
+//------------设置身份证------------------------------------------
+function saveCode() {
     var model = "customer";
-    var key = "is_reg";
+    var key = "code";
+    var value = $('#code').val();
 
-    var value = "1";
+    if (!value) {
+        $.toastMsg("身份证不能为空!", 3000);
 
-    modifyValie(user_id, model, key, value, setReg);
+        return;
+    }
+
+    if (value.length != 15 && value.length != 18) {
+        $.toastMsg("身份证格式错误!", 3000);
+
+        return;
+    }
+
+    modifyValie(user_id, model, key, value, setCode);
 }
 
-function setReg(response) {
-    var url = localStorage.getItem("url");
+function setCode(response) {
+    $("#my-code").html(response.data);
 
-    location.href = url;
+    $("#pp-change-code").find('.cd-slidepopupback').tap();
 }

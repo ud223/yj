@@ -29,10 +29,10 @@
             <img src="/img/arr-r.png" class="icoin" />
         </div>
     </div>
-    <div class="row actbtn cd-slideoutbtn my-intro-trigger" id="pp-my-intro-btn" rel="#pp-change-description">
-        <span class="tt">个人介绍</span>
+    <div class="row cd-slideoutbtn" id="pp-change-code-btn" rel="#pp-change-code">
+        <span class="tt">身份证号码</span>
         <div class="holder arr">
-            <span id="my-description" class="lab-txt"></span>
+            <span id="my-code"></span>
             <img src="/img/arr-r.png" class="icoin" />
         </div>
     </div>
@@ -68,17 +68,17 @@
     </div>
 </div>
 
-<div class="slidepopup cd-slidepopup" id="pp-change-description">
-    <div class="tt">更改个人介绍<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+<div class="slidepopup cd-slidepopup" id="pp-change-code">
+    <div class="tt">更改身份证号码<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
     <div class="blackrowgall">
-        <div class="row auto">
+        <div class="row">
             <div class="holder">
-                <textarea class="fulltxtinput" id="description" name="description" placeholder="请认真填写个人介绍" style="height:120px;"></textarea>
+                <input placeholder="填写正确身份证号码" id="code" name="code" maxlength="18" value="<?php echo $this->model->code ?>" type="text" class="holder" />
             </div>
         </div>
     </div>
     <div class="clear-15"></div>
-    <div id="valid-description-code" class="fullbtn">
+    <div id="valid-code-code"  class="fullbtn">
         确认
     </div>
 </div>

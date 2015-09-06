@@ -16,8 +16,8 @@ function validPhoneCodeClick() {
     });
 }
 
-function setDescriptionClick() {
-    $("#valid-description-code").tap(function() {
-        saveDescription();
+function saveCodeClick() {
+    $("#valid-code-code").tap(function() {
+        saveCode();
     })
 }

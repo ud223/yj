@@ -37,7 +37,7 @@ function toMeClick() {
         var user_id = localStorage.getItem('user_id');
         alert(0);
         if (user_id) {
-            alert(1);
+            alert(user_id);
             location.href = "/me/"+ user_id;
         }
         else {

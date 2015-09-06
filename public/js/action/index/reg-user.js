@@ -3,13 +3,13 @@ function saveName() {
     var model = "customer";
     var key = "name";
     var value = $("#user-name").val();
-
+    alert(12);
     if (!value) {
         $.toastMsg("姓名不能为空!", 3000);
 
         return;
     }
-
+    alert(13);
     modifyValie(user_id, model, key, value, setName);
 }
 

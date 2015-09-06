@@ -1,3 +1,4 @@
+alert("load");
 function modifyValie(id, model, key, value, fun) {
     var url= "/api/set/value";
 

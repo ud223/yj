@@ -3,13 +3,44 @@
 class Angel_Model_Customer extends Angel_Model_AbstractModel {
     protected $_document_class = '\Documents\UserInfo';
 
-    public function addCustomer($nickname, $sex, $openid) {
-        $data = array('usertype' => 1,
-            'nickname'=>$nickname,
-            'sex'=>$sex,
-            'openid'=>$openid);
+    public function addCustomer($nickname, $sex, $openid, $headimgurl) {
+//        $data = array('usertype' => 1,
+//            'nickname'=>$nickname,
+//            'sex'=>$sex,
+//            'openid'=>$openid,
+//            'headimgurl' => $headimgurl);
+//
+//        $result = $this->add($data);
+//
+//        return $result;
+        $result = false;
+        $customer = new $this->_document_class();
 
-        $result = $this->add($data);
+        $customer->nickname = $nickname;
+        $customer->sex = $sex;
+        $customer->openid = $openid;
+        $customer->headimgurl = $headimgurl;
+
+        try {
+            $this->_dm->persist($customer);
+            $this->_dm->flush();
+
+            $result = $customer;
+        } catch (Exception $e) {
+            $this->_logger->info(__CLASS__, __FUNCTION__, $e->getMessage() . "\n" . $e->getTraceAsString());
+        }
+
+        return $result;
+    }
+
+
+    public function saveWinXinUser($id, $openid, $nickname, $sex, $headimgurl) {
+        $data = array('openid' => $openid,
+            'nickname' => $nickname,
+            'sex' => $sex,
+            'headimgurl' => $headimgurl);
+
+        $result = $this->save($id, $data);
 
         return $result;
     }
@@ -96,6 +127,14 @@ class Angel_Model_Customer extends Angel_Model_AbstractModel {
         $data = array('frozen'=>1);
 
         $result = $this->save($id, $data);
+
+        return $result;
+    }
+
+    public function getUserByOpenId($openid) {
+        $query = $this->_dm->createQueryBuilder($this->_document_class)->field('openid')->equals($openid)->sort("created_at", -1);
+
+        $result = $query->getQuery();
 
         return $result;
     }

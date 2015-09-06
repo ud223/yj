@@ -11,6 +11,7 @@
     <link href="/css/yj.global.css" rel="stylesheet">
     <script type="text/javascript" src="/js/jquery-1.11.2.js"></script>
     <script type="text/javascript" src="/js/jquery-mobile.js"></script>
+    <script type="text/javascript" src="/js/tools/wx.js"></script>
 </head>
 
 <body ontouchstart="">
@@ -32,6 +33,10 @@
     $(document).ready(function() {
         if (validEnvironment() == 0 && page_type != 3) {
             location.href = "/about";
+        }
+
+        if (page_type == 1) {
+            userLogin();
         }
     });
 </script>

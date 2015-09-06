@@ -1,0 +1,87 @@
+<script src="<?php echo $this->jsPath("swipe.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("tools/sms.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("tools/String.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("api/tools.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("action/index/reg-user.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("delegate/index/reg-user.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("controller/index/reg-user.js"); ?>"></script>
+<div class="p10-head-warning" id="didntsettel">
+    请输入用户信息进行注册
+</div>
+
+<div class="p10-t02">
+    <img src="$this->model->headimgurl" class="usrgmi" />
+    <div class="p10-t03"><?php echo $this->model->nickname ?></div>
+</div>
+
+<div class="blackrowgall nmt">
+    <div class="row actbtn cd-slideoutbtn" rel="#pp-change-name">
+        <span class="tt">真实姓名</span>
+        <div class="holder arr">
+            <span id="my-name"></span>
+            <img src="/img/arr-r.png" class="icoin" />
+        </div>
+    </div>
+    <div class="row actbtn cd-slideoutbtn" id="pp-change-tel-btn" rel="#pp-change-tel">
+        <span class="tt">手机</span>
+        <div class="holder arr">
+            <span id="my-phone"></span>
+            <img src="/img/arr-r.png" class="icoin" />
+        </div>
+    </div>
+    <div class="row actbtn cd-slideoutbtn my-intro-trigger" id="pp-my-intro-btn" rel="#pp-my-intro">
+        <span class="tt">个人介绍</span>
+        <div class="holder arr">
+            <span id="my-description" class="lab-txt"></span>
+            <img src="/img/arr-r.png" class="icoin" />
+        </div>
+    </div>
+</div>
+
+<div class="slidepopup cd-slidepopup" id="pp-change-name">
+    <div class="tt">更改真实姓名<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+    <div class="blackrowgall">
+        <div class="row">
+            <input placeholder="请填写" id="user-name" type="text" maxlength="11" value="" class="fulltxtinput" />
+        </div>
+    </div>
+    <div class="clear-15"></div>
+    <div id="btn-accept-name" class="fullbtn">
+        确认
+    </div>
+</div>
+
+<div class="slidepopup cd-slidepopup" id="pp-change-tel">
+    <div class="tt">更改电话号码<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+    <div class="blackrowgall">
+        <div class="row">
+            <input placeholder="请填写手机号码"  id="phone-num" type="tel" maxlength="11" value="" class="fulltxtinput" />
+            <button id="send-code" class="sendvalcodbt">发送验证码</button>
+        </div>
+        <div class="row">
+            <input placeholder="验证码" id="phone-code"  type="tel" maxlength="11" class="fulltxtinput" />
+        </div>
+    </div>
+    <div class="clear-15"></div>
+    <div id="valid-phone-code"  class="fullbtn">
+        确认
+    </div>
+</div>
+
+<div class="slidepopup cd-slidepopup" id="pp-change-description">
+    <div class="tt">更改个人介绍<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+    <div class="blackrowgall">
+        <div class="row auto">
+            <div class="holder">
+                <textarea class="fulltxtinput" id="description" name="description" placeholder="请认真填写个人介绍" style="height:120px;"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="clear-15"></div>
+    <div id="valid-description-code" class="fullbtn">
+        确认
+    </div>
+</div>
+
+<div class="clear-15"></div>
+<button id="submit-reg" type="button" class="fullbtn cd_hottap" hottap="">确认提交</button>

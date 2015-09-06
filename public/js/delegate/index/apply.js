@@ -102,8 +102,8 @@ function setDescriptionClick() {
     })
 }
 
-//function setYearsClick() {
-//    $("#send-years").tap(function() {
-//        saveYears();
-//    })
-//}
+function submitRegClick() {
+    $("#submit-reg").tap(function() {
+        submitReg();
+    })
+}

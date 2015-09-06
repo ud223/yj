@@ -201,7 +201,6 @@ class Angel_IndexController extends Angel_Controller_Action {
             $web_url = "/";
         }
 
-
         $open_id = $this->getOpenId($code);
         $userInfo = $this->getUserInfo($open_id);
 
@@ -221,7 +220,7 @@ class Angel_IndexController extends Angel_Controller_Action {
 
         if ($result) {
             if (!$result->is_reg) {
-                exit("11");
+                exit($result->id);
                 header("location: /reg/user/". $result->id); exit;
             }
             exit("22");

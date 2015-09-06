@@ -204,8 +204,9 @@ class Angel_IndexController extends Angel_Controller_Action {
 //        exit($web_url);
         $open_id = $this->getOpenId($code);
         $userInfo = $this->getUserInfo($open_id);
+        echo "11";
         $result = $this->addUser($userInfo);
-
+        echo "22"; exit;
         if ($web_url == "/") {
             $web_url = $web_url . $open_id;
         }

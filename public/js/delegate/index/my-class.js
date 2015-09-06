@@ -1,11 +1,11 @@
 function lessonClick() {
-    $(".class-btn").tap(function() {
+    $(".class-btn").tapA(function() {
         chooseLesson(this);
     });
 }
 
 function joinClick() {
-    $("#is-join-lesson").tap(function() {
+    $("#is-join-lesson").tapA(function() {
         submitLesson(this);
     })
 }

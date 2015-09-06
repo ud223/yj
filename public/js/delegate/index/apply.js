@@ -41,55 +41,55 @@ function saveEducationalClick() {
 }
 
 function saveCodeClick() {
-    $("#valid-code-code").tap(function() {
+    $("#valid-code-code").tapA(function() {
         saveCode();
     })
 }
 
 function saveEmailClick() {
-    $("#valid-email-code").tap(function() {
+    $("#valid-email-code").tapA(function() {
         saveEmail();
     })
 }
 
 function saveQQClick() {
-    $("#valid-qq-code").tap(function() {
+    $("#valid-qq-code").tapA(function() {
         saveQQ();
     })
 }
 
 function saveWeChatClick() {
-    $("#valid-wechat-code").tap(function() {
+    $("#valid-wechat-code").tapA(function() {
         saveWeChat();
     })
 }
 
 function saveLocationClick() {
-    $("#valid-location-code").tap(function() {
+    $("#valid-location-code").tapA(function() {
         saveLocation();
     })
 }
 
 function saveRegionClick() {
-    $("#valid-region-code").tap(function() {
+    $("#valid-region-code").tapA(function() {
         saveRegion();
     })
 }
 
 function saveCategoryClick() {
-    $("#valid-category-code").tap(function() {
+    $("#valid-category-code").tapA(function() {
         saveCategory();
     })
 }
 
 function saveBankClick() {
-    $("#valid-bank-code").tap(function() {
+    $("#valid-bank-code").tapA(function() {
         saveBank();
     })
 }
 
 function saveBankCodeClick() {
-    $("#valid-bank_code-code").tap(function() {
+    $("#valid-bank_code-code").tapA(function() {
         saveBankCode();
     })
 }
@@ -97,13 +97,13 @@ function saveBankCodeClick() {
 
 
 function setDescriptionClick() {
-    $("#valid-description-code").tap(function() {
+    $("#valid-description-code").tapA(function() {
         saveDescription();
     })
 }
 
 function submitRegClick() {
-    $("#submit-reg").tap(function() {
+    $("#submit-reg").tapA(function() {
         submitReg();
     })
 }

@@ -1,11 +1,11 @@
 function setFreeDayClick() {
-    $("#set-free").tap(function() {
+    $("#set-free").tapA(function() {
         setDay(0);
     });
 }
 
 function setBusyDayClick() {
-    $("#set-busy").tap(function() {
+    $("#set-busy").tapA(function() {
         setDay(1);
     });
 }

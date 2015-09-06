@@ -10,7 +10,7 @@
 </div>
 
 <div class="p10-t02">
-    <img src="$this->model->headimgurl" class="usrgmi" />
+    <img src="<?php echo $this->model->headimgurl ?>" class="usrgmi" />
     <div class="p10-t03"><?php echo $this->model->nickname ?></div>
 </div>
 
@@ -84,7 +84,7 @@
 </div>
 
 <div class="clear-15"></div>
-<button id="submit-reg" type="button" class="fullbtn cd_hottap" hottap="">确认提交</button>
+<button id="submit-reg" type="button" class="fullbtn" style="height: 50px; font-size: medium">确认提交</button>
 <script type="text/javascript">
     var page_type = 0;
 </script>

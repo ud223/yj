@@ -1,23 +1,29 @@
 function setNameClick() {
-    $("#btn-accept-name").tap(function() {
+    $("#btn-accept-name").tapA(function() {
         saveName();
     })
 }
 
 function phoneValidClick() {
-    $("#send-code").tap(function() {
+    $("#send-code").tapA(function() {
         getPhoneValidCode();
     });
 }
 
 function validPhoneCodeClick() {
-    $("#valid-phone-code").tap(function() {
+    $("#valid-phone-code").tapA(function() {
         validPhoneCode();
     });
 }
 
 function saveCodeClick() {
-    $("#valid-code-code").tap(function() {
+    $("#valid-code-code").tapA(function() {
+        saveCode();
+    })
+}
+
+function submitRegClick() {
+    $("#submit-reg").tapA(function() {
         saveCode();
     })
 }

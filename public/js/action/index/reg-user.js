@@ -99,3 +99,42 @@ function setCode(response) {
 
     $("#pp-change-code").find('.cd-slidepopupback').tap();
 }
+//------------提交注册信息------------------------------------------------
+function submitReg() {
+    var model = "customer";
+    var key = "is_reg";
+    var value = "1";
+
+    if ($("#my-name").html() == "") {
+        $.toastMsg("请填写真实姓名!", 3000);
+
+        return;
+    }
+
+    if ($("#my-phone").html() == "") {
+        $.toastMsg("请填写电话号码!", 3000);
+
+        return;
+    }
+
+    if ($("#my-code").html() == "") {
+        $.toastMsg("请填写身份证号!", 3000);
+
+        return;
+    }
+
+    modifyValie(user_id, model, key, value, setReg);
+}
+
+function setReg(response) {
+    var url = localStorage.getItem("url");
+
+    localStorage.setItem("url", null);
+
+    if (url) {
+        location.href = url;
+    }
+    else {
+        location.href = "/";
+    }
+}

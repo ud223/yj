@@ -16,8 +16,8 @@ function initBtn() {
     validPhoneCodeClick();
 
     saveCodeClick();
-    //
-    //setYearsClick();
+
+    submitRegClick();
 }
 
 function initInput() {

@@ -31,7 +31,8 @@ class Angel_IndexController extends Angel_Controller_Action {
         'rating-success',
         'about',
         'reg',
-        'reg-user'
+        'reg-user',
+        'clear'
     );
 
     public function init() {
@@ -40,6 +41,10 @@ class Angel_IndexController extends Angel_Controller_Action {
     }
 
     public function aboutAction() {
+
+    }
+
+    public function clearAction() {
 
     }
 

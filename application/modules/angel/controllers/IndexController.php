@@ -1,5 +1,5 @@
 <?php
-
+define("TOKEN", "yingxi");
 class Angel_IndexController extends Angel_Controller_Action {
 
     protected $login_not_required = array(

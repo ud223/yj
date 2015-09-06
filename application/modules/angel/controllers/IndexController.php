@@ -222,7 +222,7 @@ class Angel_IndexController extends Angel_Controller_Action {
             }
 
             $this->view->url = $web_url;
-            $this->view->openid = $open_id;
+            $this->view->user_id = $result->id;
         }
         else {
             exit("注册或登陆失败,请重试!");

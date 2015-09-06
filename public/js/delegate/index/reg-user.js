@@ -24,6 +24,6 @@ function saveCodeClick() {
 
 function submitRegClick() {
     $("#submit-reg").tapA(function() {
-        saveCode();
+        submitReg();
     })
 }

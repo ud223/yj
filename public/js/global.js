@@ -32,8 +32,12 @@ function removPhoto($this, url, containerSelector, valSelector) {
     });
 }
 
-function removeObject($this, url, containerSelector, valSelector) {
-    if (!confirm('确认删除该对象？')) {
+function removeObject($this, url, containerSelector, valSelector, msg) {
+    if (!msg) {
+        msg = "确认删除该对象？";
+    }
+
+    if (!confirm(msg)) {
         return;
     }
     //if (!containerSelector) {

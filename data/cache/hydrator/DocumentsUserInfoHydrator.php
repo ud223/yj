@@ -383,6 +383,14 @@ class DocumentsUserInfoHydrator implements HydratorInterface
             $hydratedData['teacher_score'] = $return;
         }
 
+        /** @Field(type="int") */
+        if (isset($data['is_reg'])) {
+            $value = $data['is_reg'];
+            $return = (int) $value;
+            $this->class->reflFields['is_reg']->setValue($document, $return);
+            $hydratedData['is_reg'] = $return;
+        }
+
         /** @Field(type="id") */
         if (isset($data['_id'])) {
             $value = $data['_id'];

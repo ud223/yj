@@ -140,4 +140,7 @@ class UserInfo extends AbstractDocument {
 
     /** @ODM\String */
     protected $teacher_score = 5;
+    //是否正式注册
+    /** @ODM\Int */
+    protected $is_reg = 0;
 }

@@ -1,6 +1,9 @@
 <?php
 
 class Angel_IndexController extends Angel_Controller_Action {
+    private $app_id = 'wx4f812fb76adfa3ff';
+    private $app_secret = '4450180e6fd9b8a88b79a2261a1da6ae';
+    private $access_token = '';
 
     protected $login_not_required = array(
         'index',
@@ -25,7 +28,11 @@ class Angel_IndexController extends Angel_Controller_Action {
         'my-calendar',
         'my-class',
         'rating',
-        'rating-success'
+        'rating-success',
+        'about',
+        'reg',
+        'reg-user',
+        'clear'
     );
 
     public function init() {
@@ -33,7 +40,16 @@ class Angel_IndexController extends Angel_Controller_Action {
         parent::init();
     }
 
+    public function aboutAction() {
+
+    }
+
+    public function clearAction() {
+
+    }
+
     public function indexAction() {
+//        exit("xixi");
         $regionModel = $this->getModel('region');
 
         $region = $regionModel->getAll(false);
@@ -103,6 +119,128 @@ class Angel_IndexController extends Angel_Controller_Action {
         foreach ($teachers as $t) {
             $teacherModel->initTeacherCount($t->id);
         }
+    }
+
+    public function getOpenId($code) {
+        $url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=". $this->app_id ."&secret=". $this->app_secret ."&code=". $code ."&grant_type=authorization_code";
+
+        $weixin = file_get_contents($url);
+        $jsondecode = json_decode($weixin);
+        $array = get_object_vars($jsondecode);
+
+        $open_id = $array['openid'];
+        $this->access_token = $array['access_token'];
+
+        return $open_id;
+    }
+
+    public function getUserInfo($open_id) {
+        $url = "https://api.weixin.qq.com/sns/userinfo?access_token=". $this->access_token ."&openid=". $open_id ."&lang=zh_CN";
+
+        $weixin = file_get_contents($url);
+
+        $jsondecode = json_decode($weixin);
+        $array = get_object_vars($jsondecode);
+
+        return $array;
+    }
+
+    public function addUser($data) {
+        $customerModel = $this->getModel('customer');
+
+        $openid = $data['openid'];
+        $nickname = $data['nickname'];
+        $sex = $data['sex'];
+//        $language = $data['language'];
+        $city = $data['city'];
+        $province = $data['province'];
+        $country = $data['country'];
+        $headimgurl = $data['headimgurl'];
+
+        $result = $customerModel->getUserByOpenId($openid);
+
+        //如果该openid用户已经添加
+        if (count($result) == 1) {
+            foreach ($result as $r) {
+                $customer = $r;
+
+                break;
+            }
+
+            $id = $customer->id;
+
+            $customerModel->saveWinXinUser($id, $openid, $nickname, $sex, $headimgurl);
+
+            return $customer;
+        }
+
+        $result = $customerModel->addCustomer($nickname, $sex, $openid, $headimgurl);
+
+        return $result;
+    }
+
+    public function  regAction() {
+//        exit("xixi");
+        $code = $_GET['code'];
+        $id = $this->getParam('id');
+
+        $tmp_web_url = $this->getParam('web_url');
+        $web_url = urldecode($tmp_web_url);
+//        exit($web_url);
+        if ($web_url) {
+            if ($web_url == "http://www.yujiaqu.com/") {
+                $web_url = "/";
+            }
+            else {
+                $web_url = str_replace("http://www.yujiaqu.com/", "/", $web_url);
+            }
+        }
+        else {
+            $web_url = "/";
+        }
+
+        $open_id = $this->getOpenId($code);
+        $userInfo = $this->getUserInfo($open_id);
+
+        $result = $this->addUser($userInfo);
+
+        if ($web_url == "/") {
+            $web_url = $web_url;
+        }
+        else {
+            if (substr($web_url, strlen($web_url) - 1, 1) != "/") {
+                $web_url = $web_url;
+            }
+            else {
+                $web_url = $web_url;
+            }
+        }
+
+        if ($result) {
+            if (!$result->is_reg) {
+                header("location: /reg/user/". $result->id); exit;
+            }
+
+            $this->view->url = $web_url;
+            $this->view->user_id = $result->id;
+        }
+        else {
+            exit("注册或登陆失败,请重试!");
+        }
+    }
+
+    public function regUserAction() {
+        $customerModel = $this->getModel('customer');
+
+        $id = $this->getParam('id');
+
+        $customer = $customerModel->getById($id);
+
+        if ($customer->is_reg) {
+            header("location: /"); exit;
+        }
+
+        $this->view->model = $customer;
     }
 
     public function courseAction() {
@@ -270,15 +408,44 @@ class Angel_IndexController extends Angel_Controller_Action {
     }
 
     public function  applyAction() {
+        $categoryModel = $this->getModel('category');
+        $regionModel = $this->getModel('region');
+        $customerModel = $this->getModel('customer');
 
+        $id = $this->getParam('id');
+
+        $customer = $customerModel->getById($id);
+
+        $regions = $regionModel->getAll(false);
+        $categorys = $categoryModel->getAll(false);
+
+        $this->view->model = $customer;
+        $this->view->region = $regions;
+        $this->view->category = $categorys;
     }
 
     public function applyHistoryAction() {
+        $applicaitonModel = $this->getModel('application');
 
+        $id = $this->getParam('id');
+
+        $applicaitons = $applicaitonModel->getBy(false, array('customer.$id'=>new MongoId($id)));
+
+        $this->view->application = $applicaitons;
+        $this->view->user_id = $id;
     }
 
     public function applySuccessAction() {
+        $customerModel = $this->getModel('customer');
+        $applicaitonModel = $this->getModel('application');
 
+        $id = $this->getParam('id');
+
+        $customer = $customerModel->getById($id);
+
+        $result = $applicaitonModel->addApplication($customer);
+
+        $this->view->user_id = $id;
     }
 
     /***************************************************************
@@ -311,7 +478,7 @@ class Angel_IndexController extends Angel_Controller_Action {
      */
     public function loginAction() {
         if ($this->request->isPost()) {
-            $this->userLogin('show-play', "登录芝士电视");
+            $this->userLogin('show-play', "登录瑜伽去");
         }
         else {
             //第一次请求先判断是否移动端浏览器,如果是移动端浏览器就跳转到移动端注册页面
@@ -328,7 +495,7 @@ class Angel_IndexController extends Angel_Controller_Action {
      */
     public function registerAction() {
         if ($this->request->isPost()) {
-            $this->userRegister('login', "注册芝士电视", "user");
+            $this->userRegister('login', "注册瑜伽去", "user");
         }
         else {
             //第一次请求先判断是否移动端浏览器,如果是移动端浏览器就跳转到移动端注册页面

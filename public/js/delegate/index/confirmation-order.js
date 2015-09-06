@@ -15,19 +15,19 @@ function editAddressName() {
 }
 
 function applyAddrClick() {
-    $("#apply-addr").tap(function() {
+    $("#apply-addr").tapA(function() {
         applyAddress();
     });
 }
 
 function phoneValidClick() {
-    $("#send-code").tap(function() {
+    $("#send-code").tapA(function() {
         getPhoneValidCode();
     });
 }
 
 function validPhoneCodeClick() {
-    $("#valid-phone-code").tap(function() {
+    $("#valid-phone-code").tapA(function() {
         validPhoneCode();
     });
 }
@@ -47,7 +47,7 @@ function chooseDayClick() {
     //    $("#select_date").val($(this).attr("val"));
     //});
 
-    $(".time-day-select").find(".week-td").tap(function() {
+    $(".time-day-select").find(".week-td").tapA(function() {
         var date = $(this).attr("val");
 
         getTeacherBusy(teacher_id, date, this, chooseDay, busyDay);
@@ -56,7 +56,7 @@ function chooseDayClick() {
 }
 
 function initTimeClick() {
-    $(".time-space").tap(function() {
+    $(".time-space").tapA(function() {
         if ($(this).hasClass("unclickable")) {
             $.toastMsg("该时间段已有预约!", 3000);
 
@@ -68,13 +68,13 @@ function initTimeClick() {
 }
 
 function initSubmitOrder() {
-    $("#submit-order").tap(function() {
+    $("#submit-order").tapA(function() {
         submitOrder();
     });
 }
 
 function acceptTimeClick() {
-    $("#btn-accept-time").tap(function() {
+    $("#btn-accept-time").tapA(function() {
         acceptTime();
     })
 }

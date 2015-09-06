@@ -1,5 +1,5 @@
 function removeOrderClick() {
-    $("#remove-order").tap(function() {
+    $("#remove-order").tapA(function() {
         removeOrderById();
     });
 }

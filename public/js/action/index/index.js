@@ -45,7 +45,14 @@ function loadTeacher(data, current_page_no, page_count) {
         //node.find(".user-intro-img").attr("src", this.headimgurl);
         node.find(".teacher-name").html(this.name);
         node.find(".this-teacher-score").html(this.score);
-        node.find(".user-intro-skill").html(this.category);
+
+        var tmp_category = this.category;
+
+        if (this.category.length > 20) {
+            tmp_category = this.category.substr(0, 19) + "...";
+        }
+
+        node.find(".user-intro-skill").html(tmp_category);
         node.find(".price").html(this.price);
         node.find(".teacher-img-big").attr("src", this.photo);
         node.find(".cd_hottap").attr("hottap", "/teacher/" + this.id);

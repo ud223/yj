@@ -53,24 +53,25 @@
             <th>电子邮箱</th>
             <th>所在城市</th>
             <th>详细</th>
-            <th>操作</th>
+            <th>通过操作</th>
+            <th>拒绝操作</th>
         </tr>
         </thead>
         <tbody>
         <?php if ($this->paginator):?>
             <?php foreach ($this->paginator as $p): ?>
                 <tr>
-                    <td><?php echo $p->teacher->name ?></td>
-                    <td><?php echo $p->teacher->sex ?></td>
-                    <td><?php echo $p->teacher->birthday ?></td>
-                    <td><?php echo $p->teacher->place ?></td>
-                    <td><?php echo $p->teacher->educational ?></td>
-                    <td><?php echo $p->teacher->phone ?></td>
-                    <td><?php echo $p->teacher->qq ?></td>
-                    <td><?php echo $p->teacher->email ?></td>
-                    <td><?php echo $p->teacher->location ?></td>
+                    <td><?php echo $p->customer->name ?></td>
+                    <td><?php echo $p->customer->sex ?></td>
+                    <td><?php echo $p->customer->birthday ?></td>
+                    <td><?php echo $p->customer->place ?></td>
+                    <td><?php echo $p->customer->educational ?></td>
+                    <td><?php echo $p->customer->phone ?></td>
+                    <td><?php echo $p->customer->qq ?></td>
+                    <td><?php echo $p->customer->email ?></td>
+                    <td><?php echo $p->customer->location ?></td>
                     <td>
-                        <a href="/manage/teacher/save/<?php echo $p->id ?>">查看<span class="glyphicon glyphicon-link"></span></a>
+                        <a href="/manage/teacher/save/<?php echo $p->customer->id ?>">查看<span class="glyphicon glyphicon-link"></span></a>
                     </td>
                     <td>
                         <div><a href="javascript:void(0)" class="apply-list">审核通过</a><input type="hidden" class="tmp" value="<?php echo $p->id ?>"/></div>
@@ -153,10 +154,10 @@
 </div>
 <script type="text/javascript">
     $('.apply-list').click(function() {
-        removeObject($(this).parent(), '<?php echo $this->url(array(), 'manage-application-apply') ?>');
+        removeObject($(this).parent(), '<?php echo $this->url(array(), 'manage-application-apply') ?>', null, null, "是否通过该用户成为导师申请?");
     });
 
     $('.remove-list').click(function() {
-        removeObject($(this).parent(), '<?php echo $this->url(array(), 'manage-application-reject') ?>');
+        removeObject($(this).parent(), '<?php echo $this->url(array(), 'manage-application-reject') ?>', null, null, "是否拒绝该用户成为导师的申请?");
     });
 </script>

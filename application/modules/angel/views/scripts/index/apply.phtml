@@ -1,127 +1,592 @@
+<script src="<?php echo $this->jsPath("swipe.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("tools/sms.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("tools/String.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("api/tools.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("action/index/apply.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("delegate/index/apply.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("controller/index/apply.js"); ?>"></script>
 <div class="p14-t01">
     您提交的资料都会经过严格审核，请认真填写后再提交。
 </div>
 
 <div class="blackrowgall">
-    <div class="row">
+    <div class="row cd-slideoutbtn" rel="#pp-change-name">
         <span class="tt">真实姓名</span>
-        <input placeholder="请填写真实姓名" value="张三丰" type="text" class="holder" />
+        <div class="holder arr">
+            <span id="my-name"><?php echo $this->model->name ?></span>
+            <img src="/img/arr-r.png" class="icoin" />
+        </div>
     </div>
-    <div class="row actbtn cd-slideoutbtn" rel="#pp-change-tel">
+    <div class="row actbtn cd-slideoutbtn" id="pp-change-tel-btn" rel="#pp-change-tel">
         <span class="tt">手机</span>
         <div class="holder arr">
-            <span>18923833647</span>
-            <img src="img/arr-r.png" class="icoin" />
+            <span id="my-phone"><?php echo $this->model->phone ?></span>
+            <img src="/img/arr-r.png" class="icoin" />
         </div>
     </div>
-    <div class="row actbtn">
+    <div class="row actbtn cd-slideoutbtn" id="pp-change-sex-btn" rel="#pp-change-sex">
         <span class="tt">性别</span>
-        <div class="holder">
-					<span>
-						<input type="radio" id="p14-male" name="gener"/><label for="p14-male">男</label>
-						&nbsp;&nbsp;
-						<input type="radio" id="p14-female" name="gener"/><label for="p14-female">女</label>
-					</span>
+        <div class="holder arr">
+            <span id="my-sex">
+                <?php
+                    if ($this->model->sex == 1) {
+                        echo "男";
+                    }
+                    else {
+                        echo "女";
+                    }
+                ?></span>
+            <img src="/img/arr-r.png" class="icoin" />
         </div>
     </div>
-    <div class="row">
+    <div class="row cd-slideoutbtn" id="pp-change-birthday-btn" rel="#pp-change-birthday">
         <span class="tt">出生日期</span>
-        <input placeholder="请填写出生日期" value="" type="date" class="holder" />
+        <div class="holder arr">
+            <span id="my-birthday">
+                <?php
+                    $tmp_birthday = explode("-", $this->model->birthday);
+                    $tmp_month = "";
+                    $tmp_day = "";
+
+                    if (substr($tmp_birthday[1], 0, 1) == "0") {
+                        $tmp_month = substr($tmp_birthday[1], 1, 1);
+                    }
+                    else {
+                        $tmp_month = $tmp_birthday[1];
+                    }
+
+                    if (substr($tmp_birthday[2], 0, 1) == "0") {
+                        $tmp_day = substr($tmp_birthday[2], 1, 1);
+                    }
+                    else {
+                        $tmp_day = $tmp_birthday[2];
+                    }
+
+                    echo $tmp_birthday[0] ."年". $tmp_month ."月" . $tmp_day ."日";
+                ?></span>
+            <img src="/img/arr-r.png" class="icoin" />
+        </div>
     </div>
-    <div class="row">
+    <div class="row cd-slideoutbtn" id="pp-change-place-btn" rel="#pp-change-place">
         <span class="tt">籍贯</span>
-        <input placeholder="请填写籍贯" value="" type="text" class="holder" />
+        <div class="holder arr">
+            <span id="my-place"><?php echo $this->model->place ?></span>
+            <img src="/img/arr-r.png" class="icoin" />
+        </div>
     </div>
-    <div class="row">
+    <div class="row cd-slideoutbtn" id="pp-change-educational-btn" rel="#pp-change-educational">
         <span class="tt">学历</span>
-        <select class="holder p14-sele">
-            <option>选择学历</option>
-            <option>博士</option>
-            <option>研究生</option>
-            <option>大学</option>
-            <option>高中</option>
-            <option>初中</option>
-        </select>
+        <div class="holder arr">
+            <span id="my-educational"><?php echo $this->model->educational ?></span>
+            <img src="/img/arr-r.png" class="icoin" />
+        </div>
     </div>
-    <div class="row">
+    <div class="row cd-slideoutbtn" id="pp-change-code-btn" rel="#pp-change-code">
         <span class="tt">身份证号码</span>
-        <input placeholder="填写正确身份证号码" value="" type="text" class="holder" />
+        <div class="holder arr">
+            <span id="my-code"><?php echo $this->model->code ?></span>
+            <img src="/img/arr-r.png" class="icoin" />
+        </div>
     </div>
 </div>
 
 <div class="blackrowgall">
-    <div class="row">
+    <div class="row cd-slideoutbtn" id="pp-change-email-btn" rel="#pp-change-email">
         <span class="tt">邮箱</span>
-        <input placeholder="请填写常用邮箱" value="" type="text" class="holder" />
+        <div class="holder arr">
+            <span id="my-email"><?php echo $this->model->email ?></span>
+            <img src="/img/arr-r.png" class="icoin" />
+        </div>
     </div>
-    <div class="row">
+    <div class="row cd-slideoutbtn" id="pp-change-qq-btn" rel="#pp-change-qq">
         <span class="tt">QQ（可选）</span>
-        <input placeholder="请填写QQ" value="" type="text" class="holder" />
+        <div class="holder arr">
+            <span id="my-qq"><?php echo $this->model->qq ?></span>
+            <img src="/img/arr-r.png" class="icoin" />
+        </div>
     </div>
-    <div class="row">
+    <div class="row cd-slideoutbtn" id="pp-change-wechat-btn" rel="#pp-change-wechat">
         <span class="tt">微信（可选）</span>
-        <input placeholder="请填写微信号" value="" type="text" class="holder" />
+        <div class="holder arr">
+            <span id="my-wechat"><?php echo $this->model->wechat ?></span>
+            <img src="/img/arr-r.png" class="icoin" />
+        </div>
     </div>
 </div>
 
-
 <div class="blackrowgall">
-    <div class="row">
+    <div class="row cd-slideoutbtn" id="pp-change-location-btn" rel="#pp-change-location">
         <span class="tt">所在城市</span>
-        <input placeholder="请填写" value="" type="text" class="holder" />
+        <div class="holder arr">
+            <span id="my-location"><?php echo $this->model->location ?></span>
+            <img src="/img/arr-r.png" class="icoin" />
+        </div>
     </div>
     <div class="row">
         <span class="tt">授课区域</span>
-        <?php foreach ($this->region as $r):?>
-            <button class="itmbtn" type="button" id="<?php echo $r->id?>"><?php echo $r->name ?></button>
-        <?php endforeach;?>
+    </div>
+    <div class="row cd-slideoutbtn" id="pp-change-region-btn" rel="#pp-change-region">
+        <div class="holder arr">
+            <span id="my-region">
+                <?php
+                    $region_text = "";
+
+                    foreach ($this->model->region as $region) {
+                        if ($region_text != "") {
+                            $region_text = $region_text . " / ";
+                        }
+
+                        $region_text = $region_text . $region->name;
+                    }
+
+                    echo $region_text;
+                ?></span>
+            <img src="/img/arr-r.png" class="icoin" />
+        </div>
     </div>
     <div class="row">
         <span class="tt">授课类别</span>
-        <select class="holder p14-sele">
-            <option>选择授课类别</option>
-            <option>流瑜珈</option>
-            <option>阴瑜伽</option>
-            <option>哈他瑜伽</option>
-        </select>
+    </div>
+    <div class="row cd-slideoutbtn" id="pp-change-category-btn" rel="#pp-change-category">
+        <div class="holder arr">
+            <span id="my-category">
+                <?php
+                $category_text = "";
+
+                foreach ($this->model->category as $category) {
+                    if ($category_text != "") {
+                        $category_text = $category_text . " / ";
+                    }
+
+                    $category_text = $category_text . $category->name;
+                }
+
+                echo $category_text;
+                ?></span>
+            <img src="/img/arr-r.png" class="icoin" />
+        </div>
     </div>
 </div>
 
 <div class="blackrowgall">
-    <div class="row">
+    <div class="row cd-slideoutbtn" id="pp-change-bank-btn" rel="#pp-change-bank">
         <span class="tt">银行</span>
-        <select class="holder p14-sele">
-            <option>选择银行</option>
-            <option>中国银行</option>
-            <option>建设银行</option>
-            <option>招商银行</option>
-            <option>工商银行</option>
-            <option>交通银行</option>
-            <option>农业银行</option>
-            <option>民生银行</option>
-            <option>平安银行</option>
-            <option>深圳发展银行</option>
-            <option>中信银行</option>
-            <option>广发银行</option>
-            <option>浦发银行</option>
-            <option>光大银行</option>
-            <option>华夏银行</option>
-            <option>兴业银行</option>
-            <option>浙商银行</option>
-            <option>广东南粤银行</option>
-        </select>
+        <div class="holder arr">
+            <span id="my-bank"><?php echo $this->model->bank ?></span>
+            <img src="/img/arr-r.png" class="icoin" />
+        </div>
     </div>
-    <div class="row">
+    <div class="row cd-slideoutbtn" id="pp-change-bank_code-btn" rel="#pp-change-bank_code">
         <span class="tt">银行卡号</span>
-        <input placeholder="请填写正确卡号" value="" type="text" class="holder" />
+        <div class="holder arr">
+            <span id="my-bank_code"><?php echo $this->model->bank_code ?></span>
+            <img src="/img/arr-r.png" class="icoin" />
+        </div>
+
     </div>
     <div class="row">
         <span class="tt">个人介绍</span>
     </div>
-    <div class="row auto">
-        <textarea class="fulltxtinput" placeholder="请认真填写个人介绍" style="height:120px;"></textarea>
+    <div class="row auto cd-slideoutbtn" id="pp-change-description-btn" rel="#pp-change-description">
+        <div class="holder arr">
+            <span id="my-description"><?php echo $this->model->description ?></span>
+            <img src="/img/arr-r.png" class="icoin" />
+        </div>
     </div>
 </div>
 <div class="clear-15"></div>
-<div class="fullbtn">确认提交</div>
+<button type="button" class="fullbtn cd_hottap" hottap="/applysuccess/<?php echo $this->model->id ?>" style="height: 50px; font-size: medium">确认提交</button>
+
 <div class="bt-distance"></div>
+<div class="clear-25"></div>
+<div style="height: 30px"></div>
+
+<div class="slidepopup cd-slidepopup" id="pp-change-name">
+    <div class="tt">更改真实姓名<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+    <div class="blackrowgall">
+        <div class="row">
+            <input placeholder="请填写" id="user-name" type="text" maxlength="11" value="<?php echo $this->model->name ?>" class="fulltxtinput" />
+        </div>
+    </div>
+    <div class="clear-15"></div>
+    <div id="btn-accept-name" class="fullbtn">
+        确认
+    </div>
+</div>
+
+<div class="slidepopup cd-slidepopup" id="pp-change-tel">
+    <div class="tt">更改电话号码<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+    <div class="blackrowgall">
+        <div class="row">
+            <input placeholder="请填写手机号码"  id="phone-num" type="tel" maxlength="11" value="<?php echo $this->model->phone ?>" class="fulltxtinput" />
+            <button id="send-code" class="sendvalcodbt">发送验证码</button>
+        </div>
+        <div class="row">
+            <input placeholder="验证码" id="phone-code"  type="tel" maxlength="11" class="fulltxtinput" />
+        </div>
+    </div>
+    <div class="clear-15"></div>
+    <div id="valid-phone-code"  class="fullbtn">
+        确认
+    </div>
+</div>
+
+<div class="slidepopup cd-slidepopup" id="pp-change-sex">
+    <div class="tt">更改性别<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+    <div class="blackrowgall">
+        <div class="row">
+            <div class="holder">
+                <span>
+                    <?php if ($this->model->sex == 1) :?>
+                        <input type="radio" id="p14-male" name="sex" value="1" checked="checked" /><label for="p14-male">男</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" id="p14-female" value="2" name="sex"/><label for="p14-female">女</label>
+                    <?php else :?>
+                        <input type="radio" id="p14-male" value="1" name="sex" /><label for="p14-male">男</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" id="p14-female" value="2" name="sex"  checked="checked" /><label for="p14-female">女</label>
+                    <?php endif; ?>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="clear-15"></div>
+    <div id="valid-sex-code"  class="fullbtn">
+        确认
+    </div>
+</div>
+
+<div class="slidepopup cd-slidepopup" id="pp-change-birthday">
+    <div class="tt">更改出生日期<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+    <div class="blackrowgall">
+        <div class="row">
+            <div class="holder">
+                <input placeholder="请填写出生日期" id="birthday" name="birthday" value="<?php echo $this->model->birthday ?>" type="date" class="holder" />
+            </div>
+        </div>
+    </div>
+    <div class="clear-15"></div>
+    <div id="valid-birthday-code"  class="fullbtn">
+        确认
+    </div>
+</div>
+
+<div class="slidepopup cd-slidepopup" id="pp-change-place">
+    <div class="tt">更改籍贯<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+    <div class="blackrowgall">
+        <div class="row">
+            <div class="holder">
+                <input placeholder="请填写籍贯" id="place" name="place" value="<?php echo $this->model->place ?>" type="text" class="holder" />
+            </div>
+        </div>
+    </div>
+    <div class="clear-15"></div>
+    <div id="valid-place-code"  class="fullbtn">
+        确认
+    </div>
+</div>
+
+<div class="slidepopup cd-slidepopup" id="pp-change-educational">
+    <div class="tt">更改学历<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+    <div class="blackrowgall">
+        <div class="row">
+            <div class="holder">
+                <select id="educational" name="educational" class="holder p14-sele">
+                    <option value="0">选择学历</option>
+                    <?php if ($this->model->educational == "博士") :?>
+                        <option selected="selected" value="博士">博士</option>
+                    <?php else :?>
+                        <option value="博士">博士</option>
+                    <?php endif;?>
+                    <?php if ($this->model->educational == "研究生") :?>
+                        <option selected="selected" value="研究生">研究生</option>
+                    <?php else :?>
+                        <option value="研究生">研究生</option>
+                    <?php endif;?>
+                    <?php if ($this->model->educational == "本科") :?>
+                        <option selected="selected" value="本科">本科</option>
+                    <?php else :?>
+                        <option value="本科">本科</option>
+                    <?php endif;?>
+                    <?php if ($this->model->educational == "高中") :?>
+                        <option selected="selected" value="高中">高中</option>
+                    <?php else :?>
+                        <option  value="高中">高中</option>
+                    <?php endif;?>
+                    <?php if ($this->model->educational == "初中") :?>
+                        <option selected="selected" value="初中">初中</option>
+                    <?php else :?>
+                        <option value="初中">初中</option>
+                    <?php endif;?>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="clear-15"></div>
+    <div id="valid-educational-code"  class="fullbtn">
+        确认
+    </div>
+</div>
+
+<div class="slidepopup cd-slidepopup" id="pp-change-code">
+    <div class="tt">更改身份证号码<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+    <div class="blackrowgall">
+        <div class="row">
+            <div class="holder">
+                <input placeholder="填写正确身份证号码" id="code" name="code" maxlength="18" value="<?php echo $this->model->code ?>" type="text" class="holder" />
+            </div>
+        </div>
+    </div>
+    <div class="clear-15"></div>
+    <div id="valid-code-code"  class="fullbtn">
+        确认
+    </div>
+</div>
+
+<div class="slidepopup cd-slidepopup" id="pp-change-email">
+    <div class="tt">更改电子邮箱<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+    <div class="blackrowgall">
+        <div class="row">
+            <div class="holder">
+                <input placeholder="请填写常用邮箱" id="email" name="email" value="<?php echo $this->model->email ?>" type="email" class="holder" />
+            </div>
+        </div>
+    </div>
+    <div class="clear-15"></div>
+    <div id="valid-email-code"  class="fullbtn">
+        确认
+    </div>
+</div>
+
+<div class="slidepopup cd-slidepopup" id="pp-change-qq">
+    <div class="tt">更改QQ号<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+    <div class="blackrowgall">
+        <div class="row">
+            <div class="holder">
+                <input placeholder="请填写QQ" id="qq" name="qq" value="<?php echo $this->model->qq ?>" type="number" class="holder" />
+            </div>
+        </div>
+    </div>
+    <div class="clear-15"></div>
+    <div id="valid-qq-code"  class="fullbtn">
+        确认
+    </div>
+</div>
+
+<div class="slidepopup cd-slidepopup" id="pp-change-wechat">
+    <div class="tt">更改微信<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+    <div class="blackrowgall">
+        <div class="row">
+            <div class="holder">
+                <input placeholder="请填写微信号" id="wechat" name="wechat" value="<?php echo $this->model->wechat ?>" type="text" class="holder" />
+            </div>
+        </div>
+    </div>
+    <div class="clear-15"></div>
+    <div id="valid-wechat-code"  class="fullbtn">
+        确认
+    </div>
+</div>
+
+<div class="slidepopup cd-slidepopup" id="pp-change-location">
+    <div class="tt">更改所在城市<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+    <div class="blackrowgall">
+        <div class="row">
+            <div class="holder">
+                <input placeholder="请填写所在城市" id="location" name="location" value="<?php echo $this->model->location ?>" type="text" class="holder" />
+            </div>
+        </div>
+    </div>
+    <div class="clear-15"></div>
+    <div id="valid-location-code"  class="fullbtn">
+        确认
+    </div>
+</div>
+
+<div class="slidepopup cd-slidepopup" id="pp-change-region">
+    <div class="tt">更改授课区域<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+    <div class="blackrowgall">
+        <div class="row">
+            <div class="holder">
+                <?php foreach ($this->region as $r):?>
+                    <?php $is_choose = false; ?>
+                    <?php foreach($this->model->region as $my_region) :?>
+                        <?php if ($my_region->id == $r->id):?>
+                            <input type="checkbox" name="region" value="<?php echo $r->id?>" checked><?php echo $r->name ?>
+                            <?php $is_choose = true; break; ?>
+                        <?php endif; ?>
+                    <?php endforeach;?>
+                    <?php if (!$is_choose):?>
+                        <input type="checkbox" name="region" value="<?php echo $r->id?>"><?php echo $r->name ?>
+                    <?php endif; ?>
+                <?php endforeach;?>
+            </div>
+        </div>
+    </div>
+    <div class="clear-15"></div>
+    <div id="valid-region-code"  class="fullbtn">
+        确认
+    </div>
+</div>
+
+<div class="slidepopup cd-slidepopup" id="pp-change-category">
+    <div class="tt">更改授课类别<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+    <div class="blackrowgall">
+        <div class="row">
+            <div class="holder">
+                <?php foreach ($this->category as $c):?>
+                    <?php $is_category = false; ?>
+                    <?php foreach($this->model->category as $my_category) :?>
+                        <?php if ($my_category->id == $c->id):?>
+                            <input type="checkbox" name="category" value="<?php echo $c->id?>" checked><?php echo $c->name ?>
+                            <?php $is_category = true; break; ?>
+                        <?php endif; ?>
+                    <?php endforeach;?>
+                    <?php if (!$is_category):?>
+                        <input type="checkbox" name="category" value="<?php echo $c->id?>"><?php echo $c->name ?>
+                    <?php endif; ?>
+                <?php endforeach;?>
+            </div>
+        </div>
+    </div>
+    <div class="clear-15"></div>
+    <div id="valid-category-code"  class="fullbtn">
+        确认
+    </div>
+</div>
+
+<div class="slidepopup cd-slidepopup" id="pp-change-bank">
+    <div class="tt">更改银行<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+    <div class="blackrowgall">
+        <div class="row">
+            <div class="holder">
+                <select id="bank" name="bank" class="holder p14-sele">
+                    <option>选择银行</option>
+                    <?php if ($this->model->educational == "中国银行") :?>
+                        <option selected="selected">中国银行</option>
+                    <?php else :?>
+                        <option>中国银行</option>
+                    <?php endif;?>
+                    <?php if ($this->model->educational == "建设银行") :?>
+                        <option selected="selected">建设银行</option>
+                    <?php else :?>
+                        <option>建设银行</option>
+                    <?php endif;?>
+                    <?php if ($this->model->educational == "招商银行") :?>
+                        <option selected="selected">招商银行</option>
+                    <?php else :?>
+                        <option>招商银行</option>
+                    <?php endif;?>
+                    <?php if ($this->model->educational == "工商银行") :?>
+                        <option selected="selected">工商银行</option>
+                    <?php else :?>
+                        <option>工商银行</option>
+                    <?php endif;?>
+                    <?php if ($this->model->educational == "交通银行") :?>
+                        <option selected="selected">交通银行</option>
+                    <?php else :?>
+                        <option>交通银行</option>
+                    <?php endif;?>
+                    <?php if ($this->model->educational == "农业银行") :?>
+                        <option selected="selected">农业银行</option>
+                    <?php else :?>
+                        <option>农业银行</option>
+                    <?php endif;?>
+                    <?php if ($this->model->educational == "民生银行") :?>
+                        <option selected="selected">民生银行</option>
+                    <?php else :?>
+                        <option>民生银行</option>
+                    <?php endif;?>
+                    <?php if ($this->model->educational == "平安银行") :?>
+                        <option selected="selected">平安银行</option>
+                    <?php else :?>
+                        <option>平安银行</option>
+                    <?php endif;?>
+                    <?php if ($this->model->educational == "深圳发展银行") :?>
+                        <option selected="selected">深圳发展银行</option>
+                    <?php else :?>
+                        <option>深圳发展银行</option>
+                    <?php endif;?>
+                    <?php if ($this->model->educational == "中信银行") :?>
+                        <option selected="selected">中信银行</option>
+                    <?php else :?>
+                        <option>中信银行</option>
+                    <?php endif;?>
+                    <?php if ($this->model->educational == "广发银行") :?>
+                        <option selected="selected">广发银行</option>
+                    <?php else :?>
+                        <option>广发银行</option>
+                    <?php endif;?>
+                    <?php if ($this->model->educational == "浦发银行") :?>
+                        <option selected="selected">浦发银行</option>
+                    <?php else :?>
+                        <option>浦发银行</option>
+                    <?php endif;?>
+                    <?php if ($this->model->educational == "光大银行") :?>
+                        <option selected="selected">光大银行</option>
+                    <?php else :?>
+                        <option>光大银行</option>
+                    <?php endif;?>
+                    <?php if ($this->model->educational == "华夏银行") :?>
+                        <option selected="selected">华夏银行</option>
+                    <?php else :?>
+                        <option>华夏银行</option>
+                    <?php endif;?>
+                    <?php if ($this->model->educational == "兴业银行") :?>
+                        <option selected="selected">兴业银行</option>
+                    <?php else :?>
+                        <option>兴业银行</option>
+                    <?php endif;?>
+                    <?php if ($this->model->educational == "浙商银行") :?>
+                        <option selected="selected">浙商银行</option>
+                    <?php else :?>
+                        <option>浙商银行</option>
+                    <?php endif;?>
+                    <?php if ($this->model->educational == "广东南粤银行") :?>
+                        <option selected="selected">广东南粤银行</option>
+                    <?php else :?>
+                        <option>广东南粤银行</option>
+                    <?php endif;?>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="clear-15"></div>
+    <div id="valid-bank-code"  class="fullbtn">
+        确认
+    </div>
+</div>
+
+<div class="slidepopup cd-slidepopup" id="pp-change-bank_code">
+    <div class="tt">更改银行卡号<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+    <div class="blackrowgall">
+        <div class="row">
+            <div class="holder">
+                <input placeholder="请填写正确卡号" id="bank_code" name="bank_code" value="<?php echo $this->model->bank_code ?>" type="text" class="holder" />
+            </div>
+        </div>
+    </div>
+    <div class="clear-15"></div>
+    <div id="valid-bank_code-code"  class="fullbtn">
+        确认
+    </div>
+</div>
+
+<div class="slidepopup cd-slidepopup" id="pp-change-description">
+    <div class="tt">更改个人介绍<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+    <div class="blackrowgall">
+        <div class="row auto">
+            <div class="holder">
+                <textarea class="fulltxtinput" id="description" name="description" placeholder="请认真填写个人介绍" style="height:120px;"><?php echo $this->model->description ?></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="clear-15"></div>
+    <div id="valid-description-code" class="fullbtn">
+        确认
+    </div>
+</div>
+<script type="text/javascript">
+    var user_id = '<?php echo $this->model->id ?>';
+    var page_type = 1;
+</script>

@@ -1,5 +1,5 @@
 function submitScoreClick() {
-    $("#btn-submit-score").tap(function() {
+    $("#btn-submit-score").tapA(function() {
         submitOrderScore();
     })
 }

@@ -18,7 +18,7 @@
     </div>
 <?php endif;?>
 <div class="p10-t02">
-    <img src="/img/user04.jpg" class="usrgmi" />
+    <img src="<?php echo $this->model->headimgurl ?>" style="width: 100px" class="usrgmi" />
     <div class="p10-t03"><?php echo $this->model->nickname ?></div>
 </div>
 
@@ -111,14 +111,14 @@
     </div>
 <?php endif;?>
 <?php if ($this->model->usertype == "1"):?>
-    <div class="blackrowgall" style="display: none">
-        <div class="row actbtn cd_hottap" hottap="/apply">
+    <div class="blackrowgall" >
+        <div class="row actbtn cd_hottap" hottap="/apply/<?php echo $this->model->id ?>">
             <span class="tt">申请成为老师</span>
             <div class="holder arr">
                 <img src="/img/arr-r.png" class="icoin" />
             </div>
         </div>
-        <div class="row actbtn cd_hottap" hottap="/applyhistory">
+        <div class="row actbtn cd_hottap" hottap="/applyhistory/<?php echo $this->model->id ?>">
             <span class="tt">查看申请记录</span>
             <div class="holder arr">
                 <img src="/img/arr-r.png" class="icoin" />
@@ -185,5 +185,6 @@
     </div>
 </div>
 <script type="text/javascript">
+    var page_type = 1;
     var user_id = '<?php echo $this->model->id ?>';
 </script>

@@ -5,8 +5,7 @@ class Angel_Model_Order extends Angel_Model_AbstractModel
     protected $_document_class = '\Documents\Order';
 
     //新增课程信息
-    public function addOrder($rundate, $time, $hour, $customer, $teacher, $price, $amount)
-    {
+    public function addOrder($rundate, $time, $hour, $customer, $teacher, $price, $amount) {
         $result = false;
         $order = new $this->_document_class();
 

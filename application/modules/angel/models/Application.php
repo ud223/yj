@@ -4,8 +4,8 @@ class Angel_Model_Application extends Angel_Model_AbstractModel {
     protected $_document_class = '\Documents\Application';
 
     //新增课程信息
-    public function addApplication($teacher) {
-        $data = array('teacher' => $teacher);
+    public function addApplication($customer) {
+        $data = array('customer'=>$customer);
 
         $result = $this->add($data);
 

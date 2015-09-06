@@ -1,0 +1,12 @@
+用户信息处理中...
+<script type="text/javascript">
+    var page_type = 0;
+    var user_id = '<?php echo $this->user_id?>';
+    var url = '<?php echo $this->url ?>';
+
+    if (user_id) {
+        localStorage.setItem('user_id', user_id);
+
+        location.href = url;
+    }
+</script>

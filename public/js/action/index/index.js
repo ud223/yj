@@ -48,8 +48,8 @@ function loadTeacher(data, current_page_no, page_count) {
 
         var tmp_category = this.category;
 
-        if (this.category.length > 35) {
-            tmp_category = this.category.substr(0, 34) + "...";
+        if (this.category.length > 20) {
+            tmp_category = this.category.substr(0, 19) + "...";
         }
 
         node.find(".user-intro-skill").html(tmp_category);

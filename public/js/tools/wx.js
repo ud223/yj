@@ -14,7 +14,7 @@ function userLogin() {
     alert(2);
     var user_id = localStorage.getItem('user_id');
     var url = "http://www.yujiaqu.com/reg";
-
+    alert(user_id);
     if (!user_id) {
         location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid="+ appid +"&redirect_uri="+ url +"&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect";
     }

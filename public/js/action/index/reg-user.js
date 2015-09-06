@@ -127,7 +127,6 @@ function submitReg() {
 }
 
 function setReg(response) {
-    alert(0);
     var url = localStorage.getItem("url");
 
     localStorage.setItem("url", null);

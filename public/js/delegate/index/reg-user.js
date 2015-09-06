@@ -1,5 +1,6 @@
 function setNameClick() {
     $("#btn-accept-name").tap(function() {
+        alert(0);
         saveName();
     })
 }

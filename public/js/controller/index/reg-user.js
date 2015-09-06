@@ -9,7 +9,6 @@ $(document).ready(function() {
 });
 
 function initBtn() {
-    alert(0);
     setNameClick();
 
     phoneValidClick();

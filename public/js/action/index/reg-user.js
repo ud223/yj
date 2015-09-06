@@ -1,4 +1,5 @@
 function saveName() {
+    alert(1);
     var model = "customer";
     var key = "name";
     var value = $("#user-name").val();
@@ -13,6 +14,7 @@ function saveName() {
 }
 
 function setName(response) {
+    alert(2);
     $("#my-name").html(response.data)
 
     $("#pp-change-name").find('.cd-slidepopupback').tap();

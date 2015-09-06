@@ -35,13 +35,11 @@ function sortClick() {
 function toMeClick() {
     $("#to-me").click(function() {
         var user_id = localStorage.getItem('user_id');
-        alert(0);
+
         if (user_id) {
-            alert(user_id);
             location.href = "/me/"+ user_id;
         }
         else {
-            alert(2);
             userLogin();
         }
     });

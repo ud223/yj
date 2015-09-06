@@ -21,6 +21,13 @@ function initTimeClick() {
 
 function initSubmitOrder() {
     $("#submit-order").tap(function() {
-        submitOrder();
+        var user_id = localStorage.getItem('user_id');
+
+        if (user_id) {
+            submitOrder();
+        }
+        else {
+            userLogin();
+        }
     });
 }

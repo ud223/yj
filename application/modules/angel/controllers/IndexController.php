@@ -161,8 +161,6 @@ class Angel_IndexController extends Angel_Controller_Action {
 
         //如果该openid用户已经添加
         if (count($result) == 1) {
-//            echo "added"; exit;
-//            return true;
             foreach ($result as $r) {
                 $customer = $r;
 
@@ -173,7 +171,7 @@ class Angel_IndexController extends Angel_Controller_Action {
 
             $customerModel->saveWinXinUser($id, $openid, $nickname, $sex, $headimgurl);
 
-            return $customerModel;
+            return $customer;
         }
 
         $result = $customerModel->addCustomer($nickname, $sex, $openid, $headimgurl);

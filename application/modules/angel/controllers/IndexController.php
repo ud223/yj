@@ -610,7 +610,7 @@ class Angel_IndexController extends Angel_Controller_Action {
 
     public function createMenu() {
         $accessToken = $this->getAccessToken();//获取access_token
-        $menuPostString = '{ "button":[{ "type":"view", "name":"进入天使圈云步客",  "url":"http://cbook.test.angelhere.cn" }] }';
+        $menuPostString = '{ "button":[{ "type":"view", "name":"进入瑜伽去",  "url":"http://www.yujiaqu.com" }] }';
 
         $menuPostUrl = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token=".$accessToken;//POST的url
         $menu = $this->dataPost($menuPostString, $menuPostUrl);//将菜单结构体POST给微信服务器

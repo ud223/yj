@@ -19,7 +19,7 @@ var Order = function() {
         return true;
     }
 
-    obj.confrimCheck = function(rundate, time, customer_name, phone, address) {
+    obj.confrimCheck = function(rundate, time, customer_name, phone, address, address_detail) {
         if (!rundate) {
             obj.message = "请选择授课日期!";
 
@@ -50,6 +50,12 @@ var Order = function() {
             return false;
         }
 
+        if (!address_detail) {
+            obj.message = "请输入授课地址详细地址!";
+
+            return false;
+        }
+
         return true;
     }
 
@@ -74,14 +80,14 @@ var Order = function() {
     }
 
 
-    obj.confrim = function(rundate, time, hour, amount, pay_amount, address, phone, customer_name, address, phone,  fun) {
-        if (!obj.confrimCheck(rundate, time, customer_name, phone, address)) {
+    obj.confrim = function(rundate, time, hour, amount, pay_amount, address, address_detail, phone, customer_name,  fun) {
+        if (!obj.confrimCheck(rundate, time, customer_name, phone, address, address_detail)) {
             $.toastMsg(obj.message, 3000);
 
             return;
         }
 
-        confirmOrder(rundate, time, hour, amount, pay_amount, customer_name, address, phone, fun);
+        confirmOrder(rundate, time, hour, amount, pay_amount, address, address_detail, phone, customer_name, fun);
     }
 
     obj.getHour = function(hour) {

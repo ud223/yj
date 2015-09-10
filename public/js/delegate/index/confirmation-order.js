@@ -20,6 +20,12 @@ function applyAddrClick() {
     });
 }
 
+function applyAddrDetailClick() {
+    $("#valid-addr-detail-code").tapA(function() {
+        applyAddressDetail();
+    });
+}
+
 function phoneValidClick() {
     $("#send-code").tapA(function() {
         getPhoneValidCode();

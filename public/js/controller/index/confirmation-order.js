@@ -13,6 +13,8 @@ function initBtn() {
 
     applyAddrClick();
 
+    applyAddrDetailClick();
+
     phoneValidClick();
 
     validPhoneCodeClick();

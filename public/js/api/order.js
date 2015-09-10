@@ -25,10 +25,10 @@ function addOrder(customer_id, teacher_id, rundate, time, hour, price, amount, f
     });
 }
 
-function confirmOrder(rundate, time, hour, amount, pay_amount, customer_name, address, phone, fun) {
+function confirmOrder(rundate, time, hour, amount, pay_amount, address, address_detail, phone, customer_name, fun) {
     var url = '/api/order/confirm';
 
-    var  data = { 'id':order_id, 'pay_amount':pay_amount, 'rundate':rundate, 'time':time, 'hour':hour, 'price': order_price, 'amount':amount, 'customer_name':customer_name, 'address':address, 'phone':phone }
+    var  data = { 'id':order_id, 'pay_amount':pay_amount, 'rundate':rundate, 'time':time, 'hour':hour, 'price': order_price, 'amount':amount, 'customer_name':customer_name, 'address':address, 'address_detail':address_detail, 'phone':phone }
     //alert(JSON.stringify(data)); //return;
     $.ajax({
         url: url,

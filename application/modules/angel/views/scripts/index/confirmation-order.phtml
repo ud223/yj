@@ -31,17 +31,17 @@
             <img src="/img/arr-r.png" class="icoin" />
         </div>
     </div>
-    <div class="row actbtn cd-slideoutbtn" rel="#pp-change-addr-detail">
-        <span class="tt">小区</span>
-        <div class="holder arr">
-            <span id="address-detail-view"></span>
-            <img src="/img/arr-r.png" class="icoin" />
-        </div>
-    </div>
+<!--    <div class="row actbtn cd-slideoutbtn" rel="#pp-change-addr-detail">-->
+<!--        <span class="tt">小区</span>-->
+<!--        <div class="holder arr">-->
+<!--            <span id="address-detail-view"></span>-->
+<!--            <img src="/img/arr-r.png" class="icoin" />-->
+<!--        </div>-->
+<!--    </div>-->
 
     <div class="row">
         <span class="tt">门牌号</span>
-        <input id="" placeholder="门牌号或其他详细地址" type="text" class="holder" />
+        <input id="address-detail" placeholder="门牌号或其他详细地址" type="text" class="holder" />
     </div>
 </div>
 
@@ -53,7 +53,7 @@
     <div class="row actbtn cd-slideoutbtn" rel="#pp-change-tel">
         <span class="tt">手机</span>
         <div class="holder arr">
-            <span id="customer-phone">15927094025<?php echo $this->model->phone ?></span></span>
+            <span id="customer-phone"><?php echo $this->model->phone ?></span></span>
             <img src="/img/arr-r.png" class="icoin" />
         </div>
     </div>
@@ -144,19 +144,19 @@
         确认
     </div>
 </div>
-
-<div class="slidepopup cd-slidepopup" id="pp-change-addr-detail">
-    <div class="tt">更改详细地址<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
-    <div class="blackrowgall">
-        <div class="row">
-            <input placeholder="请填详细地址" id="address-detail" type="text" maxlength="50" class="fulltxtinput" />
-        </div>
-    </div>
-    <div class="clear-15"></div>
-    <div id="valid-addr-detail-code" class="fullbtn">
-        确认
-    </div>
-</div>
+<!---->
+<!--<div class="slidepopup cd-slidepopup" id="pp-change-addr-detail">-->
+<!--    <div class="tt">更改详细地址<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>-->
+<!--    <div class="blackrowgall">-->
+<!--        <div class="row">-->
+<!--            <input placeholder="请填详细地址" id="address-detail" type="text" maxlength="50" class="fulltxtinput" />-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="clear-15"></div>-->
+<!--    <div id="valid-addr-detail-code" class="fullbtn">-->
+<!--        确认-->
+<!--    </div>-->
+<!--</div>-->
 
 <div class="slidepopup cd-slidepopup" id="pp-change-coupon">
     <div class="tt">我的优惠券<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>

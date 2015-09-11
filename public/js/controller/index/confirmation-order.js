@@ -13,7 +13,7 @@ function initBtn() {
 
     applyAddrClick();
 
-    applyAddrDetailClick();
+    //applyAddrDetailClick();
 
     phoneValidClick();
 

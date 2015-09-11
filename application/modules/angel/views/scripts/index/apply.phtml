@@ -125,7 +125,7 @@
         </div>
     </div>
 
-    <div style="padding:15px 15px;">授课区域</div>
+    <div style="padding:0 15px;">授课区域</div>
     <div class="row cd-slideoutbtn" id="pp-change-region-btn" rel="#pp-change-region">
         <div class="holder arr">
             <span id="my-region">
@@ -234,21 +234,21 @@
 
 <div class="slidepopup cd-slidepopup" id="pp-change-sex">
     <div class="tt">更改性别<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+
     <div class="blackrowgall">
         <div class="row">
-            <div class="holder">
-                <span>
-                    <?php if ($this->model->sex == 1) :?>
-                        <input type="radio" id="p14-male" name="sex" value="1" checked="checked" /><label for="p14-male">男</label>
-                        &nbsp;&nbsp;
-                        <input type="radio" id="p14-female" value="2" name="sex"/><label for="p14-female">女</label>
-                    <?php else :?>
-                        <input type="radio" id="p14-male" value="1" name="sex" /><label for="p14-male">男</label>
-                        &nbsp;&nbsp;
-                        <input type="radio" id="p14-female" value="2" name="sex"  checked="checked" /><label for="p14-female">女</label>
-                    <?php endif; ?>
-                </span>
-            </div>
+            <label style="margin-right:30px;">请选择您的性别</label>
+            <span>
+                <?php if ($this->model->sex == 1) :?>
+                    <input type="radio" id="p14-male" name="sex" value="1" checked="checked" /><label for="p14-male">男</label>
+                    &nbsp;&nbsp;
+                    <input type="radio" id="p14-female" value="2" name="sex"/><label for="p14-female">女</label>
+                <?php else :?>
+                    <input type="radio" id="p14-male" value="1" name="sex" /><label for="p14-male">男</label>
+                    &nbsp;&nbsp;
+                    <input type="radio" id="p14-female" value="2" name="sex"  checked="checked" /><label for="p14-female">女</label>
+                <?php endif; ?>
+            </span>
         </div>
     </div>
     <div class="clear-15"></div>

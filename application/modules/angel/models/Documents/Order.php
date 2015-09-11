@@ -22,6 +22,9 @@ class Order extends AbstractDocument {
     protected $address;
 
     /** @ODM\String */
+    protected $address_detail;
+
+    /** @ODM\String */
     protected $phone;
 
     /** @ODM\ReferenceOne(targetDocument="\Documents\UserInfo") */

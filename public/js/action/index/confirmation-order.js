@@ -87,6 +87,10 @@ function applyAddress() {
     $("#address-view").html($("#edit-addr").val());
 }
 
+function applyAddressDetail() {
+    $("#address-detail-view").html($("#address-detail").val());
+}
+
 //-----------------------手机短信验证------------------------------------------
 
 function setPhoneCode(response) {
@@ -481,13 +485,14 @@ function submitOrder() {
     var customer_name = $("#customer_name").val();
     var phone = $("#customer-phone").html();
     var address = $("#address-view").html();
+    var address_detail = $("#address-detail-view").html();
     var rundate = $("#select_date").val();
     var hour = $("#hour").html();
     var time = $("#time_range").val();
     var amount = $("#amount").html();
     var pay_amount = $("#pay-amount").html();
 
-    order.confrim(rundate, time, hour, amount, pay_amount, address, phone, customer_name, address, phone, toPay);
+    order.confrim(rundate, time, hour, amount, pay_amount, address, address_detail, phone, customer_name, toPay);
 }
 
 

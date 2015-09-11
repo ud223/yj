@@ -253,6 +253,7 @@ class Angel_ApiController extends Angel_Controller_Action {
         $customer_name = $this->getParam('customer_name');
         $phone = $this->getParam('phone');
         $address = $this->getParam('address');
+        $address_detail = $this->getParam('address_detail');
 
         $order = $orderModel->getById($id);
 
@@ -263,7 +264,7 @@ class Angel_ApiController extends Angel_Controller_Action {
         }
 
         if ($order) {
-            $result = $orderModel->saveOrder($id, $rundate, $time, $hour, $order->customer, $order->teacher, 10, $order->user_score, $order->user_appraise, $order->teacher_score, $order->teacher_appraise, $price, $amount, $pay_amount, $customer_name, $phone, $address);
+            $result = $orderModel->saveOrder($id, $rundate, $time, $hour, $order->customer, $order->teacher, 10, $order->user_score, $order->user_appraise, $order->teacher_score, $order->teacher_appraise, $price, $amount, $pay_amount, $customer_name, $phone, $address, $address_detail);
 
             if ($result) {
                 $this->_helper->json(array('data' => "订单保存成功!", 'code' => 200));

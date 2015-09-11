@@ -30,7 +30,7 @@ class Angel_Model_Order extends Angel_Model_AbstractModel
     }
 
     //保存课程信息
-    public function saveOrder($id, $rundate, $time, $hour, $customer, $teacher, $state, $user_score, $user_appraise, $teacher_score, $teacher_appraise, $price, $amount, $pay_amount, $customer_name, $phone, $address) {
+    public function saveOrder($id, $rundate, $time, $hour, $customer, $teacher, $state, $user_score, $user_appraise, $teacher_score, $teacher_appraise, $price, $amount, $pay_amount, $customer_name, $phone, $address, $address_detail) {
         $data = array('rundate' => $rundate,
             'time' => $time,
             'hour' => $hour,
@@ -38,6 +38,7 @@ class Angel_Model_Order extends Angel_Model_AbstractModel
             'customer_name' => $customer_name,
             'phone' => $phone,
             'address' => $address,
+            'address_detail' => $address_detail,
             'teacher' => $teacher,
             'state' => $state,
             'price' => $price,

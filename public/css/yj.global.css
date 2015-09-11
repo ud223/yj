@@ -1098,11 +1098,11 @@ p:after {
     margin-left: -15px;
 }
 .slidepopup .tt .back.rt {
-    left: auto;
-    right: 0;
+    left: 0;
+    right: auto;
 }
 .slidepopup .tt .back.rt .ico {
-    background-image: url(../img/arr-r.png);
+    background-image: url(../img/arr-l.png);
     left: auto;
     right: 50%;
     top: 50%;

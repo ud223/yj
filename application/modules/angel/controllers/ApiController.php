@@ -58,15 +58,14 @@ class Angel_ApiController extends Angel_Controller_Action {
 //                }
 //            }
             }
-
         }
-        $this->_helper->json(array('data' => $condition, 'code' => 0)); exit;
+
         if (!$sort) {
             $sort = false;
         }
 
         $paginator = $teacherModel->getByAndSort(true, $condition, $sort);
-
+        $this->_helper->json(array('data' => $condition, 'code' => 0)); exit;
         $paginator->setItemCountPerPage(100);
         $paginator->setCurrentPageNumber(1);
 

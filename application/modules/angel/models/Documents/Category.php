@@ -6,7 +6,6 @@ use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
 
 /** @ODM\Document */
 class Category extends AbstractDocument {
-
     /** @ODM\String */
     protected $name;
 
@@ -24,5 +23,4 @@ class Category extends AbstractDocument {
 
     /** @ODM\Int */
     protected $view = 0;
-
 }

@@ -114,13 +114,13 @@
                     <div  style="float:left" >
                         <input id="<?php echo $region->id ?>" type="checkbox" name="region[]" value="<?php echo $region->id ?>"
                         <?php
-//                            foreach ($this->model->region as $r) {
-//                                if ($region->id == $r->id) {
-//                                    echo "checked='checked'";
-//
-//                                    break;
-//                                }
-//                            }
+                            foreach ($this->model->region as $r) {
+                                if ($region->id == $r->id) {
+                                    echo "checked='checked'";
+
+                                    break;
+                                }
+                            }
                         ?>
                         /> <label class="marginright10px" for="<?php echo $region->id ?>"><?php echo $region->name ?></label>
                     </div>

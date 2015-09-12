@@ -99,7 +99,7 @@ class Angel_ApiController extends Angel_Controller_Action {
 
                         $category_text = $category_text . $category->name;
                     }
-//                }
+                }
 
                 $teacherList[] = array("id"=>$p->id, "openid"=>$p->openid, "nickname"=>$p->nickname, "sex"=>$p->sex, "headimgurl"=>$p->headimgurl, "name"=>$p->name, "score"=>$p->teacher_score, "photo"=>$path, "price"=>$p->price, "category"=>$category_text);
             }

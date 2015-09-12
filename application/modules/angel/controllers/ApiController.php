@@ -74,7 +74,7 @@ class Angel_ApiController extends Angel_Controller_Action {
             $page_count = $paginator->count();
 
             $teacherList = array();
-//            $this->_helper->json(array('data' => $condition, 'code' => 0)); exit;
+
             foreach ($paginator as $p) {
                 $path = "";
                 $category_text = "";
@@ -100,7 +100,7 @@ class Angel_ApiController extends Angel_Controller_Action {
                         $category_text = $category_text . $category->name;
                     }
                 }
-
+                $this->_helper->json(array('data' => $p->name, 'code' => 0)); exit;
                 $teacherList[] = array("id"=>$p->id, "openid"=>$p->openid, "nickname"=>$p->nickname, "sex"=>$p->sex, "headimgurl"=>$p->headimgurl, "name"=>$p->name, "score"=>$p->teacher_score, "photo"=>$path, "price"=>$p->price, "category"=>$category_text);
             }
 

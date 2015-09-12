@@ -304,7 +304,7 @@ class Angel_ManageController extends Angel_Controller_Action {
 
                 $this->view->model = $result;
             }
-            
+
             $lessons = $lessonModel->getAll(false);
             $categorys = $categoryModel->getAll(false);
             $regions = $regionModel->getAll(false);
@@ -313,7 +313,6 @@ class Angel_ManageController extends Angel_Controller_Action {
             $this->view->categorys = $categorys;
             $this->view->lessons = $lessons;
             $this->view->title = "编辑老师信息";
-            exit("haha");
         }
     }
 

@@ -304,7 +304,7 @@ class Angel_ManageController extends Angel_Controller_Action {
 
                 $this->view->model = $result;
 
-                var_dump($result->category); exit;
+//                echo($result->category[0]->name); exit;
             }
 
             $lessons = $lessonModel->getAll(false);

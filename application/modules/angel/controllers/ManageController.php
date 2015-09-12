@@ -275,7 +275,7 @@ class Angel_ManageController extends Angel_Controller_Action {
             $photoModel = $this->getModel('photo');
 
             $id = $this->getParam('id');
-
+            exit($id);
             if ($id) {
                 $result = $teacherModel->getById($id);
 

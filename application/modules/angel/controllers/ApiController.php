@@ -60,7 +60,7 @@ class Angel_ApiController extends Angel_Controller_Action {
             }
 
         }
-//        $this->_helper->json(array('data' => $condition, 'code' => 0)); exit;
+        $this->_helper->json(array('data' => $condition, 'code' => 0)); exit;
         if (!$sort) {
             $sort = false;
         }

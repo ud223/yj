@@ -303,6 +303,8 @@ class Angel_ManageController extends Angel_Controller_Action {
                 }
 
                 $this->view->model = $result;
+
+                var_dump($result->category); exit;
             }
 
             $lessons = $lessonModel->getAll(false);

@@ -74,7 +74,7 @@ class Angel_ApiController extends Angel_Controller_Action {
             $page_count = $paginator->count();
 
             $teacherList = array();
-            $this->_helper->json(array('data' => $condition, 'code' => 0)); exit;
+//            $this->_helper->json(array('data' => $condition, 'code' => 0)); exit;
             foreach ($paginator as $p) {
                 $path = "";
                 $category_text = "";

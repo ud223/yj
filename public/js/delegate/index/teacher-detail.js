@@ -31,3 +31,11 @@ function initSubmitOrder() {
         }
     });
 }
+
+function toChooseTimeClick() {
+    $(".rtselectedtime").find(".t2").tapA(function() {
+        var url = location.href;
+
+        location.href = "#teacher-time";
+    })
+}

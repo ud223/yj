@@ -14,6 +14,8 @@ function initBtn() {
     initTimeClick();
 
     initSubmitOrder();
+
+    toChooseTimeClick();
 }
 
 function initInput() {

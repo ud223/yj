@@ -140,13 +140,13 @@
                     <div  style="float:left" >
                         <input id="<?php echo $category->id ?>" type="checkbox" name="category[]" value="<?php echo $category->id ?>"
                             <?php
-//                                foreach ($this->model->category as $p) {
-//                                    if ($category->id == $p->id) {
-//                                        echo "checked='checked'";
-//
-//                                        break;
-//                                    }
-//                                }
+                                foreach ($this->model->category as $p) {
+                                    if ($category->id == $p->id) {
+                                        echo "checked='checked'";
+
+                                        break;
+                                    }
+                                }
                             ?>
                         /> <label class="marginright10px" for="<?php echo $category->id ?>"><?php echo $category->name ?></label>
                     </div>

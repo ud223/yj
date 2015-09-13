@@ -133,16 +133,16 @@
         </div>
     </div>
 
-    <div style="padding:0 15px;">授课区域</div>
     <div class="row cd-slideoutbtn" id="pp-change-region-btn" rel="#pp-change-region">
+        <span class="tt">授课区域</span>
         <div class="holder arr">
-            <span id="my-region">
+            <span id="my-region" style="font-size:10px;color:#aaa;">
                 <?php
                 $region_text = "";
 
                 foreach ($this->model->region as $region) {
                     if ($region_text != "") {
-                        $region_text = $region_text . " / ";
+                        $region_text = $region_text . ",";
                     }
 
                     $region_text = $region_text . $region->name;
@@ -153,18 +153,16 @@
             <img src="/img/arr-r.png" class="icoin"/>
         </div>
     </div>
-    <div class="row">
-        <span class="tt">授课类别</span>
-    </div>
     <div class="row cd-slideoutbtn" id="pp-change-category-btn" rel="#pp-change-category">
+        <span class="tt">授课类别</span>
         <div class="holder arr">
-            <span id="my-category">
+            <span id="my-category" style="font-size:10px;color:#aaa;">
                 <?php
                 $category_text = "";
 
                 foreach ($this->model->category as $category) {
                     if ($category_text != "") {
-                        $category_text = $category_text . " / ";
+                        $category_text = $category_text . ",";
                     }
 
                     $category_text = $category_text . $category->name;
@@ -195,12 +193,10 @@
         </div>
 
     </div>
-    <div class="row">
-        <span class="tt">个人介绍</span>
-    </div>
     <div class="row auto cd-slideoutbtn" id="pp-change-description-btn" rel="#pp-change-description">
+        <span class="tt">个人介绍</span>
         <div class="holder arr">
-            <span id="my-description"><?php echo $this->model->description ?></span>
+            <span id="my-description" style="font-size:10px;color:#aaa;"><?php echo $this->model->description ?></span>
             <img src="/img/arr-r.png" class="icoin"/>
         </div>
     </div>
@@ -276,7 +272,8 @@
     <div class="tt">更改出生日期<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
     <div class="blackrowgall">
         <div class="row">
-            <input placeholder="请填写出生日期" id="birthday" name="birthday" value="<?php echo $this->model->birthday ?>"
+            <span class="tt" style="z-index:0;background:transparent;font-size:16px;">点击填写</span>
+            <input id="birthday" name="birthday" value="<?php echo $this->model->birthday ?>"
                    type="date" class="holder"/>
         </div>
     </div>

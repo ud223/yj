@@ -58,9 +58,8 @@ class Angel_ApiController extends Angel_Controller_Action {
 //                }
 //            }
             }
-
         }
-//        $this->_helper->json(array('data' => $condition, 'code' => 0)); exit;
+
         if (!$sort) {
             $sort = false;
         }
@@ -91,7 +90,7 @@ class Angel_ApiController extends Angel_Controller_Action {
                         // 图片被删除的情况
                     }
                 }
-
+//                $this->_helper->json(array('data' => count($p->category), 'code' => 0));
                 if (count($p->category)) {
                     foreach ($p->category as $category) {
                         if ($category_text != "") {
@@ -102,7 +101,7 @@ class Angel_ApiController extends Angel_Controller_Action {
                     }
                 }
 
-                $teacherList[] = array("id"=>$p->id, "openid"=>$p->openid, "nickname"=>$p->nickname, "sex"=>$p->sex, "city"=>$p->city, "headimgurl"=>$p->headimgurl, "name"=>$p->name, "score"=>$p->teacher_score, "photo"=>$path, "price"=>$p->price, "category"=>$category_text);
+                $teacherList[] = array("id"=>$p->id, "openid"=>$p->openid, "nickname"=>$p->nickname, "sex"=>$p->sex, "headimgurl"=>$p->headimgurl, "name"=>$p->name, "score"=>$p->teacher_score, "photo"=>$path, "price"=>$p->price, "category"=>$category_text);
             }
 
             $this->_helper->json(array('data' => $teacherList, "current_page_no"=>$current_page_no, "page_count"=>$page_count, 'code' => 200));

@@ -40,7 +40,15 @@
     <div class="row actbtn cd-slideoutbtn my-intro-trigger" id="pp-my-intro-btn" rel="#pp-my-intro">
         <span class="tt">个人介绍</span>
         <div class="holder arr">
-            <span id="my-description" class="lab-txt"><?php echo $this->model->description ?></span>
+            <span id="my-description" class="lab-txt">
+                <?php
+                    if (strlen($this->model->description ) > 31) {
+                        echo substr($this->model->description, 0, 30) . "...";
+                    }
+                    else {
+                        echo $this->model->description;
+                    }
+                ?></span>
             <img src="/img/arr-r.png" class="icoin" />
         </div>
     </div>

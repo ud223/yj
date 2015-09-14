@@ -60,7 +60,9 @@ function                                                                        
     //$("#edit-addr").val(text);
     $("#address-view").html(text);
 
-    $("#pp-change-addr").find(".cd-slidepopupback").tap();
+    //$("#pp-change-addr").find(".cd-slidepopupback").tap();
+
+    closePopup($("#pp-change-addr").find('.cd-slidepopupback'));
 }
 
 function setAddressList(response) {
@@ -155,7 +157,9 @@ function validPhoneCode() {
 
     $("#customer-phone").html($("#phone-num").val());
 
-    $("#pp-change-tel").find(".cd-slidepopupback").tap();
+    //$("#pp-change-tel").find(".cd-slidepopupback").tap();
+
+    closePopup($("#pp-change-tel").find('.cd-slidepopupback'));
 }
 
 //----------选择日期和时间段-----------------------------------------------------
@@ -268,7 +272,9 @@ function acceptTime() {
 
         $("#select-timespan").show();
 
-        $("#pp-change-time").find(".cd-slidepopupback").tap();
+        //$("#pp-change-time").find(".cd-slidepopupback").tap();
+
+        closePopup($("#pp-change-time").find('.cd-slidepopupback'));
     }
 }
 

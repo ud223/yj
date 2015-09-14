@@ -142,13 +142,18 @@
 
                 foreach ($this->model->region as $region) {
                     if ($region_text != "") {
-                        $region_text = $region_text . ",";
+                        $region_text = $region_text . " / ";
                     }
 
                     $region_text = $region_text . $region->name;
                 }
 
-                echo $region_text;
+                if (strlen($region_text) > 46) {
+                    echo substr($region_text, 0, 45) . '...';
+                }
+                else {
+                    echo $region_text;
+                }
                 ?></span>
             <img src="/img/arr-r.png" class="icoin"/>
         </div>
@@ -162,13 +167,18 @@
 
                 foreach ($this->model->category as $category) {
                     if ($category_text != "") {
-                        $category_text = $category_text . ",";
+                        $category_text = $category_text . " / ";
                     }
 
                     $category_text = $category_text . $category->name;
                 }
 
-                echo $category_text;
+                if (strlen($category_text) > 31) {
+                    echo substr($category_text, 0, 30) . '...';
+                }
+                else {
+                    echo $category_text;
+                }
                 ?></span>
             <img src="/img/arr-r.png" class="icoin"/>
         </div>

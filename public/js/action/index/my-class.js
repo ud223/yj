@@ -67,5 +67,7 @@ function submitLater(opt, lesson_id) {
         $("#is-join-lesson").attr("opt", "1");
     }
 
-    $("#pp-show-cld").find('.cd-slidepopupback').tap();
+    //$("#pp-show-cld").find('.cd-slidepopupback').tap();
+
+    closePopup($("#pp-show-cld").find('.cd-slidepopupback'));
 }

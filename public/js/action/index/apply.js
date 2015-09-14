@@ -15,7 +15,10 @@ function saveName() {
 function setName(response) {
     $("#my-name").html(response.data)
 
-    $("#pp-change-name").find('.cd-slidepopupback').tap();
+    //$("#pp-change-name").find('.cd-slidepopupback').tapA();
+    //$('.cd-slidepopupback').tapA();
+
+    closePopup($("#pp-change-name").find('.cd-slidepopupback'));
 }
 
 //-----------------------手机短信验证------------------------------------------
@@ -83,7 +86,9 @@ function validPhoneCode() {
 
     modifyValie(user_id, model, key, value, null);
 
-    $("#pp-change-tel").find('.cd-slidepopupback').tap();
+    //$("#pp-change-tel").find('.cd-slidepopupback').tapA();
+
+    closePopup($("#pp-change-tel").find('.cd-slidepopupback'));
 }
 //------------设置性别------------------------------------------
 
@@ -104,7 +109,9 @@ function setSex(response) {
 
     $("#my-sex").html(sex_text)
 
-    $("#pp-change-sex").find('.cd-slidepopupback').tap();
+    //$("#pp-change-sex").find('.cd-slidepopupback').tapA();
+
+    closePopup($("#pp-change-sex").find('.cd-slidepopupback'));
 }
 
 //------------设置出生日期------------------------------------------
@@ -142,7 +149,9 @@ function setBirthday(response) {
 
     $("#my-birthday").html(tmp_date[0] + "年" + tmp_month +"月"+ tmp_day +"日");
 
-    $("#pp-change-birthday").find('.cd-slidepopupback').tap();
+    //$("#pp-change-birthday").find('.cd-slidepopupback').tapA();
+
+    closePopup($("#pp-change-birthday").find('.cd-slidepopupback'));
 }
 
 //------------设置籍贯------------------------------------------
@@ -157,7 +166,9 @@ function savePlace() {
 function setPlace(response) {
     $("#my-place").html(response.data);
 
-    $("#pp-change-place").find('.cd-slidepopupback').tap();
+    //$("#pp-change-place").find('.cd-slidepopupback').tapA();
+
+    closePopup($("#pp-change-place").find('.cd-slidepopupback'));
 }
 
 //------------设置学历------------------------------------------
@@ -178,7 +189,9 @@ function saveEducational() {
 function setEducational(response) {
     $("#my-educational").html(response.data);
 
-    $("#pp-change-educational").find('.cd-slidepopupback').tap();
+    //$("#pp-change-educational").find('.cd-slidepopupback').tapA();
+
+    closePopup($("#pp-change-educational").find('.cd-slidepopupback'));
 }
 
 //------------设置身份证------------------------------------------
@@ -205,7 +218,9 @@ function saveCode() {
 function setCode(response) {
     $("#my-code").html(response.data);
 
-    $("#pp-change-code").find('.cd-slidepopupback').tap();
+    //$("#pp-change-code").find('.cd-slidepopupback').tapA();
+
+    closePopup($("#pp-change-code").find('.cd-slidepopupback'));
 }
 
 //-----------设置邮箱------------------------------
@@ -226,7 +241,9 @@ function saveEmail() {
 function seEmail(response) {
     $("#my-email").html(response.data);
 
-    $("#pp-change-email").find('.cd-slidepopupback').tap();
+    //$("#pp-change-email").find('.cd-slidepopupback').tapA();
+
+    closePopup($("#pp-change-email").find('.cd-slidepopupback'));
 }
 
 //-----------设置qq------------------------------
@@ -241,7 +258,9 @@ function saveQQ() {
 function setQQ(response) {
     $("#my-qq").html(response.data);
 
-    $("#pp-change-qq").find('.cd-slidepopupback').tap();
+    //$("#pp-change-qq").find('.cd-slidepopupback').tapA();
+
+    closePopup($("#pp-change-qq").find('.cd-slidepopupback'));
 }
 
 //-----------设置微信------------------------------
@@ -256,7 +275,9 @@ function saveWeChat() {
 function setWeChat(response) {
     $("#my-wechat").html(response.data);
 
-    $("#pp-change-wechat").find('.cd-slidepopupback').tap();
+    //$("#pp-change-wechat").find('.cd-slidepopupback').tapA();
+
+    closePopup($("#pp-change-wechat").find('.cd-slidepopupback'));
 }
 
 //-----------设置所在城市------------------------------
@@ -271,7 +292,9 @@ function saveLocation() {
 function setLocation(response) {
     $("#my-location").html(response.data);
 
-    $("#pp-change-location").find('.cd-slidepopupback').tap();
+    //$("#pp-change-location").find('.cd-slidepopupback').tapA();
+
+    closePopup($("#pp-change-location").find('.cd-slidepopupback'));
 }
 
 //---------------------设置授课区域------------------------
@@ -291,9 +314,16 @@ function saveRegion() {
 }
 
 function setRegion(response) {
-    $("#my-region").html(response.data);
+    if (response.data.length > 26) {
+        $("#my-region").html(response.data.substr(0, 25) + "...");
+    }
+    else {
+        $("#my-region").html(response.data);
+    }
 
-    $("#pp-change-region").find('.cd-slidepopupback').tap();
+    //$("#pp-change-region").find('.cd-slidepopupback').tapA();
+
+    closePopup($("#pp-change-region").find('.cd-slidepopupback'));
 }
 
 //---------------------设置授课类别------------------------
@@ -313,9 +343,17 @@ function saveCategory() {
 }
 
 function setCategory(response) {
-    $("#my-category").html(response.data);
+    if (response.data.length > 20) {
+        $("#my-category").html(response.data.substr(0, 19) + "...");
+    }
+    else {
+        $("#my-category").html(response.data);
+    }
+    //$("#my-category").html(response.data);
 
-    $("#pp-change-category").find('.cd-slidepopupback').tap();
+    //$("#pp-change-category").find('.cd-slidepopupback').tapA();
+
+    closePopup($("#pp-change-category").find('.cd-slidepopupback'));
 }
 
 //---------------------设置银行------------------------
@@ -337,7 +375,9 @@ function saveBank() {
 function setBank(response) {
     $("#my-bank").html(response.data);
 
-    $("#pp-change-bank").find('.cd-slidepopupback').tap();
+    //$("#pp-change-bank").find('.cd-slidepopupback').tapA();
+
+    closePopup($("#pp-change-bank").find('.cd-slidepopupback'));
 }
 
 //---------------------设置银行卡好------------------------
@@ -359,7 +399,9 @@ function saveBankCode() {
 function setBankCode(response) {
     $("#my-bank_code").html(response.data);
 
-    $("#pp-change-bank_code").find('.cd-slidepopupback').tap();
+    //$("#pp-change-bank_code").find('.cd-slidepopupback').tapA();
+
+    closePopup($("#pp-change-bank_code").find('.cd-slidepopupback'));
 }
 
 
@@ -376,5 +418,7 @@ function saveDescription() {
 function setDescription(response) {
     $("#my-description").html(response.data);
 
-    $("#pp-change-description").find('.cd-slidepopupback').tap();
+    //$("#pp-change-description").find('.cd-slidepopupback').tapA();
+
+    closePopup($("#pp-change-description").find('.cd-slidepopupback'));
 }

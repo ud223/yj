@@ -348,3 +348,10 @@ $.extend({
         });
     }
 });
+
+function closePopup(popup) {
+    var $this = $(popup);
+    var container = $this.closest('.cd-slidepopup');
+    container.addClass('hide').removeClass('show');
+    $('html').removeClass('html-no-scroll');
+}

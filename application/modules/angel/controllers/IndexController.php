@@ -34,7 +34,9 @@ class Angel_IndexController extends Angel_Controller_Action {
         'reg-user',
         'clear',
         'menu-create',
-        'menu-delete'
+        'menu-delete',
+        'order-pay',
+        'order-notify'
     );
 
     public function init() {
@@ -448,6 +450,22 @@ class Angel_IndexController extends Angel_Controller_Action {
         $result = $applicaitonModel->addApplication($customer);
 
         $this->view->user_id = $id;
+    }
+
+    public function orderPayAction() {
+        $orderModel = $this->getModel('order');
+
+        $id = $this->getParam('id');
+
+        if ($id) {
+            $order = $orderModel->getById($id);
+
+            $this->view->model = $order;
+        }
+    }
+
+    public function orderNotifyAction() {
+
     }
 
     /***************************************************************

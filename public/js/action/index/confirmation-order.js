@@ -519,7 +519,7 @@ function submitOrder() {
     var customer_name = $("#customer_name").val();
     var phone = $("#customer-phone").html();
     var address = $("#address-view").html();
-    var address_detail = $("#address-detail-view").val();
+    var address_detail = $("#address-detail").val();
     var rundate = $("#select_date").val();
     var hour = $("#hour").html();
     var time = $("#time_range").val();

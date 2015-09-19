@@ -41,7 +41,7 @@
 
     <div class="row">
         <span class="tt">门牌号</span>
-        <input id="address-detail" placeholder="门牌号或其他详细地址" type="text" class="holder" />
+        <input id="address-detail" placeholder="门牌号或其他详细地址" type="text" class="holder" value="111" />
     </div>
 </div>
 
@@ -53,7 +53,7 @@
     <div class="row actbtn cd-slideoutbtn" rel="#pp-change-tel">
         <span class="tt">手机</span>
         <div class="holder arr">
-            <span id="customer-phone"><?php echo $this->model->phone ?></span></span>
+            <span id="customer-phone"><?php echo $this->model->customer->phone ?></span></span>
             <img src="/img/arr-r.png" class="icoin" />
         </div>
     </div>

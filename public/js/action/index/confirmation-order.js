@@ -388,7 +388,11 @@ function setTimeSelected(time) {
 }
 
 function toPay() {
-    location.href = "/order/pay/"+ order_id;
+    var url = '/order/pay/' + order_id;
+
+    alert(url);
+
+    location.href = url;
 }
 
 function chooseDay(week) {

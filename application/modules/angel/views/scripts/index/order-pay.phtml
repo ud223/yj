@@ -1,4 +1,5 @@
 <?php
+header("Content-Type: text/html;charset=utf-8");
 ini_set('date.timezone','Asia/Shanghai');
 
 
@@ -23,7 +24,7 @@ function printf_info($data)
 //①、获取用户openid
 $tools = new JsApiPay();
 
-$openId = $this->model->customer->openid;//$tools->GetOpenid();
+$openId = $this->model->customer->openid;//$tools->GetOpenid();"ovaVFs0D8661cy-w7C8o61Yd7p08";//
 
 //②、统一下单
 $input = new WxPayUnifiedOrder();
@@ -32,14 +33,10 @@ $input->SetAttach("");
 
 $tmp = WxPayConfig::MCHID . $this->model->id;
 
-//$strLen = strlen($tmp);
-//echo $strLen . '|';
-//exit($tmp);
-
 $out_trade_no = substr($tmp, 0, 32);
 
 $input->SetOut_trade_no($out_trade_no);
-$input->SetTotal_fee("1");//$this->model->pay_amount
+$input->SetTotal_fee($this->model->pay_amount);//$this->model->pay_amount
 
 $input->SetTime_start(date("YmdHis"));
 $input->SetTime_expire(date("YmdHis", time() + 600));
@@ -128,42 +125,8 @@ $editAddress = $tools->GetEditAddressParameters();
         }
     };
 </script>
-<!DOCTYPE html>
-<html lang="zh-cn">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>瑜伽去</title>
-
-    <!-- Bootstrap -->
-    <link href="/css/yj.global.css" rel="stylesheet">
-    <script type="text/javascript" src="/js/jquery-1.11.2.js"></script>
-    <script type="text/javascript" src="/js/jquery-mobile.js"></script>
-    <script type="text/javascript" src="/js/tools/wx.js"></script>
-</head>
-
-<body ontouchstart="">
 <br />
 <font color="#9ACD32"><b>该笔订单支付金额为<span style="color:#f00;font-size:50px"><?php echo $this->model->pay_amount ?>元</span>钱</b></font><br/><br/>
 <div align="center">
     <button style="width:210px; height:50px; border-radius: 15px;background-color:#FE6714; border:0px #FE6714 solid; cursor: pointer;  color:white;  font-size:16px;" type="button" onclick="callpay()" >立即支付</button>
 </div>
-<script type="text/javascript" src="/js/yj.global.js"></script>
-<script type="text/javascript">
-    var appid = "wx4f812fb76adfa3ff";
-
-    $(document).ready(function() {
-        if (validEnvironment() == 0 && page_type != 3) {
-            location.href = "/about";
-        }
-
-        if (page_type == 1) {
-            userLogin();
-        }
-    });
-</script>
-</body>
-
-</html>

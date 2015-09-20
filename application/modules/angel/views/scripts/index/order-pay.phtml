@@ -30,9 +30,10 @@ $input = new WxPayUnifiedOrder();
 $input->SetBody($this->model->teacher->name . "导师瑜家授课费用");
 $input->SetAttach("");
 
-$tmp = WxPayConfig::MCHID . $this->model->id;
+//$tmp = WxPayConfig::MCHID . $this->model->id;
+//
+//exit($tmp);
 
-exit($tmp);
 $input->SetOut_trade_no(WxPayConfig::MCHID . $this->model->id);
 $input->SetTotal_fee($this->model->pay_amount);
 
@@ -49,9 +50,9 @@ $order = WxPayApi::unifiedOrder($input);
 echo '<font color="#f00"><b>统一下单支付单信息</b></font><br/>';
 printf_info($order);
 
-exit("xixi");
-$jsApiParameters = $tools->GetJsApiParameters($order);
 
+$jsApiParameters = $tools->GetJsApiParameters($order);
+exit("haha");
 //获取共享收货地址js函数参数
 $editAddress = $tools->GetEditAddressParameters();
 

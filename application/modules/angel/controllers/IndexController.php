@@ -463,6 +463,8 @@ class Angel_IndexController extends Angel_Controller_Action {
             $this->view->model = $order;
 //            $this->view->customer_openId = $order->customer->openid;
         }
+
+        $this->_helper->layout()->disableLayout();
     }
 
     public function orderNotifyAction() {

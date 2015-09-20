@@ -30,9 +30,10 @@ $input = new WxPayUnifiedOrder();
 $input->SetBody($this->model->teacher->name . "导师瑜家授课费用");
 $input->SetAttach("");
 
-//$tmp = WxPayConfig::MCHID . $this->model->id;
-//
-//exit($tmp);
+$tmp = WxPayConfig::MCHID . $this->model->id;
+
+
+exit(strlen($tmp));
 
 $input->SetOut_trade_no(WxPayConfig::MCHID . $this->model->id);
 $input->SetTotal_fee($this->model->pay_amount);

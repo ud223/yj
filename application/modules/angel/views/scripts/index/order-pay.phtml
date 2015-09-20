@@ -32,11 +32,13 @@ $input->SetAttach("");
 
 $tmp = WxPayConfig::MCHID . $this->model->id;
 
-$strLen = strlen($tmp);
-echo $strLen . '|';
-exit($tmp);
+//$strLen = strlen($tmp);
+//echo $strLen . '|';
+//exit($tmp);
 
-$input->SetOut_trade_no(WxPayConfig::MCHID . $this->model->id);
+$out_trade_no = substr($tmp, 0, 32);
+
+$input->SetOut_trade_no($out_trade_no);
 $input->SetTotal_fee($this->model->pay_amount);
 
 $input->SetTime_start(date("YmdHis"));

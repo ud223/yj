@@ -388,7 +388,7 @@ function setTimeSelected(time) {
 }
 
 function toPay() {
-    var url = 'http://www.yujiaqu.com/order/pay/' + order_id;
+    var url = '/order/pay/' + order_id + '?showwxpaytitle=1';
 
     alert(url);
 

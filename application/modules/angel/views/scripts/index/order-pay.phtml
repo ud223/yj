@@ -19,11 +19,11 @@ function printf_info($data)
         echo "<font color='#00ff55;'>$key</font> : $value <br/>";
     }
 }
-
+exit("xixixixi");
 //①、获取用户openid
 $tools = new JsApiPay();
 $openId = $tools->GetOpenid();
-exit("xixixixi");
+
 //②、统一下单
 $input = new WxPayUnifiedOrder();
 $input->SetBody($this->model->teacher->name . "导师瑜家授课费用");

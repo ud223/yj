@@ -22,9 +22,9 @@ function printf_info($data)
 
 //①、获取用户openid
 $tools = new JsApiPay();
-exit("hahaha");
-$openId = $tools->GetOpenid();
 
+$openId = $tools->GetOpenid();
+exit("xixixi");
 //②、统一下单
 $input = new WxPayUnifiedOrder();
 $input->SetBody($this->model->teacher->name . "导师瑜家授课费用");

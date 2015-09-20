@@ -462,8 +462,6 @@ class Angel_IndexController extends Angel_Controller_Action {
 
             $this->view->model = $order;
         }
-
-        exit("xixi");
     }
 
     public function orderNotifyAction() {

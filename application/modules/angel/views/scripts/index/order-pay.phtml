@@ -2,12 +2,12 @@
 ini_set('date.timezone','Asia/Shanghai');
 
 
-exit("haha");
+
 //error_reporting(E_ERROR);
 require_once '/var/www/yj/public/lib/WxPay.Api.php';
 require_once '/var/www/yj/public/WxPay.JsApiPay.php';
 require_once '/var/www/yj/public/log.php';
-
+exit("haha");
 //初始化日志
 $logHandler= new CLogFileHandler("/var/www/yj/public/logs/".date('Y-m-d').'.log');
 $log = Log::Init($logHandler, 15);

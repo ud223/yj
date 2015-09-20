@@ -461,6 +461,7 @@ class Angel_IndexController extends Angel_Controller_Action {
             $order = $orderModel->getById($id);
 
             $this->view->model = $order;
+//            $this->view->customer_openId = $order->customer->openid;
         }
     }
 

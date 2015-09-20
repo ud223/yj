@@ -44,7 +44,6 @@ class JsApiPay
 		if (!isset($_GET['code'])){
 			//触发微信返回code码
 			$baseUrl = urlencode('http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].$_SERVER['QUERY_STRING']);
-            exit($baseUrl);
 			$url = $this->__CreateOauthUrlForCode($baseUrl);
 			Header("Location: $url");
 			exit();
@@ -55,7 +54,7 @@ class JsApiPay
 			return $openid;
 		}
 	}
-	
+
 	/**
 	 * 
 	 * 获取jsapi支付的参数

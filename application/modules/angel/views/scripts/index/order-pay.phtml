@@ -23,8 +23,8 @@ function printf_info($data)
 //①、获取用户openid
 $tools = new JsApiPay();
 
-//$openId = $tools->GetOpenid();
-
+$openId = $this->model->customer->openid;//$tools->GetOpenid();
+exit($openId);
 //②、统一下单
 $input = new WxPayUnifiedOrder();
 $input->SetBody($this->model->teacher->name . "导师瑜家授课费用");
@@ -36,7 +36,7 @@ $input->SetTime_expire(date("YmdHis", time() + 600));
 $input->SetGoods_tag("");
 $input->SetNotify_url("http://www.yujiaqu.com/order/notify/". $this->model->id);
 $input->SetTrade_type("JSAPI");
-$input->SetOpenid($this->model->customer->openid);
+$input->SetOpenid($openId);
 $order = WxPayApi::unifiedOrder($input);
 echo '<font color="#f00"><b>统一下单支付单信息</b></font><br/>';
 printf_info($order);

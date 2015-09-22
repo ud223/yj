@@ -2,6 +2,7 @@
 <style>
 </style>
 <script src="<?php echo $this->jsPath("tools/String.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("tools/pic.js"); ?>"></script>
 <script src="<?php echo $this->jsPath("action/manage/teacher-create.js"); ?>"></script>
 <script src="<?php echo $this->jsPath("api/customer.js"); ?>"></script>
 <script src="<?php echo $this->jsPath("entity/customer.js"); ?>"></script>
@@ -19,21 +20,33 @@
             <label>微信昵称：</label>
             <span class="span-nickname">暂未微信登录及指定用户</span>
         </div>
-        <div class="form-group">
-            <label>性别：</label>
-            <span class="span-sex">暂未微信登录及指定用户</span>
-        </div>
+<!--        <div class="form-group">-->
+<!--            <label>性别：</label>-->
+<!--            <span class="span-sex">暂未微信登录及指定用户</span>-->
+<!--        </div>-->
     </div>
     <div class="col-md-8">
-        <form role="form" method="post">
+        <form role="form" enctype="multipart/form-data" method="post">
             <input type="hidden" id="wxid" name="wxid">
             <input type="hidden" id="wxname" name="wxname">
-            <input type="hidden" id="wxsex" name="wxsex">
+<!--            <input type="hidden" id="wxsex" name="wxsex">-->
             <input type="hidden" id="wxcity" name="wxcity">
             <input type="hidden" id="wxheadimgurl" name="wxheadimgurl">
             <div class="form-group">
+                <label>头像：</label>
+                <img id="pre-image">
+                <input type="file" capture="camera" accept="image/*" id="upload-head-pic" name="upload-head-pic">
+            </div>
+            <div class="form-group">
                 <label>姓名：</label>
                 <input type="text" class="form-control" id="name" name="name" data-toggle="popover" value="" required="required" oninvalid="setCustomValidity('必须填写老师姓名!');" oninput="setCustomValidity('');">
+            </div>
+            <div class="form-group">
+                <label>性别：</label>
+                <select id="sex" name="sex">
+                    <option value="1">男</option>
+                    <option value="2">女</option>
+                </select>
             </div>
             <div class="form-group">
                 <label>出生日期：</label>
@@ -49,7 +62,9 @@
             </div>
             <div class="form-group">
                 <label>证书：</label>
-                <input type="text" class="form-control" id="certificate" name="certificate" data-toggle="popover" value="" required="required" oninvalid="setCustomValidity('必须填写证书!');" oninput="setCustomValidity('');">
+<!--                <input type="text" class="form-control" id="certificate" name="certificate" data-toggle="popover" value="" required="required" oninvalid="setCustomValidity('必须填写证书!');" oninput="setCustomValidity('');">-->
+                <img id="pre-certificate-image">
+                <input type="file" capture="camera" accept="image/*" id="upload-certificate-pic" name="upload-certificate-pic">
             </div>
             <div class="form-group">
                 <label>联系电话：</label>
@@ -257,4 +272,27 @@
             }
         });
     })(jQuery);
+
+    document.getElementById('file').onchange = function(evt) {
+        // 如果浏览器不支持FileReader，则不处理
+        if (!window.FileReader) return;
+        var files = evt.target.files;
+
+        for (var i = 0, f; f = files[i]; i++) {
+            if (!f.type.match('image.*')) {
+                continue;
+            }
+
+            var reader = new FileReader();
+
+            reader.onload = (function(theFile) {
+                return function(e) {
+                    // img 元素
+                    document.getElementById('previewImage').src = e.target.result;
+                };
+            })(f);
+
+            reader.readAsDataURL(f);
+        }
+    }
 </script>

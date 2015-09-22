@@ -34,10 +34,10 @@ class Angel_Model_Customer extends Angel_Model_AbstractModel {
     }
 
 
-    public function saveWinXinUser($id, $openid, $nickname, $sex, $headimgurl) {
+    public function saveWinXinUser($id, $openid, $nickname, $headimgurl) {
         $data = array('openid' => $openid,
             'nickname' => $nickname,
-            'sex' => $sex,
+//            'sex' => $sex,
             'headimgurl' => $headimgurl);
 
         $result = $this->save($id, $data);

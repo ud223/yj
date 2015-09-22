@@ -78,3 +78,313 @@ Stack trace:
 #5 /var/www/yj/public/index.php(44): Zend_Application->run()
 #6 {main}
 2015-09-12T11:18:30+08:00 INFO (6): array
+2015-09-21T22:06:48+08:00 INFO (6): exception 'Zend_Controller_Action_Exception' with message 'Action "teacher" does not exist and was not trapped in __call()' in /var/www/yj/library/Zend/Controller/Action.php:485
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Action.php(518): Zend_Controller_Action->__call('teacherAction', Array)
+#1 /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php(308): Zend_Controller_Action->dispatch('teacherAction')
+#2 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#3 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#4 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#5 /var/www/yj/public/index.php(44): Zend_Application->run()
+#6 {main}
+2015-09-21T22:06:48+08:00 INFO (6): array
+2015-09-22T21:58:47+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T21:58:47+08:00 INFO (6): array
+2015-09-22T22:43:38+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:43:38+08:00 INFO (6): array
+2015-09-22T22:43:42+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:43:42+08:00 INFO (6): array
+2015-09-22T22:43:42+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:43:42+08:00 INFO (6): array
+2015-09-22T22:44:22+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:44:22+08:00 INFO (6): array
+2015-09-22T22:44:25+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (dff09c24-65ea-4a9c-1048-edb71690483b.jpg)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:44:25+08:00 INFO (6): array
+2015-09-22T22:44:25+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:44:25+08:00 INFO (6): array
+2015-09-22T22:44:25+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:44:25+08:00 INFO (6): array
+2015-09-22T22:44:44+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:44:44+08:00 INFO (6): array
+2015-09-22T22:44:44+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:44:44+08:00 INFO (6): array
+2015-09-22T22:44:47+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:44:47+08:00 INFO (6): array
+2015-09-22T22:44:47+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:44:47+08:00 INFO (6): array
+2015-09-22T22:44:47+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:44:47+08:00 INFO (6): array
+2015-09-22T22:47:53+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:47:53+08:00 INFO (6): array
+2015-09-22T22:47:53+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:47:53+08:00 INFO (6): array
+2015-09-22T22:47:55+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:47:55+08:00 INFO (6): array
+2015-09-22T22:47:55+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:47:55+08:00 INFO (6): array
+2015-09-22T22:47:55+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:47:55+08:00 INFO (6): array
+2015-09-22T22:47:57+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:47:57+08:00 INFO (6): array
+2015-09-22T22:48:16+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:48:16+08:00 INFO (6): array
+2015-09-22T22:49:26+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:49:26+08:00 INFO (6): array
+2015-09-22T22:49:29+08:00 INFO (6): exception 'MongoException' with message 'Invalid object ID' in /var/www/yj/library/Doctrine/ODM/MongoDB/Mapping/Types/IdType.php:39
+Stack trace:
+#0 /var/www/yj/library/Doctrine/ODM/MongoDB/Mapping/Types/IdType.php(39): MongoId->__construct('dff09c24-65ea-4...')
+#1 /var/www/yj/library/Doctrine/ODM/MongoDB/Mapping/ClassMetadataInfo.php(1266): Doctrine\ODM\MongoDB\Mapping\Types\IdType->convertToDatabaseValue('dff09c24-65ea-4...')
+#2 /var/www/yj/library/Doctrine/ODM/MongoDB/Persisters/DocumentPersister.php(969): Doctrine\ODM\MongoDB\Mapping\ClassMetadataInfo->getDatabaseIdentifierValue('dff09c24-65ea-4...')
+#3 /var/www/yj/library/Doctrine/ODM/MongoDB/Persisters/DocumentPersister.php(793): Doctrine\ODM\MongoDB\Persisters\DocumentPersister->prepareQueryElement('_id', 'dff09c24-65ea-4...', NULL, true)
+#4 /var/www/yj/library/Doctrine/ODM/MongoDB/Query/Expr.php(123): Doctrine\ODM\MongoDB\Persisters\DocumentPersister->prepareQuery(Array)
+#5 /var/www/yj/library/Doctrine/ODM/MongoDB/Query/Builder.php(233): Doctrine\ODM\MongoDB\Query\Expr->getQuery()
+#6 /var/www/yj/application/modules/angel/models/AbstractModel.php(118): Doctrine\ODM\MongoDB\Query\Builder->getQuery()
+#7 /var/www/yj/application/modules/angel/controllers/IndexController.php(264): Angel_Model_AbstractModel->getById('dff09c24-65ea-4...')
+#8 /var/www/yj/library/Zend/Controller/Action.php(516): Angel_IndexController->courseDetailAction()
+#9 /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php(308): Zend_Controller_Action->dispatch('courseDetailAct...')
+#10 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#11 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#12 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#13 /var/www/yj/public/index.php(44): Zend_Application->run()
+#14 {main}
+2015-09-22T22:49:29+08:00 INFO (6): array
+2015-09-22T22:49:43+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:49:43+08:00 INFO (6): array
+2015-09-22T22:49:45+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:49:45+08:00 INFO (6): array
+2015-09-22T22:51:50+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:51:50+08:00 INFO (6): array
+2015-09-22T22:51:52+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:51:52+08:00 INFO (6): array
+2015-09-22T22:51:52+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:51:52+08:00 INFO (6): array
+2015-09-22T22:51:52+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:51:52+08:00 INFO (6): array
+2015-09-22T22:51:52+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:51:52+08:00 INFO (6): array
+2015-09-22T22:51:52+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:51:52+08:00 INFO (6): array
+2015-09-22T22:51:59+08:00 INFO (6): exception 'Zend_Controller_Action_Exception' with message 'Action "photo" does not exist and was not trapped in __call()' in /var/www/yj/library/Zend/Controller/Action.php:485
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Action.php(518): Zend_Controller_Action->__call('photoAction', Array)
+#1 /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php(308): Zend_Controller_Action->dispatch('photoAction')
+#2 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#3 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#4 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#5 /var/www/yj/public/index.php(44): Zend_Application->run()
+#6 {main}
+2015-09-22T22:51:59+08:00 INFO (6): array
+2015-09-22T22:52:23+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:52:23+08:00 INFO (6): array
+2015-09-22T22:52:23+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:52:23+08:00 INFO (6): array
+2015-09-22T22:52:23+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:52:23+08:00 INFO (6): array
+2015-09-22T22:52:23+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:52:23+08:00 INFO (6): array
+2015-09-22T22:52:23+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-22T22:52:23+08:00 INFO (6): array

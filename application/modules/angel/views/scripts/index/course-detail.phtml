@@ -12,23 +12,15 @@
 <script type="text/javascript">
     // 此处是php代码渲染输出而成，一次性把该导师所有的图片路径都加载至此。
     var imgs_json = [
-
-                {
-                    url: '/photo/image/<?php echo $this->model->photo[0]->name . $this->model->photo[0]->type?>'
-                }
-       ];
-
-    <!--        --><?php //for ($i = 0; $i < count($this->model->photo); $i++):?>
-    <!--            --><?php //if($i > 0):?>
-    //                ,{
-    //                    url: '/photo/image/<?php //echo $this->model->photo[$i]->name . $this->model->photo[$i]->type?>//'
-    //                }
-    //            <?php //else: ?>
-    //                {
-    //                    url: '/photo/image/<?php //echo $this->model->photo[$i]->name . $this->model->photo[$i]->type?>//'
-    //                }
-    //            <?php //endif;?>
-    <!--        --><?php //endfor;?>
+        <?php $index = 0; ?>
+        <?php foreach($this->model->photo as $p) :?>
+            <?php if($index > 0) :?>
+                <?php echo "," ?>
+            <?php endif; ?>
+            { url: '/photo/image/<?php echo $p->name . $p->type ?>' }
+            <?php $index++; ?>
+        <?php endforeach; ?>
+    ];
 </script>
 
 <div class="p09-gallery" style="background-image:url(/photo/image/<?php echo $this->model->photo[0]->name . $this->model->photo[0]->type?>);"></div>

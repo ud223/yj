@@ -140,6 +140,14 @@ class DocumentsUserInfoHydrator implements HydratorInterface
         }
 
         /** @Field(type="string") */
+        if (isset($data['head_pic'])) {
+            $value = $data['head_pic'];
+            $return = (string) $value;
+            $this->class->reflFields['head_pic']->setValue($document, $return);
+            $hydratedData['head_pic'] = $return;
+        }
+
+        /** @Field(type="string") */
         if (isset($data['birthday'])) {
             $value = $data['birthday'];
             $return = (string) $value;

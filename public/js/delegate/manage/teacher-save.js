@@ -24,3 +24,23 @@ function initBangCustomer() {
         loadCustomerList(1, name);
     });
 }
+
+function initHeadPic() {
+    var fileInput = document.getElementById('upload-head-pic');
+
+    fileInput.onchange = function() {
+        var file = fileInput.files[0];
+
+        ImageOpt(file, 'pre-image');
+    };
+}
+
+function initCertificatePic() {
+    var fileInput = document.getElementById('upload-certificate-pic');
+
+    fileInput.onchange = function() {
+        var file = fileInput.files[0];
+
+        ImageOpt(file, 'pre-certificate-image');
+    };
+}

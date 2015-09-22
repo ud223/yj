@@ -39,9 +39,15 @@
     </div>
 </div>
 <div class="mentor-intro-blk">
-    <img src="/img/female.png" class="usrgener">
-    <img src="/img/male.png" class="usrgener selected">
-    <img src="/img/user04.jpg" class="usrimg" />
+    <?php if ($this->model->sex == 1) : ?>
+        <img src="/img/female.png" class="usrgener selected">
+        <img src="/img/male.png" class="usrgener">
+    <?php else :?>
+        <img src="/img/female.png" class="usrgener">
+        <img src="/img/male.png" class="usrgener selected">
+    <?php endif; ?>
+<!--    <img src="/img/user04.jpg" class="usrimg" />-->
+    <img src="/photo/image/<?php echo $this->model->head_pic ?>" class="usrimg" />
 
     <div class="user-tt">
         <!--有认证就有 has_cert这个class-->

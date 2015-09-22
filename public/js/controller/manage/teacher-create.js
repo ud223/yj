@@ -18,5 +18,9 @@ function initBtn() {
 function initInput() {
     //初始化money样式输入框
     limit_money_input();
+
+    initHeadPic();
+
+    initCertificatePic();
 }
 

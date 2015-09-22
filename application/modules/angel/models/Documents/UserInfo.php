@@ -54,6 +54,9 @@ class UserInfo extends AbstractDocument {
     protected $name;
 
     /** @ODM\String */
+    protected $head_pic;
+
+    /** @ODM\String */
     protected $birthday;
 
     /** @ODM\String */

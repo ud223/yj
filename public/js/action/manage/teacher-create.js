@@ -164,3 +164,4 @@ function chooseCustomer(id, nickname, sex, openid) {
 
     $(".modal-close").click();
 }
+

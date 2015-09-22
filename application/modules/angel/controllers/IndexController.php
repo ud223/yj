@@ -173,7 +173,7 @@ class Angel_IndexController extends Angel_Controller_Action {
 
             $id = $customer->id;
 
-            $customerModel->saveWinXinUser($id, $openid, $nickname, $sex, $headimgurl);
+            $customerModel->saveWinXinUser($id, $openid, $nickname, $headimgurl);
 
             return $customer;
         }
@@ -461,10 +461,7 @@ class Angel_IndexController extends Angel_Controller_Action {
             $order = $orderModel->getById($id);
 
             $this->view->model = $order;
-//            $this->view->customer_openId = $order->customer->openid;
         }
-
-        $this->_helper->layout()->disableLayout();
     }
 
     public function orderNotifyAction() {

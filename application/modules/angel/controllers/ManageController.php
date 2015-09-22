@@ -48,12 +48,58 @@ class Angel_ManageController extends Angel_Controller_Action {
         $regionModel = $this->getModel('region');
 
         if ($this->request->isPost()) {
+            $headPic = "";
+//            var_dump($_FILES['upload-head-pic']); exit;
+            if(is_uploaded_file($_FILES['upload-head-pic']['tmp_name'])) {
+
+                $tmp_headPic_filename = '/tmp/'. $_FILES['upload-head-pic']['name'];
+                $tmp_headPic_path = $_FILES['upload-head-pic']['tmp_name'];
+
+                move_uploaded_file($tmp_headPic_path, $tmp_headPic_filename);
+
+                $img_head_pic = file_get_contents($tmp_headPic_filename);
+                $enHeadPic = base64_encode($img_head_pic);
+//                exit($enHeadPic);
+                $headPic = $this->saveFile($enHeadPic);
+
+                if ($headPic === 0) {
+                    $this->_redirect($this->view->url(array(), 'manage-result') . '?error=头像上传失败!'); exit;
+                }
+            }
+
+            $certificate = "";
+//            var_dump($_FILES['upload-certificate-pic']); exit;
+            if(is_uploaded_file($_FILES['upload-certificate-pic']['tmp_name'])) {
+
+                $tmp_certificatePic_filename = '/tmp/'. $_FILES['upload-certificate-pic']['name'];
+                $tmp_certificatePic_path = $_FILES['upload-certificate-pic']['tmp_name'];
+
+                move_uploaded_file($tmp_certificatePic_path, $tmp_certificatePic_filename);
+
+                $img_certificate_pic = file_get_contents($tmp_certificatePic_filename);
+                $enCertificatePic = base64_encode($img_certificate_pic);
+//                exit($enHeadPic);
+                $certificate = $this->saveFile($enCertificatePic);
+
+                if ($certificate === 0) {
+                    $this->_redirect($this->view->url(array(), 'manage-result') . '?error=证书上传失败!'); exit;
+                }
+            }
+            else {
+                $certificate = $this->getParam('tmp_certificate_pic');
+            }
+
+            if (!$certificate) {
+                $certificate = "";
+            }
+
             $wxid = $this->getParam('wxid');
             $name = $this->getParam('name');
+            $sex = $this->getParam('sex');
             $birthday = $this->getParam('birthday');
             $place = $this->getParam('place');
             $educational = $this->getParam('educational');
-            $certificate = $this->getParam('certificate');
+//            $certificate = $this->getParam('certificate');
             $phone = $this->getParam('phone');
             $code = $this->getParam('code');
             $email = $this->getParam('email');
@@ -124,10 +170,10 @@ class Angel_ManageController extends Angel_Controller_Action {
 
             try {
                 if ($wxid) {
-                    $result = $teacherModel->ModifyTeacher($wxid, $name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $years, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, 0, 0, $categorys, $regions, $experience, $price);
+                    $result = $teacherModel->ModifyTeacher($wxid, $headPic, $name, $sex, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $years, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, 0, 0, $categorys, $regions, $experience, $price);
                 }
                 else {
-                    $result = $teacherModel->addTeacher($name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $years, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $categorys, $regions, $experience, $price);
+                    $result = $teacherModel->addTeacher($headPic, $name, $sex, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $years, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $categorys, $regions, $experience, $price);
                 }
             }
             catch (Exception $e) {
@@ -161,15 +207,69 @@ class Angel_ManageController extends Angel_Controller_Action {
 
         if ($this->request->isPost()) {
             $result = 0;
+
+            $headPic = "";
+//            var_dump($_FILES['upload-head-pic']); exit;
+            if(is_uploaded_file($_FILES['upload-head-pic']['tmp_name'])) {
+
+                $tmp_headPic_filename = '/tmp/'. $_FILES['upload-head-pic']['name'];
+                $tmp_headPic_path = $_FILES['upload-head-pic']['tmp_name'];
+
+                move_uploaded_file($tmp_headPic_path, $tmp_headPic_filename);
+
+                $img_head_pic = file_get_contents($tmp_headPic_filename);
+                $enHeadPic = base64_encode($img_head_pic);
+//                exit($enHeadPic);
+                $headPic = $this->saveFile($enHeadPic);
+
+                if ($headPic === 0) {
+                    $this->_redirect($this->view->url(array(), 'manage-result') . '?error=头像上传失败!'); exit;
+                }
+            }
+            else {
+                $headPic = $this->getParam('tmp_head_pic');
+            }
+
+            if (!$headPic) {
+                $headPic = "";
+            }
+
+            $certificate = "";
+//            var_dump($_FILES['upload-certificate-pic']); exit;
+            if(is_uploaded_file($_FILES['upload-certificate-pic']['tmp_name'])) {
+
+                $tmp_certificatePic_filename = '/tmp/'. $_FILES['upload-certificate-pic']['name'];
+                $tmp_certificatePic_path = $_FILES['upload-certificate-pic']['tmp_name'];
+
+                move_uploaded_file($tmp_certificatePic_path, $tmp_certificatePic_filename);
+
+                $img_certificate_pic = file_get_contents($tmp_certificatePic_filename);
+                $enCertificatePic = base64_encode($img_certificate_pic);
+//                exit($enHeadPic);
+                $certificate = $this->saveFile($enCertificatePic);
+
+                if ($certificate === 0) {
+                    $this->_redirect($this->view->url(array(), 'manage-result') . '?error=证书上传失败!'); exit;
+                }
+            }
+            else {
+                $certificate = $this->getParam('tmp_certificate_pic');
+            }
+
+            if (!$certificate) {
+                $certificate = "";
+            }
+
             $wxid = $this->getParam('wxid');
 
             $id = $this->getParam('id');
             // POST METHOD
             $name = $this->getParam('name');
+            $sex = $this->getParam('sex');
             $birthday = $this->getParam('birthday');
             $place = $this->getParam('place');
             $educational = $this->getParam('educational');
-            $certificate = $this->getParam('certificate');
+//            $certificate = $this->getParam('certificate');
             $phone = $this->getParam('phone');
             $code = $this->getParam('code');
             $email = $this->getParam('email');
@@ -247,20 +347,20 @@ class Angel_ManageController extends Angel_Controller_Action {
                 if ($wxid) {
                     if ($result->openid) {
                         //将之前的老师数据迁移到微信用户号的数据中
-                        $result = $teacherModel->ModifyTeacher($wxid, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, $result->frozen, $result->delete, null, null, null, null);
+                        $result = $teacherModel->ModifyTeacher($wxid, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, $result->frozen, $result->delete, null, null, null, null);
 
                         $result = $teacherModel->returnToCustomer($result->id);
                     }
                     else {
                         //将之前的老师数据迁移到微信用户号的数据中
-                        $result = $teacherModel->ModifyTeacher($wxid, $name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $years, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $result->frozen, $result->delete, $categorys, $regions, $experience, $price);
+                        $result = $teacherModel->ModifyTeacher($wxid, $headPic, $name, $sex, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $years, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $result->frozen, $result->delete, $categorys, $regions, $experience, $price);
                     }
 
                     //--------------------这里涉及数据迁移的问题-----------------------------------
                     $teacherModel->deleteTeacher($id);
                 }
                 else {
-                    $result = $teacherModel->ModifyTeacher($id, $name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $years, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $result->frozen, $result->delete, $categorys, $regions, $experience, $price);
+                    $result = $teacherModel->ModifyTeacher($id, $headPic, $name, $sex, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $years, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $result->frozen, $result->delete, $categorys, $regions, $experience, $price);
                 }
             } catch (Exception $e) {
                 $result = false;
@@ -1364,5 +1464,170 @@ class Angel_ManageController extends Angel_Controller_Action {
 
         $this->view->title = "授课列表";
         $this->view->paginator = $paginator;
+    }
+    /**
+    +------------------------------------------------------------------------------
+     *                等比例压缩图片
+    +------------------------------------------------------------------------------
+     * @param String $src_imagename 源文件名        比如 “source.jpg”
+     * @param int    $maxwidth      压缩后最大宽度
+     * @param int    $maxheight     压缩后最大高度
+     * @param String $savename      保存的文件名    “d:save”
+     * @param String $filetype      保存文件的格式 比如 ”.jpg“
+    +------------------------------------------------------------------------------
+     */
+    function resizeImage($src_imagename,$maxwidth,$maxheight,$savename,$filetype) {
+        $im=imagecreatefromjpeg($src_imagename);
+        $current_width = imagesx($im);
+        $current_height = imagesy($im);
+
+        if(($maxwidth && $current_width > $maxwidth) || ($maxheight && $current_height > $maxheight)) {
+            if($maxwidth && $current_width>$maxwidth) {
+                $widthratio = $maxwidth/$current_width;
+                $resizewidth_tag = true;
+            }
+
+            if($maxheight && $current_height>$maxheight) {
+                $heightratio = $maxheight/$current_height;
+                $resizeheight_tag = true;
+            }
+
+            if($resizewidth_tag && $resizeheight_tag) {
+                if($widthratio<$heightratio)
+                    $ratio = $widthratio;
+                else
+                    $ratio = $heightratio;
+            }
+
+            if($resizewidth_tag && !$resizeheight_tag)
+                $ratio = $widthratio;
+            if($resizeheight_tag && !$resizewidth_tag)
+                $ratio = $heightratio;
+
+            $newwidth = $current_width * $ratio;
+            $newheight = $current_height * $ratio;
+
+            if(function_exists("imagecopyresampled")) {
+                $newim = imagecreatetruecolor($newwidth,$newheight);
+                imagecopyresampled($newim,$im,0,0,0,0,$newwidth,$newheight,$current_width,$current_height);
+            }
+            else {
+                $newim = imagecreate($newwidth,$newheight);
+                imagecopyresized($newim,$im,0,0,0,0,$newwidth,$newheight,$current_width,$current_height);
+            }
+
+            $savename = $savename.$filetype;
+            imagejpeg($newim,$savename);
+            imagedestroy($newim);
+        }
+        else {
+            $savename = $savename.$filetype;
+            imagejpeg($im,$savename);
+        }
+    }
+
+    public function saveFile($file) {
+        $base64 = $file;
+        $IMG = base64_decode( $base64 );
+
+        $filename = strtolower($this->create_guid());
+
+        $full_name = APPLICATION_PATH . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'public/photo/image/'. $filename . '.jpg';
+
+        file_put_contents($full_name, $IMG);
+        $type = '.jpg';
+        $return_file_name = "";
+
+        $return_file_name = $filename . $type;
+
+        $tmp_name = APPLICATION_PATH . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'public/photo/image/tmp_'. $filename;
+        $result_name = $filename .'_120'. $type;//jpg';//
+        $small_name = APPLICATION_PATH . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'public/photo/image/'. $result_name;
+
+        $code = 200;
+
+        try {
+            $this->resizeImage($full_name, 200, 200, $tmp_name, $type);
+
+            $this->cutImg($tmp_name . $type, $small_name, 120, 120);
+
+            unlink($tmp_name . $type) ;
+        }
+        catch (Exception $e) {
+            $code = 0;
+            $result_name = $e->getMessage();
+        }
+
+        if ($code == 0) {
+            return $code;
+        }
+        else {
+            return $return_file_name;
+        }
+    }
+
+    function cutImg($img, $new_path, $w,$h){        //要裁减的图片，宽度，高度
+        $s = imagecreatefromjpeg($img);            //这里以jpg图片为例，其他图片要修改这个方法名称，可以上网参考（就是后面那个后缀名不一样)
+
+        $w = imagesx($s)<$w?imagesx($s):$w;        //如果图片的宽比要求的小，则以原图宽为准
+        $h = imagesy($s)<$w?imagesy($s):$h;
+
+        $bg = imagecreatetruecolor($w,$h);        //创建$w*$h的空白图像
+
+        $top = 0;
+        $left = 0;
+        $right = 0;
+        $bottom = 0;
+        $p = imagesx($s);
+        //获取从中间往左上偏移坐标
+        if (imagesx($s)> $w) {
+            $left = (imagesx($s) / 2) - ($w / 2);
+        }
+
+        if (imagesy($s)> $h) {
+            $top = (imagesy($s) / 2) - ($h / 2);
+        }
+
+        if(imagecopy($bg, $s, 0, 0, $left, $top, $w, $h)){
+            if(imagejpeg($bg, $new_path)){            //将生成的图片保存到img/new_img.jpg
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }
+        /*
+        *imagecopy ($dst_im,$src_im,$dst_x,$dst_y,$src_x,$src_y,$src_w,$src_h)
+        将 src_im 图像中坐标从 src_x，src_y 开始，宽度为 src_w，高度为 src_h 的一部分拷贝到 dst_im 图像中坐标为 dst_x 和 dst_y 的位置上。
+        */
+        imagedestroy($s);                //关闭图片
+        imagedestroy($bg);
+        //这里只写了几个主要操作，你可以再加上开始裁减的坐标，也就是imagecopy中的第5，第6两个参数，那么在判断$w和$h的地方也要相应的剪掉开始没算进去的部分，
+        //然后保存路径是否存在的判断等
+    }
+
+    public function create_guid($namespace = '') {
+        static $guid = '';
+        $uid = uniqid("", true);
+        $data = $namespace;
+        $data .= $_SERVER['REQUEST_TIME'];
+        $data .= $_SERVER['HTTP_USER_AGENT'];
+        $data .= $_SERVER['LOCAL_ADDR'];
+        $data .= $_SERVER['LOCAL_PORT'];
+        $data .= $_SERVER['REMOTE_ADDR'];
+        $data .= $_SERVER['REMOTE_PORT'];
+        $hash = strtoupper(hash('ripemd128', $uid . $guid . md5($data)));
+        $guid = substr($hash, 0, 8) .
+            '-' .
+            substr($hash, 8, 4) .
+            '-' .
+            substr($hash, 12, 4) .
+            '-' .
+            substr($hash, 16, 4) .
+            '-' .
+            substr($hash, 20, 12);
+
+        return $guid;
     }
 }

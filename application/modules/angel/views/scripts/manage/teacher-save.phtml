@@ -325,7 +325,11 @@
         });
     })(jQuery);
 
-    loadImage('/photo/image/<?php echo $this->model->head_pic ?>', 'pre-image');
+    <?php if ($this->model->head_pic) :?>
+        loadImage('/photo/image/<?php echo $this->model->head_pic ?>', 'pre-image');
+    <?php endif; ?>
 
-    loadImage('/photo/image/<?php echo $this->model->certificate ?>', 'pre-certificate-image')
+    <?php if ($this->model->certificate) :?>
+        loadImage('/photo/image/<?php echo $this->model->certificate ?>', 'pre-certificate-image')
+    <?php endif; ?>
 </script>

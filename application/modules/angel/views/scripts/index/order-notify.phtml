@@ -49,15 +49,19 @@ $notify->Handle(false);
 
 $result = $notify->GetReturn_code();
 
+header("location:http://www.yujiaqu.com/pay/success/". $this->order_id);
+
 Log::DEBUG("query-test:" . "============test================" . $result . '|' .  $this->order_id);
 
 if ($result == "SUCCESS") {
-    redirect("http://www.yujiaqu.com/pay/success/". $this->order_id);
+    header("location:http://www.yujiaqu.com/pay/success/". $this->order_id);
 }
 else {
-    redirect("http://www.yujiaqu.com/pay/success/". $this->order_id);
+    header("location:http://www.yujiaqu.com/pay/success/". $this->order_id);
 }
 ?>
+<script type="text/javascript">
 
+</script>
 
 

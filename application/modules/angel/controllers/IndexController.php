@@ -465,7 +465,9 @@ class Angel_IndexController extends Angel_Controller_Action {
     }
 
     public function orderNotifyAction() {
+        $order_id = $this->getParam('id');
 
+        $this->view->order_id = $order_id;
     }
 
     /***************************************************************

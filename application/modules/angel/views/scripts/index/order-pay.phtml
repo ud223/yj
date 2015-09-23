@@ -41,7 +41,7 @@ $input->SetTime_start(date("YmdHis"));
 $input->SetTime_expire(date("YmdHis", time() + 600));
 $input->SetGoods_tag("");
 
-$input->SetNotify_url("http://www.yujiaqu.com/pay/success/". $this->model->id);
+$input->SetNotify_url("http://www.yujiaqu.com/order/notify/". $this->model->id);
 $input->SetTrade_type("JSAPI");
 $input->SetOpenid($openId);
 
@@ -72,7 +72,7 @@ $editAddress = $tools->GetEditAddressParameters();
             <?php echo $jsApiParameters; ?>,
             function(res){
                 WeixinJSBridge.log(res.err_msg);
-                alert(res.err_code+res.err_desc+res.err_msg);
+//                alert(res.err_code+res.err_desc+res.err_msg);
             }
         );
     }
@@ -102,7 +102,7 @@ $editAddress = $tools->GetEditAddressParameters();
                 var value4 = res.addressDetailInfo;
                 var tel = res.telNumber;
 
-                alert(value1 + value2 + value3 + value4 + ":" + tel);
+//                alert(value1 + value2 + value3 + value4 + ":" + tel);
             }
         );
     }

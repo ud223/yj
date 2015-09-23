@@ -388,7 +388,8 @@ function setTimeSelected(time) {
 }
 
 function toPay() {
-    var url = '/order/pay/' + order_id + '?showwxpaytitle=1';
+    //var url = '/order/pay/' + order_id + '?showwxpaytitle=1';
+    var url = '/payOrder.php?showwxpaytitle=1&id='+ order_id;
 
     location.href = url;
 }

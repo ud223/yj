@@ -49,11 +49,15 @@ $notify->Handle(false);
 
 $result = $notify->GetReturn_code();
 
-Log::DEBUG("query-test:" . "============test================" . $result);
+Log::DEBUG("query-test:" . "============test================" . $result . '|' .  $this->order_id);
 
 if ($result == "SUCCESS") {
     header("location:/pay/success/". $this->order_id);
 }
+else {
+    header("location:/pay/success/". $this->order_id);
+}
+?>
 
 
 

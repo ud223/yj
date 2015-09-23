@@ -1,14 +1,4 @@
 <?php
-$orderModel = $this->getModel('order');
-
-$id = $this->getParam('id');
-
-if ($id) {
-    $order = $orderModel->getById($id);
-
-    $this->view->model = $order;
-}
-
 
 header("Content-Type: text/html;charset=utf-8");
 ini_set('date.timezone','Asia/Shanghai');

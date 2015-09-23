@@ -2,6 +2,16 @@
 header("Content-Type: text/html;charset=utf-8");
 ini_set('date.timezone','Asia/Shanghai');
 
+$orderModel = $this->getModel('order');
+
+$id = $this->getParam('id');
+
+if ($id) {
+    $order = $orderModel->getById($id);
+
+    $this->view->model = $order;
+}
+
 //error_reporting(E_ERROR);
 require_once '/var/www/yj/public/lib/WxPay.Api.php';
 require_once '/var/www/yj/public/WxPay.JsApiPay.php';

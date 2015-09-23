@@ -52,10 +52,10 @@ $result = $notify->GetReturn_code();
 Log::DEBUG("query-test:" . "============test================" . $result . '|' .  $this->order_id);
 
 if ($result == "SUCCESS") {
-    redirect("/pay/success/". $this->order_id);
+    redirect("http://www.yujiaqu.com/pay/success/". $this->order_id);
 }
 else {
-//    redirect("/pay/success/". $this->order_id);
+    redirect("http://www.yujiaqu.com/pay/success/". $this->order_id);
 }
 ?>
 

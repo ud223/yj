@@ -16,7 +16,7 @@ class PayNotifyCallBack extends WxPayNotify {
         $input = new WxPayOrderQuery();
         $input->SetTransaction_id($transaction_id);
         $result = WxPayApi::orderQuery($input);
-        Log::DEBUG("query222:" . json_encode($result));
+        Log::DEBUG("query:" . json_encode($result));
         if(array_key_exists("return_code", $result) && array_key_exists("result_code", $result) && $result["return_code"] == "SUCCESS" && $result["result_code"] == "SUCCESS") {
             return true;
         }
@@ -49,11 +49,10 @@ $notify->Handle(false);
 
 $result = $notify->GetReturn_code();
 
-Log::DEBUG("query222:" . "============test================" . $result);
+Log::DEBUG("query-test:" . "============test================" . $result);
 
 if ($result == "SUCCESS") {
-    exit("xixi");
-    //    header("location:/pay/success/". $this->order_id);
+    header("location:/pay/success/". $this->order_id);
 }
 
 

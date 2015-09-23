@@ -18,7 +18,11 @@
     </div>
 <?php endif;?>
 <div class="p10-t02">
-    <img src="<?php echo $this->model->headimgurl ?>" style="width: 100px" class="usrgmi" />
+    <?php if ($this->model->head_pic) :?>
+        <img src="/photo/image/<?php echo $this->model->head_pic ?>" style="width: 100px" class="usrgmi" />
+    <?php else :?>
+        <img src="/img/user.jpg" style="width: 100px" class="usrgmi" />
+    <?php endif; ?>
     <div class="p10-t03"><?php echo $this->model->nickname ?></div>
 </div>
 

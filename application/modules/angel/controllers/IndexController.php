@@ -392,7 +392,7 @@ class Angel_IndexController extends Angel_Controller_Action {
     public function ratingSuccessAction() {
         $orderModel = $this->getModel('order');
         $teacherModel = $this->getModel('teacher');
-
+        exit($id);
         $id = $this->getParam('id');
 
         $orderModel->updateState($id, 50);

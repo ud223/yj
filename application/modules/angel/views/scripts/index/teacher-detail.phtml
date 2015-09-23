@@ -11,20 +11,17 @@
     // 此处是php代码渲染输出而成，一次性把该导师所有的图片路径都加载至此。
     var imgs_json = [
         <?php $index = 0; ?>
-        <?php foreach($this->model->photo as $p) :?>
-            <?php if($index > 0) :?>
-                <?php echo "," ?>
-            <?php endif; ?>
-            {url: '/photo/image/<?php echo $p->name . $p->type ?>'}
-        <?php $index++; ?>
-        <?php endforeach; ?>
-//        {
-//        url: '/photo/image/<?php //echo $this->model->photo[0]->name . $this->model->photo[0]->type ?>//'
-//    }, {
-//        url: '/img/user02-big.jpg'
-//    }, {
-//        url: '/img/user03-big.jpg'
-//    }
+        <?php if ($this->model->photo && count($this->model->photo) > 0) :?>
+            <?php foreach($this->model->photo as $p) :?>
+                <?php if($index > 0) :?>
+                    <?php echo "," ?>
+                <?php endif; ?>
+                {url: '/photo/image/<?php echo $p->name . $p->type ?>'}
+            <?php $index++; ?>
+            <?php endforeach; ?>
+        <?php else :?>
+            {url: '/img/userdefault.jpg'}
+        <?php endif; ?>
     ];
 </script>
 
@@ -46,9 +43,12 @@
         <img src="/img/female.png" class="usrgener">
         <img src="/img/male.png" class="usrgener selected">
     <?php endif; ?>
-<!--    <img src="/img/user04.jpg" class="usrimg" />-->
-    <img src="/photo/image/<?php echo $this->model->head_pic ?>" class="usrimg" />
 
+    <?php if ( $this->model->head_pic) :?>
+        <img src="/photo/image/<?php echo $this->model->head_pic ?>" class="usrimg" />
+    <?php else :?>
+        <img src="/img/user.jpg" class="usrimg" />
+    <?php endif; ?>
     <div class="user-tt">
         <!--有认证就有 has_cert这个class-->
         <!--未认证就没有 has_cert这个class， 并且没有下方class="cert"的span-->

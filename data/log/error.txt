@@ -917,3 +917,582 @@
 [22-Sep-2015 22:58:21 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
 [22-Sep-2015 22:58:21 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
 [22-Sep-2015 22:58:21 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/index/course.phtml on line 44
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:13:50 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:21 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:21 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:22 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:22 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:25 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:38 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:38 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:38 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:38 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:40 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:40 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:40 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:40 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:41 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:41 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:42 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:42 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:42 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:42 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:49 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:49 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:49 Asia/Chongqing] PHP Notice:  Undefined index: LOCAL_ADDR in /var/www/yj/application/modules/angel/controllers/ManageController.php on line 1616
+[22-Sep-2015 23:14:49 Asia/Chongqing] PHP Notice:  Undefined index: LOCAL_PORT in /var/www/yj/application/modules/angel/controllers/ManageController.php on line 1617
+[22-Sep-2015 23:14:49 Asia/Chongqing] PHP Notice:  Use of undefined constant Exception - assumed 'Exception' in /var/www/yj/application/modules/angel/models/AbstractModel.php on line 52
+[22-Sep-2015 23:14:49 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:49 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:50 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:50 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:53 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:53 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:53 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:53 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:14:55 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:14:55 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:15:13 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:15:13 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:15:13 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:15:13 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:15:13 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:15:13 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[22-Sep-2015 23:15:13 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[22-Sep-2015 23:15:13 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:14:52 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:14:52 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:14:52 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:14:52 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:15:00 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:15:00 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:15:00 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:15:00 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:15:02 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:15:02 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:15:04 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:15:04 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:15:04 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:15:04 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:15:04 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:15:04 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:15:04 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:15:04 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:35:52 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:35:52 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:35:52 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:35:52 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:35:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:37:00 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:37:00 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:37:00 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:37:00 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:37:00 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:37:00 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:37:00 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:37:00 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:38:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:38:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:38:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:38:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:38:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:38:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:38:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:38:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:04 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:04 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:04 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:04 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:06 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:06 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:08 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:08 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:08 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:08 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:08 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:08 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:08 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:08 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:15 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:15 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:15 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:15 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:16 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:16 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:16 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:16 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:18 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:18 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:20 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:20 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:20 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:20 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:22 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:22 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:22 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:22 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:22 Asia/Chongqing] PHP Warning:  Missing argument 2 for Angel_View_Helper_PhotoImage::photoImage() in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 18
+[23-Sep-2015 10:39:22 Asia/Chongqing] PHP Notice:  Undefined variable: version in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:39:22 Asia/Chongqing] PHP Notice:  Undefined index:  in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:39:22 Asia/Chongqing] PHP Warning:  Missing argument 2 for Angel_View_Helper_PhotoImage::photoImage() in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 18
+[23-Sep-2015 10:39:22 Asia/Chongqing] PHP Notice:  Undefined variable: version in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:39:22 Asia/Chongqing] PHP Notice:  Undefined index:  in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:39:22 Asia/Chongqing] PHP Warning:  Missing argument 2 for Angel_View_Helper_PhotoImage::photoImage() in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 18
+[23-Sep-2015 10:39:22 Asia/Chongqing] PHP Notice:  Undefined variable: version in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:39:22 Asia/Chongqing] PHP Notice:  Undefined index:  in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:39:22 Asia/Chongqing] PHP Warning:  Missing argument 2 for Angel_View_Helper_PhotoImage::photoImage() in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 18
+[23-Sep-2015 10:39:22 Asia/Chongqing] PHP Notice:  Undefined variable: version in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:39:22 Asia/Chongqing] PHP Notice:  Undefined index:  in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:39:22 Asia/Chongqing] PHP Warning:  Missing argument 2 for Angel_View_Helper_PhotoImage::photoImage() in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 18
+[23-Sep-2015 10:39:22 Asia/Chongqing] PHP Notice:  Undefined variable: version in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:39:22 Asia/Chongqing] PHP Notice:  Undefined index:  in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:39:22 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:22 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:22 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:22 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:22 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:22 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:22 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:22 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:22 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:22 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Warning:  Missing argument 2 for Angel_View_Helper_PhotoImage::photoImage() in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 18
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Notice:  Undefined variable: version in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Notice:  Undefined index:  in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Warning:  Missing argument 2 for Angel_View_Helper_PhotoImage::photoImage() in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 18
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Notice:  Undefined variable: version in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Notice:  Undefined index:  in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Warning:  Missing argument 2 for Angel_View_Helper_PhotoImage::photoImage() in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 18
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Notice:  Undefined variable: version in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Notice:  Undefined index:  in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Warning:  Missing argument 2 for Angel_View_Helper_PhotoImage::photoImage() in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 18
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Notice:  Undefined variable: version in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Notice:  Undefined index:  in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Warning:  Missing argument 2 for Angel_View_Helper_PhotoImage::photoImage() in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 18
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Notice:  Undefined variable: version in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Notice:  Undefined index:  in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Notice:  Use of undefined constant id - assumed 'id' in /var/www/yj/application/modules/angel/views/scripts/manage/photo-list.phtml on line 93
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Notice:  Use of undefined constant id - assumed 'id' in /var/www/yj/application/modules/angel/views/scripts/manage/photo-list.phtml on line 93
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Notice:  Use of undefined constant id - assumed 'id' in /var/www/yj/application/modules/angel/views/scripts/manage/photo-list.phtml on line 93
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Notice:  Use of undefined constant id - assumed 'id' in /var/www/yj/application/modules/angel/views/scripts/manage/photo-list.phtml on line 93
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Notice:  Use of undefined constant id - assumed 'id' in /var/www/yj/application/modules/angel/views/scripts/manage/photo-list.phtml on line 93
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Notice:  Use of undefined constant category_id - assumed 'category_id' in /var/www/yj/application/modules/angel/views/scripts/manage/partials/_paginator_bar.phtml on line 9
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Notice:  Object of class Zend_View could not be converted to int in /var/www/yj/application/modules/angel/views/scripts/manage/partials/_paginator_bar.phtml on line 9
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:30 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:32 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:32 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:32 Asia/Chongqing] PHP Warning:  unlink(/var/www/yj/application/../public/photo/image/56016b2550ad88.17841324_800.jpg): No such file or directory in /var/www/yj/library/Angel/Service/Image.php on line 79
+[23-Sep-2015 10:39:32 Asia/Chongqing] PHP Warning:  unlink(/var/www/yj/application/../public/photo/image/56016b2550ad88.17841324_480.jpg): No such file or directory in /var/www/yj/library/Angel/Service/Image.php on line 79
+[23-Sep-2015 10:39:32 Asia/Chongqing] PHP Warning:  unlink(/var/www/yj/application/../public/photo/image/56016b2550ad88.17841324_160.jpg): No such file or directory in /var/www/yj/library/Angel/Service/Image.php on line 79
+[23-Sep-2015 10:39:32 Asia/Chongqing] PHP Warning:  unlink(/var/www/yj/application/../public/photo/image/56016b2550ad88.17841324.jpg): No such file or directory in /var/www/yj/library/Angel/Service/Image.php on line 81
+[23-Sep-2015 10:39:34 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:34 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:34 Asia/Chongqing] PHP Warning:  unlink(/var/www/yj/application/../public/photo/image/56016b25cb2046.74959047_800.jpg): No such file or directory in /var/www/yj/library/Angel/Service/Image.php on line 79
+[23-Sep-2015 10:39:34 Asia/Chongqing] PHP Warning:  unlink(/var/www/yj/application/../public/photo/image/56016b25cb2046.74959047_480.jpg): No such file or directory in /var/www/yj/library/Angel/Service/Image.php on line 79
+[23-Sep-2015 10:39:34 Asia/Chongqing] PHP Warning:  unlink(/var/www/yj/application/../public/photo/image/56016b25cb2046.74959047_160.jpg): No such file or directory in /var/www/yj/library/Angel/Service/Image.php on line 79
+[23-Sep-2015 10:39:34 Asia/Chongqing] PHP Warning:  unlink(/var/www/yj/application/../public/photo/image/56016b25cb2046.74959047.jpg): No such file or directory in /var/www/yj/library/Angel/Service/Image.php on line 81
+[23-Sep-2015 10:39:36 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:36 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:36 Asia/Chongqing] PHP Warning:  unlink(/var/www/yj/application/../public/photo/image/56016b2450f114.90210256_800.jpg): No such file or directory in /var/www/yj/library/Angel/Service/Image.php on line 79
+[23-Sep-2015 10:39:36 Asia/Chongqing] PHP Warning:  unlink(/var/www/yj/application/../public/photo/image/56016b2450f114.90210256_480.jpg): No such file or directory in /var/www/yj/library/Angel/Service/Image.php on line 79
+[23-Sep-2015 10:39:36 Asia/Chongqing] PHP Warning:  unlink(/var/www/yj/application/../public/photo/image/56016b2450f114.90210256_160.jpg): No such file or directory in /var/www/yj/library/Angel/Service/Image.php on line 79
+[23-Sep-2015 10:39:36 Asia/Chongqing] PHP Warning:  unlink(/var/www/yj/application/../public/photo/image/56016b2450f114.90210256.jpg): No such file or directory in /var/www/yj/library/Angel/Service/Image.php on line 81
+[23-Sep-2015 10:39:37 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:37 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:37 Asia/Chongqing] PHP Warning:  unlink(/var/www/yj/application/../public/photo/image/56016b24cac0a8.26269721_800.jpg): No such file or directory in /var/www/yj/library/Angel/Service/Image.php on line 79
+[23-Sep-2015 10:39:37 Asia/Chongqing] PHP Warning:  unlink(/var/www/yj/application/../public/photo/image/56016b24cac0a8.26269721_480.jpg): No such file or directory in /var/www/yj/library/Angel/Service/Image.php on line 79
+[23-Sep-2015 10:39:37 Asia/Chongqing] PHP Warning:  unlink(/var/www/yj/application/../public/photo/image/56016b24cac0a8.26269721_160.jpg): No such file or directory in /var/www/yj/library/Angel/Service/Image.php on line 79
+[23-Sep-2015 10:39:37 Asia/Chongqing] PHP Warning:  unlink(/var/www/yj/application/../public/photo/image/56016b24cac0a8.26269721.jpg): No such file or directory in /var/www/yj/library/Angel/Service/Image.php on line 81
+[23-Sep-2015 10:39:40 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:40 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:40 Asia/Chongqing] PHP Warning:  unlink(/var/www/yj/application/../public/photo/image/56016b23cb4204.23420255_800.jpg): No such file or directory in /var/www/yj/library/Angel/Service/Image.php on line 79
+[23-Sep-2015 10:39:40 Asia/Chongqing] PHP Warning:  unlink(/var/www/yj/application/../public/photo/image/56016b23cb4204.23420255_480.jpg): No such file or directory in /var/www/yj/library/Angel/Service/Image.php on line 79
+[23-Sep-2015 10:39:40 Asia/Chongqing] PHP Warning:  unlink(/var/www/yj/application/../public/photo/image/56016b23cb4204.23420255_160.jpg): No such file or directory in /var/www/yj/library/Angel/Service/Image.php on line 79
+[23-Sep-2015 10:39:40 Asia/Chongqing] PHP Warning:  unlink(/var/www/yj/application/../public/photo/image/56016b23cb4204.23420255.jpg): No such file or directory in /var/www/yj/library/Angel/Service/Image.php on line 81
+[23-Sep-2015 10:39:40 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:40 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:41 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:41 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:41 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:41 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:52 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:52 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:52 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:52 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:52 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:52 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:52 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:52 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:52 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:52 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:54 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:54 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:56 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:56 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:56 Asia/Chongqing] PHP Warning:  Missing argument 8 for Angel_Model_Photo::addPhoto(), called in /var/www/yj/application/modules/angel/controllers/ManageController.php on line 718 and defined in /var/www/yj/application/modules/angel/models/Photo.php on line 45
+[23-Sep-2015 10:39:56 Asia/Chongqing] PHP Notice:  Undefined variable: photoclass in /var/www/yj/application/modules/angel/models/Photo.php on line 69
+[23-Sep-2015 10:39:56 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:56 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:56 Asia/Chongqing] PHP Warning:  Missing argument 8 for Angel_Model_Photo::addPhoto(), called in /var/www/yj/application/modules/angel/controllers/ManageController.php on line 718 and defined in /var/www/yj/application/modules/angel/models/Photo.php on line 45
+[23-Sep-2015 10:39:56 Asia/Chongqing] PHP Notice:  Undefined variable: photoclass in /var/www/yj/application/modules/angel/models/Photo.php on line 69
+[23-Sep-2015 10:39:57 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:57 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:57 Asia/Chongqing] PHP Warning:  Missing argument 8 for Angel_Model_Photo::addPhoto(), called in /var/www/yj/application/modules/angel/controllers/ManageController.php on line 718 and defined in /var/www/yj/application/modules/angel/models/Photo.php on line 45
+[23-Sep-2015 10:39:57 Asia/Chongqing] PHP Notice:  Undefined variable: photoclass in /var/www/yj/application/modules/angel/models/Photo.php on line 69
+[23-Sep-2015 10:39:57 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:57 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:57 Asia/Chongqing] PHP Warning:  Missing argument 8 for Angel_Model_Photo::addPhoto(), called in /var/www/yj/application/modules/angel/controllers/ManageController.php on line 718 and defined in /var/www/yj/application/modules/angel/models/Photo.php on line 45
+[23-Sep-2015 10:39:57 Asia/Chongqing] PHP Notice:  Undefined variable: photoclass in /var/www/yj/application/modules/angel/models/Photo.php on line 69
+[23-Sep-2015 10:39:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:58 Asia/Chongqing] PHP Warning:  Missing argument 8 for Angel_Model_Photo::addPhoto(), called in /var/www/yj/application/modules/angel/controllers/ManageController.php on line 718 and defined in /var/www/yj/application/modules/angel/models/Photo.php on line 45
+[23-Sep-2015 10:39:58 Asia/Chongqing] PHP Notice:  Undefined variable: photoclass in /var/www/yj/application/modules/angel/models/Photo.php on line 69
+[23-Sep-2015 10:39:59 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:39:59 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:39:59 Asia/Chongqing] PHP Warning:  Missing argument 2 for Angel_View_Helper_PhotoImage::photoImage() in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 18
+[23-Sep-2015 10:39:59 Asia/Chongqing] PHP Notice:  Undefined variable: version in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:39:59 Asia/Chongqing] PHP Notice:  Undefined index:  in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:39:59 Asia/Chongqing] PHP Warning:  Missing argument 2 for Angel_View_Helper_PhotoImage::photoImage() in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 18
+[23-Sep-2015 10:39:59 Asia/Chongqing] PHP Notice:  Undefined variable: version in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:39:59 Asia/Chongqing] PHP Notice:  Undefined index:  in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:39:59 Asia/Chongqing] PHP Warning:  Missing argument 2 for Angel_View_Helper_PhotoImage::photoImage() in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 18
+[23-Sep-2015 10:39:59 Asia/Chongqing] PHP Notice:  Undefined variable: version in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:39:59 Asia/Chongqing] PHP Notice:  Undefined index:  in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:39:59 Asia/Chongqing] PHP Warning:  Missing argument 2 for Angel_View_Helper_PhotoImage::photoImage() in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 18
+[23-Sep-2015 10:39:59 Asia/Chongqing] PHP Notice:  Undefined variable: version in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:39:59 Asia/Chongqing] PHP Notice:  Undefined index:  in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:39:59 Asia/Chongqing] PHP Warning:  Missing argument 2 for Angel_View_Helper_PhotoImage::photoImage() in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 18
+[23-Sep-2015 10:39:59 Asia/Chongqing] PHP Notice:  Undefined variable: version in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:39:59 Asia/Chongqing] PHP Notice:  Undefined index:  in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:39:59 Asia/Chongqing] PHP Notice:  Use of undefined constant id - assumed 'id' in /var/www/yj/application/modules/angel/views/scripts/manage/photo-list.phtml on line 93
+[23-Sep-2015 10:39:59 Asia/Chongqing] PHP Notice:  Use of undefined constant id - assumed 'id' in /var/www/yj/application/modules/angel/views/scripts/manage/photo-list.phtml on line 93
+[23-Sep-2015 10:39:59 Asia/Chongqing] PHP Notice:  Use of undefined constant id - assumed 'id' in /var/www/yj/application/modules/angel/views/scripts/manage/photo-list.phtml on line 93
+[23-Sep-2015 10:39:59 Asia/Chongqing] PHP Notice:  Use of undefined constant id - assumed 'id' in /var/www/yj/application/modules/angel/views/scripts/manage/photo-list.phtml on line 93
+[23-Sep-2015 10:39:59 Asia/Chongqing] PHP Notice:  Use of undefined constant id - assumed 'id' in /var/www/yj/application/modules/angel/views/scripts/manage/photo-list.phtml on line 93
+[23-Sep-2015 10:39:59 Asia/Chongqing] PHP Notice:  Use of undefined constant category_id - assumed 'category_id' in /var/www/yj/application/modules/angel/views/scripts/manage/partials/_paginator_bar.phtml on line 9
+[23-Sep-2015 10:39:59 Asia/Chongqing] PHP Notice:  Object of class Zend_View could not be converted to int in /var/www/yj/application/modules/angel/views/scripts/manage/partials/_paginator_bar.phtml on line 9
+[23-Sep-2015 10:40:02 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:40:02 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:40:04 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:40:04 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:40:04 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:40:04 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:40:06 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:40:06 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:40:06 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:40:06 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:40:06 Asia/Chongqing] PHP Warning:  Missing argument 2 for Angel_View_Helper_PhotoImage::photoImage() in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 18
+[23-Sep-2015 10:40:06 Asia/Chongqing] PHP Notice:  Undefined variable: version in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:40:06 Asia/Chongqing] PHP Notice:  Undefined index:  in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:40:06 Asia/Chongqing] PHP Warning:  Missing argument 2 for Angel_View_Helper_PhotoImage::photoImage() in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 18
+[23-Sep-2015 10:40:06 Asia/Chongqing] PHP Notice:  Undefined variable: version in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:40:06 Asia/Chongqing] PHP Notice:  Undefined index:  in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:40:06 Asia/Chongqing] PHP Warning:  Missing argument 2 for Angel_View_Helper_PhotoImage::photoImage() in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 18
+[23-Sep-2015 10:40:06 Asia/Chongqing] PHP Notice:  Undefined variable: version in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:40:06 Asia/Chongqing] PHP Notice:  Undefined index:  in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:40:06 Asia/Chongqing] PHP Warning:  Missing argument 2 for Angel_View_Helper_PhotoImage::photoImage() in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 18
+[23-Sep-2015 10:40:06 Asia/Chongqing] PHP Notice:  Undefined variable: version in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:40:06 Asia/Chongqing] PHP Notice:  Undefined index:  in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:40:06 Asia/Chongqing] PHP Warning:  Missing argument 2 for Angel_View_Helper_PhotoImage::photoImage() in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 18
+[23-Sep-2015 10:40:06 Asia/Chongqing] PHP Notice:  Undefined variable: version in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:40:06 Asia/Chongqing] PHP Notice:  Undefined index:  in /var/www/yj/application/modules/angel/views/helpers/PhotoImage.php on line 23
+[23-Sep-2015 10:40:11 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:40:11 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:40:11 Asia/Chongqing] PHP Notice:  Use of undefined constant Exception - assumed 'Exception' in /var/www/yj/application/modules/angel/models/AbstractModel.php on line 52
+[23-Sep-2015 10:40:11 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:40:11 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:40:12 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:40:12 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:40:15 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:40:15 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:40:15 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:40:15 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:40:15 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:40:15 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:40:15 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:40:15 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:40:46 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:40:46 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:40:46 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:40:46 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:40:48 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:40:48 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:40:48 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:40:48 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:40:48 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:40:48 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[23-Sep-2015 10:40:48 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[23-Sep-2015 10:40:48 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43

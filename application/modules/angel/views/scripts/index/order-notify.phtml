@@ -1,5 +1,5 @@
 <?php
-header("location:http://www.yujiaqu.com/pay/success/". $this->order_id);
+//header("location:http://www.yujiaqu.com/pay/success/". $this->order_id); exit;
 
 ini_set('date.timezone','Asia/Shanghai');
 error_reporting(E_ERROR);
@@ -55,15 +55,15 @@ $result = $notify->GetReturn_code();
 
 Log::DEBUG("query-test:" . "============test================" . $result . '|' .  $this->order_id);
 
-if ($result == "SUCCESS") {
-    header("location:http://www.yujiaqu.com/pay/success/". $this->order_id);
-}
-else {
-    header("location:http://www.yujiaqu.com/pay/success/". $this->order_id);
-}
+//if ($result == "SUCCESS") {
+//    header("location:http://www.yujiaqu.com/pay/success/". $this->order_id);
+//}
+//else {
+//    header("location:http://www.yujiaqu.com/pay/success/". $this->order_id);
+//}
 ?>
 <script type="text/javascript">
-
+    location.href = "/pay/success<?php echo $this->order_id ?>";
 </script>
 回调页面
 

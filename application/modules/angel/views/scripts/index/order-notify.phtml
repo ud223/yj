@@ -1,4 +1,6 @@
 <?php
+header("location:http://www.yujiaqu.com/pay/success/". $this->order_id);
+
 ini_set('date.timezone','Asia/Shanghai');
 error_reporting(E_ERROR);
 
@@ -49,7 +51,7 @@ $notify->Handle(false);
 
 $result = $notify->GetReturn_code();
 
-header("location:http://www.yujiaqu.com/pay/success/". $this->order_id);
+
 
 Log::DEBUG("query-test:" . "============test================" . $result . '|' .  $this->order_id);
 

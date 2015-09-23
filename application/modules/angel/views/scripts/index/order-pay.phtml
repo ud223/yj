@@ -27,7 +27,7 @@ $openId = $this->model->customer->openid;//$tools->GetOpenid();"ovaVFs0D8661cy-w
 
 //②、统一下单
 $input = new WxPayUnifiedOrder();
-$input->SetBody($this->model->teacher->name . "导师瑜家授课费用");
+$input->SetBody($this->model->teacher->name . "导师瑜伽授课费用");
 $input->SetAttach("");
 
 $tmp = WxPayConfig::MCHID . $this->model->id;

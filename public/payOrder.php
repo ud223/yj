@@ -6,10 +6,12 @@ $orderModel = $this->getModel('order');
 
 $id = $this->getParam('id');
 
-if ($id) {
-    $order = $orderModel->getById($id);
+exit($id);
 
-    $this->view->model = $order;
+if ($id) {
+    $tmp_order = $orderModel->getById($id);
+
+//    $this->view->model = $order;
 }
 
 //error_reporting(E_ERROR);
@@ -31,25 +33,25 @@ function printf_info($data) {
 //①、获取用户openid
 $tools = new JsApiPay();
 
-$openId = $this->model->customer->openid;//$tools->GetOpenid();"ovaVFs0D8661cy-w7C8o61Yd7p08";//
+$openId = $tmp_order->customer->openid;//$tools->GetOpenid();"ovaVFs0D8661cy-w7C8o61Yd7p08";//
 
 //②、统一下单
 $input = new WxPayUnifiedOrder();
-$input->SetBody($this->model->teacher->name . "导师瑜伽授课费用");
+$input->SetBody($tmp_order->teacher->name . "导师瑜伽授课费用");
 $input->SetAttach("");
 
-$tmp = WxPayConfig::MCHID . $this->model->id;
+$tmp = WxPayConfig::MCHID . $tmp_order->id;
 
 $out_trade_no = substr($tmp, 0, 32);
 
 $input->SetOut_trade_no($out_trade_no);
-$input->SetTotal_fee($this->model->pay_amount);//$this->model->pay_amount
+$input->SetTotal_fee($tmp_order->pay_amount);//$this->model->pay_amount
 
 $input->SetTime_start(date("YmdHis"));
 $input->SetTime_expire(date("YmdHis", time() + 600));
 $input->SetGoods_tag("");
 
-$input->SetNotify_url("http://www.yujiaqu.com/order/notify/". $this->model->id);
+$input->SetNotify_url("http://www.yujiaqu.com/payNotify.php");
 $input->SetTrade_type("JSAPI");
 $input->SetOpenid($openId);
 

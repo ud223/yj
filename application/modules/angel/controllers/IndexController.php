@@ -107,6 +107,9 @@ class Angel_IndexController extends Angel_Controller_Action {
         $orderModel = $this->getModel('order');
 
         $id = $this->getParam('id');
+
+        $this->_redirect('/info.php');
+
         exit($id);
         $orderModel->updateState($id, 20);
 

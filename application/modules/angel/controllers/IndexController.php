@@ -22,6 +22,7 @@ class Angel_IndexController extends Angel_Controller_Action {
         'end-lesson',
         'lesson-success',
         'pay-success',
+        'pay-fail',
         'start-lesson',
         'end-lesson',
         'lesson-success',
@@ -108,10 +109,17 @@ class Angel_IndexController extends Angel_Controller_Action {
 
         $id = $this->getParam('id');
 
-        $this->_redirect('/info.php');
-
-        exit($id);
         $orderModel->updateState($id, 20);
+
+        $order = $orderModel->getById($id);
+
+        $this->view->model = $order;
+    }
+
+    public function payFailAction() {
+        $orderModel = $this->getModel('order');
+
+        $id = $this->getParam('id');
 
         $order = $orderModel->getById($id);
 

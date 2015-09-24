@@ -383,7 +383,7 @@ class Angel_ApiController extends Angel_Controller_Action {
 
         $mobile_code = $this->random(4,1);
 
-        $post_data = "account=cf_dean&password=119223&mobile=". $phone ."&content=".rawurlencode("您的验证码是：".$mobile_code."。请不要把验证码泄露给其他人。");
+        $post_data = "account=cf_yujiaqu&password=yujiaqu.com&mobile=". $phone ."&content=".rawurlencode("您的验证码是：".$mobile_code."。请不要把验证码泄露给其他人。");
         header("Content-type:text/html; charset=UTF-8");
         //密码可以使用明文密码或使用32位MD5加密
         $gets =  $this->Post($post_data, $target);//$this->xml_to_array();

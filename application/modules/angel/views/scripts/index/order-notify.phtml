@@ -56,10 +56,10 @@ $result = $notify->GetReturn_code();
 Log::DEBUG("query-test:" . "============test================" . $result . '|' .  $this->order_id);
 
 if ($result == "SUCCESS") {
-    header("location:http://www.yujiaqu.com/paySuccess.php?id=". $this->order_id); exit;
+    header("location:/pay/success/". $this->order_id . "?access=success"); exit;
 }
 else {
-    header("location:http://www.yujiaqu.com/paySuccess.php?id=". $this->order_id); exit;
+    header("location:/pay/success/". $this->order_id . "?access=fail"); exit;
 }
 ?>
 

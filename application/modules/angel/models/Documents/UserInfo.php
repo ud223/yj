@@ -146,4 +146,7 @@ class UserInfo extends AbstractDocument {
     //是否正式注册
     /** @ODM\Int */
     protected $is_reg = 0;
+
+    /** @ODM\String */
+    protected $serial_number;
 }

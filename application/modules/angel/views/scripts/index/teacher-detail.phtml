@@ -24,7 +24,9 @@
         <?php endif; ?>
     ];
 </script>
-
+<div class="fixbackt">
+    <a class="arrc" href="#"></a>
+</div>
 <!--此段为滑动多图的html部分，写死在这里-->
 <div id="cd_mentor_img_slider" class="swipe">
     <div class="swipe-wrap">
@@ -45,9 +47,10 @@
     <?php endif; ?>
 
     <?php if ( $this->model->head_pic) :?>
-        <img src="/photo/image/<?php echo $this->model->head_pic ?>" class="usrimg" />
+<!--        <img src="/photo/image/--><?php //echo $this->model->head_pic ?><!--" class="usrimg" />-->
+        <div class="usrimg" style="background-image:url(/photo/image/<?php echo $this->model->head_pic ?>)"></div>
     <?php else :?>
-        <img src="/img/user.jpg" class="usrimg" />
+        <div class="usrimg" style="background-image:url(/img/user.jpg)"></div>
     <?php endif; ?>
     <div class="user-tt">
         <!--有认证就有 has_cert这个class-->

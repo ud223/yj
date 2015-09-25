@@ -34,7 +34,10 @@ $tmp = WxPayConfig::MCHID . $this->model->id;
 $out_trade_no = substr($tmp, 0, 32);
 
 $input->SetOut_trade_no($out_trade_no);
-$input->SetTotal_fee($this->model->pay_amount);//$this->model->pay_amount
+
+$tmp_amount = intval($this->model->pay_amount) * 100;
+
+$input->SetTotal_fee($tmp_amount);//
 
 $input->SetTime_start(date("YmdHis"));
 $input->SetTime_expire(date("YmdHis", time() + 600));

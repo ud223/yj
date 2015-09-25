@@ -8,6 +8,9 @@
 <script src="<?php echo $this->jsPath("action/index/my-index.js"); ?>"></script>
 <script src="<?php echo $this->jsPath("delegate/index/my-index.js"); ?>"></script>
 <script src="<?php echo $this->jsPath("controller/index/my-index.js"); ?>"></script>
+<div class="relativebackt">
+    <a href="#" class="arrc">返回</a>
+</div>
 <div class="menu-fix">
     <div class="menu-fix-itm cd_hottap" hottap="/">预约老师</div>
     <div class="menu-fix-itm cd_hottap selected" hottap="/me/<?php echo $this->model->id ?>">我</div>
@@ -17,6 +20,7 @@
         您还没有设置手机号码，前往设置
     </div>
 <?php endif;?>
+
 <div class="p10-t02">
     <?php if ($this->model->head_pic) :?>
         <img src="/photo/image/<?php echo $this->model->head_pic ?>" style="width: 100px" class="usrgmi" />

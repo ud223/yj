@@ -728,7 +728,11 @@ p:after {
     padding: 20px 15px 0 15px;
     /*box-shadow: 0 1px 3px rgba(0, 0, 0, .05);*/
 }
+
 .mentor-intro-blk .usrimg {
+    background-position: center center;
+    background-size: cover;
+    display:inline-block;
     width: 70px;
     height: 70px;
     border-radius: 200px;
@@ -736,6 +740,7 @@ p:after {
     margin-top: -40px;
     border: 2px solid #FFF;
 }
+
 .mentor-intro-blk .usrgener {
     display: none;
     width: 20px;
@@ -1756,7 +1761,7 @@ p:after {
     display: inline-block;
     width: 30px;
     height: 30px;
-    background: url(../img/location-marker-128.png) center center no-repeat;
+    background: url(/img/location-marker-128.png) center center no-repeat;
     background-size: cover;
     position: absolute;
     left: 10px;
@@ -1789,4 +1794,44 @@ p:after {
 .arblk-cl .al-ciiel {
     padding:5px 10px 5px 0;
     display: inline-block;
+}
+
+.fixbackt, .relativebackt {
+    height: 50px;
+    line-height: 50px;
+    background: transparent;
+    color: #FFF;
+    z-index: 10;
+    position: fixed;
+    z-index: 21;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+.fixbackt .arrc, .relativebackt .arrc {
+    float: left;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    width: 30px;
+    margin: 10px 0 0 10px;
+    background: url(/img/arr-l-b.png) center center no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 200px;
+}
+.relativebackt {
+    background:#555;
+    position:relative;
+    left:auto;
+    top:auto;
+}
+.relativebackt .arrc {
+    width:auto;
+    padding-left:30px;
+    color:#FFF;
+    background-color:transparent;
+    background-size: contain;
+    background-position: left center;
+
 }

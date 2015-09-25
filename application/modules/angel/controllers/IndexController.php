@@ -9,11 +9,11 @@ class Angel_IndexController extends Angel_Controller_Action {
         'index',
         'teacher-detail',
         'course',
+        'course-detail',
         'my-index',
         'apply',
         'apply-history',
         'apply-success',
-        'course-detail',
         'confirmation-order',
         'my-order',
         'order-detail',
@@ -303,6 +303,7 @@ class Angel_IndexController extends Angel_Controller_Action {
 
         $this->view->count = count($paginator);
         $this->view->order_list = $paginator;
+        $this->view->user_id = $id;
     }
 
     public function orderDetailAction() {

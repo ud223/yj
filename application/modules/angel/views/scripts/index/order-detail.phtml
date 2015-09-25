@@ -8,7 +8,7 @@
 <script src="<?php echo $this->jsPath("delegate/index/order-detail.js"); ?>"></script>
 <script src="<?php echo $this->jsPath("controller/index/order-detail.js"); ?>"></script>
 <div class="relativebackt">
-    <a href="#" class="arrc">返回</a>
+    <a href="/my/order/<?php echo $this->model->customer->id ?>" class="arrc">返回</a>
 </div>
 <?php if ($this->model->state == 20):?>
     <div class="status-for-order completed">

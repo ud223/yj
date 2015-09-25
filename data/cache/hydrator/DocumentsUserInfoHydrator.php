@@ -399,6 +399,14 @@ class DocumentsUserInfoHydrator implements HydratorInterface
             $hydratedData['is_reg'] = $return;
         }
 
+        /** @Field(type="string") */
+        if (isset($data['serial_number'])) {
+            $value = $data['serial_number'];
+            $return = (string) $value;
+            $this->class->reflFields['serial_number']->setValue($document, $return);
+            $hydratedData['serial_number'] = $return;
+        }
+
         /** @Field(type="id") */
         if (isset($data['_id'])) {
             $value = $data['_id'];

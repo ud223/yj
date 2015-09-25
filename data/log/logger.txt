@@ -502,3 +502,30 @@ Stack trace:
 #3 /var/www/yj/public/index.php(44): Zend_Application->run()
 #4 {main}
 2015-09-23T10:40:04+08:00 INFO (6): array
+2015-09-25T15:07:20+08:00 INFO (6): exception 'Doctrine\ODM\MongoDB\DocumentNotFoundException' with message 'The "Angel\Document\Proxy\__CG__\Documents\Photo" document with identifier "56016b25d53de44d068b4568" could not be found.' in /var/www/yj/library/Doctrine/ODM/MongoDB/DocumentNotFoundException.php:35
+Stack trace:
+#0 /var/www/yj/data/cache/proxy/__CG__DocumentsPhoto.php(34): Doctrine\ODM\MongoDB\DocumentNotFoundException::documentNotFound('Angel\\Documentt...', '56016b25d53de44...')
+#1 /var/www/yj/data/cache/proxy/__CG__DocumentsPhoto.php(67): Angel\Document\Proxy\__CG__\Documents\Photo->__load()
+#2 /var/www/yj/application/modules/angel/views/scripts/index/course.phtml(69): Angel\Document\Proxy\__CG__\Documents\Photo->__get('name')
+#3 /var/www/yj/library/Zend/View.php(108): include('/var/www/yj/app...')
+#4 /var/www/yj/library/Zend/View/Abstract.php(888): Zend_View->_run('/var/www/yj/app...')
+#5 /var/www/yj/library/Zend/Controller/Action/Helper/ViewRenderer.php(900): Zend_View_Abstract->render('index/course.ph...')
+#6 /var/www/yj/library/Zend/Controller/Action/Helper/ViewRenderer.php(921): Zend_Controller_Action_Helper_ViewRenderer->renderScript('index/course.ph...', NULL)
+#7 /var/www/yj/library/Zend/Controller/Action/Helper/ViewRenderer.php(960): Zend_Controller_Action_Helper_ViewRenderer->render()
+#8 /var/www/yj/library/Zend/Controller/Action/HelperBroker.php(277): Zend_Controller_Action_Helper_ViewRenderer->postDispatch()
+#9 /var/www/yj/library/Zend/Controller/Action.php(527): Zend_Controller_Action_HelperBroker->notifyPostDispatch()
+#10 /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php(308): Zend_Controller_Action->dispatch('courseAction')
+#11 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#12 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#13 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#14 /var/www/yj/public/index.php(44): Zend_Application->run()
+#15 {main}
+2015-09-25T15:07:20+08:00 INFO (6): array
+2015-09-25T15:07:58+08:00 INFO (6): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (photo)' in /var/www/yj/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /var/www/yj/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /var/www/yj/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /var/www/yj/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/yj/public/index.php(44): Zend_Application->run()
+#4 {main}
+2015-09-25T15:07:58+08:00 INFO (6): array

@@ -39,3 +39,7 @@ function toChooseTimeClick() {
         location.href = "#teacher-time";
     })
 }
+
+function back() {
+    window.history.back();
+}

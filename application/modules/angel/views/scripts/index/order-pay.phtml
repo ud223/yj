@@ -85,8 +85,7 @@ $editAddress = $tools->GetEditAddressParameters();
                     window.location.href="/pay/success/<?php echo $this->model->id ?>";
                 }else{
                     //返回跳转到订单详情页面
-                    alert(支付失败);
-                    window.location.href="http://blog.sina.com.cn/u/1863605217";
+                    window.location.href="/pay/fail/<?php echo $this->model->id ?>";
 
                 }
             }

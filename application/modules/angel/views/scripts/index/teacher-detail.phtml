@@ -186,19 +186,19 @@
     <div class="dipu2 nbb">
         <div class="dipu3 mmbe">最新评论</div>
         <div class="dipu4">
-<!--            --><?php //foreach($this->orders as $order):?>
-<!--                <div class="mgi-b1">-->
-<!--                    <img src="--><?php //echo $order->customer->headimgurl ?><!--" style="width: 100px" class="b4ee" />-->
-<!--                    <div class="b5ee">--><?php //echo $order->customer->name ?><!--</div>-->
-<!--                    <div class="b6ee">--><?php
-//                            $tmp_date = explode("-", $order->rundate);
-//                            echo $tmp_date[0] .'年'. $tmp_date[1] .'月'. $tmp_date[2] .'日';
-//                        ?><!--</div>-->
-<!--                    <div class="b7ee">-->
-<!--                        --><?php //echo $order->teacher_appraise ?>
-<!--                    </div>-->
-<!--                </div>-->
-<!--            --><?php //endforeach; ?>
+            <?php foreach($this->orders as $order):?>
+                <div class="mgi-b1">
+                    <img src="<?php echo $order->customer->headimgurl ?>" style="width: 100px" class="b4ee" />
+                    <div class="b5ee"><?php echo $order->customer->name ?></div>
+                    <div class="b6ee"><?php
+                            $tmp_date = explode("-", $order->rundate);
+                            echo $tmp_date[0] .'年'. $tmp_date[1] .'月'. $tmp_date[2] .'日';
+                        ?></div>
+                    <div class="b7ee">
+                        <?php echo $order->teacher_appraise ?>
+                    </div>
+                </div>
+            <?php endforeach; ?>
 <!--            <div class="mgi-b2">-->
 <!--                查看更多-->
 <!--                <span class="arr-r"></span>-->

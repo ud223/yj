@@ -16,7 +16,7 @@ function addOrder(customer_id, teacher_id, rundate, time, hour, price, amount, f
                 }
             }
             else {
-                $.toastMsg(response.data, 3000);
+                $.toastMsg(response.data, 1500);
             }
         },
         error: function () {
@@ -43,7 +43,7 @@ function confirmOrder(rundate, time, hour, amount, pay_amount, address, address_
                 }
             }
             else {
-                $.toastMsg(response.data, 3000);
+                $.toastMsg(response.data, 1500);
             }
         },
         error: function () {
@@ -72,7 +72,7 @@ function removeOrder(id, fun) {
                 }
             }
             else {
-                $.toastMsg(response.data, 3000);
+                $.toastMsg(response.data, 1500);
             }
         },
         error: function () {
@@ -99,7 +99,7 @@ function getOrderBy(teacher_id, rundate, fun) {
                 }
             }
             else {
-                $.toastMsg(response.data, 3000);
+                $.toastMsg(response.data, 1500);
             }
         },
         error: function () {
@@ -127,7 +127,7 @@ function submitScore(order_id, time_score, content_score, way_score, teacher_app
                 }
             }
             else {
-                $.toastMsg(response.data, 3000);
+                $.toastMsg(response.data, 1500);
             }
         },
         error: function () {

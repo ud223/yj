@@ -13,7 +13,7 @@ function getAddressByCoordinate(lng, lat, fun) {
                 }
             }
             else {
-                $.toastMsg("获取失败", 3000);
+                $.toastMsg("获取失败", 1500);
             }
         },
         error: function () {
@@ -37,7 +37,7 @@ function getAddressByAddressName(address_name, fun) {
                 }
             }
             else {
-                $.toastMsg("没有找到对应信息,请输入完整地名!", 3000);
+                $.toastMsg("没有找到对应信息,请输入完整地名!", 1500);
             }
         },
         error: function () {

@@ -16,7 +16,7 @@ function getPhoneValid(phone, fun) {
                 }
             }
             else {
-                $.toastMsg("获取失败", 3000);
+                $.toastMsg("获取失败", 1500);
             }
         },
         error: function () {

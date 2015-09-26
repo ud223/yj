@@ -16,7 +16,7 @@ function queryTeacherList(search, sort, page) {
                 loadTeacher(response.data, response.current_page_no, response.page_count);
             }
             else {
-                $.toastMsg(response.data, 3000);
+                $.toastMsg(response.data, 1500);
             }
         },
         error: function () {
@@ -72,7 +72,7 @@ function applyTeacher(customer_id, sex, birthday, code, email, wechat, region_id
                 }
             }
             else {
-                $.toastMsg(response.data, 3000);
+                $.toastMsg(response.data, 1500);
             }
         },
         error: function () {

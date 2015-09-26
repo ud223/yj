@@ -29,7 +29,13 @@
 <div class="blackrowgall">
     <div class="row">
         <span class="tt">授课老师</span>
-        <span class="holder"><?php echo $this->model->teacher->name ?><span class="lightgray">（<?php echo $this->model->teacher->teacher_score ?>分）</span><img src="/img/user04.jpg" width="25" /></span>
+        <span class="holder"><?php echo $this->model->teacher->name ?><span class="lightgray">（<?php echo $this->model->teacher->teacher_score ?>分）
+            <?php if ($this->model->teacher->head_pic) :?>
+                </span><img src="/photo/image/<?php echo $this->model->teacher->head_pic ?>" width="25" /></span>
+            <?php else :?>
+                </span><img src="/img/user.jpg" width="25" /></span>
+            <?php endif; ?>
+
     </div>
     <div class="row">
         <span class="tt">手机</span>

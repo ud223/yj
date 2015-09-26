@@ -4,7 +4,7 @@ function saveName() {
     var value = $("#user-name").val();
 
     if (!value) {
-        $.toastMsg("姓名不能为空!", 3000);
+        $.toastMsg("姓名不能为空!", 1500);
 
         return;
     }
@@ -55,7 +55,7 @@ function getPhoneValidCode() {
     var phone_num = $("#phone-num").val();
 
     if (!phone_num || phone_num.length != 11) {
-        $.toastMsg("请输入正确手机号码!", 3000);
+        $.toastMsg("请输入正确手机号码!", 1500);
 
         return;
     }
@@ -73,7 +73,7 @@ function validPhoneCode() {
     var tmp_2 = $("#phone-num").attr("code");
 
     if (tmp_1 != tmp_2) {
-        $.toastMsg("验证码输入错误!", 3000);
+        $.toastMsg("验证码输入错误!", 1500);
 
         return;
     }
@@ -121,7 +121,7 @@ function saveBirthday() {
     var value = $('#birthday').val();
 
     if (!value) {
-        $.toastMsg("出生年月不能为空!", 3000);
+        $.toastMsg("出生年月不能为空!", 1500);
 
         return;
     }
@@ -178,7 +178,7 @@ function saveEducational() {
     var value = $('#educational').val();
 
     if (value == "0") {
-        $.toastMsg("请选择学历程度!", 3000);
+        $.toastMsg("请选择学历程度!", 1500);
 
         return;
     }
@@ -201,13 +201,13 @@ function saveCode() {
     var value = $('#code').val();
 
     if (!value) {
-        $.toastMsg("身份证不能为空!", 3000);
+        $.toastMsg("身份证不能为空!", 1500);
 
         return;
     }
 
     if (value.length != 15 && value.length != 18) {
-        $.toastMsg("身份证格式错误!", 3000);
+        $.toastMsg("身份证格式错误!", 1500);
 
         return;
     }
@@ -230,7 +230,7 @@ function saveEmail() {
     var value = $('#email').val();
 
     if (!value) {
-        $.toastMsg("电子邮箱不能为空!", 3000);
+        $.toastMsg("电子邮箱不能为空!", 1500);
 
         return;
     }
@@ -364,7 +364,7 @@ function saveBank() {
     var value = $('#bank').val();
 
     if (value == "0") {
-        $.toastMsg("请选择银行名称!", 3000);
+        $.toastMsg("请选择银行名称!", 1500);
 
         return;
     }
@@ -388,7 +388,7 @@ function saveBankCode() {
     var value = $('#bank_code').val();
 
     if (value == "0") {
-        $.toastMsg("请输入银行卡号!", 3000);
+        $.toastMsg("请输入银行卡号!", 1500);
 
         return;
     }

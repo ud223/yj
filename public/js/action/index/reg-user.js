@@ -4,7 +4,7 @@ function saveName() {
     var value = $("#user-name").val();
 
     if (!value) {
-        $.toastMsg("姓名不能为空!", 3000);
+        $.toastMsg("姓名不能为空!", 1500);
 
         return;
     }
@@ -28,7 +28,7 @@ function getPhoneValidCode() {
     var phone_num = $("#phone-num").val();
 
     if (!phone_num || phone_num.length != 11) {
-        $.toastMsg("请输入正确手机号码!", 3000);
+        $.toastMsg("请输入正确手机号码!", 1500);
 
         return;
     }
@@ -41,7 +41,7 @@ function validPhoneCode() {
     var tmp_2 = $("#phone-num").attr("code");
 
     if (tmp_1 != tmp_2) {
-        $.toastMsg("验证码输入错误!", 3000);
+        $.toastMsg("验证码输入错误!", 1500);
 
         return;
     }
@@ -80,13 +80,13 @@ function saveCode() {
     var value = $('#code').val();
 
     if (!value) {
-        $.toastMsg("身份证不能为空!", 3000);
+        $.toastMsg("身份证不能为空!", 1500);
 
         return;
     }
 
     if (value.length != 15 && value.length != 18) {
-        $.toastMsg("身份证格式错误!", 3000);
+        $.toastMsg("身份证格式错误!", 1500);
 
         return;
     }
@@ -106,19 +106,19 @@ function submitReg() {
     var value = "1";
 
     if ($("#my-name").html() == "") {
-        $.toastMsg("请填写真实姓名!", 3000);
+        $.toastMsg("请填写真实姓名!", 1500);
 
         return;
     }
 
     if ($("#my-phone").html() == "") {
-        $.toastMsg("请填写电话号码!", 3000);
+        $.toastMsg("请填写电话号码!", 1500);
 
         return;
     }
 
     if ($("#my-code").html() == "") {
-        $.toastMsg("请填写身份证号!", 3000);
+        $.toastMsg("请填写身份证号!", 1500);
 
         return;
     }

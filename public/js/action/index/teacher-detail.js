@@ -111,13 +111,13 @@ function checkMaxHour() {
     var selected_time = $("#time-panel").find(".selected");
 
     if (selected_time.length > 2) {
-        $.toastMsg("单次预约不能超过3小时!", 3000);
+        $.toastMsg("单次预约不能超过3小时!", 1500);
 
         return false;
     }
 
     if (tmp_max_hours - selected_time.length < 1) {
-        $.toastMsg("今天预约满了!", 3000);
+        $.toastMsg("今天预约满了!", 1500);
 
         return false;
     }

@@ -11,13 +11,13 @@ function modifyValie(id, model, key, value, fun) {
         success: function (response) {
             //alert(JSON.stringify(response)); //return;
             if (response.code == 200) {
-                $.toastMsg("操作成功!", 3000);
+                $.toastMsg("操作成功!", 1500);
                 if (fun) {
                     fun(response);
                 }
             }
             else {
-                $.toastMsg(response.data, 3000);
+                $.toastMsg(response.data, 1500);
             }
         },
         error: function () {
@@ -45,7 +45,7 @@ function setDayOpt(teacher_id, date, opt, fun) {
                 }
             }
             else {
-                $.toastMsg(response.data, 3000);
+                $.toastMsg(response.data, 1500);
             }
         },
         error: function () {
@@ -73,7 +73,7 @@ function getBusyOpt(teacher_id, fun) {
                 }
             }
             else {
-                $.toastMsg(response.data, 3000);
+                $.toastMsg(response.data, 1500);
             }
         },
         error: function () {

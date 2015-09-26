@@ -1,58 +1,67 @@
+<!--<div class="suc-t1">-->
+<!--    <div class="suc-t2"></div>-->
+<!--    <p class="suc-t3">支付失败</p>-->
+<!--</div>-->
+<!--<div class="clear-30"></div>-->
+<!--<div class="p05-c01">-->
+<!--    <div class="tb">-->
+<!--        <div class="row">-->
+<!--            <div class="td lt">老师</div>-->
+<!--            <div class="td rt">--><?php //echo $this->model->teacher->name ?><!-- --><?php //echo $this->model->teacher->phone ?><!--</div>-->
+<!--        </div>-->
+<!--        <div class="row">-->
+<!--            <div class="td lt">联系人</div>-->
+<!--            <div class="td rt">--><?php //echo $this->model->customer_name ?><!-- --><?php //echo $this->model->phone ?><!--</div>-->
+<!--        </div>-->
+<!--        <div class="row">-->
+<!--            <div class="td lt">授课地址</div>-->
+<!--            <div class="td rt">--><?php //echo $this->model->address ?><!--</div>-->
+<!--        </div>-->
+<!--        <div class="row">-->
+<!--            <div class="td lt">授课时间</div>-->
+<!--            <div class="td rt">--><?php
+//                $tmp_date = explode("-", $this->model->rundate);
+//
+//                $tmp_text = "";
+//
+//                if (substr($tmp_date[1], 0, 1) == "0") {
+//                    $tmp_text = substr($tmp_date[1], 1, 1) . "月";
+//                }
+//                else {
+//                    $tmp_text = $tmp_date[1] . "月";
+//                }
+//
+//                if (substr($tmp_date[2], 0, 1) == "0") {
+//                    $tmp_text = $tmp_text . substr($tmp_date[2], 1, 1) . "日";
+//                }
+//                else {
+//                    $tmp_text = $tmp_text . $tmp_date[2] . "日";
+//                }
+//
+//                echo  $tmp_text;
+//                ?><!-- --><?php //echo explode("|", $this->model->time)[0] ?><!--</div>-->
+<!--        </div>-->
+<!--        <div class="row">-->
+<!--            <div class="td lt">实付金额</div>-->
+<!--            <div class="td rt">￥--><?php //echo $this->model->pay_amount ?><!--</div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<div class="clear-30"></div>-->
+<!--<p class="p05-c02">-->
+<!--    请尽快点击下方重新支付授课费用,避免预约失败-->
+<!--</p>-->
+<!--<div class="clear-30"></div>-->
+<!--<div class="autobtn suc-t6 cd_hottap" hottap="/order/pay/--><?php //echo $this->model->id ?><!--">重新支付</div>-->
+<!--<div class="bt-distance"></div>-->
 <div class="suc-t1">
-    <div class="suc-t2"></div>
-    <p class="suc-t3">支付失败</p>
+    <div class="suc-t2 failure"></div>
+    <p class="suc-t3 failure">抱歉，支付失败</p>
 </div>
 <div class="clear-30"></div>
-<div class="p05-c01">
-    <div class="tb">
-        <div class="row">
-            <div class="td lt">老师</div>
-            <div class="td rt"><?php echo $this->model->teacher->name ?> <?php echo $this->model->teacher->phone ?></div>
-        </div>
-        <div class="row">
-            <div class="td lt">联系人</div>
-            <div class="td rt"><?php echo $this->model->customer_name ?> <?php echo $this->model->phone ?></div>
-        </div>
-        <div class="row">
-            <div class="td lt">授课地址</div>
-            <div class="td rt"><?php echo $this->model->address ?></div>
-        </div>
-        <div class="row">
-            <div class="td lt">授课时间</div>
-            <div class="td rt"><?php
-                $tmp_date = explode("-", $this->model->rundate);
 
-                $tmp_text = "";
-
-                if (substr($tmp_date[1], 0, 1) == "0") {
-                    $tmp_text = substr($tmp_date[1], 1, 1) . "月";
-                }
-                else {
-                    $tmp_text = $tmp_date[1] . "月";
-                }
-
-                if (substr($tmp_date[2], 0, 1) == "0") {
-                    $tmp_text = $tmp_text . substr($tmp_date[2], 1, 1) . "日";
-                }
-                else {
-                    $tmp_text = $tmp_text . $tmp_date[2] . "日";
-                }
-
-                echo  $tmp_text;
-                ?> <?php echo explode("|", $this->model->time)[0] ?></div>
-        </div>
-        <div class="row">
-            <div class="td lt">实付金额</div>
-            <div class="td rt">￥<?php echo $this->model->pay_amount ?></div>
-        </div>
-    </div>
-</div>
 <div class="clear-30"></div>
-<p class="p05-c02">
-    请尽快点击下方重新支付授课费用,避免预约失败
-</p>
-<div class="clear-30"></div>
-<div class="autobtn suc-t6 cd_hottap" hottap="/order/pay/<?php echo $this->model->id ?>">重新支付</div>
+<a href="/confirmation/order/<?php echo $this->model->id ?>" class="fullbtn normal">返回继续支付</a>
 <div class="bt-distance"></div>
 <script type="text/javascript">
     var page_type = 1;

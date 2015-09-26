@@ -188,7 +188,11 @@
         <div class="dipu4">
             <?php foreach($this->orders as $order):?>
                 <div class="mgi-b1">
-                    <img src="<?php echo $order->customer->headimgurl ?>" style="width: 100px" class="b4ee" />
+                    <?php if ($order->customer->head_pic) :?>
+                        <img src="/photo/image/<?php echo $order->customer->head_pic ?>" style="width: 100px" class="b4ee" />
+                    <?php else :?>
+                        <img src="/img/user.jpg" style="width: 100px" class="b4ee" />
+                    <?php endif; ?>
                     <div class="b5ee"><?php echo $order->customer->name ?></div>
                     <div class="b6ee"><?php
                             $tmp_date = explode("-", $order->rundate);

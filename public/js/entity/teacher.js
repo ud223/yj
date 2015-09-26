@@ -49,7 +49,7 @@ var Teacher = function() {
 
     obj.apply = function(customer_id, sex, birthday, code, email, wechat, region_id, category_id, bank, bank_code, description, location, fun) {
         if (!obj.check(code, email, bank, bank_code)) {
-            $.toastMsg(obj.message, 3000);
+            $.toastMsg(obj.message, 1500);
 
             return;
         }

@@ -17,7 +17,7 @@ function check() {
 function checkSkill(name, value) {
     if (!name) {
         if (!value) {
-            $.toastMsg("老师技能和评分不能都为空!", 3000)
+            $.toastMsg("老师技能和评分不能都为空!", 1500)
 
             return false;
         }
@@ -25,7 +25,7 @@ function checkSkill(name, value) {
 
     if (name) {
         if (!value) {
-            $.toastMsg("老师技能评分不能为空!", 3000)
+            $.toastMsg("老师技能评分不能为空!", 1500)
 
             return false;
         }
@@ -33,7 +33,7 @@ function checkSkill(name, value) {
 
     if (value) {
         if (!name) {
-            $.toastMsg("老师技能名称不能为空!", 3000)
+            $.toastMsg("老师技能名称不能为空!", 1500)
 
             return false;
         }
@@ -153,7 +153,7 @@ function loadCustomerRow(data, page, pagecount, name) {
         $("#page-controller").find(".pagination").html(page_html);
     }
     else {
-        $.toastMsg("没有微信注册普通用户!", 3000);
+        $.toastMsg("没有微信注册普通用户!", 1500);
     }
 }
 function chooseCustomer(id, nickname, sex, openid) {

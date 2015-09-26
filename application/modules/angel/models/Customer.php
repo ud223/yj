@@ -45,6 +45,14 @@ class Angel_Model_Customer extends Angel_Model_AbstractModel {
         return $result;
     }
 
+    public function saveHeadPic($id, $head_pic) {
+        $data = array('head_pic' => $head_pic);
+
+        $result = $this->save($id, $data);
+
+        return $result;
+    }
+
     public function saveApplyUser($id, $sex, $birthday, $code, $email,  $wechat, $region, $category, $bank, $bank_code, $description, $location) {
         $data = array('sex' => $sex,
             'birthday' => $birthday,

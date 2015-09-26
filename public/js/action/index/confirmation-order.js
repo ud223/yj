@@ -127,7 +127,7 @@ function getPhoneValidCode() {
     var phone_num = $("#phone-num").val();
 
     if (!phone_num || phone_num.length != 11) {
-        $.toastMsg("请输入正确手机号码!", 3000);
+        $.toastMsg("请输入正确手机号码!", 1500);
 
         return;
     }
@@ -144,13 +144,13 @@ function validPhoneCode() {
     var tmp_2 = $("#phone-num").attr("code");
 
     if ($("#phone-num").val() == "") {
-        $.toastMsg("请输入电话号码!", 3000);
+        $.toastMsg("请输入电话号码!", 1500);
 
         return;
     }
 
     if (tmp_1 != tmp_2) {
-        $.toastMsg("验证码输入错误!", 3000);
+        $.toastMsg("验证码输入错误!", 1500);
 
         return;
     }
@@ -282,13 +282,13 @@ function checkMaxHour() {
     var selected_time = $("#time-panel").find(".selected");
 
     if (selected_time.length > 2) {
-        $.toastMsg("单次预约不能超过3小时!", 3000);
+        $.toastMsg("单次预约不能超过3小时!", 1500);
 
         return false;
     }
 
     if (tmp_max_hours - selected_time.length < 1) {
-        $.toastMsg("已超出最大预约数!", 3000);
+        $.toastMsg("已超出最大预约数!", 1500);
 
         return false;
     }

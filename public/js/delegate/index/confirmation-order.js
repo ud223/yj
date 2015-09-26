@@ -64,7 +64,7 @@ function chooseDayClick() {
 function initTimeClick() {
     $(".time-space").tapA(function() {
         if ($(this).hasClass("unclickable")) {
-            $.toastMsg("该时间段已有预约!", 3000);
+            $.toastMsg("该时间段已有预约!", 1500);
 
             return ;
         }

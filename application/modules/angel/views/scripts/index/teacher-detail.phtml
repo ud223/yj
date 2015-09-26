@@ -64,21 +64,23 @@
         <div>授课类型： <span class="dt">
             <?php
                 $category_text = "";
+            
+                if ($this->model->category && count($this->model->category)) {
+                    foreach($this->model->category as $category) {
+                        if (!$category) {
+                            continue;
+                        }
 
-                foreach($this->model->category as $category) {
-                    if (!$category) {
-                        continue;
+
+                        if ($category_text != "") {
+                            $category_text = $category_text . " / ";
+                        }
+
+                        $category_text = $category_text. $category->name;
                     }
 
-
-                    if ($category_text != "") {
-                        $category_text = $category_text . " / ";
-                    }
-
-                    $category_text = $category_text. $category->name;
+                    $category_text = $category_text;
                 }
-
-                $category_text = $category_text;
 
                 echo $category_text;
             ?>
@@ -87,16 +89,18 @@
                 <?php
                     $region_text = "";
 
-                    foreach($this->model->region as $region) {
-                        if (!$region) {
-                            continue;
-                        }
+                    if ($this->model->region && count($this->model->region)) {
+                        foreach ($this->model->region as $region) {
+                            if (!$region) {
+                                continue;
+                            }
 
-                        if ($region_text != "") {
-                            $region_text = $region_text . " / ";
-                        }
+                            if ($region_text != "") {
+                                $region_text = $region_text . " / ";
+                            }
 
-                        $region_text = $region_text. $region->name;
+                            $region_text = $region_text . $region->name;
+                        }
                     }
 
                     echo $region_text;

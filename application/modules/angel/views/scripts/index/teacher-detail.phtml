@@ -64,24 +64,24 @@
         <div>授课类型： <span class="dt">
             <?php
                 $category_text = "";
-//
-//                if ($this->model->category && count($this->model->category)) {
-//                    foreach($this->model->category as $category) {
-//                        if (!$category) {
-//                            continue;
-//                        }
-//
-//
-//                        if ($category_text != "") {
-//                            $category_text = $category_text . " / ";
-//                        }
-//
-//                        $category_text = $category_text. $category->name;
-//                    }
-//
-//                    $category_text = $category_text;
-//                }
-//
+
+                if (!empty($this->model->category) && count($this->model->category)) {
+                    foreach($this->model->category as $category) {
+                        if (!$category) {
+                            continue;
+                        }
+
+
+                        if ($category_text != "") {
+                            $category_text = $category_text . " / ";
+                        }
+
+                        $category_text = $category_text. $category->name;
+                    }
+
+                    $category_text = $category_text;
+                }
+
                 echo $category_text;
             ?>
         </span></div>

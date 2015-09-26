@@ -22,11 +22,35 @@ function setName(response) {
 
 //-----------------------手机短信验证------------------------------------------
 
+var countdown=60;
+var is_count = false;
+
+function settime(val) {
+    if (!is_count)
+        return;
+
+    if (countdown == 0) {
+        $(val).removeAttr("disabled");
+        $(val).html("发送验证码");
+        countdown = 60;
+        is_count = false
+    } else {
+        $(val).attr("disabled", "true");
+        $(val).html("重新发送(" + countdown + ")");
+        countdown--;
+    }
+    setTimeout(function() { settime(val) },1000)
+}
+
 function setPhoneCode(response) {
     $("#phone-num").attr("code", response.data);
 }
 
 function getPhoneValidCode() {
+    if (is_count) {
+        return;
+    }
+
     var phone_num = $("#phone-num").val();
 
     if (!phone_num || phone_num.length != 11) {
@@ -34,6 +58,9 @@ function getPhoneValidCode() {
 
         return;
     }
+
+    is_count = true;
+    settime(document.getElementById("send-code"));
 
     getPhoneValid(phone_num, setPhoneCode);
 }

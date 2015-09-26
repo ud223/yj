@@ -1490,6 +1490,8 @@ p:after {
     color: #FFF;
 }
 .p14-sele {
+    float: right !important;
+    width: auto !important;
     padding: 0 !important;
     margin-top: -1px !important;
 }

@@ -53,3 +53,7 @@ function getTeacherBusy(teacher_id, date, control, fun, fun1) {
         }
     });
 }
+
+function applyTeacher($customer_id, sex, birthday, code, email, wechat, region_id, category_id, bank, bank_code, description) {
+
+}

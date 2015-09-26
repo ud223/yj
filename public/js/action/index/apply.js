@@ -422,3 +422,7 @@ function setDescription(response) {
 
     closePopup($("#pp-change-description").find('.cd-slidepopupback'));
 }
+
+function saveApplyData() {
+
+}

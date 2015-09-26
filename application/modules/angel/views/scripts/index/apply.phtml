@@ -31,7 +31,7 @@
             <img src="/img/arr-r.png" class="icoin"/>
         </div>
     </div>
-    <div class="row actbtn cd-slideoutbtn" id="pp-change-sex-btn">
+    <div class="row actbtn" id="pp-change-sex-btn">
         <span class="tt">性别</span>
 
 <!--        <div class="holder arr"> rel="#pp-change-sex"-->
@@ -59,7 +59,7 @@
             </span>
         </div>
     </div>
-    <div class="row cd-slideoutbtn" id="pp-change-birthday-btn">
+    <div class="row" id="pp-change-birthday-btn">
         <span class="tt">出生日期(选填)</span>
         <?php if ($this->model->birthday) :?>
             <input id="birthday" name="birthday" value="<?php echo $this->model->birthday ?>" type="date" class="holder"/>
@@ -107,18 +107,18 @@
 <!--            <img src="/img/arr-r.png" class="icoin"/>-->
 <!--        </div>-->
 <!--    </div>-->
-    <div class="row cd-slideoutbtn" id="pp-change-code-btn">
+    <div class="row" id="pp-change-code-btn">
         <span class="tt">身份证号码</span>
-        <input placeholder="填写正确身份证号码" id="code" name="code" maxlength="18" value="<?php echo $this->model->code ?>" type="text" class="holder"/>
+        <input id="code" name="code" maxlength="18" value="<?php echo $this->model->code ?>" type="text" class="holder" />
 <!--        <div class="holder arr">-->
-<!--            <span id="my-code">--><?php //echo $this->model->code ?><!--</span> rel="#pp-change-code"-->
+<!--            <span id="my-code">--><?php //echo $this->model->code ?><!--</span> rel="#pp-change-code"cd-slideoutbtn-->
 <!--            <img src="/img/arr-r.png" class="icoin"/>-->
 <!--        </div>-->
     </div>
 </div>
 
     <div class="blackrowgall">
-    <div class="row cd-slideoutbtn" id="pp-change-email-btn">
+    <div class="row" id="pp-change-email-btn">
         <span class="tt">邮箱</span>
         <input placeholder="请填写常用邮箱" id="email" value="<?php echo $this->model->email ?>" type="text" class="holder" />
 <!--        <div class="holder arr">-->
@@ -134,7 +134,7 @@
 <!--            <img src="/img/arr-r.png" class="icoin"/>-->
 <!--        </div>-->
 <!--    </div>-->
-    <div class="row cd-slideoutbtn" id="pp-change-wechat-btn">
+    <div class="row" id="pp-change-wechat-btn">
         <span class="tt">微信（可选）</span>
         <input placeholder="请填写微信号" id="wechat" value="<?php echo $this->model->wechat ?>" type="text" class="holder" />
 <!--        <div class="holder arr">-->
@@ -145,7 +145,7 @@
 </div>
 
     <div class="blackrowgall">
-        <div class="row cd-slideoutbtn" id="pp-change-location-btn">
+        <div class="row" id="pp-change-location-btn">
             <span class="tt">所在城市</span>
             <input placeholder="请填写所在城市" id="location" value="<?php echo $this->model->location ?>" type="text" class="holder" />
     <!--        <div class="holder arr">-->
@@ -349,7 +349,7 @@
                 <?php endif; ?>
             </select>
         </div>
-        <div class="row cd-slideoutbtn" id="pp-change-bank_code-btn">
+        <div class="row" id="pp-change-bank_code-btn">
             <span class="tt">银行卡号</span>
             <input placeholder="请填写银行卡号" id="bank_code" value="<?php echo $this->model->bank_code ?>" type="text" class="holder" />
     <!--        <div class="holder arr">-->

@@ -37,7 +37,8 @@ class Angel_IndexController extends Angel_Controller_Action {
         'menu-create',
         'menu-delete',
         'order-pay',
-        'order-notify'
+        'order-notify',
+        'change-photo'
     );
 
     public function init() {
@@ -486,6 +487,17 @@ class Angel_IndexController extends Angel_Controller_Action {
      * 用户处理
      *
      * *************************************************************/
+
+    public function changePhotoAction() {
+        $customerModel = $this->getModel('customer');
+
+        $id = $this->getParam('id');
+
+        $result = $customerModel->getById($id);
+
+        $this->view->model = $result;
+    }
+
     public function upgradeAction() {
         $this->_helper->layout->setLayout('upgrade');
     }

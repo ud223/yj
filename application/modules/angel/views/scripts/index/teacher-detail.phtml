@@ -66,6 +66,11 @@
                 $category_text = "";
 
                 foreach($this->model->category as $category) {
+                    if (!$category) {
+                        continue;
+                    }
+
+
                     if ($category_text != "") {
                         $category_text = $category_text . " / ";
                     }
@@ -83,6 +88,10 @@
                     $region_text = "";
 
                     foreach($this->model->region as $region) {
+                        if (!$region) {
+                            continue;
+                        }
+
                         if ($region_text != "") {
                             $region_text = $region_text . " / ";
                         }

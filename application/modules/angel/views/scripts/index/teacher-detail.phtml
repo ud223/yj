@@ -89,19 +89,19 @@
                 <?php
                     $region_text = "";
 
-//                    if ($this->model->region && count($this->model->region)) {
-//                        foreach ($this->model->region as $region) {
-//                            if (!$region) {
-//                                continue;
-//                            }
-//
-//                            if ($region_text != "") {
-//                                $region_text = $region_text . " / ";
-//                            }
-//
-//                            $region_text = $region_text . $region->name;
-//                        }
-//                    }
+                    if (!empty($this->model->region) && count($this->model->region)) {
+                        foreach ($this->model->region as $region) {
+                            if (!$region) {
+                                continue;
+                            }
+
+                            if ($region_text != "") {
+                                $region_text = $region_text . " / ";
+                            }
+
+                            $region_text = $region_text . $region->name;
+                        }
+                    }
 
                     echo $region_text;
                 ?>

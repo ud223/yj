@@ -79,19 +79,19 @@ class Angel_ApiController extends Angel_Controller_Action {
                 $path = "";
                 $category_text = "";
 
-//                if (!$p->photo && count($p->photo)) {
-//                    try {
-//                        if ($p->photo[0]->name) {
-//                            $path = $this->bootstrap_options['image.photo_path'];
-//
-//                            $path = $this->view->photoImage($p->photo[0]->name . $p->photo[0]->type, 'main');
-//                        }
-//                    } catch (Doctrine\ODM\MongoDB\DocumentNotFoundException $e) {
-//                        // 图片被删除的情况
-//                    }
-//                }
+                if (!$p->photo && count($p->photo)) {
+                    try {
+                        if ($p->photo[0]->name) {
+                            $path = $this->bootstrap_options['image.photo_path'];
+
+                            $path = $this->view->photoImage($p->photo[0]->name . $p->photo[0]->type, 'main');
+                        }
+                    } catch (Doctrine\ODM\MongoDB\DocumentNotFoundException $e) {
+                        // 图片被删除的情况
+                    }
+                }
 //                $this->_helper->json(array('data' => count($p->category), 'code' => 0));
-                if (count($p->category)) {
+                if (!$p->category && count($p->category)) {
                     foreach ($p->category as $category) {
                         if ($category_text != "") {
                             $category_text = $category_text . " / ";

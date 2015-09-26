@@ -2,14 +2,14 @@ function queryTeacherList(search, sort, page) {
     var url = '/api/teacher/get';
 
     var  data = { 'page': page, 'search': search, 'sort': sort }
-    //alert(JSON.stringify(data));
+    alert(JSON.stringify(data));
     $.ajax({
         url: url,
         dataType: 'json',
         data: data,
         method: 'post',
         success: function (response) {
-            //alert(JSON.stringify(response));
+            alert(JSON.stringify(response));
             // return;
             if (response.code == 200) {
                 //加载活动集合

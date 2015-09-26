@@ -79,7 +79,7 @@ class Angel_ApiController extends Angel_Controller_Action {
                 $path = "";
                 $category_text = "";
 
-                if (count($p->photo)) {
+                if (!empty($p->photo) && count($p->photo)) {
                     try {
                         if ($p->photo[0]->name) {
                             $path = $this->bootstrap_options['image.photo_path'];

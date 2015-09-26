@@ -1,6 +1,10 @@
 var Teacher = function() {
     var obj = new Object();
 
+    obj.check = function(code, email, bank, bank_code) {
+
+    }
+
     obj.query = function(search, sort, page) {
         queryTeacherList(search, sort, page);
     }

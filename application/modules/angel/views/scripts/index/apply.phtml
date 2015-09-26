@@ -2,6 +2,8 @@
 <script src="<?php echo $this->jsPath("tools/sms.js"); ?>"></script>
 <script src="<?php echo $this->jsPath("tools/String.js"); ?>"></script>
 <script src="<?php echo $this->jsPath("api/tools.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("api/teacher.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("entity/teacher.js"); ?>"></script>
 <script src="<?php echo $this->jsPath("action/index/apply.js"); ?>"></script>
 <script src="<?php echo $this->jsPath("delegate/index/apply.js"); ?>"></script>
 <script src="<?php echo $this->jsPath("controller/index/apply.js"); ?>"></script>
@@ -58,7 +60,7 @@
         </div>
     </div>
     <div class="row cd-slideoutbtn" id="pp-change-birthday-btn">
-        <span class="tt">出生日期</span>
+        <span class="tt">出生日期(选填)</span>
         <?php if ($this->model->birthday) :?>
             <input id="birthday" name="birthday" value="<?php echo $this->model->birthday ?>" type="date" class="holder"/>
         <?php else :?>
@@ -118,7 +120,7 @@
     <div class="blackrowgall">
     <div class="row cd-slideoutbtn" id="pp-change-email-btn">
         <span class="tt">邮箱</span>
-        <input placeholder="请填写常用邮箱" value="<?php echo $this->model->email ?>" type="text" class="holder" />
+        <input placeholder="请填写常用邮箱" id="email" value="<?php echo $this->model->email ?>" type="text" class="holder" />
 <!--        <div class="holder arr">-->
 <!--            <span id="my-email">--><?php //echo $this->model->email ?><!--</span>  rel="#pp-change-email"-->
 <!--            <img src="/img/arr-r.png" class="icoin"/>-->
@@ -134,7 +136,7 @@
 <!--    </div>-->
     <div class="row cd-slideoutbtn" id="pp-change-wechat-btn">
         <span class="tt">微信（可选）</span>
-        <input placeholder="请填写微信号" value="<?php echo $this->model->wechat ?>" type="text" class="holder" />
+        <input placeholder="请填写微信号" id="wechat" value="<?php echo $this->model->wechat ?>" type="text" class="holder" />
 <!--        <div class="holder arr">-->
 <!--            <span id="my-wechat">--><?php //echo $this->model->wechat ?><!--</span> rel="#pp-change-wechat"-->
 <!--            <img src="/img/arr-r.png" class="icoin"/>-->
@@ -145,7 +147,7 @@
     <div class="blackrowgall">
         <div class="row cd-slideoutbtn" id="pp-change-location-btn">
             <span class="tt">所在城市</span>
-            <input placeholder="请填写所在城市" value="<?php echo $this->model->location ?>" type="text" class="holder" />
+            <input placeholder="请填写所在城市" id="location" value="<?php echo $this->model->location ?>" type="text" class="holder" />
     <!--        <div class="holder arr">-->
     <!--            <span id="my-location">--><?php //echo $this->model->location ?><!--</span> rel="#pp-change-location"-->
     <!--            <img src="/img/arr-r.png" class="icoin"/>-->
@@ -162,14 +164,16 @@
                 <?php foreach ($this->region as $region) :?>
                     <div class="al-ciiel">
                         <input type="checkbox" name="region" id="<?php echo $region->id ?>" value="<?php echo $region->id ?>"
-                           <?php if (!empty($this->model->region) && count($this->model->region) > 0) :?>
-                                <?php foreach ($this->model->region as $my_region) : ?>
-                                    <?php if ($my_region->id == $region->id) :?>
-                                        checked="checked"
-                                    <?php endif; ?>
-                                <?php endforeach; ?>
-                            <?php endif; ?>
-                            >
+                        <?php
+                            if ($this->model->region) {
+                                foreach ($this->model->region as $my_region) {
+                                    if ($my_region->id == $region->id) {
+                                        echo 'checked="checked"';
+                                    }
+                                }
+                            }
+                        ?>
+                        />
                         <label for="<?php echo $region->id ?>"><?php echo $region->name ?></label>
                     </div>
                 <?php endforeach; ?>
@@ -205,14 +209,16 @@
             <?php foreach ($this->category as $category) :?>
                 <div class="al-ciiel">
                     <input type="checkbox" name="category" id="<?php echo $category->id ?>" value="<?php echo $category->id ?>"
-                        <?php if (!empty($this->model->category) && count($this->model->category) > 0) :?>
-                            <?php foreach ($this->model->category as $my_category) : ?>
-                                <?php if ($my_category->id == $category->id) :?>
-                                    checked="checked"
-                                <?php endif; ?>
-                            <?php endforeach; ?>
-                        <?php endif; ?>
-                        >
+                    <?php
+                        if ($this->model->category) {
+                            foreach ($this->model->category as $my_category) {
+                                if ($my_category->id == $category->id) {
+                                    echo 'checked="checked"';
+                                }
+                            }
+                        }
+                    ?>
+                    />
                     <label for="<?php echo $category->id ?>"><?php echo $category->name ?></label>
                 </div>
             <?php endforeach; ?>
@@ -256,87 +262,87 @@
             <span class="tt">银行</span>
             <select id="bank" name="bank" class="holder p14-sele">
                 <option>选择银行</option>
-                <?php if ($this->model->educational == "中国银行") : ?>
+                <?php if ($this->model->bank == "中国银行") : ?>
                     <option selected="selected">中国银行</option>
                 <?php else : ?>
                     <option>中国银行</option>
                 <?php endif; ?>
-                <?php if ($this->model->educational == "建设银行") : ?>
+                <?php if ($this->model->bank == "建设银行") : ?>
                     <option selected="selected">建设银行</option>
                 <?php else : ?>
                     <option>建设银行</option>
                 <?php endif; ?>
-                <?php if ($this->model->educational == "招商银行") : ?>
+                <?php if ($this->model->bank == "招商银行") : ?>
                     <option selected="selected">招商银行</option>
                 <?php else : ?>
                     <option>招商银行</option>
                 <?php endif; ?>
-                <?php if ($this->model->educational == "工商银行") : ?>
+                <?php if ($this->model->bank == "工商银行") : ?>
                     <option selected="selected">工商银行</option>
                 <?php else : ?>
                     <option>工商银行</option>
                 <?php endif; ?>
-                <?php if ($this->model->educational == "交通银行") : ?>
+                <?php if ($this->model->bank == "交通银行") : ?>
                     <option selected="selected">交通银行</option>
                 <?php else : ?>
                     <option>交通银行</option>
                 <?php endif; ?>
-                <?php if ($this->model->educational == "农业银行") : ?>
+                <?php if ($this->model->bank == "农业银行") : ?>
                     <option selected="selected">农业银行</option>
                 <?php else : ?>
                     <option>农业银行</option>
                 <?php endif; ?>
-                <?php if ($this->model->educational == "民生银行") : ?>
+                <?php if ($this->model->bank == "民生银行") : ?>
                     <option selected="selected">民生银行</option>
                 <?php else : ?>
                     <option>民生银行</option>
                 <?php endif; ?>
-                <?php if ($this->model->educational == "平安银行") : ?>
+                <?php if ($this->model->bank == "平安银行") : ?>
                     <option selected="selected">平安银行</option>
                 <?php else : ?>
                     <option>平安银行</option>
                 <?php endif; ?>
-                <?php if ($this->model->educational == "深圳发展银行") : ?>
+                <?php if ($this->model->bank == "深圳发展银行") : ?>
                     <option selected="selected">深圳发展银行</option>
                 <?php else : ?>
                     <option>深圳发展银行</option>
                 <?php endif; ?>
-                <?php if ($this->model->educational == "中信银行") : ?>
+                <?php if ($this->model->bank == "中信银行") : ?>
                     <option selected="selected">中信银行</option>
                 <?php else : ?>
                     <option>中信银行</option>
                 <?php endif; ?>
-                <?php if ($this->model->educational == "广发银行") : ?>
+                <?php if ($this->model->bank == "广发银行") : ?>
                     <option selected="selected">广发银行</option>
                 <?php else : ?>
                     <option>广发银行</option>
                 <?php endif; ?>
-                <?php if ($this->model->educational == "浦发银行") : ?>
+                <?php if ($this->model->bank == "浦发银行") : ?>
                     <option selected="selected">浦发银行</option>
                 <?php else : ?>
                     <option>浦发银行</option>
                 <?php endif; ?>
-                <?php if ($this->model->educational == "光大银行") : ?>
+                <?php if ($this->model->bank == "光大银行") : ?>
                     <option selected="selected">光大银行</option>
                 <?php else : ?>
                     <option>光大银行</option>
                 <?php endif; ?>
-                <?php if ($this->model->educational == "华夏银行") : ?>
+                <?php if ($this->model->bank == "华夏银行") : ?>
                     <option selected="selected">华夏银行</option>
                 <?php else : ?>
                     <option>华夏银行</option>
                 <?php endif; ?>
-                <?php if ($this->model->educational == "兴业银行") : ?>
+                <?php if ($this->model->bank == "兴业银行") : ?>
                     <option selected="selected">兴业银行</option>
                 <?php else : ?>
                     <option>兴业银行</option>
                 <?php endif; ?>
-                <?php if ($this->model->educational == "浙商银行") : ?>
+                <?php if ($this->model->bank == "浙商银行") : ?>
                     <option selected="selected">浙商银行</option>
                 <?php else : ?>
                     <option>浙商银行</option>
                 <?php endif; ?>
-                <?php if ($this->model->educational == "广东南粤银行") : ?>
+                <?php if ($this->model->bank == "广东南粤银行") : ?>
                     <option selected="selected">广东南粤银行</option>
                 <?php else : ?>
                     <option>广东南粤银行</option>
@@ -345,7 +351,7 @@
         </div>
         <div class="row cd-slideoutbtn" id="pp-change-bank_code-btn">
             <span class="tt">银行卡号</span>
-            <input placeholder="请填写银行卡号" value="<?php echo $this->model->bank_code ?>" type="text" class="holder" />
+            <input placeholder="请填写银行卡号" id="bank_code" value="<?php echo $this->model->bank_code ?>" type="text" class="holder" />
     <!--        <div class="holder arr">-->
     <!--            <span id="my-bank_code">--><?php //echo $this->model->bank_code ?><!--</span> rel="#pp-change-bank_code"-->
     <!--            <img src="/img/arr-r.png" class="icoin"/>-->
@@ -371,10 +377,8 @@
     </div>
 
 <div class="clear-15"></div>
-<button type="button" class="fullbtn cd_hottap" hottap="/applysuccess/<?php echo $this->model->id ?>"
-        style="height: 50px; font-size: medium">确认提交
-</button>
-
+<button type="button" id="submit-apply" class="fullbtn" style="height: 50px; font-size: medium">确认提交</button>
+<!--hottap="/applysuccess/--><?php //echo $this->model->id ?><!--"cd_hottap-->
 <div class="bt-distance"></div>
 <div class="clear-25"></div>
 <div style="height: 30px"></div>

@@ -107,3 +107,9 @@ function submitRegClick() {
         submitReg();
     })
 }
+
+function applyClick() {
+    $("#submit-apply").tapA(function() {
+        submitApply();
+    })
+}

@@ -44,6 +44,8 @@ function initBtn() {
     setDescriptionClick();
     //
     //setYearsClick();
+
+    applyClick();
 }
 
 function initInput() {

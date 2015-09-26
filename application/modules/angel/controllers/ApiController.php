@@ -14,7 +14,8 @@ class Angel_ApiController extends Angel_Controller_Action {
         'get-busy',
         'is-busy',
         'join-lesson',
-        'rating-order'
+        'rating-order',
+        'teacher-apply'
     );
     protected $SEPARATOR = ';';
 
@@ -152,6 +153,58 @@ class Angel_ApiController extends Angel_Controller_Action {
         }
         else {
             $this->_helper->json(array('data' => "读取失败!", 'code' => 0));
+        }
+    }
+
+    public function teacherApplyAction() {
+        $regionModel = $this->getModel('region');
+        $categoryModel = $this->getModel('category');
+        $customerModel = $this->getModel('customer');
+
+        $id = $this->getParam('teacher_id');
+        $sex = $this->getParam('sex');
+        $birthday = $this->getParam('birthday');
+        $code = $this->getParam('code');
+        $email = $this->getParam('email');
+        $wechat = $this->getParam('wechat');
+        $region_id = $this->getParam('region_id');
+        $category_id = $this->getParam('category_id');
+        $bank = $this->getParam('bank');
+        $bank_code = $this->getParam('bank_code');
+        $description = $this->getParam('description');
+        $location = $this->getParam('location');
+
+        $region = array();
+
+        if ($region_id) {
+            $tmp_region_id = explode(",", $region_id);
+
+            $tmp_region = $regionModel->getByIds($tmp_region_id);
+
+            foreach ($tmp_region as $r) {
+                $region[] = $r;
+            }
+        }
+//        $this->_helper->json(array('data' => "保存失败!", 'code' => 0));
+        $category = array();
+
+        if ($category_id) {
+            $tmp_category_id = explode(",", $category_id);
+
+            $tmp_category = $categoryModel->getByIds($tmp_category_id);
+
+            foreach ($tmp_category as $c) {
+                $category[] = $c;
+            }
+        }
+
+        $result = $customerModel->saveApplyUser($id, $sex, $birthday, $code, $email,  $wechat, $region, $category, $bank, $bank_code, $description, $location);
+
+        if ($result) {
+            $this->_helper->json(array('data' => "保存成功!!", 'code' => 200));
+        }
+        else {
+            $this->_helper->json(array('data' => "保存失败!", 'code' => 0));
         }
     }
 

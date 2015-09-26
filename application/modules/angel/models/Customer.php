@@ -45,6 +45,24 @@ class Angel_Model_Customer extends Angel_Model_AbstractModel {
         return $result;
     }
 
+    public function saveApplyUser($id, $sex, $birthday, $code, $email,  $wechat, $region, $category, $bank, $bank_code, $description, $location) {
+        $data = array('sex' => $sex,
+            'birthday' => $birthday,
+            'code' => $code,
+            'email' => $email,
+            'wechat' => $wechat,
+            'region' => $region,
+            'category' => $category,
+            'bank' => $bank,
+            'bank_code' => $bank_code,
+            'location' => $location,
+            'description' => $description);
+
+        $result = $this->save($id, $data);
+
+        return $result;
+    }
+
     public function ModifyCustomer($id, $name, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $frozen, $delete, $categorys, $regions) {
         $data = array('usertype' => 2,
             'name'=>$name,

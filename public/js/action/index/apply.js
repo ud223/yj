@@ -423,6 +423,51 @@ function setDescription(response) {
     closePopup($("#pp-change-description").find('.cd-slidepopupback'));
 }
 
-function saveApplyData() {
+function submitApply() {
+    var customer_id = user_id;
+    var sex = $('input[name="sex"]:checked').val();
+    var birthday = $("#birthday").val();
+    var email = $("#email").val();
+    var code = $("#code").val();
+    var wechat = $("#wechat").val();
 
+    var region_id = "";
+
+    var regions = document.getElementsByName('region');
+    //取到对象数组后，我们来循环检测它是不是被选中
+
+    for(var i=0; i < regions.length; i++){
+        if(regions[i].checked)
+            region_id += regions[i].value + ',';
+    }
+
+    if (region_id.length > 1) {
+        region_id = region_id.substr(0, region_id.length - 1);
+    }
+
+    var category_id = "";
+
+    var categorys = document.getElementsByName('category');
+
+    for(var i=0; i < categorys.length; i++){
+        if(categorys[i].checked)
+            category_id += categorys[i].value + ',';
+    }
+
+    if (category_id.length > 1) {
+        category_id = category_id.substr(0, category_id.length - 1);
+    }
+
+    var bank = $("#bank").find("option:selected").text();
+    var bank_code = $("#bank_code").val();
+    var description = $("#description").val();
+    var location = $("#location").val();
+
+    var teacher = new Teacher();
+
+    teacher.apply(customer_id, sex, birthday, code, email, wechat, region_id, category_id, bank, bank_code, description, location, toApply)
+}
+
+function toApply() {
+    location.href = '/applysuccess/'+ user_id;
 }

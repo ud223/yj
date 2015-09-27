@@ -219,4 +219,9 @@
     var customer_id = '<?php echo $this->model->customer->id ?>';
     var max_hours = <?php echo $this->max_hours ?>;
     var tmp_max_hours = <?php echo $this->max_hours ?>;
+    <?php if ($this->model->address) :?>
+        var is_address = true;
+    <?php else :?>
+        var is_address = false;
+    <?php endif; ?>
 </script>

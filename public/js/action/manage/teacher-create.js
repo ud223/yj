@@ -129,7 +129,7 @@ function loadCustomerRow(data, page, pagecount, name) {
                 cls = "active";
             }
 
-            page_html = page_html + '<li class="cls"><a href="/manage/teacher/list/'+ index +'" >'+ index +'</a></li>';
+            page_html = page_html + '<li class="cls"><a href="javascript:void(0)" onclick="loadCustomerList('+ index +', \"'+ name +'\");" >'+ index +'</a></li>';///manage/teacher/list/'+ index +'
         }
 
         if (page == 1) {

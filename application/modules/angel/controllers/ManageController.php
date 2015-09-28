@@ -432,16 +432,13 @@ class Angel_ManageController extends Angel_Controller_Action {
             $param = new MongoRegex("/" . $name . "/i");
 
             $paginator = $teacherModel->getBy(true, array("usertype"=> "2", "delete"=>"0", "name"=>$param));
-
-            $paginator->setItemCountPerPage($this->bootstrap_options['default_page_size']);
-            $paginator->setCurrentPageNumber($page);
         }
         else {
             $paginator = $teacherModel->getBy(true, array("usertype"=> "2", "delete"=>0));
-
-            $paginator->setItemCountPerPage($this->bootstrap_options['default_page_size']);
-            $paginator->setCurrentPageNumber($page);
         }
+
+        $paginator->setItemCountPerPage($this->bootstrap_options['default_page_size']);
+        $paginator->setCurrentPageNumber($page);
 
         $this->view->name = $name;
         $this->view->title = "老师列表";
@@ -605,7 +602,7 @@ class Angel_ManageController extends Angel_Controller_Action {
             $page = 1;
         }
 
-        $paginator = $customerModel->getBy(true, array("usertype"=> "1", "frozen"=> "1"));
+        $paginator = $customerModel->getBy(true, array("usertype"=> "1", "frozen"=> 1));
         $paginator->setItemCountPerPage($this->bootstrap_options['default_page_size']);
         $paginator->setCurrentPageNumber($page);
 

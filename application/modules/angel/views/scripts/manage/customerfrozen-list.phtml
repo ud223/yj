@@ -43,11 +43,11 @@
     <table class="table table-bordered table-hover wb mbtable table-striped">
         <thead>
         <tr>
+            <th>用户ID</th>
             <th>昵称</th>
             <th>性别</th>
             <th>登录城市</th>
             <th>评分</th>
-            <th>是否可用</th>
             <th>状态</th>
             <!--            <th>详细</th>-->
             <th>操作</th>
@@ -57,8 +57,9 @@
         <?php if ($this->paginator):?>
             <?php foreach ($this->paginator as $p): ?>
                 <tr>
+                    <td><?php echo $p->id ?></td>
                     <td><?php echo $p->nickname ?></td>
-                    <td><?php echo $p->sex ?></td>
+                    <td><?php if ($p->sex == 1) { echo "男"; } else if($p->sex) { echo "女"; } else { echo "未知"; } ?></td>
                     <td><?php echo $p->city ?></td>
                     <td><a href="/manage/customer/score/list/<?php echo $p->id ?>"><?php echo $p->user_score ?></a></td>
                     <td><?php if ($p->frozen == 0) { echo "正常"; } else { echo "冻结"; } ?></td>
@@ -66,7 +67,7 @@
                     <!--                        <a href="/manage/teacher/save/--><?php //echo $p->id ?><!--">查看<span class="glyphicon glyphicon-link"></span></a>-->
                     <!--                    </td>-->
                     <td>
-                        <?php if ($p->delete == 0):?>
+                        <?php if ($p->frozen == 0):?>
                             <div><a href="javascript:void(0)" class="remove-list">冻结</a><input type="hidden" class="tmp" value="<?php echo $p->id ?>"/></div>
                         <?php else:?>
                             <div><a href="javascript:void(0)" class="remove-list">解冻</a><input type="hidden" class="tmp" value="<?php echo $p->id ?>"/></div>

@@ -34,7 +34,7 @@ function removPhoto($this, url, containerSelector, valSelector) {
 
 function removeObject($this, url, containerSelector, valSelector, msg) {
     if (!msg) {
-        msg = "确认删除该对象？";
+        msg = "确认处理该对象？";
     }
 
     if (!confirm(msg)) {
@@ -46,11 +46,11 @@ function removeObject($this, url, containerSelector, valSelector, msg) {
     if (!valSelector) {
         valSelector = '.tmp';
     }
-    
+
     //var container = $this.closest(containerSelector);
     var id = $this.find(valSelector).val();
     var data = {id: id};
-
+    //alert(url);
     $.ajax({
         url: url,
         dataType: 'json',
@@ -63,7 +63,7 @@ function removeObject($this, url, containerSelector, valSelector, msg) {
                 //});
                 location.reload();
             } else {
-                alert('删除失败');
+                alert('处理失败');
             }
         }
     });

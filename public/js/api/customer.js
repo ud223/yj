@@ -1,4 +1,4 @@
-function queryCustomerList(seacher, sort, page) {
+function queryCustomerList(page, name) {
     var url = '/api/customer/list';
 
     var  data = { 'page': page, 'nickname': name }

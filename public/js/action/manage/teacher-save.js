@@ -129,25 +129,25 @@ function loadCustomerRow(data, page, pagecount, name) {
                 cls = "active";
             }
 
-            page_html = page_html + '<li class="cls"><a href="/manage/teacher/list/'+ index +'" >'+ index +'</a></li>';
+            page_html = page_html + "<li class='cls'><a href='javascript:void(0)' onclick='loadCustomerList("+ index +", \""+ name +"\");' >"+ index +"</a></li>";///manage/teacher/list/'+ index +"
         }
 
         if (page == 1) {
-            page_html = '<li><a href="javascript:void(0)" onclick="loadCustomerList(1, \"'+ name +'\");" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>' + page_html;
+            page_html = "<li><a href='javascript:void(0)' onclick='loadCustomerList(1, \""+ name +"\");' aria-label='Previous'><span aria-hidden='true'>&laquo;</span></a></li>" + page_html;
         }
         else {
             var tmp_page = page - 1;
 
-            page_html = '<li><a href="javascript:void(0)" onclick="loadCustomerList(\"'+ page +'\", \"'+ name +'\");" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>' + page_html;
+            page_html = "<li><a href='javascript:void(0)' onclick='loadCustomerList("+ page +", \""+ name +"\");' aria-label='Previous'><span aria-hidden='true'>&laquo;</span></a></li>" + page_html;
         }
 
         if (page == pagecount) {
-            page_html = page_html + '<li><a href="javascript:void(0)" onclick="loadCustomerList(\"'+ pagecount +'\", \"'+ name +'\");" aria-label="Previous"><span aria-hidden="true">&raquo;</span></a></li>';
+            page_html = page_html + "<li><a href='javascript:void(0)' onclick='loadCustomerList("+ pagecount +", \""+ name +"\");' aria-label='Previous'><span aria-hidden='true'>&raquo;</span></a></li>";
         }
         else {
             var tmp_page = page + 1;
 
-            page_html = page_html + '<li><a href="javascript:void(0)" onclick="loadCustomerList(\"'+ tmp_page +'\", \"'+ name +'\");" aria-label="Previous"><span aria-hidden="true">&raquo;</span></a></li>';
+            page_html = page_html + "<li><a href='javascript:void(0)' onclick='loadCustomerList("+ tmp_page +", \""+ name +"\");' aria-label='Previous'><span aria-hidden='true'>&raquo;</span></a></li>";
         }
 
         $("#page-controller").find(".pagination").html(page_html);

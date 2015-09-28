@@ -62,9 +62,9 @@
                     <td><?php echo $p->rundate ?></td>
                     <td><?php echo $p->teacher->name ?></td>
                     <td><?php echo $p->hour ?></td>
-                    <td><?php echo $p->amount ?></td>
+                    <td><?php echo $p->pay_amount ?></td>
                     <td><?php
-                            switch($p->$state) {
+                            switch($p->state) {
                                 case 1: {
                                     echo "下单"; break;
                                 }

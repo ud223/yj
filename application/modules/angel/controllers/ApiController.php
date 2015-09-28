@@ -80,7 +80,7 @@ class Angel_ApiController extends Angel_Controller_Action {
                 $path = "";
                 $category_text = "";
 
-                if (!$p->photo && count($p->photo)) {
+                if ($p->photo && count($p->photo)) {
                     try {
                         if ($p->photo[0]->name) {
                             $path = $this->bootstrap_options['image.photo_path'];
@@ -130,14 +130,14 @@ class Angel_ApiController extends Angel_Controller_Action {
             $param = new MongoRegex("/" . $nickname . "/i");
 
             $paginator = $customerModel->getBy(true, array("usertype"=> "1", "nickname"=>$param));
-            $paginator->setItemCountPerPage($this->bootstrap_options['default_page_size']);
-            $paginator->setCurrentPageNumber($page);
+
         }
         else {
             $paginator = $customerModel->getBy(true, array("usertype"=> "1"));
-            $paginator->setItemCountPerPage($this->bootstrap_options['default_page_size']);
-            $paginator->setCurrentPageNumber($page);
         }
+
+        $paginator->setItemCountPerPage($this->bootstrap_options['default_page_size']);//
+        $paginator->setCurrentPageNumber($page);
 
         if ($paginator) {
             $current_page_no = $paginator->getCurrentPageNumber();

@@ -144,11 +144,11 @@ function submitReg() {
         return;
     }
 
-    if ($("#my-code").html() == "") {
-        $.toastMsg("请填写身份证号!", 1500);
-
-        return;
-    }
+    //if ($("#my-code").html() == "") {
+    //    $.toastMsg("请填写身份证号!", 1500);
+    //
+    //    return;
+    //}
 
     modifyValie(user_id, model, key, value, setReg);
 }

@@ -39,6 +39,9 @@ function loadTeacher(data, current_page_no, page_count) {
     }
 
     $.each(data, function() {
+        if (user_id == this.id)
+            return;
+
        var node = $("#teacher-item").find(".teacher-itm").clone();
 
         node.find(".cd_hottap").attr("hottap", "/mentordetail/" + this.id);

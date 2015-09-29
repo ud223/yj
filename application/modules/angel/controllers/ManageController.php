@@ -181,7 +181,8 @@ class Angel_ManageController extends Angel_Controller_Action {
             }
 
             if ($result) {
-                $this->_redirect($this->view->url(array(), 'manage-result') . '?redirectUrl=' . $this->view->url(array(), 'manage-teacher-list-home'));
+                $this->_redirect($this->view->url(array(), 'manage-teacher-list-home'));
+//                $this->_redirect($this->view->url(array(), 'manage-result') . '?redirectUrl=' . $this->view->url(array(), 'manage-teacher-list-home'));
             } else {
                 $this->_redirect($this->view->url(array(), 'manage-result') . '?error=' . $error);
             }
@@ -367,7 +368,8 @@ class Angel_ManageController extends Angel_Controller_Action {
                 $error = $e->getMessage();
             }
             if ($result) {
-                $this->_redirect($this->view->url(array(), 'manage-result') . '?redirectUrl=' . $this->view->url(array(), 'manage-teacher-list-home'));
+                $this->_redirect($this->view->url(array(), 'manage-teacher-list-home'));
+//                $this->_redirect($this->view->url(array(), 'manage-result') . '?redirectUrl=' . $this->view->url(array(), 'manage-teacher-list-home'));
             } else {
                 $this->_redirect($this->view->url(array(), 'manage-result') . '?error=' . $error);
             }

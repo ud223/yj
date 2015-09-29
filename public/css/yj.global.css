@@ -378,6 +378,7 @@ p:after {
     height: 100%;
     position: relative;
     width: 60px;
+    font-size:12px;
 }
 .tcfilter-fix .loc-bt:active,
 .tcfilter-fix .sort-bt:active {
@@ -394,8 +395,14 @@ p:after {
 .tcfilter-fix .sort-bt {
     background-image: url(../img/top-fix-list-dl.png);
 }
+.tcfilter-fix .loc-bt {
+    background:none;
+    padding-left:15px;
+    padding-right:15px;
+    width:auto;
+}
 .tcfilter-fix .loc-bt.selected {
-    background-image: url(../img/top-fix-list-location-open.png);
+
 }
 .tcfilter-fix .sort-bt.selected {
     background-image: url(../img/top-fix-list-dl-open.png);
@@ -1905,4 +1912,16 @@ p:after {
 }
 .suc-t2.failure {
     background-image:url(/img/error.svg);
+}
+
+.fkd-00 {
+    padding:0 15px;
+}
+.fkd-01 {
+    font-size:14px;
+}
+.fkd-02 {
+}
+.fkd-03 {
+    font-weight: bold;
 }

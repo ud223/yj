@@ -33,7 +33,8 @@ function locationSuccess(position) {
     alert(5);;
     lat = currentLat;
     var currentLon = position.coords.longitude;
-    lng = currenlon;
+    alert(6);
+    lng = currentLon;
     alert(0);
     if (afterMethod) {
         alert(1);

@@ -170,10 +170,14 @@ class Angel_ManageController extends Angel_Controller_Action {
 
             try {
                 if ($wxid) {
-                    $result = $teacherModel->ModifyTeacher($wxid, $headPic, $name, $sex, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $years, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, 0, 0, $categorys, $regions, $experience, $price);
+                    $serial = $this->getMaxNum();
+
+                    $result = $teacherModel->ModifyTeacher($wxid, $headPic, $name, $sex, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $years, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, 0, 0, $categorys, $regions, $experience, $price, $serial);
                 }
                 else {
-                    $result = $teacherModel->addTeacher($headPic, $name, $sex, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $years, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $categorys, $regions, $experience, $price);
+                    $serial = $this->getMaxNum();
+
+                    $result = $teacherModel->addTeacher($headPic, $name, $sex, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $years, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $categorys, $regions, $experience, $price, $serial);
                 }
             }
             catch (Exception $e) {
@@ -356,12 +360,13 @@ class Angel_ManageController extends Angel_Controller_Action {
                         //将之前的老师数据迁移到微信用户号的数据中
                         $result = $teacherModel->ModifyTeacher($wxid, $headPic, $name, $sex, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $years, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $result->frozen, $result->delete, $categorys, $regions, $experience, $price);
                     }
-
                     //--------------------这里涉及数据迁移的问题-----------------------------------
                     $teacherModel->deleteTeacher($id);
                 }
                 else {
-                    $result = $teacherModel->ModifyTeacher($id, $headPic, $name, $sex, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $years, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $result->frozen, $result->delete, $categorys, $regions, $experience, $price);
+                    $serial = $this->getMaxNum();
+
+                    $result = $teacherModel->ModifyTeacher($id, $headPic, $name, $sex, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $years, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $result->frozen, $result->delete, $categorys, $regions, $experience, $price, $serial);
                 }
             } catch (Exception $e) {
                 $result = false;
@@ -1628,5 +1633,24 @@ class Angel_ManageController extends Angel_Controller_Action {
             substr($hash, 20, 12);
 
         return $guid;
+    }
+
+    public function getMaxNum() {
+        $serialModel = $this->getModel('serial');
+
+        $serial = $serialModel->getLastSerial();
+
+        $num = 1;
+
+        if ($serial) {
+            $num = $serial->max_num + 1;
+
+            $serialModel->saveSerial($num, "tp");
+        }
+        else {
+            $serialModel->addSerial(1, "tp");
+        }
+
+        return $num;
     }
 }

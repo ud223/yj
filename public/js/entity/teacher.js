@@ -43,6 +43,34 @@ var Teacher = function() {
         return true;
     }
 
+    obj.checkRange = function(cell, range, lat, lng) {
+        if (!cell) {
+            obj.message = "小区名称不能为空!!";
+
+            return false;
+        }
+
+        if (!range) {
+            obj.message = "请选择授课范围!";
+
+            return false;
+        }
+
+        if (!lat) {
+            obj.message = "坐标数据不完整!";
+
+            return false;
+        }
+
+        if (!lng) {
+            obj.message = "坐标数据不完整!";
+
+            return false;
+        }
+
+        return true;
+    }
+
     obj.query = function(search, sort, page) {
         queryTeacherList(search, sort, page);
     }
@@ -62,6 +90,16 @@ var Teacher = function() {
             birthday = "19" + code.substr(6, 2) + "-"  + code.substr(8, 2) + "-" +  code.substr(10, 2);
 
         applyTeacher(customer_id, sex, birthday, code, email, wechat, region_id, category_id, bank, bank_code, description, location, fun);
+    }
+
+    obj.saveRange = function(teacher_id, cell, range, lat, lng, fun) {
+        if (!obj.checkRange(cell, range, lat, lng)) {
+            $.toastMsg(obj.message, 1500);
+
+            return;
+        }
+
+        setRange(teacher_id, cell, range, lat, lng, fun);
     }
 
     return obj;

@@ -2,10 +2,10 @@ var page = 1;
 var teacher_list_count = 1;
 
 function load() {
-    var tmp_region= $(".tcfilter-filter").find(".selected");
+    //var tmp_region= $(".tcfilter-filter").find(".selected");
     var tmp_sort = $(".tcfilter-sort").find(".selected");
 
-    var search = "region.$id="+ $(tmp_region).attr("id");
+    var search = "lat:"+ lat +";lng:"+ lng;
     var sort = $(tmp_sort).attr("sort");
 
     var tmp_search = localStorage.getItem("teacher_search");
@@ -73,4 +73,44 @@ function loadTeacher(data, current_page_no, page_count) {
 
     page = current_page_no;
     teacher_list_count = page_count;
+}
+
+function setAddressList(response) {
+    var addresses = response.result.pois;
+    var list = $("#addr-list");
+
+    list.html("");
+
+    $("#address-view").html(addresses[0].name);
+
+    $.each(addresses, function() {
+        var node = $("#div-addr-node").find(".loc-ddl-itm").clone();
+
+        node.find(".t1").html(this.name);
+        node.find(".t2").html(this.addr);
+
+        node.find(".t1").attr("lng", this.point.x);
+        node.find(".t1").attr("lat", this.point.y);
+
+        addrClick(node);
+
+        list.append(node);
+    });
+}
+
+function chooseAddr(node) {
+    ///$("#edit-addr").val(text);
+    if (node.find(".t1").html().length > 5) {
+        $("#address-view").html(node.find(".t1").html().substr(0, 5) +  "...");
+    }
+    else {
+        $("#address-view").html(node.find(".t1").html());
+    }
+
+    lat = node.find(".t1").attr("lat");
+    lng = node.find(".t1").attr("lng");
+
+    load();
+
+    closePopup($("#pp-change-loc").find('.cd-slidepopupback'));
 }

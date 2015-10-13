@@ -149,4 +149,18 @@ class UserInfo extends AbstractDocument {
 
     /** @ODM\String */
     protected $serial_number;
+
+    //导师服务范围中心小区
+    /** @ODM\String */
+    protected $cell;
+
+    //服务范围,单位：米  默认5公里
+    /** @ODM\Int */
+    protected $range = 5000;
+
+    /** @ODM\String */
+    protected $lng;
+
+    /** @ODM\String */
+    protected $lat;
 }

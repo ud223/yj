@@ -407,6 +407,38 @@ class DocumentsUserInfoHydrator implements HydratorInterface
             $hydratedData['serial_number'] = $return;
         }
 
+        /** @Field(type="string") */
+        if (isset($data['cell'])) {
+            $value = $data['cell'];
+            $return = (string) $value;
+            $this->class->reflFields['cell']->setValue($document, $return);
+            $hydratedData['cell'] = $return;
+        }
+
+        /** @Field(type="int") */
+        if (isset($data['range'])) {
+            $value = $data['range'];
+            $return = (int) $value;
+            $this->class->reflFields['range']->setValue($document, $return);
+            $hydratedData['range'] = $return;
+        }
+
+        /** @Field(type="string") */
+        if (isset($data['lng'])) {
+            $value = $data['lng'];
+            $return = (string) $value;
+            $this->class->reflFields['lng']->setValue($document, $return);
+            $hydratedData['lng'] = $return;
+        }
+
+        /** @Field(type="string") */
+        if (isset($data['lat'])) {
+            $value = $data['lat'];
+            $return = (string) $value;
+            $this->class->reflFields['lat']->setValue($document, $return);
+            $hydratedData['lat'] = $return;
+        }
+
         /** @Field(type="id") */
         if (isset($data['_id'])) {
             $value = $data['_id'];

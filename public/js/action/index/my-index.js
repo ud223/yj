@@ -127,3 +127,62 @@ function setYears(response) {
 
     closePopup($("#pp-change-years").find('.cd-slidepopupback'));
 }
+/****************************************
+* 地址设置
+* **************************************/
+function setAddressList(response) {
+    var addresses = response.result.pois;
+    var list = $("#addr-list");
+
+    list.html("");
+    //alert(JSON.stringify(response));
+    var lat = response.result.location.lat;
+    var lng = response.result.location.lng;
+
+    $.each(addresses, function() {
+        var node = $("#div-addr-node").find(".loc-ddl-itm").clone();
+
+        node.find(".t1").html(this.name);
+        node.find(".t2").html(this.addr);
+
+        //alert("lng:"+this.point.x);
+        //alert("lat:"+this.point.y);
+        node.find(".t1").attr("lng", this.point.x);
+        node.find(".t1").attr("lat", this.point.y);
+
+        addrClick(node);
+
+        list.append(node);
+    });
+}
+
+function chooseAddr(text, lat, lng) {
+    $("#cell").html(text);
+    $("#cell").attr("lat", lat);
+    $("#cell").attr("lng", lng);
+}
+
+function saveRange() {
+    //$("#range").html($("#choose-range").find("option:selected").text());
+    //
+    //return;
+
+    var user_id = localStorage.getItem('user_id');
+    var cell = $("#cell").html();
+    var range = $("#choose-range").val();
+    var lat = $("#cell").attr("lat");
+    var lng = $("#cell").attr("lng");
+
+    var teacher = new Teacher();
+
+    teacher.saveRange(user_id, cell, range, lat, lng, saveRanged)
+}
+
+function saveRanged() {
+    $.toastMsg("保存成功!", 1500);
+
+    $("#range").attr("value", $("#choose-range").val());
+    $("#range").html($("#choose-range").find("option:selected").text());
+
+    closePopup($("#pp-teach-area").find('.cd-slidepopupback'));
+}

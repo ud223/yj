@@ -1,5 +1,6 @@
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=8TN0gC5Rqo6cec2jroKOkNpE&v=2.0"></script>
 <script src="<?php echo $this->jsPath("swipe.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("tools/map.js"); ?>"></script>
 <script src="<?php echo $this->jsPath("tools/sms.js"); ?>"></script>
 <script src="<?php echo $this->jsPath("tools/String.js"); ?>"></script>
 <script src="<?php echo $this->jsPath("api/tools.js"); ?>"></script>
@@ -104,8 +105,13 @@
             </div>
         </div>
     </div>
-
     <div class="blackrowgall">
+        <div class="row actbtn cd-slideoutbtn" rel="#pp-teach-area">
+            <span class="tt">授课区域</span>
+            <div class="holder arr">
+                <img src="/img/arr-r.png" class="icoin" />
+            </div>
+        </div>
         <div class="row actbtn cd_hottap" hottap="/my/calendar/<?php echo $this->model->id ?>">
             <span class="tt">日程表</span>
             <div class="holder arr">
@@ -198,6 +204,81 @@
     <div class="clear-15"></div>
     <div id="valid-phone-code"  class="fullbtn">
         确认
+    </div>
+</div>
+<div class="slidepopup cd-slidepopup" id="pp-teach-area">
+    <div class="tt">选择授课地址<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+        <div class="fkd-00">
+            <div class="fkd-01">
+                <div class="fkd-02">授课区域中心 <span class="fkd-03" id="cell" lng="<?php echo $this->model->lng ?>"  lat="<?php echo $this->model->lat ?>"><?php echo $this->model->cell ?></span></div>
+                <div class="fkd-02">授课范围 <span class="fkd-03" id="range" value="<?php echo $this->model->range ?>"><?php echo $this->model->range / 1000  ?>公里</span></div>
+                <div class="fkd-05">服务半径</div>
+                <div>
+                    <select id="choose-range" class="fkd-06">
+                        <option value="5000">5公里</option>
+                        <option value="10000">10公里</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+<!--        <div class="fkd-04">-->
+<!--            <div class="fkd-05">服务半径</div>-->
+<!--            <div>-->
+<!--                <select class="fkd-06">-->
+<!--                    <option>5公里</option>-->
+<!--                    <option>10公里</option>-->
+<!--                </select>-->
+<!--            </div>-->
+<!--        </div>-->
+        <a href="javascript:void(0)" id="submit-range" class="fullbtn">确认修改</a>
+        <div class="address-list" style="position:absolute;left:0;right:0;top:260px;bottom:0;overflow-y:auto">
+            <div style="padding:10px 15px 0 15px;">
+                <input id="edit-addr" placeholder="请输入详细地址" type="text" class="fulltxtinput" />
+                <button id="btn-addr-query" class="sendvalcodbt">查询</button>
+            </div>
+            <div class="clear-15"></div>
+            <div id="addr-list" class="loc-ddl-bd">
+            </div>
+            <div class="clear-15"></div>
+        </div>
+        <div class="clear-15"></div>
+    </div>
+    <!--<div class="slidepopup cd-slidepopup" id="pp-teach-area">-->
+<!--    <div class="tt">更改授课区域<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>-->
+<!--    <div class="address-list" style="position:absolute;left:0;right:0;top:60px;bottom:20;overflow-y:auto">-->
+<!--        <div style="padding:10px 15px 0 15px;">-->
+<!--            <input id="edit-addr" placeholder="请输入详细地址" type="text" class="fulltxtinput" />-->
+<!--            <button id="btn-addr-query" class="sendvalcodbt">查询</button>-->
+<!--        </div>-->
+<!--        <div class="clear-15"></div>-->
+<!--        <div id="addr-list" class="loc-ddl-bd">-->
+<!--        </div>-->
+<!--        <div class="clear-15"></div>-->
+<!--    </div>-->
+<!--    <div class="fkd-00">-->
+<!--        <div class="fkd-01">-->
+<!--            <div class="fkd-02">授课区域中心 <span class="fkd-03">--><?php //echo $this->model->cell  ?><!--</span></div>-->
+<!--            <div class="fkd-02">授课范围 <span class="fkd-03">10公里</span></div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="fkd-04">-->
+<!--        <div class="fkd-05">服务半径</div>-->
+<!--        <div>-->
+<!--            <select class="fkd-06">-->
+<!--                <option>5公里</option>-->
+<!--                <option>10公里</option>-->
+<!--            </select>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="clear-15"></div>-->
+<!--    <a href="#" class="fullbtn">确认修改</a>-->
+<!--    <div class="clear-15"></div>-->
+<!--</div>-->
+<div id="div-addr-node" style="display: none">
+    <div class="loc-ddl-itm">
+        <p class="t1"></p>
+        <div class="t2"></div>
+        <i class="ico"></i>
     </div>
 </div>
 <script type="text/javascript">

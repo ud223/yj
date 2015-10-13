@@ -3,7 +3,9 @@
         padding-bottom:50px;
     }
 </style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=8TN0gC5Rqo6cec2jroKOkNpE&v=2.0"></script>
 <script src="<?php echo $this->jsPath("tools/String.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("tools/map.js"); ?>"></script>
 <script src="<?php echo $this->jsPath("action/index/course-detail.js"); ?>"></script>
 <script src="<?php echo $this->jsPath("api/teacher.js"); ?>"></script>
 <script src="<?php echo $this->jsPath("entity/teacher.js"); ?>"></script>
@@ -41,8 +43,9 @@
 </div>
 
 <div class="tcfilter-fix" style="position: relative;">
-    <div class="nothing-btn loc-bt">
-        <i class="ico"></i>
+    <div class="nothing-btn loc-bt cd-slideoutbtn" rel="#pp-change-loc">
+        <span id="address-view">皇御苑</span>
+        <img src="/img/arr-d.png" width="12">
     </div>
     <div class="nothing-btn sort-bt">
         <i class="ico"></i>
@@ -107,7 +110,30 @@
         </div>
     </div>
 </div>
+<div class="slidepopup cd-slidepopup" id="pp-change-loc">
+    <div class="tt">选择授课地址<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+    <div class="address-list" style="position:absolute;left:0;right:0;top:60px;bottom:0;overflow-y:auto">
+        <div style="padding:10px 15px 0 15px;">
+            <input id="edit-addr" placeholder="请输入详细地址" type="text" class="fulltxtinput" />
+            <button id="btn-addr-query" class="sendvalcodbt">查询</button>
+        </div>
+        <div class="clear-15"></div>
+        <div id="addr-list" class="loc-ddl-bd">
+        </div>
+        <div class="clear-15"></div>
+    </div>
+    <div class="clear-15"></div>
+</div>
+<div id="div-addr-node" style="display: none">
+    <div class="loc-ddl-itm">
+        <p class="t1"></p>
+        <div class="t2"></div>
+        <i class="ico"></i>
+    </div>
+</div>
 <script type="text/javascript">
     var lesson_id = '<?php echo $this->model->id ?>';
     var page_type = 0;
+    var lat = false;
+    var lng = false;
 </script>

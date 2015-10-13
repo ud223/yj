@@ -378,7 +378,7 @@ p:after {
     height: 100%;
     position: relative;
     width: 60px;
-    font-size:12px;
+    font-size: 12px;
 }
 .tcfilter-fix .loc-bt:active,
 .tcfilter-fix .sort-bt:active {
@@ -396,17 +396,14 @@ p:after {
     background-image: url(../img/top-fix-list-dl.png);
 }
 .tcfilter-fix .loc-bt {
-    background:none;
-    padding-left:15px;
-    padding-right:15px;
-    width:auto;
+    background: none;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: auto;
 }
-.tcfilter-fix .loc-bt.selected {
-
-}
-.tcfilter-fix .sort-bt.selected {
-    background-image: url(../img/top-fix-list-dl-open.png);
-}
+.tcfilter-fix .loc-bt.selected {} .tcfilter-fix .sort-bt.selected {
+                                      background-image: url(../img/top-fix-list-dl-open.png);
+                                  }
 .tcfilter-fix .switcher {
     width: 40%;
     left: 50%;
@@ -582,8 +579,8 @@ p:after {
     left: 0;
     bottom: 0;
     right: 0;
-    height: 50px;
-    line-height: 50px;
+    height: 60px;
+    line-height: 60px;
     z-index: 9;
     box-shadow: 0 0 5px rgba(0, 0, 0, .2);
     background: rgba(246, 246, 246, .9);
@@ -735,11 +732,10 @@ p:after {
     padding: 20px 15px 0 15px;
     /*box-shadow: 0 1px 3px rgba(0, 0, 0, .05);*/
 }
-
 .mentor-intro-blk .usrimg {
     background-position: center center;
     background-size: cover;
-    display:inline-block;
+    display: inline-block;
     width: 70px;
     height: 70px;
     border-radius: 200px;
@@ -747,7 +743,6 @@ p:after {
     margin-top: -40px;
     border: 2px solid #FFF;
 }
-
 .mentor-intro-blk .usrgener {
     display: none;
     width: 20px;
@@ -1757,7 +1752,7 @@ p:after {
     padding: 15px 15px 15px 50px;
 }
 .loc-ddl-itm:active {
-    background:#F8F8F8;
+    background: #F8F8F8;
 }
 .loc-ddl-itm .t1 {
     margin-bottom: 5px;
@@ -1770,7 +1765,7 @@ p:after {
     display: inline-block;
     width: 30px;
     height: 30px;
-    background: url(/img/location-marker-128.png) center center no-repeat;
+    background: url(../img/location-marker-128.png) center center no-repeat;
     background-size: cover;
     position: absolute;
     left: 10px;
@@ -1778,34 +1773,32 @@ p:after {
     margin-top: -15px;
 }
 .toastmsg-wp {
-    width:100%;
-    left:0;
-    position:fixed;
+    width: 100%;
+    left: 0;
+    position: fixed;
     z-index: 101;
-    text-align:center;
-    bottom:30px;
-    display:none;
+    text-align: center;
+    bottom: 30px;
+    display: none;
 }
 .toastmsg {
-    padding:8px 15px;
-    background:rgba(0,0,0,.8);
-    text-align:center;
-    color:#FFF;
+    padding: 8px 15px;
+    background: rgba(0, 0, 0, .8);
+    text-align: center;
+    color: #FFF;
     border-radius: 5px;
-    display:inline-block;
-    box-shadow:0 0 4px rgba(0,0,0,.2);
+    display: inline-block;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .2);
 }
 .arblk-cl {
-    padding:15px;
+    padding: 15px;
 }
-.arblk-cl input[type="checkbox"] {
-}
-.arblk-cl .al-ciiel {
-    padding:5px 10px 5px 0;
-    display: inline-block;
-}
-
-.fixbackt, .relativebackt {
+.arblk-cl input[type="checkbox"] {} .arblk-cl .al-ciiel {
+                                        padding: 5px 10px 5px 0;
+                                        display: inline-block;
+                                    }
+.fixbackt,
+.relativebackt {
     height: 50px;
     line-height: 50px;
     background: transparent;
@@ -1816,112 +1809,158 @@ p:after {
     left: 0;
     top: 0;
 }
-.fixbackt .arrc, .relativebackt .arrc {
+.fixbackt .arrc,
+.relativebackt .arrc {
     float: left;
     display: inline-block;
     height: 30px;
     line-height: 30px;
     width: 30px;
     margin: 10px 0 0 10px;
-    background: url(/img/arr-l-b.png) center center no-repeat;
+    background: url(../img/arr-l-b.png) center center no-repeat;
     background-size: cover;
     background-color: rgba(0, 0, 0, .5);
     border-radius: 200px;
 }
 .relativebackt {
-    background:#555;
-    position:relative;
-    left:auto;
-    top:auto;
+    background: #555;
+    position: relative;
+    left: auto;
+    top: auto;
 }
 .relativebackt .arrc {
-    width:auto;
-    padding-left:30px;
-    color:#FFF;
-    background-color:transparent;
+    width: auto;
+    padding-left: 30px;
+    color: #FFF;
+    background-color: transparent;
     background-size: contain;
     background-position: left center;
-
 }
-
 .p0x-c0 {
-    text-align:center;
-    border-bottom:1px solid #E2E2E2;
-    padding:15px;
-    font-size:12px;
-    color:#aaa;
-    background:#FBFBFB;
+    text-align: center;
+    border-bottom: 1px solid #E2E2E2;
+    padding: 15px;
+    font-size: 12px;
+    color: #aaa;
+    background: #FBFBFB;
 }
 .p0x-c1 {
-    padding:15px;
+    padding: 15px;
 }
 .p0x-c2 {
-    display:inline-block;
-    width:100%;
+    display: inline-block;
+    width: 100%;
     box-sizing: border-box;
-    height:32px;
-    line-height:32px;
-    padding:0;
-    text-align:center;
-    background:#FBFBFB;
-    border-radius:4px;
-    box-shadow:0 1px 2px rgba(0,0,0,.1);
-    color:#333;
-    border:1px solid #ccc;
-    font-size:12px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0;
+    text-align: center;
+    background: #FBFBFB;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+    color: #333;
+    border: 1px solid #ccc;
+    font-size: 12px;
 }
 .p0x-c2.upload {
-    background:#40BF43;
-    color:#FFF;
-    border-color:#30AF43;
+    background: #40BF43;
+    color: #FFF;
+    border-color: #30AF43;
 }
 .p0x-c2.upload[disabled="disabled"] {
-    opacity:.5;
+    opacity: .5;
 }
 .p0x-c2.back {
-    background:rgba(0,0,0,.1);
-    color:#999;
-    width:100%;
-    margin-top:20px;
+    background: rgba(0, 0, 0, .1);
+    color: #999;
+    width: 100%;
+    margin-top: 20px;
     border: none;
     box-shadow: none;
 }
 .p0x-c3 {
-    background:#DDD;
-    height:200px;
-    width:200px;
-    display:inline-block;
-    margin-bottom:30px;
+    background: #DDD;
+    height: 200px;
+    width: 200px;
+    display: inline-block;
+    margin-bottom: 30px;
 }
 .p0x-c4 {
     text-align: center;
-    padding-top:20px;
+    padding-top: 20px;
 }
 .p0x-c5 {
-    margin-bottom:10px;
-    color:#aaa;
-    font-size:12px;
+    margin-bottom: 10px;
+    color: #aaa;
+    font-size: 12px;
 }
 .p0x-c6 {
-    margin-bottom:10px;
+    margin-bottom: 10px;
 }
-
-
 .suc-t3.failure {
-    color:#D20;
+    color: #D20;
 }
 .suc-t2.failure {
-    background-image:url(/img/error.svg);
+    background-image: url(/img/error.svg);
 }
-
 .fkd-00 {
-    padding:0 15px;
+    padding: 0 15px;
 }
 .fkd-01 {
-    font-size:14px;
+    font-size: 14px;
+    margin-bottom:10px;
 }
 .fkd-02 {
+    margin-bottom:10px;
 }
 .fkd-03 {
     font-weight: bold;
+}
+.fkd-04 {
+    padding:10px 15px;
+}
+.fkd-05 {
+    margin-bottom:10px;
+}
+.fkd-06 {
+    padding:5px 12px;
+    box-sizing: border-box;
+}
+.fkd-07 {
+    padding:5px 12px;
+    box-sizing: border-box;
+}
+/* 2015.10.4 追加 */
+
+.p10-t02-camera {
+    background: #1AA1CD;
+    color: #FFF;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    padding:5px 10px;
+    font-size:12px;
+    border-radius:100px;
+}
+.menu-fix-itm.grid3 {
+    width: 33%;
+}
+.menu-fix-itm.grid3:last-child {
+    width: 34%;
+}
+.p28-tt1 {
+    text-align: center;
+    padding: 0 15px;
+}
+.teacherbag {
+    display: inline-block;
+    margin: 15px 0 0 0;
+    color: #FFF;
+    background: #40BF43;
+    border: 1px solid #30AF43;
+    padding: 5px 12px;
+    text-shadow: 0 1px 2px rgba(0,0,0,.2);
+    font-size:14px;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, .5), 0 1px 3px rgba(0, 0, 0, .2);
 }

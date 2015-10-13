@@ -1,3 +1,9 @@
+function addrClick(node) {
+    $(node).tapA(function() {
+        chooseAddr(node);
+    })
+}
+
 function regionClick() {
     $(".tcfilter-filter").find(".itmbtn").click(function() {
         if ($(this).hasClass("selected")) {

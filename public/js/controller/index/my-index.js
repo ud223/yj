@@ -18,6 +18,10 @@ function initBtn() {
     setDescriptionClick();
 
     setYearsClick();
+
+    editAddressName();
+
+    saveRangeClick();
 }
 
 function initInput() {

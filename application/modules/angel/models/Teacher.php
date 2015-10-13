@@ -9,7 +9,7 @@
 class Angel_Model_Teacher extends Angel_Model_AbstractModel {
     protected $_document_class = '\Documents\UserInfo';
 
-    public function addTeacher($headPic, $name, $sex, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $years, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $categorys, $regions, $experience, $price) {
+    public function addTeacher($headPic, $name, $sex, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $years, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $categorys, $regions, $experience, $price, $serial_number) {
         $data = array('usertype' => 2,
             'name'=>$name,
             'head_pic'=>$headPic,
@@ -35,6 +35,7 @@ class Angel_Model_Teacher extends Angel_Model_AbstractModel {
             'region'=>$regions,
             'experience'=>$experience,
             'price'=>$price,
+            'serial_number'=>$serial_number,
             'category'=>$categorys);
 
         $result = $this->add($data);
@@ -42,7 +43,7 @@ class Angel_Model_Teacher extends Angel_Model_AbstractModel {
         return $result;
     }
 
-    public function ModifyTeacher($id, $headPic, $name, $sex, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $years, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $frozen, $delete, $categorys, $regions, $experience, $price) {
+    public function ModifyTeacher($id, $headPic, $name, $sex, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $years, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $frozen, $delete, $categorys, $regions, $experience, $price, $serial_number) {
         $data = array('usertype' => 2,
             'name'=>$name,
             'head_pic'=>$headPic,
@@ -70,6 +71,7 @@ class Angel_Model_Teacher extends Angel_Model_AbstractModel {
             'region'=>$regions,
             'experience'=>$experience,
             'price'=>$price,
+            'serial_number'=>$serial_number,
             'category'=>$categorys);
 
         $result = $this->save($id, $data);
@@ -127,6 +129,14 @@ class Angel_Model_Teacher extends Angel_Model_AbstractModel {
 
     public function getTeacher() {
 
+    }
+
+    public function setTeacherRanage($id, $cell, $range, $lat, $lng) {
+        $data = array("cell"=>$cell, "range"=>$range, "lat"=>$lat, "lng"=>$lng);
+
+        $result = $this->save($id, $data);
+
+        return $result;
     }
 
     public function getTeacherApplication($id) {

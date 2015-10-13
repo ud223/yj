@@ -80,3 +80,30 @@ function applyTeacher(customer_id, sex, birthday, code, email, wechat, region_id
         }
     });
 }
+
+function setRange(teacher_id, cell, range, lat, lng,  fun) {
+    var url = '/api/set/range';
+
+    var  data = { 'teacher_id':teacher_id, 'cell':cell, 'range':range, 'lat':lat, 'lng':lng }
+    //alert(JSON.stringify(data)); return;
+    $.ajax({
+        url: url,
+        dataType: 'json',
+        data: data,
+        method: 'post',
+        success: function (response) {
+            //alert(JSON.stringify(response)); return;
+            if (response.code == 200) {
+                if (fun) {
+                    fun();
+                }
+            }
+            else {
+                $.toastMsg(response.data, 1500);
+            }
+        },
+        error: function () {
+
+        }
+    });
+}

@@ -15,7 +15,8 @@ class Angel_ApiController extends Angel_Controller_Action {
         'is-busy',
         'join-lesson',
         'rating-order',
-        'teacher-apply'
+        'teacher-apply',
+        'set-range'
     );
     protected $SEPARATOR = ';';
 
@@ -31,35 +32,34 @@ class Angel_ApiController extends Angel_Controller_Action {
         $search = $this->getParam("search");
         $sort = $this->getParam('sort');
         $page = $this->getParam('page');
-
+//        $this->_helper->json(array('data' => $search, 'code' => 0)); exit;
         $condition = false;
 
-        if ($search) {
-            $condition = array();
-            $tmp_search = explode("&", $search);
-
-            if (count($tmp_search) == 1) {
-                $tmp_condition = explode("=", $tmp_search[0]);
-
-                $condition[] = array('region.$id' => new MongoId($tmp_condition[1]), 'delete'=>0);
-            }
-            else {
-                $tmp_condition = explode("=", $tmp_search[0]);
-                $tmp_condition1 = explode("=", $tmp_search[1]);
-
-                $condition[] = array('region.$id' => new MongoId($tmp_condition[1]), 'lesson.$id' => new MongoId($tmp_condition1[1]), 'delete'=>0);
-//            foreach ($tmp_search as $tmp) {
-//                $tmp_condition = explode("=", $tmp);
+//        if ($search) {
+//            $condition = array();
+//            $tmp_search = explode("&", $search);
 //
-//                if (strpos($tmp_condition[0], ".") > -1) {
-//                    $condition[] = array($tmp_condition[0] => new MongoId($tmp_condition[1]));
-//                }
-//                else {
-//                    $condition[] = array($tmp_condition[0] =>$tmp_condition[1]);
-//                }
+//            if (count($tmp_search) == 1) {
+//                $tmp_condition = explode("=", $tmp_search[0]);
+//
+//                $condition[] = array('region.$id' => new MongoId($tmp_condition[1]), 'delete'=>0);
 //            }
-            }
+//            else {
+//                $tmp_condition = explode("=", $tmp_search[0]);
+//                $tmp_condition1 = explode("=", $tmp_search[1]);
+//
+//                $condition[] = array('region.$id' => new MongoId($tmp_condition[1]), 'lesson.$id' => new MongoId($tmp_condition1[1]), 'delete'=>0);
+//            }
+//        }
+
+        if (!$search) {
+            $this->_helper->json(array('data' => "坐标刷新失败!", 'code' => 0)); exit;
         }
+
+        $tmp_pos = explode(";", $search);
+
+        $lat = explode(":", $tmp_pos[0])[1];
+        $lng = explode(":", $tmp_pos[1])[1];
 
         if (!$sort) {
             $sort = false;
@@ -77,6 +77,17 @@ class Angel_ApiController extends Angel_Controller_Action {
             $teacherList = array();
 
             foreach ($paginator as $p) {
+//                if (!$p->lat) {
+//                    continue;
+//                }
+
+                $range = $this->getDistance($lat, $lng, $p->lat, $p->lng);
+                $tmp_range = $p->range;
+
+//                if ($range > $tmp_range) {
+//                    continue;
+//                }
+
                 $path = "";
                 $category_text = "";
 
@@ -199,6 +210,29 @@ class Angel_ApiController extends Angel_Controller_Action {
         }
 
         $result = $customerModel->saveApplyUser($id, $sex, $birthday, $code, $email,  $wechat, $region, $category, $bank, $bank_code, $description, $location);
+
+        if ($result) {
+            $this->_helper->json(array('data' => "保存成功!!", 'code' => 200));
+        }
+        else {
+            $this->_helper->json(array('data' => "保存失败!", 'code' => 0));
+        }
+    }
+
+    /********************************************************************
+     * 设置老师服务范围
+     *
+     * *************************************************************/
+    public function setRangeAction() {
+        $teacherModel = $this->getModel('teacher');
+
+        $id = $this->getParam('teacher_id');
+        $range = $this->getParam('range');
+        $cell = $this->getParam('cell');
+        $lat = $this->getParam('lat');
+        $lng = $this->getParam('lng');
+
+        $result = $teacherModel->setTeacherRanage($id, $cell, $range, $lat, $lng);
 
         if ($result) {
             $this->_helper->json(array('data' => "保存成功!!", 'code' => 200));
@@ -707,5 +741,23 @@ class Angel_ApiController extends Angel_Controller_Action {
             }
         }
         return $hash;
+    }
+
+    private function rad($d)  {
+        return $d * 3.1415926535898 / 180.0;
+    }
+
+    private function getDistance($lat1, $lng1, $lat2, $lng2) {
+        $EARTH_RADIUS = 6378.137;
+        $radLat1 = $this->rad($lat1);
+        //echo $radLat1;
+        $radLat2 = $this->rad($lat2);
+        $a = $radLat1 - $radLat2;
+        $b = $this->rad($lng1) - $this->rad($lng2);
+        $s = 2 * asin(sqrt(pow(sin($a/2),2) +
+                cos($radLat1)*cos($radLat2)*pow(sin($b/2),2)));
+        $s = $s *$EARTH_RADIUS;
+        $s = round($s * 10000) / 10000;
+        return $s;
     }
 }

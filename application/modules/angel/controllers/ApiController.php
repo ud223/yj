@@ -52,6 +52,8 @@ class Angel_ApiController extends Angel_Controller_Action {
 //            }
 //        }
 
+        $condition[] = array('usertype'=>2);
+
         if (!$search) {
             $this->_helper->json(array('data' => "坐标刷新失败!", 'code' => 0)); exit;
         }

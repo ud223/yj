@@ -52,7 +52,7 @@ class Angel_ApiController extends Angel_Controller_Action {
 //            }
 //        }
 
-        $condition[] = array('usertype'=>2);
+        $condition[] = array('usertype' => 1, 'delete' => 0);
 
         if (!$search) {
             $this->_helper->json(array('data' => "坐标刷新失败!", 'code' => 0)); exit;

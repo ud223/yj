@@ -30,6 +30,7 @@ function showPosition(data) {
 function locationSuccess(position) {
     alert(2);
     var currentLat = position.coords.latitude;
+    alert(5);;
     lat = currentLat;
     var currentLon = position.coords.longitude;
     lng = currenlon;

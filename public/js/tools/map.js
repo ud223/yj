@@ -20,6 +20,10 @@ function showPosition(data) {
     lng = data.result[0].x;
     lat = data.result[0].y;
 
+    if (afterMethod) {
+        afterMethod();
+    }
+
     getAddressByCoordinate(lng, lat, setAddressList);
 }
 

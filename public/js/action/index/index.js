@@ -2,7 +2,7 @@ var page = 1;
 var teacher_list_count = 1;
 
 function load() {
-    alert(3);
+    //alert(3);
     //var tmp_region= $(".tcfilter-filter").find(".selected");
     var tmp_sort = $(".tcfilter-sort").find(".selected");
 

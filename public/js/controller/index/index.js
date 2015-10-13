@@ -34,7 +34,7 @@ function initControls() {
 function initUser() {
     lat = "30.646992";
     lng = "114.308168";
-
+    alert(0);
     getLocal(load);
 
     //var regions = $(".tcfilter-filter").find(".itmbtn");

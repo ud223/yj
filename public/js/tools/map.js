@@ -28,16 +28,13 @@ function showPosition(data) {
 }
 
 function locationSuccess(position) {
-    alert(2);
     var currentLat = position.coords.latitude;
-    alert(5);;
+
     lat = currentLat;
     var currentLon = position.coords.longitude;
-    alert(6);
     lng = currentLon;
-    alert(0);
+
     if (afterMethod) {
-        alert(1);
         afterMethod();
     }
 
@@ -93,7 +90,7 @@ function getAddressByCoordinate(lng, lat, fun) {
 }
 
 function getAddressByAddressName(address_name, fun) {
-   var url = "http://api.map.baidu.com/geocoder/v2/?ak=8TN0gC5Rqo6cec2jroKOkNpE&callback=renderOption&output=json&address="+ address_name +"&city=武汉市";
+   var url = "http://api.map.baidu.com/geocoder/v2/?ak=8TN0gC5Rqo6cec2jroKOkNpE&callback=renderOption&output=json&address="+ address_name +"&city=深圳市";
 
     $.ajax({
         url: url,

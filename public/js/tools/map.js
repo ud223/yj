@@ -4,7 +4,6 @@ var lat = "22.531413";
 var afterMethod = null;
 
 function locationError(error){
-    alert(3);
     if (afterMethod) {
         afterMethod();
     }
@@ -34,8 +33,9 @@ function locationSuccess(position) {
     lat = currentLat;
     var currentLon = position.coords.longitude;
     lng = currenlon;
-
+    alert(0);
     if (afterMethod) {
+        alert(1);
         afterMethod();
     }
 
@@ -50,8 +50,7 @@ function locationSuccess(position) {
 
 function getLocal(fun) {
     afterMethod = fun;
-    alert(1);
-    alert(afterMethod);
+
     //手机使用代码
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(locationSuccess, locationError,{

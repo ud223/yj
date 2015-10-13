@@ -26,7 +26,7 @@ class Angel_Model_Lesson extends Angel_Model_AbstractModel {
     }
 
     public  function getByIds($id) {
-        $query = $this->_dm->createQueryBuilder($this->_document_class)->field('id')->in($id)->sort('created_at', -1);;
+        $query = $this->_dm->createQueryBuilder($this->_document_class)->field('id')->in($id)->sort('created_at', -1);
 
         $result = null;
         $result = $query->getQuery()->execute();

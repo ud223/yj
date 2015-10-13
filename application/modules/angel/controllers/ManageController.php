@@ -357,21 +357,25 @@ class Angel_ManageController extends Angel_Controller_Action {
                         $result = $teacherModel->returnToCustomer($result->id);
                     }
                     else {
+                        $serial = $this->getMaxNum();
+                        exit($serial);
                         //将之前的老师数据迁移到微信用户号的数据中
-                        $result = $teacherModel->ModifyTeacher($wxid, $headPic, $name, $sex, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $years, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $result->frozen, $result->delete, $categorys, $regions, $experience, $price);
+                        $result = $teacherModel->ModifyTeacher($wxid, $headPic, $name, $sex, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $years, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $result->frozen, $result->delete, $categorys, $regions, $experience, $price, $serial);
                     }
                     //--------------------这里涉及数据迁移的问题-----------------------------------
                     $teacherModel->deleteTeacher($id);
                 }
                 else {
-                    $serial = $this->getMaxNum();
 
-                    $result = $teacherModel->ModifyTeacher($id, $headPic, $name, $sex, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $years, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $result->frozen, $result->delete, $categorys, $regions, $experience, $price, $serial);
+//                    $serial = $this->getMaxNum();
+
+                    $result = $teacherModel->ModifyTeacher($id, $headPic, $name, $sex, $birthday, $place, $educational, $certificate, $phone, $code, $email, $qq, $years, $wechat, $location, $lessons, $bank, $bank_code, $description, $skills, $photo, $result->frozen, $result->delete, $categorys, $regions, $experience, $price, $result->serial_number);
                 }
             } catch (Exception $e) {
                 $result = false;
                 $error = $e->getMessage();
             }
+
             if ($result) {
                 $this->_redirect($this->view->url(array(), 'manage-teacher-list-home'));
 //                $this->_redirect($this->view->url(array(), 'manage-result') . '?redirectUrl=' . $this->view->url(array(), 'manage-teacher-list-home'));
@@ -1645,7 +1649,7 @@ class Angel_ManageController extends Angel_Controller_Action {
         if ($serial) {
             $num = $serial->max_num + 1;
 
-            $serialModel->saveSerial($num, "tp");
+            $serialModel->saveSerial($serial->id, $num, "tp");
         }
         else {
             $serialModel->addSerial(1, "tp");

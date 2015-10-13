@@ -79,16 +79,16 @@ class Angel_ApiController extends Angel_Controller_Action {
             $teacherList = array();
 
             foreach ($paginator as $p) {
-//                if (!$p->lat) {
-//                    continue;
-//                }
+                if (!$p->lat) {
+                    continue;
+                }
 
                 $range = $this->getDistance($lat, $lng, $p->lat, $p->lng);
                 $tmp_range = $p->range;
 
-//                if ($range > $tmp_range) {
-//                    continue;
-//                }
+                if ($range > $tmp_range) {
+                    continue;
+                }
 
                 $path = "";
                 $category_text = "";

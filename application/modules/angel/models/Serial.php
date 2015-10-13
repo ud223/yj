@@ -24,7 +24,7 @@ class Angel_Model_Serial extends Angel_Model_AbstractModel {
 
     //保存流水号信息
     public function saveSerial($id, $num, $prefix) {
-        $data = array('num' => $num,
+        $data = array('max_num' => $num,
             'prefix' => $prefix);
 
         $result = $this->save($id, $data);
@@ -33,8 +33,17 @@ class Angel_Model_Serial extends Angel_Model_AbstractModel {
     }
 
     public function getLastSerial() {
-        $result = $this->_dm->createQueryBuilder($this->_document_class)->getQuery()->sort('created_at', -1)->limit(1)->skip(0);
+        $query = $this->_dm->createQueryBuilder($this->_document_class);
 
-        return $result;
+        $result = null;
+        $result = $query->getQuery();
+
+        if (count($result) > 0) {
+            foreach ($result as $r) {
+                return $r;
+            }
+        }
+
+        return false;
     }
 }

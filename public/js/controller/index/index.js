@@ -32,8 +32,8 @@ function initControls() {
 
 //初始化测试数据
 function initUser() {
-    lat = "22.745052";
-    lng = "113.803324";
+    //lat = "22.745052";
+    //lng = "113.803324";
 
     getLocal(load);
 

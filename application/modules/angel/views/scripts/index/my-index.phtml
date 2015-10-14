@@ -51,8 +51,8 @@
         <div class="holder arr">
             <span id="my-description" class="lab-txt">
                 <?php
-                    if (strlen($this->model->description ) > 31) {
-                        echo substr($this->model->description, 0, 30) . "...";
+                    if (strlen($this->model->description ) > 30) {
+                        echo substr($this->model->description, 0, 29) . "...";
                     }
                     else {
                         echo $this->model->description;

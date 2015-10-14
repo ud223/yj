@@ -11,7 +11,13 @@
 </div>
 <div class="blackrowgall nmt">
     <?php foreach ($this->lessons as $lesson):?>
-        <div class="row actbtn cd-slideoutbtn class-btn" img="<?php echo $lesson->photo[0]->name . $lesson->photo[0]->type; ?>" val="<?php echo $lesson->id ?>" rel="#pp-show-cld">
+        <div class="row actbtn cd-slideoutbtn class-btn" img="<?php
+            if (isset($lesson->photo)) {
+                if (count($lesson->photo) > 0) {
+                    echo $lesson->photo[0]->name . $lesson->photo[0]->type;
+                }
+            }
+            ?>" val="<?php echo $lesson->id ?>" rel="#pp-show-cld">
             <div class="tt lesson-name"><?php echo $lesson->name ?></div>
             <div class="lesson-description" style="display: none"><?php echo $lesson->description ?></div>
             <div class="holder arr">

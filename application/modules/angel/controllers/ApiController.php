@@ -83,7 +83,7 @@ class Angel_ApiController extends Angel_Controller_Action {
                     continue;
                 }
 
-                $range = $this->getDistance($lat, $lng, $p->lat, $p->lng);
+                $range = $this->getDistance($lat, $lng, $p->lat, $p->lng) * 1000;
                 $tmp_range = $p->range;
 
                 if ($range > $tmp_range) {

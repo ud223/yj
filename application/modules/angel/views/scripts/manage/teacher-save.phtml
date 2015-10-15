@@ -136,11 +136,17 @@
                     <div  style="float:left" >
                         <input id="<?php echo $region->id ?>" type="checkbox" name="region[]" value="<?php echo $region->id ?>"
                         <?php
-                            foreach ($this->model->region as $r) {
-                                if ($region->id == $r->id) {
-                                    echo "checked='checked'";
+                            if ($this->model->region) {
+                                foreach ($this->model->region as $r) {
+                                    if (!$r) {
+                                        continue;
+                                    }
 
-                                    break;
+                                    if ($region->id == $r->id) {
+                                        echo "checked='checked'";
+
+                                        break;
+                                    }
                                 }
                             }
                         ?>
@@ -162,9 +168,9 @@
                         <div  style="float:left" >
                             <input id="<?php echo $category->id ?>" type="checkbox" name="category[]" value="<?php echo $category->id ?>"
                                 <?php
-//                                    if (!empty($this->model->category)) {
+                                    if ($this->model->category) {
                                         foreach ($this->model->category as $c) {
-                                            if (empty($c)) {
+                                            if (!$c) {
                                                 continue;
                                             }
 
@@ -173,7 +179,7 @@
 
                                                 break;
                                             }
-//                                        }
+                                        }
                                     }
                                 ?>
                             /> <label class="marginright10px" for="<?php echo $category->id ?>"><?php echo $category->name ?></label>

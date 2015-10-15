@@ -138,7 +138,7 @@
                         <?php
                             if ($this->model->region) {
                                 foreach ($this->model->region as $r) {
-                                    if (!$r) {
+                                    if (empty($r)) {
                                         continue;
                                     }
 
@@ -170,7 +170,7 @@
                                 <?php
                                     if ($this->model->category) {
                                         foreach ($this->model->category as $c) {
-                                            if (!$c) {
+                                            if (empty($c)) {
                                                 continue;
                                             }
 

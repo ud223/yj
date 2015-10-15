@@ -67,19 +67,19 @@
             <?php
                 $category_text = "";
 
-//                if (count($this->model->category) > 0) {// && count($this->model->category) > 0
-//                    foreach($this->model->category as $category) {
-//                        if (!$category->name) {
-//                            continue;
-//                        }
-//
-//                        if ($category_text != "") {
-//                            $category_text = $category_text . " / ";
-//                        }
-//
-//                        $category_text = $category_text . $category->name;
-//                    }
-//                }
+                if ($this->model->category) {
+                    foreach($this->model->category as $category) {
+                        if (!$category->name) {
+                            continue;
+                        }
+
+                        if ($category_text != "") {
+                            $category_text = $category_text . " / ";
+                        }
+
+                        $category_text = $category_text . $category->name;
+                    }
+                }
 
                 echo $category_text;
             ?>

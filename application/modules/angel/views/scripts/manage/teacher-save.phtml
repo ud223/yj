@@ -209,6 +209,10 @@
                         <input id="<?php echo $lesson->id ?>" type="checkbox" name="lesson[]" value="<?php echo $lesson->id ?>"
                             <?php
                             foreach ($this->model->lesson as $p) {
+                                if (!$p->id) {
+                                    continue;
+                                }
+
                                 if ($lesson->id == $p->id) {
                                     echo "checked='checked'";
 

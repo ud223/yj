@@ -169,17 +169,17 @@
                             <input id="<?php echo $category->id ?>" type="checkbox" name="category[]" value="<?php echo $category->id ?>"
                                 <?php
                                     if ($this->model->category) {
-                                        foreach ($this->model->category as $c) {
-                                            if (empty($c)) {
-                                                continue;
-                                            }
-
-                                            if ($category->id == $c->id) {
-                                                echo "checked='checked'";
-
-                                                break;
-                                            }
-                                        }
+//                                        foreach ($this->model->category as $c) {
+//                                            if (empty($c)) {
+//                                                continue;
+//                                            }
+//
+//                                            if ($category->id == $c->id) {
+//                                                echo "checked='checked'";
+//
+//                                                break;
+//                                            }
+//                                        }
                                     }
                                 ?>
                             /> <label class="marginright10px" for="<?php echo $category->id ?>"><?php echo $category->name ?></label>

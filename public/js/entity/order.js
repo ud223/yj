@@ -92,14 +92,14 @@ var Order = function() {
     }
 
 
-    obj.confrim = function(rundate, time, hour, amount, pay_amount, address, address_detail, phone, customer_name,  fun) {
+    obj.confrim = function(rundate, time, hour, amount, pay_amount, address, address_detail, phone, customer_name, lat, lng, fun) {
         if (!obj.confrimCheck(rundate, time, customer_name, phone, address, address_detail)) {
             $.toastMsg(obj.message, 1500);
 
             return;
         }
 
-        confirmOrder(rundate, time, hour, amount, pay_amount, address, address_detail, phone, customer_name, fun);
+        confirmOrder(rundate, time, hour, amount, pay_amount, address, address_detail, phone, customer_name, lat, lng, fun);
     }
 
     obj.getHour = function(hour) {

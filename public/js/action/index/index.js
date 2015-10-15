@@ -9,6 +9,9 @@ function load() {
     var search = "lat:"+ lat +";lng:"+ lng;
     var sort = $(tmp_sort).attr("sort");
 
+    localStorage.setItem("lat", lat);
+    localStorage.setItem("lng", lng);
+
     var tmp_search = localStorage.getItem("teacher_search");
     var tmp_sort = localStorage.getItem("teacher_sort");
 
@@ -84,6 +87,8 @@ function setAddressList(response) {
 
     $("#address-view").html(addresses[0].name);
 
+    localStorage.setItem("cell", addresses[0].name)
+
     $.each(addresses, function() {
         var node = $("#div-addr-node").find(".loc-ddl-itm").clone();
 
@@ -111,7 +116,17 @@ function chooseAddr(node) {
     lat = node.find(".t1").attr("lat");
     lng = node.find(".t1").attr("lng");
 
+    localStorage.setItem("cell",node.find(".t1").html())
+    localStorage.setItem("lat", lat);
+    localStorage.setItem("lng", lng);
+
     load();
 
     closePopup($("#pp-change-loc").find('.cd-slidepopupback'));
+}
+
+function clearPos() {
+    localStorage.setItem("lat", "");
+    localStorage.setItem("lng", "");
+    localStorage.setItem("cell", "");
 }

@@ -1,6 +1,6 @@
 function addrClick(node) {
     $(node).tapA(function() {
-        chooseAddr($(this).find(".t1").html());
+        chooseAddr(node);
     })
 }
 

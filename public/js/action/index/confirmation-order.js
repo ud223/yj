@@ -4,15 +4,32 @@
 
 function initAddress() {
     //如果没有添加地址，就获取gps当前位置
-    if (!is_address)
-        getLocal();
+    if (!is_address) {
+        var cell = localStorage.getItem("cell");
+        var lat = localStorage.getItem("lat");
+        var lng = localStorage.getItem("lng");
+
+        if (!lat) {
+            getLocal();
+        }
+        else {
+            $("#address-view").html(cell);
+            $("#address-view").attr("lat", lat);
+            $("#address-view").attr("lng", lng);
+        }
+    }
 }
 
-function chooseAddr(text) {
+function chooseAddr(node) {
     ///$("#edit-addr").val(text);
-    $("#address-view").html(text);
+    $("#address-view").html(node.find(".t1").html());
 
-    //$("#pp-change-addr").find(".cd-slidepopupback").tap();
+    $("#address-view").attr("lat", node.find(".t1").attr("lat"));
+    $("#address-view").attr("lng", node.find(".t1").attr("lng"));
+
+    localStorage.setItem("cell",node.find(".t1").html());
+    localStorage.setItem("lat", node.find(".t1").attr("lat"));
+    localStorage.setItem("lng", node.find(".t1").attr("lng"));
 
     closePopup($("#pp-change-addr").find('.cd-slidepopupback'));
 }
@@ -29,6 +46,9 @@ function setAddressList(response) {
         var node = $("#div-addr-node").find(".loc-ddl-itm").clone();
 
         node.find(".t1").html(this.name);
+        node.find(".t1").attr("lng", this.point.x);
+        node.find(".t1").attr("lat", this.point.y);
+
         node.find(".t2").html(this.addr);
 
         addrClick(node);
@@ -491,8 +511,10 @@ function submitOrder() {
     var time = $("#time_range").val();
     var amount = $("#amount").html();
     var pay_amount = $("#pay-amount").html();
+    var lat = $("#address-view").attr("lat");
+    var lng = $("#address-view").attr("lng");
 
-    order.confrim(rundate, time, hour, amount, pay_amount, address, address_detail, phone, customer_name, toPay);
+    order.confrim(rundate, time, hour, amount, pay_amount, address, address_detail, phone, customer_name, lat, lng, toPay);
 }
 
 

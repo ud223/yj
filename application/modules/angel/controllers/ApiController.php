@@ -79,16 +79,16 @@ class Angel_ApiController extends Angel_Controller_Action {
             $teacherList = array();
 
             foreach ($paginator as $p) {
-//                if (!$p->lat) {
-//                    continue;
-//                }
+                if (!$p->lat) {
+                    continue;
+                }
 
                 $range = $this->getDistance($lat, $lng, $p->lat, $p->lng) * 1000;
                 $tmp_range = $p->range;
 
-//                if ($range > $tmp_range) {
-//                    continue;
-//                }
+                if ($range > $tmp_range) {
+                    continue;
+                }
 
                 $path = "";
                 $category_text = "";
@@ -342,6 +342,8 @@ class Angel_ApiController extends Angel_Controller_Action {
         $phone = $this->getParam('phone');
         $address = $this->getParam('address');
         $address_detail = $this->getParam('address_detail');
+        $lat = $this->getParam('lat');
+        $lng = $this->getParam('lng');
 
         $order = $orderModel->getById($id);
 
@@ -349,6 +351,13 @@ class Angel_ApiController extends Angel_Controller_Action {
 
         if ($msg != "sucess") {
             $this->_helper->json(array('data' => $msg, 'code' => 0)); exit;
+        }
+
+        $range = $this->getDistance($lat, $lng, $order->teacher->lat, $order->teacher->lng) * 1000;
+        $tmp_range = $order->teacher->range;
+
+        if ($range > $tmp_range) {
+            $this->_helper->json(array('data' => "授课超出老师服务范围,请检查后重新选择!", 'code' => 0)); exit;;
         }
 
         if ($order) {

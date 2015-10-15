@@ -72,16 +72,17 @@
                         if (!$category) {
                             continue;
                         }
-                        exit ("b");
+
                         if (!$category->name) {
                             continue;
                         }
-                        echo("c");
+                        exit("c");
                         if ($category_text != "") {
                             $category_text = $category_text . " / ";
                         }
                         exit("d");
                         $category_text = $category_text . $category->name;
+                        exit("e");
                     }
                 }
 

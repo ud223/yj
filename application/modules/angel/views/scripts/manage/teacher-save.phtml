@@ -208,17 +208,21 @@
                     <div  style="float:left" >
                         <input id="<?php echo $lesson->id ?>" type="checkbox" name="lesson[]" value="<?php echo $lesson->id ?>"
                             <?php
-                            foreach ($this->model->lesson as $p) {
-                                if (!$p->id) {
-                                    continue;
-                                }
+                                foreach ($this->model->lesson as $p) {
+                                    if (!$p) {
+                                        continue;
+                                    }
 
-                                if ($lesson->id == $p->id) {
-                                    echo "checked='checked'";
+                                    if (!$p->id) {
+                                        continue;
+                                    }
 
-                                    break;
+                                    if ($lesson->id == $p->id) {
+                                        echo "checked='checked'";
+    
+                                        break;
+                                    }
                                 }
-                            }
                             ?>/> <label class="marginright10px" for="<?php echo $lesson->id ?>"><?php echo $lesson->name ?></label>
                     </div>
                 <?php endforeach; ?>

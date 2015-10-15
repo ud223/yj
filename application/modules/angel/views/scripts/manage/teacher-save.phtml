@@ -170,14 +170,15 @@
                                 <?php
                                     if ($this->model->category) {
                                         foreach ($this->model->category as $c) {
-                                            if (is_null($c)) {
+                                            if (empty($c)) {
                                                 continue;
                                             }
+                                            if (isset($c)) {
+                                                if ($category->id == $c->id) {
+                                                    echo "checked='checked'";
 
-                                            if ($category->id == $c->id) {
-                                                echo "checked='checked'";
-
-                                                break;
+                                                    break;
+                                                }
                                             }
                                         }
                                     }

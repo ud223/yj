@@ -14,9 +14,6 @@
         <?php if ($this->model->photo) :?>
             <?php if (count($this->model->photo) > 0) :?>
                 <?php foreach($this->model->photo as $p) :?>
-                    <?php if (!$p->name) :?>
-                        <?php continue; ?>
-                    <?php endif; ?>
                     <?php if($index > 0) :?>
                         <?php echo "," ?>
                     <?php endif; ?>
@@ -71,6 +68,10 @@
                 $category_text = "";
 
                 foreach($this->model->category as $category) {
+                    if (!$category) {
+                        continue;
+                    }
+
                     if (!$category->name) {
                         continue;
                     }
@@ -90,6 +91,10 @@
                     $region_text = "";
 
                     foreach ($this->model->region as $region) {
+                        if (!$region) {
+                            continue;
+                        }
+
                         if (!$region->name) {
                             continue;
                         }

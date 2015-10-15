@@ -12,15 +12,17 @@
     var imgs_json = [
         <?php $index = 0; ?>
         <?php if ($this->model->photo) :?>
-            <?php foreach($this->model->photo as $p) :?>
-                <?php if($index > 0) :?>
-                    <?php echo "," ?>
-                <?php endif; ?>
-                {url: '/photo/image/<?php echo $p->name . $p->type ?>'}
-            <?php $index++; ?>
-            <?php endforeach; ?>
-        <?php else :?>
-            {url: '/img/userdefault.jpg'}
+            <?php if (count($this->model->photo) < 1) :?>
+                <?php foreach($this->model->photo as $p) :?>
+                    <?php if($index > 0) :?>
+                        <?php echo "," ?>
+                    <?php endif; ?>
+                    {url: '/photo/image/<?php echo $p->name . $p->type ?>'}
+                <?php $index++; ?>
+                <?php endforeach; ?>
+            <?php else :?>
+                { url: '/img/userdefault.jpg' }
+            <?php endif; ?>
         <?php endif; ?>
     ];
 </script>

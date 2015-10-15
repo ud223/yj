@@ -79,16 +79,16 @@ class Angel_ApiController extends Angel_Controller_Action {
             $teacherList = array();
 
             foreach ($paginator as $p) {
-                if (!$p->lat) {
-                    continue;
-                }
+//                if (!$p->lat) {
+//                    continue;
+//                }
 
                 $range = $this->getDistance($lat, $lng, $p->lat, $p->lng) * 1000;
                 $tmp_range = $p->range;
 
-                if ($range > $tmp_range) {
-                    continue;
-                }
+//                if ($range > $tmp_range) {
+//                    continue;
+//                }
 
                 $path = "";
                 $category_text = "";
@@ -384,9 +384,20 @@ class Angel_ApiController extends Angel_Controller_Action {
 
     public  function getOrderAction() {
         $orderModel = $this->getModel('order');
+        $workModel = $this->getModel('work');
 
         $teacher_id = $this->getParam('teacher_id');
         $rundate = $this->getParam('rundate');
+
+        $tmp_work_time = $workModel->getAll(false);
+
+        $work_time = 0;
+
+        foreach ($tmp_work_time as $t) {
+            $work_time = $t;
+
+            break;
+        }
 
         if (!$teacher_id) {
             $this->_helper->json(array('data' => "老师信息获取错误!", 'code' => 0)); exit;
@@ -401,12 +412,20 @@ class Angel_ApiController extends Angel_Controller_Action {
         $tmp_orders = $orderModel->getBy(false, $condition);
 
         $orders = array();
+        $tmp1 = 0;
+        $tmp2 = 0;
 
         foreach ($tmp_orders as $o) {
-            $orders[] = array("id"=>$o->id, "rundate"=>$o->rundate, "time"=>$o->time, "state"=>$o->state, "customer_id"=> $o->customer->id, "teacher_id"=> $o->teacher->id, "created_date"=>date_format($o->created_at, 'Y-m-d H:i:s'), "update_at"=>date_format($o->updated_at, 'Y-m-d H:i:s'));
+            $tmp_time = explode('|', $o->time);
+
+            $tmp1 = intval(explode('-', $tmp_time[1])[1]);
+            $tmp2 = intval(explode('-', $tmp_time[1])[0]);
+            $time = $tmp1 - $tmp2 + 1;
+
+            $orders[] = array("id"=>$o->id, "rundate"=>$o->rundate, "time"=>$o->time, "user_time"=>$time, "state"=>$o->state, "customer_id"=> $o->customer->id, "teacher_id"=> $o->teacher->id, "created_date"=>date_format($o->created_at, 'Y-m-d H:i:s'), "update_at"=>date_format($o->updated_at, 'Y-m-d H:i:s'));
         }
 
-        $this->_helper->json(array('data' => $orders, 'code' => 200));
+        $this->_helper->json(array('data' => $orders, 'hour'=>$work_time->hour, 'time1'=>$tmp1, 'time2'=>$tmp2, 'code' => 200));
     }
 
     public function ratingOrderAction() {

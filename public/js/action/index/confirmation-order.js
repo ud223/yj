@@ -117,7 +117,14 @@ function validPhoneCode() {
 //----------选择日期和时间段-----------------------------------------------------
 
 function initWeek() {
-    var date = new Date();
+    var date = null;
+
+    if (rundate) {
+        date = new Date(rundate);
+    }
+    else {
+        date = new Date();
+    }
 
     var t_year = date.getFullYear();
     var t_month = date.getMonth() + 1;
@@ -133,16 +140,20 @@ function initWeek() {
         var day = date.getDate();
         var  full_date = year + "-" + singleDateCheck(month) + "-" + singleDateCheck(day);
 
+        if (full_date == rundate) {
+            week_html = week_html + '<div class="td  week-td selected" val="'+ full_date +'">'+ month +'月'+ day +'日</div>';
+        }
+        else {
+            week_html = week_html + '<div class="td  week-td" val="'+ full_date +'">'+ month +'月'+ day +'日</div>';
+        }
         //if (week_html == "") {
         //    week_html = week_html + '<div class="td week-td selected" val="'+ full_date +'">'+ month +'月'+ day +'日</div>';
         //    //给提交的选择日期赋初值
         //    $("#select_date").val(full_date);
         //}
         //else {
-            week_html = week_html + '<div class="td  week-td" val="'+ full_date +'">'+ month +'月'+ day +'日</div>';
+
         //}
-
-
         date.setDate(date.getDate() + 1);
     }
 

@@ -61,11 +61,14 @@
     .loc-bt, .sort-bt {
         display:none;
     }
+    .fixbackt {
+        display:none;
+    }
 </style>
 <div class="tcfilter-container padt50">
     <?php foreach($this->lessons as $lesson):?>
         <div class="cc-itm cd_hottap" hottap='/coursedetail/<?php echo $lesson->id ?>'
-            <?php  if (!empty($lesson->photo) && count($lesson->photo) > 0) :?>
+            <?php  if (isset($lesson->photo) && count($lesson->photo) > 0) :?>
                 style=" background-image:url(/photo/image/<?php echo $lesson->photo[0]->name . $lesson->photo[0]->type?>)"
             <?php endif; ?>
             >

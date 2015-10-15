@@ -124,7 +124,7 @@ function IdentityCodeValid(code) {
             }
             var last = parity[sum % 11];
             if(parity[sum % 11] != code[17]){
-                tip = "校验位错误";
+                tip = "身份证校验错误";
                 pass =false;
             }
         }

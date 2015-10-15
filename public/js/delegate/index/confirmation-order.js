@@ -84,3 +84,7 @@ function acceptTimeClick() {
         acceptTime();
     })
 }
+
+function back() {
+    window.history.back();
+}

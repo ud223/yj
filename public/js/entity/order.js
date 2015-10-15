@@ -13,6 +13,8 @@ var Order = function() {
         if (!time) {
             obj.message = "请选择授课时间段!";
 
+            location.href = "#teacher-time";
+
             return false;
         }
 
@@ -24,6 +26,16 @@ var Order = function() {
             obj.message = "请选择授课日期!";
 
             return false;
+        }
+        else {
+            var tmp_rundate = new Date(rundate);
+            var tmp_today = new Date();
+
+            if (tmp_today.getTime() - tmp_rundate.getTime() > 72000000) {
+                obj.message = "订单日期已经过期!";
+
+                return false;
+            }
         }
 
         if (!time) {

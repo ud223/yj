@@ -11,7 +11,7 @@
 <script src="<?php echo $this->jsPath("delegate/index/confirmation-order.js"); ?>"></script>
 <script src="<?php echo $this->jsPath("controller/index/confirmation-order.js"); ?>"></script>
 <div class="relativebackt">
-    <a href="/teacher/<?php echo $this->model->teacher->id ?>" class="arrc">返回</a>
+    <a href="javascript:void(0)" onclick="back()" class="arrc">返回</a><!--/teacher/<?php// echo $this->model->teacher->id ?>-->
 </div>
 <div class="blackrowgall">
     <div class="row">
@@ -36,7 +36,7 @@
     <div class="row actbtn cd-slideoutbtn" rel="#pp-change-addr">
         <span class="tt">小区</span>
         <div class="holder arr">
-            <span id="address-view"></span>
+            <span id="address-view" lat="<?php echo $this->model->lat ?>" lng="<?php echo $this->model->lng ?>"><?php echo $this->model->address ?></span>
             <img src="/img/arr-r.png" class="icoin" />
         </div>
     </div>
@@ -50,7 +50,7 @@
 
     <div class="row">
         <span class="tt">门牌号</span>
-        <input id="address-detail" placeholder="详细地址"  type="text" class="holder" value="" /><!---->
+        <input id="address-detail" placeholder="详细地址"  type="text" class="holder" value="<?php echo $this->model->address_detail ?>" /><!---->
     </div>
 </div>
 
@@ -219,6 +219,7 @@
     var customer_id = '<?php echo $this->model->customer->id ?>';
     var max_hours = <?php echo $this->max_hours ?>;
     var tmp_max_hours = <?php echo $this->max_hours ?>;
+    var rundate = '<?php echo $this->model->rundate ?>';
     <?php if ($this->model->address) :?>
         var is_address = true;
     <?php else :?>

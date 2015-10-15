@@ -11,7 +11,7 @@
     // 此处是php代码渲染输出而成，一次性把该导师所有的图片路径都加载至此。
     var imgs_json = [
         <?php $index = 0; ?>
-        <?php if (!empty($this->model->photo) && count($this->model->photo) > 0) :?>
+        <?php if (isset($this->model->photo) && count($this->model->photo) > 0) :?>
             <?php foreach($this->model->photo as $p) :?>
                 <?php if($index > 0) :?>
                     <?php echo "," ?>
@@ -65,7 +65,7 @@
             <?php
                 $category_text = "";
 
-                if ($this->model->category  && count($this->model->category) > 0) {// && count($this->model->category) > 0
+                if (isset($this->model->category)  && count($this->model->category) > 0) {// && count($this->model->category) > 0
                     foreach($this->model->category as $category) {
                         if (empty($category)) {
                             continue;
@@ -86,7 +86,7 @@
                 <?php
                     $region_text = "";
 
-                    if ($this->model->region && count($this->model->region) > 0) {
+                    if (isset($this->model->region) && count($this->model->region) > 0) {
                         foreach ($this->model->region as $region) {
                             if (!$region) {
                                 continue;
@@ -181,22 +181,27 @@
         </div>
     </div>
     <div class="dipu2 nbb">
-        <div class="dipu3 mmbe">最新评论</div>
+        <div class="dipu3 mmbe">用户评论</div>
         <div class="dipu4">
             <?php foreach($this->orders as $order):?>
                 <div class="mgi-b1">
-                    <?php if ($order->customer->head_pic) :?>
-                        <img src="/photo/image/<?php echo $order->customer->head_pic ?>" style="width: 100px" class="b4ee" />
-                    <?php else :?>
-                        <img src="/img/user.jpg" style="width: 100px" class="b4ee" />
-                    <?php endif; ?>
-                    <div class="b5ee"><?php echo $order->customer->name ?></div>
-                    <div class="b6ee"><?php
-                            $tmp_date = explode("-", $order->rundate);
-                            echo $tmp_date[0] .'年'. $tmp_date[1] .'月'. $tmp_date[2] .'日';
-                        ?></div>
-                    <div class="b7ee">
-                        <?php echo $order->teacher_appraise ?>
+                    <div class="bci4ee">
+                        <?php if ($order->customer->head_pic) :?>
+                            <img src="/photo/image/<?php echo $order->customer->head_pic ?>" class="b4ee" />
+                        <?php else :?>
+                            <img src="/img/user.jpg" class="b4ee" />
+                        <?php endif; ?>
+                    </div>
+                    <div class="bci5ee">
+                        <div class="b5ee"><?php echo $order->customer->name ?></div>
+                        <div class="b7ee">
+                            <?php echo $order->teacher_appraise ?>
+                        </div>
+                        <div class="b6ee"><?php
+                                $tmp_date = explode("-", $order->rundate);
+                                echo $tmp_date[0] .'年'. $tmp_date[1] .'月'. $tmp_date[2] .'日';
+                            ?>
+                        </div>
                     </div>
                 </div>
             <?php endforeach; ?>

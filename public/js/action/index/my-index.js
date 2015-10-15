@@ -13,7 +13,8 @@ function saveName() {
 }
 
 function setName(response) {
-    $("#my-name").html(response.data)
+    $("#view-name").html(response.data);
+    $("#my-name").html(response.data);
 
     //$("#pp-change-name").find('.cd-slidepopupback').tap();
 

@@ -28,7 +28,14 @@
     <?php else :?>
         <a href="/change/photo/<?php echo $this->model->id ?>"><img src="/img/user.jpg" style="width: 100px" class="usrgmi" /></a>
     <?php endif; ?>
-    <div class="p10-t03"><?php echo $this->model->nickname ?></div>
+    <div id="view-name" class="p10-t03"><?php
+        if ($this->model->name) {
+            echo $this->model->name;
+        }
+        else {
+            echo $this->model->nickname ;
+        }
+    ?></div>
 </div>
 
 <div class="blackrowgall nmt">
@@ -51,8 +58,8 @@
         <div class="holder arr">
             <span id="my-description" class="lab-txt">
                 <?php
-                    if (strlen($this->model->description ) > 30) {
-                        echo substr($this->model->description, 0, 29) . "...";
+                    if (mb_strlen($this->model->description,'UTF8') > 14) {
+                        echo mb_substr($this->model->description, 0, 13, 'UTF8') . "...";
                     }
                     else {
                         echo $this->model->description;
@@ -181,7 +188,7 @@
     <div class="tt">更改个人介绍<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
     <div class="blackrowgall">
         <div class="row auto">
-            <textarea id="edit-description" class="fulltxtinput" placeholder="请填写"><?php echo $this->model->description ?></textarea>
+            <textarea id="edit-description" class="fulltxtinput" placeholder="请填写" style="height:150px"><?php echo $this->model->description ?></textarea>
         </div>
     </div>
     <div class="clear-15"></div>
@@ -230,7 +237,7 @@
 <!--                </select>-->
 <!--            </div>-->
 <!--        </div>-->
-        <a href="javascript:void(0)" id="submit-range" class="fullbtn">确认修改</a>
+
         <div class="address-list" style="position:absolute;left:0;right:0;top:260px;bottom:0;overflow-y:auto">
             <div style="padding:10px 15px 0 15px;">
                 <input id="edit-addr" placeholder="请输入详细地址" type="text" class="fulltxtinput" />
@@ -240,8 +247,10 @@
             <div id="addr-list" class="loc-ddl-bd">
             </div>
             <div class="clear-15"></div>
+            <a href="javascript:void(0)" id="submit-range" class="fullbtn">确认修改</a>
         </div>
         <div class="clear-15"></div>
+
     </div>
     <!--<div class="slidepopup cd-slidepopup" id="pp-teach-area">-->
 <!--    <div class="tt">更改授课区域<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>-->

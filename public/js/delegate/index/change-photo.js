@@ -15,3 +15,7 @@ function choosePhotoClick() {
         $("#upload-head-pic").click();
     })
 }
+
+function back() {
+    window.history.back();
+}

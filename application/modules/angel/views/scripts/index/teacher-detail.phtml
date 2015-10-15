@@ -69,6 +69,10 @@
 
                 if ($this->model->category) {
                     foreach($this->model->category as $category) {
+                        if (!$category) {
+                            continue;
+                        }
+
                         if (!$category->name) {
                             continue;
                         }

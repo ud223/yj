@@ -12,7 +12,7 @@
     var imgs_json = [
         <?php $index = 0; ?>
         <?php if ($this->model->photo) :?>
-            <?php if (count($this->model->photo) > 0) :?>
+            <?php if (count($this->model->photo) < 1) :?>
                 <?php foreach($this->model->photo as $p) :?>
                     <?php if($index > 0) :?>
                         <?php echo "," ?>
@@ -67,20 +67,18 @@
             <?php
                 $category_text = "";
 
-                foreach($this->model->category as $category) {
-                    if (!$category) {
-                        continue;
-                    }
+                if (isset($this->model->category)  && count($this->model->category) > 0) {// && count($this->model->category) > 0
+                    foreach($this->model->category as $category) {
+                        if (empty($category)) {
+                            continue;
+                        }
 
-                    if (!$category->name) {
-                        continue;
-                    }
+                        if ($category_text != "") {
+                            $category_text = $category_text . " / ";
+                        }
 
-                    if ($category_text != "") {
-                        $category_text = $category_text . " / ";
+                        $category_text = $category_text . $category->name;
                     }
-
-                    $category_text = $category_text . $category->name;
                 }
 
                 echo $category_text;
@@ -90,20 +88,18 @@
                 <?php
                     $region_text = "";
 
-                    foreach ($this->model->region as $region) {
-                        if (!$region) {
-                            continue;
-                        }
+                    if (isset($this->model->region) && count($this->model->region) > 0) {
+                        foreach ($this->model->region as $region) {
+                            if (!$region) {
+                                continue;
+                            }
 
-                        if (!$region->name) {
-                            continue;
-                        }
+                            if ($region_text != "") {
+                                $region_text = $region_text . " / ";
+                            }
 
-                        if ($region_text != "") {
-                            $region_text = $region_text . " / ";
+                            $region_text = $region_text . $region->name;
                         }
-
-                        $region_text = $region_text . $region->name;
                     }
 
                     echo $region_text;

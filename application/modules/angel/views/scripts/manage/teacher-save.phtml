@@ -170,23 +170,19 @@
                                 <?php
                                     if ($this->model->category) {
                                         foreach ($this->model->category as $c) {
-                                            if (!$c->id) {
+                                            if (!is_object($c)) {
                                                 continue;
                                             }
-
+                                            
+                                            if(!$c->id) {
+                                                continue;
+                                            }
 
                                             if ($category->id == $c->id) {
                                                 echo "checked='checked'";
 
                                                 break;
-                                            }
-//                                            if (isset($c)) {
-//                                                if ($category->id == $c->id) {
-//                                                    echo "checked='checked'";
-//
-//                                                    break;
-//                                                }
-//                                            }
+                                            };
                                         }
                                     }
                                 ?>
@@ -208,21 +204,17 @@
                     <div  style="float:left" >
                         <input id="<?php echo $lesson->id ?>" type="checkbox" name="lesson[]" value="<?php echo $lesson->id ?>"
                             <?php
-                                foreach ($this->model->lesson as $p) {
-                                    if (!$p) {
-                                        continue;
-                                    }
-
-                                    if (!$p->id) {
-                                        continue;
-                                    }
-
-                                    if ($lesson->id == $p->id) {
-                                        echo "checked='checked'";
-    
-                                        break;
-                                    }
+                            foreach ($this->model->lesson as $p) {
+                                if (!$p->id) {
+                                    continue;
                                 }
+
+                                if ($lesson->id == $p->id) {
+                                    echo "checked='checked'";
+
+                                    break;
+                                }
+                            }
                             ?>/> <label class="marginright10px" for="<?php echo $lesson->id ?>"><?php echo $lesson->name ?></label>
                     </div>
                 <?php endforeach; ?>

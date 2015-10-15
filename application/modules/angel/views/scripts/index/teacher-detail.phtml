@@ -88,7 +88,7 @@
                 <?php
                     $region_text = "";
 
-                    if (!empty($this->model->region)) {
+                    if ($this->model->region) {
                         foreach ($this->model->region as $region) {
                             if (!$region->name) {
                                 continue;

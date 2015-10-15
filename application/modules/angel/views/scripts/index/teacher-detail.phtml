@@ -11,7 +11,7 @@
     // 此处是php代码渲染输出而成，一次性把该导师所有的图片路径都加载至此。
     var imgs_json = [
         <?php $index = 0; ?>
-        <?php if (isset($this->model->photo) && count($this->model->photo) > 0) :?>
+        <?php if ($this->model->photo) :?>
             <?php foreach($this->model->photo as $p) :?>
                 <?php if($index > 0) :?>
                     <?php echo "," ?>

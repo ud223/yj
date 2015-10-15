@@ -56,9 +56,14 @@ $.endWaiting = function() {
 };
 
 /* LOADING (END) */
-$.toastMsg = function(msg, duration){
+$.toastMsg = function(msg, duration, direction){
     if(!duration) {
         duration = 2000;
+    }
+    // direction的值只有"BOTTOM"、"TOP"、"MIDDLE"三种
+    if(!direction) {
+        // 默认为BOTTOM
+        direction = "BOTTOM";
     }
     if(!msg) {
         msg="操作成功";
@@ -69,6 +74,12 @@ $.toastMsg = function(msg, duration){
     var fadeDuration = 200;
     var div = $('<div></div>').addClass('toastmsg').append(msg);
     var divwp = $('<div></div>').addClass('toastmsg-wp');
+    if(direction === "TOP") {
+        divwp.addClass('dtop');
+    }
+    if(direction === "MIDDLE") {
+        divwp.addClass('dmiddle');
+    }
     divwp.append(div);
     $('body').append(divwp);
     divwp.fadeIn(fadeDuration, function(){

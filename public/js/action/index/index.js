@@ -46,6 +46,8 @@ function loadTeacher(data, current_page_no, page_count) {
         list.append(node);
     }
 
+    var user_id = localStorage.getItem('user_id');
+
     $.each(data, function() {
         if (user_id) {
             if (user_id== this.id) {

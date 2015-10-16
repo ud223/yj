@@ -30,10 +30,10 @@ function initControls() {
 
 //初始化测试数据
 function initTest() {
-    clearPos();
+    //clearPos();
 
-    lat = "30.646992";
-    lng = "114.308168";
-
-    getLocal(load);
+    //lat = "30.646992";
+    //lng = "114.308168";
+    if (!loadCell())
+        getLocal(load);
 }

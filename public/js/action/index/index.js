@@ -138,3 +138,18 @@ function clearPos() {
     localStorage.setItem("lng", "");
     localStorage.setItem("cell", "");
 }
+
+function loadCell() {
+    var cell = localStorage.getItem("cell")
+    lat = localStorage.getItem("lat");
+    lng = localStorage.getItem("lng");
+
+    if (cell) {
+        $("#address-view").html(cell);
+
+        return true;
+    }
+    else {
+        return false;
+    }
+}

@@ -62,8 +62,8 @@
         <div class="holder arr">
             <span id="my-description" class="lab-txt">
                 <?php
-                    if (mb_strlen($this->model->description,'UTF8') > 14) {
-                        echo mb_substr($this->model->description, 0, 13, 'UTF8') . "...";
+                    if (mb_strlen($this->model->description,'UTF8') > 10) {
+                        echo mb_substr($this->model->description, 0, 9, 'UTF8') . "...";
                     }
                     else {
                         echo $this->model->description;

@@ -61,3 +61,9 @@ function editAddressName() {
         getAddressByAddressName($("#edit-addr").val(), setAddressList);
     });
 }
+
+function getLocClick() {
+    $("#btn-get-loc").tapA(function() {
+        getLocal(load);
+    })
+}

@@ -2,7 +2,6 @@ var page = 1;
 var teacher_list_count = 1;
 
 function load() {
-    //var tmp_region= $(".tcfilter-filter").find(".selected");
     var tmp_sort = $(".tcfilter-sort").find(".selected");
 
     var search = "lat:"+ lat +";lng:"+ lng + ";lesson_id:"+lesson_id;
@@ -89,6 +88,7 @@ function setAddressList(response) {
 
     list.html("");
 
+    localStorage.setItem("cell", addresses[0].name);
     $("#address-view").html(addresses[0].name);
 
     $.each(addresses, function() {

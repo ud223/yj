@@ -26,6 +26,8 @@ function initBtn() {
     acceptTimeClick();
 
     initSubmitOrder();
+
+    getLocClick();
 }
 
 function initInput() {

@@ -119,7 +119,7 @@ function chooseAddr(node) {
     else {
         $("#address-view").html(node.find(".t1").html());
     }
-    alert(node.find(".t1").html());
+
     lat = node.find(".t1").attr("lat");
     lng = node.find(".t1").attr("lng");
 

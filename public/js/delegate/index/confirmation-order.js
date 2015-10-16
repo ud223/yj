@@ -88,3 +88,11 @@ function acceptTimeClick() {
 function back() {
     window.history.back();
 }
+
+function getLocClick() {
+    $("#btn-get-loc").tapA(function() {
+        closePopup($("#pp-change-loc").find('.cd-slidepopupback'));
+
+        getLocal(false);
+    })
+}

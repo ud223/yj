@@ -118,7 +118,17 @@ function chooseAddr(node) {
     lat = node.find(".t1").attr("lat");
     lng = node.find(".t1").attr("lng");
 
+    localStorage.setItem("cell",node.find(".t1").html())
+    localStorage.setItem("lat", lat);
+    localStorage.setItem("lng", lng);
+
     load();
 
     closePopup($("#pp-change-loc").find('.cd-slidepopupback'));
+}
+
+function clearPos() {
+    localStorage.setItem("lat", "");
+    localStorage.setItem("lng", "");
+    localStorage.setItem("cell", "");
 }

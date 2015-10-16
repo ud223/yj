@@ -202,6 +202,17 @@ function busyDay(week) {
 }
 
 function initUseHours() {
+    var select_date = $(".time-day-select").find(".selected").attr("val");
+    var tmp_today = new Date();
+    var t_year = tmp_today.getFullYear();
+    var t_month = tmp_today.getMonth() + 1;
+    var t_day = tmp_today.getDate();
+    var str_Today = t_year + "-" + singleDateCheck(t_month) + "-" + singleDateCheck(t_day);
+
+    if (select_date != str_Today) {
+        return;
+    }
+
     var use_hours = $("#time-panel").find(".use-time");
 
     tmp_max_hours = max_hours;

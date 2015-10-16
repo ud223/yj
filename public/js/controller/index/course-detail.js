@@ -26,6 +26,8 @@ function loadData() {
 
 function initControls() {
     editAddressName();
+
+    getLocClick();
 }
 
 //初始化测试数据

@@ -47,3 +47,11 @@ function editAddressName() {
         getAddressByAddressName($("#edit-addr").val(), setAddressList);
     });
 }
+
+function getLocClick() {
+    $("#btn-get-loc").tapA(function() {
+        closePopup($("#pp-change-loc").find('.cd-slidepopupback'));
+
+        getLocal(load);
+    })
+}

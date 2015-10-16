@@ -482,6 +482,7 @@ class Angel_ManageController extends Angel_Controller_Action {
 
     public function teacherApplicationAction() {
         $applicationModel = $this->getModel('application');
+        $customerModel = $this->getModel('customer');
 
         $page = $this->request->getParam('page');
 
@@ -489,10 +490,18 @@ class Angel_ManageController extends Angel_Controller_Action {
             $page = 1;
         }
 
-        $paginator = $applicationModel->getBy(true, array('state' => 1, 'customer.usertype'=>"1"));
+        $customer = $customerModel->getBy(false, array('usertype'=>'1'));
+
+        $conditions = array();
+
+        foreach ($customer as $c) {
+            $conditions[] = new MongoId($c->id);
+        }
+
+        $paginator = $applicationModel->getApps($conditions);
         $paginator->setItemCountPerPage($this->bootstrap_options['default_page_size']);
         $paginator->setCurrentPageNumber($page);
-
+        
         $this->view->title = "老师申请列表";
         $this->view->paginator = $paginator;
     }

@@ -132,6 +132,7 @@ abstract class Angel_Model_AbstractModel {
                 $query = $query->field($key)->equals($val);
             }
         }
+//        var_dump($query); exit;
         $query = $query->sort('created_at', -1);
         $result = null;
         if ($return_as_paginator) {

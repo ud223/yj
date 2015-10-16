@@ -43,4 +43,17 @@ class Angel_Model_Application extends Angel_Model_AbstractModel {
 
         return $result;
     }
+
+    public function getApps($conditions) {
+        $query = $this->_dm->createQueryBuilder($this->_document_class);
+
+        $query = $query->field('customer.$id')->in($conditions)->field('state')->equals(1);
+
+        $query = $query->sort('created_at', -1);
+        $result = null;
+
+        $result = $this->paginator($query);
+
+        return $result;
+    }
 }

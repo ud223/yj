@@ -25,6 +25,8 @@
 <div class="p10-t02">
     <?php if ($this->model->head_pic) :?>
         <a href="/change/photo/<?php echo $this->model->id ?>"><img src="/photo/image/<?php echo $this->model->head_pic ?>" style="width: 100px" class="usrgmi" /></a>
+    <?php elseif ($this->model->$headimgurl) :?>
+        <a href="/change/photo/<?php echo $this->model->id ?>"><img src="/photo/image/<?php echo $this->model->$headimgurl ?>" style="width: 100px" class="usrgmi" /></a>
     <?php else :?>
         <a href="/change/photo/<?php echo $this->model->id ?>"><img src="/img/user.jpg" style="width: 100px" class="usrgmi" /></a>
     <?php endif; ?>

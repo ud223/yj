@@ -89,12 +89,13 @@ function loadTeacher(data, current_page_no, page_count) {
 }
 
 function setAddressList(response) {
-    alert(4);
+    alert(3);
+    alert(JSON.stringify(response));
     var addresses = response.result.pois;
     var list = $("#addr-list");
 
     list.html("");
-    alert(address[0].name);
+
     $("#address-view").html(addresses[0].name);
     localStorage.setItem("cell", addresses[0].name)
 

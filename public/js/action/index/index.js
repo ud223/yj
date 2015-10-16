@@ -89,6 +89,7 @@ function loadTeacher(data, current_page_no, page_count) {
 }
 
 function setAddressList(response) {
+    alert(4);
     var addresses = response.result.pois;
     var list = $("#addr-list");
 
@@ -113,7 +114,6 @@ function setAddressList(response) {
 }
 
 function chooseAddr(node) {
-    ///$("#edit-addr").val(text);
     if (node.find(".t1").html().length > 5) {
         $("#address-view").html(node.find(".t1").html().substr(0, 5) +  "...");
     }

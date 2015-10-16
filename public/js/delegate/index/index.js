@@ -54,10 +54,11 @@ function toMeClick() {
 
 function editAddressName() {
     $("#btn-addr-query").tap(function() {
+        alert(1);
         if ($("#edit-addr").val() == "") {
             return;
         }
-
+        alert(2);
         getAddressByAddressName($("#edit-addr").val(), setAddressList);
     });
 }

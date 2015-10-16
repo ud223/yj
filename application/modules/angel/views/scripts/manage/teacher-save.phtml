@@ -184,12 +184,16 @@
 //                                            if(!$c->id) {
 //                                                continue;
 //                                            }
-//
-                                            if ($category->id == $c->id) {
-                                                echo "checked='checked'";
+                                            try {
+                                                if ($category->id == $c->id) {
+                                                    echo "checked='checked'";
 
-                                                break;
-                                            };
+                                                    break;
+                                                };
+                                            }
+                                            catch (Doctrine\ODM\MongoDB\DocumentNotFoundException $e) {
+
+                                            }
                                         }
                                     }
                                 ?>

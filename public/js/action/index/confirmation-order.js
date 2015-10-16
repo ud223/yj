@@ -250,7 +250,7 @@ function acceptTime() {
 
             $("#hour").html(hour);
             $("#amount").html(order_price * hour);
-            $("#pay-amount").html(order_price * hour - 200);
+            $("#pay-amount").html(order_price * hour);
         }
 
         $("#select-timespan").show();

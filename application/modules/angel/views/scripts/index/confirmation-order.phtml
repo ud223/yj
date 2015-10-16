@@ -70,7 +70,7 @@
 
 <div class="blackrowgall">
     <div class="row">
-        <span class="tt">原价（<span id="hour"><?php echo $this->model->hour ?></span>小时）</span>
+        <span class="tt">价格（<span id="hour"><?php echo $this->model->hour ?></span>小时）</span>
         <span class="holder"><del class="lightgray">￥<span id="amount"><?php echo $this->model->amount ?></span><del></span>
     </div>
     <div class="row actbtn cd-slideoutbtn" rel="#pp-change-coupon" style="display: none">
@@ -80,7 +80,7 @@
             <img src="/img/arr-r.png" class="icoin" />
         </div>
     </div>
-    <div class="row">
+    <div class="row" style="display: none">
         <span class="tt">优惠价</span>
         <span class="holder"><strong class="green">￥<span id="pay-amount"><?php echo $this->model->amount ?></span></strong></span><!--这里减200只是做一个测试-->
     </div>

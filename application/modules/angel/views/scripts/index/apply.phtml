@@ -156,29 +156,29 @@
     </div>
 
 <!--    <div class="row cd-slideoutbtn" id="pp-change-region-btn">-->
-    <div class="blackrowgall">
-            <div class="row">
-                <span class="tt">授课区域</span>
-            </div>
-            <div class="arblk-cl">
-                <?php foreach ($this->region as $region) :?>
-                    <div class="al-ciiel">
-                        <input type="checkbox" name="region" id="<?php echo $region->id ?>" value="<?php echo $region->id ?>"
-                        <?php
-                            if ($this->model->region) {
-                                foreach ($this->model->region as $my_region) {
-                                    if ($my_region->id == $region->id) {
-                                        echo 'checked="checked"';
-                                    }
-                                }
-                            }
-                        ?>
-                        />
-                        <label for="<?php echo $region->id ?>"><?php echo $region->name ?></label>
-                    </div>
-                <?php endforeach; ?>
-            </div>
+    <div class="blackrowgall" style="display: none">
+        <div class="row">
+            <span class="tt">授课区域</span>
         </div>
+        <div class="arblk-cl">
+            <?php foreach ($this->region as $region) :?>
+                <div class="al-ciiel">
+                    <input type="checkbox" name="region" id="<?php echo $region->id ?>" value="<?php echo $region->id ?>"
+                    <?php
+//                        if ($this->model->region) {
+//                            foreach ($this->model->region as $my_region) {
+//                                if ($my_region->id == $region->id) {
+//                                    echo 'checked="checked"';
+//                                }
+//                            }
+//                        }
+                    ?>
+                    />
+                    <label for="<?php echo $region->id ?>"><?php echo $region->name ?></label>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
     <div class="blackrowgall">
         <div class="row">
             <span class="tt">授课类别</span>

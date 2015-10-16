@@ -84,25 +84,25 @@
                 echo $category_text;
             ?>
         </span></div>
-        <div>授课区域： <span class="dt">
+        <div style="display: none">授课区域： <span class="dt">
                 <?php
-                    $region_text = "";
-
-                    if ($this->model->region) {
-                        foreach ($this->model->region as $region) {
-                            if (!$region->name) {
-                                continue;
-                            }
-
-                            if ($region_text != "") {
-                                $region_text = $region_text . " / ";
-                            }
-
-                            $region_text = $region_text . $region->name;
-                        }
-                    }
-
-                    echo $region_text;
+//                    $region_text = "";
+//
+//                    if ($this->model->region) {
+//                        foreach ($this->model->region as $region) {
+//                            if (!$region->name) {
+//                                continue;
+//                            }
+//
+//                            if ($region_text != "") {
+//                                $region_text = $region_text . " / ";
+//                            }
+//
+//                            $region_text = $region_text . $region->name;
+//                        }
+//                    }
+//
+//                    echo $region_text;
                 ?>
         </span></div>
     </div>

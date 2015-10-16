@@ -489,7 +489,7 @@ class Angel_ManageController extends Angel_Controller_Action {
             $page = 1;
         }
 
-        $paginator = $applicationModel->getBy(true, array('state' => 1));
+        $paginator = $applicationModel->getBy(true, array('state' => 1, 'customer.usertype'=>'1'));
         $paginator->setItemCountPerPage($this->bootstrap_options['default_page_size']);
         $paginator->setCurrentPageNumber($page);
 

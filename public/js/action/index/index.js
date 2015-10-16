@@ -33,16 +33,17 @@ function load() {
 }
 
 function loadTeacher(data, current_page_no, page_count) {
-    alert(JSON.stringify(data));
     var list = $(".tcfilter-container");
     //如果当前页为 1 则表示第一次查询或更换了条件，清空一次里面的html
     if (current_page_no == 1) {
         list.html("");
     }
-    alert(data.length);
+
     if (data.length == 0) {
         var node = $("#teacher-item").find(".teacher-itm").clone();
         node.find(".teacher-name").html("附近没有老师...");
+
+        list.append(node);
     }
 
     $.each(data, function() {

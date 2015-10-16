@@ -10,6 +10,9 @@ function load() {
     var tmp_search = localStorage.getItem("teacher_search");
     var tmp_sort = localStorage.getItem("teacher_sort");
 
+    localStorage.setItem("lat", lat);
+    localStorage.setItem("lng", lng);
+
     //如果条件不变，加载就翻页
     if (search == tmp_search && sort == tmp_sort) {
         page = parseInt(page) + 1;
@@ -137,9 +140,7 @@ function loadCell() {
     var cell = localStorage.getItem("cell")
     lat = localStorage.getItem("lat");
     lng = localStorage.getItem("lng");
-    alert(cell);
-    alert(lat);
-    alert(lng);
+
     if (cell) {
         $("#address-view").html(cell);
 

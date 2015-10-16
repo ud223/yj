@@ -141,6 +141,8 @@ function loadCell() {
     if (cell) {
         $("#address-view").html(cell);
 
+        load();
+
         return true;
     }
     else {

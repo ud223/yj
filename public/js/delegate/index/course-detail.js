@@ -37,3 +37,13 @@ function sortClick() {
         $('.tcfilter-sort').slideUp(150);
     });
 }
+
+function editAddressName() {
+    $("#btn-addr-query").tap(function() {
+        if ($("#edit-addr").val() == "") {
+            return;
+        }
+
+        getAddressByAddressName($("#edit-addr").val(), setAddressList);
+    });
+}

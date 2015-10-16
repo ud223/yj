@@ -25,7 +25,7 @@ function loadData() {
 }
 
 function initControls() {
-
+    editAddressName();
 }
 
 //初始化测试数据

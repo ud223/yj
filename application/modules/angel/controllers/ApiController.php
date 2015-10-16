@@ -35,24 +35,7 @@ class Angel_ApiController extends Angel_Controller_Action {
 //        $this->_helper->json(array('data' => $search, 'code' => 0)); exit;
         $condition = false;
 
-//        if ($search) {
-//            $condition = array();
-//            $tmp_search = explode("&", $search);
-//
-//            if (count($tmp_search) == 1) {
-//                $tmp_condition = explode("=", $tmp_search[0]);
-//
-//                $condition[] = array('region.$id' => new MongoId($tmp_condition[1]), 'delete'=>0);
-//            }
-//            else {
-//                $tmp_condition = explode("=", $tmp_search[0]);
-//                $tmp_condition1 = explode("=", $tmp_search[1]);
-//
-//                $condition[] = array('region.$id' => new MongoId($tmp_condition[1]), 'lesson.$id' => new MongoId($tmp_condition1[1]), 'delete'=>0);
-//            }
-//        }
 
-        $condition[] = array('usertype' => '2', 'delete' => 0);
 
         if (!$search) {
             $this->_helper->json(array('data' => "坐标刷新失败!", 'code' => 0)); exit;
@@ -62,9 +45,21 @@ class Angel_ApiController extends Angel_Controller_Action {
 
         $lat = explode(":", $tmp_pos[0])[1];
         $lng = explode(":", $tmp_pos[1])[1];
+        $lesson_id = false;
+
+        if (count($tmp_pos) > 2) {
+            $lesson_id = explode(":", $tmp_pos[2])[1];
+        }
 
         if (!$sort) {
             $sort = false;
+        }
+
+        if ($lesson_id) {
+            $condition[] = array('usertype' => '2', 'lesson.$id'=>new MongoId($lesson_id), 'delete' => 0);
+        }
+        else {
+            $condition[] = array('usertype' => '2', 'delete' => 0);
         }
 
         $paginator = $teacherModel->getByAndSort(true, $condition, $sort);

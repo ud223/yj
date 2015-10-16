@@ -89,8 +89,6 @@ function loadTeacher(data, current_page_no, page_count) {
 }
 
 function setAddressList(response) {
-    alert(3);
-    alert(JSON.stringify(response));
     var addresses = response.result.pois;
     var list = $("#addr-list");
 

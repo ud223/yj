@@ -137,7 +137,7 @@ function loadCell() {
     var cell = localStorage.getItem("cell")
     lat = localStorage.getItem("lat");
     lng = localStorage.getItem("lng");
-
+    alert(cell);
     if (cell) {
         $("#address-view").html(cell);
 

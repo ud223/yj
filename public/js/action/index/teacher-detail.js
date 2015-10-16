@@ -209,8 +209,6 @@ function initUseHours() {
     var t_day = tmp_today.getDate();
     var str_Today = t_year + "-" + singleDateCheck(t_month) + "-" + singleDateCheck(t_day);
 
-
-
     var use_hours = $("#time-panel").find(".use-time");
 
     tmp_max_hours = max_hours;

@@ -91,7 +91,9 @@ function back() {
 
 function getLocClick() {
     $("#btn-get-loc").tapA(function() {
-        closePopup($("#pp-change-loc").find('.cd-slidepopupback'));
+        closePopup($("#pp-change-addr").find('.cd-slidepopupback'));
+
+        $("#edit-addr").val("");
 
         getLocal(false);
     })

@@ -4,6 +4,7 @@
     }
 </style>
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=8TN0gC5Rqo6cec2jroKOkNpE&v=2.0"></script>
+<script src="<?php echo $this->jsPath("swipe.js"); ?>"></script>
 <script src="<?php echo $this->jsPath("tools/String.js"); ?>"></script>
 <script src="<?php echo $this->jsPath("tools/map.js"); ?>"></script>
 <script src="<?php echo $this->jsPath("action/index/course-detail.js"); ?>"></script>
@@ -29,13 +30,31 @@
 
                         }
                     ?>' }
-                <?php $index++; ?>
             <?php endforeach; ?>
     ];
+
+//    { url: '/photo/image/<?php //echo $p->name . $p->type; ?>//' }
+//    <?php //$index++; ?>
+
 </script>
+
 <div class="fixbackt">
     <a class="arrc" href="/course"></a>
 </div>
+
+<!--此段为滑动多图的html部分，写死在这里-->
+<div id="cd_mentor_img_slider" class="swipe">
+    <div class="swipe-wrap">
+        <!--<div class="figure"></div>-->
+    </div>
+    <!-- 放置索引标签的地方 -->
+    <div class="gl">
+        <!--<div class="pgitm"></div>-->
+    </div>
+</div>
+
+
+
 <?php if (!empty($this->model->photo) && count($this->model->photo) > 0) :?>
     <div class="p09-gallery" style="background-image:url(/photo/image/<?php echo $this->model->photo[0]->name . $this->model->photo[0]->type?>);"></div>
 <?php else :?>
@@ -152,4 +171,38 @@
     var page_type = 0;
     var lat = false;
     var lng = false;
+
+    $('document').ready(function() {
+        if (imgs_json.length) {
+            // 根据imgs_json的长度和内容循环加载图片
+            $.each(imgs_json, function() {
+                var new_img = $('<div>').addClass('figure');
+                new_img.css('background-image', 'url(' + this.url + ')');
+                $('#cd_mentor_img_slider .swipe-wrap').append(new_img);
+            });
+            // 初始化swipe
+            var slider = Swipe(document.getElementById('cd_mentor_img_slider'), {
+                startSlide: 0,
+                speed: 400,
+                auto: false,
+                continuous: false,
+                disableScroll: false,
+                stopPropagation: false,
+                callback: function(index, elem) {},
+                transitionEnd: function(index, elem) {
+                    $('.gl .pgitm.selected').removeClass('selected');
+                    $('.gl .pgitm[index="' + index + '"]').addClass('selected');
+                }
+            });
+            // 初始化pager
+            var n = slider.getNumSlides();
+            for (var i = 0; i < n; i++) {
+                var new_pager = $('<div>').addClass('pgitm').attr('index', i);
+                if(i === 0) {
+                    new_pager.addClass('selected');
+                }
+                $('.swipe .gl').append(new_pager);
+            }
+        }
+    });
 </script>

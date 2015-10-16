@@ -64,6 +64,9 @@ function editAddressName() {
 
 function getLocClick() {
     $("#btn-get-loc").tapA(function() {
+        alert(0);
+        closePopup($("#pp-change-loc").find('.cd-slidepopupback'));
+
         getLocal(load);
     })
 }

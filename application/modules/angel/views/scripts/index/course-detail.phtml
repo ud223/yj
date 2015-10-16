@@ -16,26 +16,26 @@
     // 此处是php代码渲染输出而成，一次性把该导师所有的图片路径都加载至此。
     var imgs_json = [
         <?php $index = 0; ?>
-            <?php foreach($this->model->photo as $p) :?>
-                <?php if($index > 0) :?>
-                    <?php echo "," ?>
-                <?php endif; ?>
-                    { url: '/photo/image/<?php
-                        try {
-                            echo $p->name . $p->type;
+            <?php if (count($this->model->photo) > 0) :?>
+                <?php foreach($this->model->photo as $p) :?>
+                    <?php if($index > 0) :?>
+                        <?php echo "," ?>
+                    <?php endif; ?>
+                        { url: '/photo/image/<?php
+                            try {
+                                echo $p->name . $p->type;
 
-                            $index++;
-                        }
-                        catch (Doctrine\ODM\MongoDB\DocumentNotFoundException $e) {
+                                $index++;
+                            }
+                            catch (Doctrine\ODM\MongoDB\DocumentNotFoundException $e) {
 
-                        }
-                    ?>' }
-            <?php endforeach; ?>
+                            }
+                        ?>' }
+                <?php endforeach; ?>
+            <?php else :?>
+                { url: '/img/userdefault.jpg' }
+            <?php endif; ?>
     ];
-
-//    { url: '/photo/image/<?php //echo $p->name . $p->type; ?>//' }
-//    <?php //$index++; ?>
-
 </script>
 
 <div class="fixbackt">
@@ -52,14 +52,6 @@
         <!--<div class="pgitm"></div>-->
     </div>
 </div>
-
-
-
-<?php if (!empty($this->model->photo) && count($this->model->photo) > 0) :?>
-    <div class="p09-gallery" style="background-image:url(/photo/image/<?php echo $this->model->photo[0]->name . $this->model->photo[0]->type?>);"></div>
-<?php else :?>
-    <div class="p09-gallery"></div>
-<?php endif; ?>
 <div class="p09-t1">
 <?php echo $this->model->name ?>
     <span class="l"></span>

@@ -93,7 +93,7 @@ function setAddressList(response) {
     var list = $("#addr-list");
 
     list.html("");
-
+    alert(address[0].name);
     $("#address-view").html(addresses[0].name);
     localStorage.setItem("cell", addresses[0].name)
 
@@ -120,7 +120,7 @@ function chooseAddr(node) {
     else {
         $("#address-view").html(node.find(".t1").html());
     }
-
+    alert(node.find(".t1").html());
     lat = node.find(".t1").attr("lat");
     lng = node.find(".t1").attr("lng");
 

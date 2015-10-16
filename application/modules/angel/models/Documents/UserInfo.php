@@ -48,7 +48,7 @@ class UserInfo extends AbstractDocument {
 
     //用户类型  1： 普通用户  2： 瑜家老师
     /** @ODM\String */
-    protected $usertype = 1;
+    protected $usertype = "1";
 
     /** @ODM\String */
     protected $name;

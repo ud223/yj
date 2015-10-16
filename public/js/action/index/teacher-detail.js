@@ -108,6 +108,7 @@ function timeChoose(time) {
 }
 
 function checkMaxHour() {
+    alert(tmp_max_hours);
     var selected_time = $("#time-panel").find(".selected");
 
     if (selected_time.length > 2) {

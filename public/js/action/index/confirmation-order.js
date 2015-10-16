@@ -492,11 +492,39 @@ function setUseTime(response) {
 }
 
 function initUseHours() {
+    var select_date = $(".time-day-select").find(".selected").attr("val");
+    var tmp_today = new Date();
+    var t_year = tmp_today.getFullYear();
+    var t_month = tmp_today.getMonth() + 1;
+    var t_day = tmp_today.getDate();
+    var str_Today = t_year + "-" + singleDateCheck(t_month) + "-" + singleDateCheck(t_day);
+
     var use_hours = $("#time-panel").find(".use-time");
 
     tmp_max_hours = max_hours;
 
     tmp_max_hours = tmp_max_hours - use_hours.length;
+
+    if (select_date != str_Today) {
+        return;
+    }
+
+    var tmp_date = new Date();
+
+    var cur_hour = tmp_date.getHours() + 1;
+
+    var td =  $("#time-panel").find(".td");
+
+    if (tmp_max_hours < 1) {
+        $(td).addClass("unclickable");
+    }
+    else {
+        $.each(td, function() {
+            if ($(this).attr('val') <= cur_hour) {
+                $(this).addClass("unclickable");
+            }
+        })
+    }
 }
 
 function submitOrder() {

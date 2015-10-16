@@ -40,7 +40,7 @@ function loadTeacher(data, current_page_no, page_count) {
     }
 
     if (data.length == 0) {
-        var node = $("#teacher-item").find(".teacher-itm").clone();
+        var node = $("#teacher-item").find(".teacher-none").clone();
         node.find(".teacher-name").html("附近没有老师...");
 
         list.append(node);

@@ -185,28 +185,35 @@
     <div class="dipu2 nbb">
         <div class="dipu3 mmbe">用户评论</div>
         <div class="dipu4">
-            <?php foreach($this->orders as $order):?>
-                <div class="mgi-b1">
-                    <div class="bci4ee">
-                        <?php if ($order->customer->head_pic) :?>
-                            <img src="/photo/image/<?php echo $order->customer->head_pic ?>" class="b4ee" />
-                        <?php else :?>
-                            <img src="/img/user.jpg" class="b4ee" />
-                        <?php endif; ?>
-                    </div>
-                    <div class="bci5ee">
-                        <div class="b5ee"><?php echo $order->customer->name ?></div>
-                        <div class="b7ee">
-                            <?php echo $order->teacher_appraise ?>
+            <?php if (count($this->orders) > 0) :?>
+                <?php foreach($this->orders as $order):?>
+                    <div class="mgi-b1">
+                        <div class="bci4ee">
+                            <?php if ($order->customer->head_pic) :?>
+                                <img src="/photo/image/<?php echo $order->customer->head_pic ?>" class="b4ee" />
+                            <?php else :?>
+                                <img src="/img/user.jpg" class="b4ee" />
+                            <?php endif; ?>
                         </div>
-                        <div class="b6ee"><?php
-                                $tmp_date = explode("-", $order->rundate);
-                                echo $tmp_date[0] .'年'. $tmp_date[1] .'月'. $tmp_date[2] .'日';
-                            ?>
+                        <div class="bci5ee">
+                            <div class="b5ee"><?php echo $order->customer->name ?></div>
+                            <div class="b7ee">
+                                <?php echo $order->teacher_appraise ?>
+                            </div>
+                            <div class="b6ee"><?php
+                                    $tmp_date = explode("-", $order->rundate);
+                                    echo $tmp_date[0] .'年'. $tmp_date[1] .'月'. $tmp_date[2] .'日';
+                                ?>
+                            </div>
                         </div>
                     </div>
+                <?php endforeach; ?>
+            <?php else :?>
+                <div class="mgi-b2">
+                    暂无评论
+                    <span class="arr-r"></span>
                 </div>
-            <?php endforeach; ?>
+            <?php endif; ?>
 <!--            <div class="mgi-b2">-->
 <!--                查看更多-->
 <!--                <span class="arr-r"></span>-->

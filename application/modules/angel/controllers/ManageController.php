@@ -501,7 +501,7 @@ class Angel_ManageController extends Angel_Controller_Action {
         $paginator = $applicationModel->getApps($conditions);
         $paginator->setItemCountPerPage($this->bootstrap_options['default_page_size']);
         $paginator->setCurrentPageNumber($page);
-        
+
         $this->view->title = "老师申请列表";
         $this->view->paginator = $paginator;
     }

@@ -62,7 +62,14 @@
             <?php foreach ($this->paginator as $p): ?>
                 <tr>
                     <td><?php echo $p->customer->name ?></td>
-                    <td><?php echo $p->customer->sex ?></td>
+                    <td><?php
+                        if ($p->customer->sex == 1) {
+                            echo '男';
+                        }
+                        else {
+                            echo '女';
+                        }
+                          ?></td>
                     <td><?php echo $p->customer->birthday ?></td>
                     <td><?php echo $p->customer->place ?></td>
                     <td><?php echo $p->customer->educational ?></td>

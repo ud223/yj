@@ -1,14 +1,16 @@
-var lng = "114.081278";
-var lat = "22.531413";
+//var lng = "114.081278";
+//var lat = "22.531413";
 
 var afterMethod = null;
 
 function locationError(error){
-    if (afterMethod) {
-        afterMethod();
-    }
+    //if (afterMethod) {
+    //    afterMethod();
+    //}
 
-    getAddressByCoordinate(lng, lat, setAddressList);
+    //getAddressByCoordinate(lng, lat, setAddressList);
+
+    $("#address-view").html("定位中...");
 }
 
 function showPosition(data) {

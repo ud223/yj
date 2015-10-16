@@ -5,7 +5,7 @@ function load() {
     //var tmp_region= $(".tcfilter-filter").find(".selected");
     var tmp_sort = $(".tcfilter-sort").find(".selected");
 
-    var search = "lat:"+ lat +";lng:"+ lng;
+    var search = "lat:"+ lat +";lng:"+ lng + ";lesson_id:"+lesson_id;
     var sort = $(tmp_sort).attr("sort");
 
     var tmp_search = localStorage.getItem("teacher_search");
@@ -36,6 +36,13 @@ function loadTeacher(data, current_page_no, page_count) {
     //如果当前页为 1 则表示第一次查询或更换了条件，清空一次里面的html
     if (current_page_no == 1) {
         list.html("");
+    }
+
+    if (data.length == 0) {
+        var node = $("#teacher-item").find(".teacher-none").clone();
+        node.find(".teacher-name").html("附近没有老师...");
+
+        list.append(node);
     }
 
     $.each(data, function() {

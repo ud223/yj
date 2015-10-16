@@ -15,15 +15,22 @@
     // 此处是php代码渲染输出而成，一次性把该导师所有的图片路径都加载至此。
     var imgs_json = [
         <?php $index = 0; ?>
-        <?php if (!empty($this->model->photo) && count($this->model->photo) > 0) :?>
             <?php foreach($this->model->photo as $p) :?>
                 <?php if($index > 0) :?>
                     <?php echo "," ?>
                 <?php endif; ?>
-                { url: '/photo/image/<?php echo $p->name . $p->type ?>' }
+                    { url: '/photo/image/<?php
+                        try {
+                            echo $p->name . $p->type;
+
+                            $index++;
+                        }
+                        catch (Doctrine\ODM\MongoDB\DocumentNotFoundException $e) {
+
+                        }
+                    ?>' }
                 <?php $index++; ?>
             <?php endforeach; ?>
-        <?php endif; ?>
     ];
 </script>
 <div class="fixbackt">
@@ -67,16 +74,16 @@
         </div>
     </div>
 
-    <div class="tcfilter-filter">
-        <div class="wp">
-            <p class="p1">选择区</p>
-            <div>
-                <?php foreach ($this->region as $r):?>
-                    <button class="itmbtn" type="button" id="<?php echo $r->id?>"><?php echo $r->name ?></button>
-                <?php endforeach;?>
-            </div>
-        </div>
-    </div>
+<!--    <div class="tcfilter-filter">-->
+<!--        <div class="wp">-->
+<!--            <p class="p1">选择区</p>-->
+<!--            <div>-->
+<!--                --><?php //foreach ($this->region as $r):?>
+<!--                    <button class="itmbtn" type="button" id="--><?php //echo $r->id?><!--">--><?php //echo $r->name ?><!--</button>-->
+<!--                --><?php //endforeach;?>
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 </div>
 
 <div class="tcfilter-container" style="padding-top:0;">
@@ -107,6 +114,15 @@
         </div>
         <div>
             <img src="" class="teacher-img-big cd_hottap" hottap="" />
+        </div>
+    </div>
+    <div class="teacher-none">
+        <div class="pad-15">
+            <div class="user-intro cd_hottap" hottap="">
+                <div class="li">
+                    <div class="user-intro-txt"><span class="teacher-name"></span</div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

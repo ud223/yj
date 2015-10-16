@@ -210,15 +210,17 @@ function initUseHours() {
     var t_day = tmp_today.getDate();
     var str_Today = t_year + "-" + singleDateCheck(t_month) + "-" + singleDateCheck(t_day);
 
-    if (select_date != str_Today) {
-        return;
-    }
+
 
     var use_hours = $("#time-panel").find(".use-time");
 
     tmp_max_hours = max_hours;
 
     tmp_max_hours = tmp_max_hours - use_hours.length;
+
+    if (select_date != str_Today) {
+        return;
+    }
 
     var tmp_date = new Date();
 

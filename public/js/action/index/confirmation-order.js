@@ -139,12 +139,14 @@ function validPhoneCode() {
 function initWeek() {
     var date = null;
 
-    if (rundate) {
-        date = new Date(rundate);
-    }
-    else {
-        date = new Date();
-    }
+    //if (rundate) {
+    //    date = new Date(rundate);
+    //}
+    //else {
+    //    date = new Date();
+    //}
+
+    date = new Date();
 
     var t_year = date.getFullYear();
     var t_month = date.getMonth() + 1;
@@ -178,6 +180,10 @@ function initWeek() {
     }
 
     $(".time-day-select").find(".table").html(week_html);
+
+    if ($(".time-day-select").find(".selected").length == 0) {
+        $($(".time-day-select").find(".week-td")[0]).addClass("selected");
+    }
 }
 
 function timeChoose(time) {

@@ -141,7 +141,7 @@
     <div class="tt">更改电话号码<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
     <div class="blackrowgall">
         <div class="row">
-            <input placeholder="请填写手机号码" id="phone-num" type="tel" maxlength="11" class="fulltxtinput" />
+            <input placeholder="请填写手机号码" id="phone-num" value="<?php echo $this->model->customer->phone ?>" type="tel" maxlength="11" class="fulltxtinput" />
             <button id="send-code" class="sendvalcodbt">发送验证码</button>
         </div>
         <div class="row">

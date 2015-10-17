@@ -77,4 +77,13 @@ class Angel_Model_Order extends Angel_Model_AbstractModel
 
         return $result;
     }
+
+    public function getAvailabilityOrder($rundate, $customer_id) {
+        $query = $this->_dm->createQueryBuilder($this->_document_class);
+
+        $result = null;
+        $result = $query->getQuery()->;
+
+        return $result;
+    }
 }

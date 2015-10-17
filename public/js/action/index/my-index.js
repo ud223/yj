@@ -100,8 +100,8 @@ function saveDescription() {
 function setDescription(response) {
     //$("#my-description").html(response.data)
 
-    if (response.data.length > 20) {
-        $("#my-description").html(response.data.substr(0, 19) + "...");
+    if (response.data.length > 10) {
+        $("#my-description").html(response.data.substr(0, 9) + "...");
     }
     else {
         $("#my-description").html(response.data);

@@ -300,7 +300,9 @@ class Angel_IndexController extends Angel_Controller_Action {
 
         $id = $this->getParam('id');
 
-        $paginator = $orderModel->getBy(false, array('delete'=>0, 'customer.$id'=>new MongoId($id)));
+        $today = date("Y-m-d");
+
+        $paginator = $orderModel->getBy(false, array('delete'=>0, 'customer.$id'=>new MongoId($id), 'rundate'=>$today));
 
         $this->view->count = count($paginator);
         $this->view->order_list = $paginator;

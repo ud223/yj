@@ -65,7 +65,9 @@ class Angel_IndexController extends Angel_Controller_Action {
 
     public function teacherDetailAction() {
         $teacherModel = $this->getModel('teacher');
+
         $orderModel = $this->getModel('order');
+
         $workModel = $this->getModel('work');
 
         $id = $this->getParam('id');

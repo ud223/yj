@@ -92,7 +92,7 @@ function getOrderBy(teacher_id, rundate, fun) {
         data: data,
         method: 'post',
         success: function (response) {
-            alert(JSON.stringify(response)); //return;
+            //alert(JSON.stringify(response)); //return;
             if (response.code == 200) {
                 if (fun) {
                     fun(response);

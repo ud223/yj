@@ -238,7 +238,7 @@ function initUseHours() {
 }
 
 function setUseTime(response) {
-    alert(JSON.stringify(response));
+    //alert(JSON.stringify(response));
     var tmp_now = new Date();
     var temp = $("#time-panel").find(".selected");
 
@@ -261,16 +261,21 @@ function setUseTime(response) {
                     if (value + 1 == time_value[0] || value - 1 == time_value[0]) {
                         $(this).addClass("unclickable")
                     }
+
+                    if (value == time_value[0]) {
+                        $(this).addClass("unclickable");
+                        $(this).addClass("unclickable use-time");
+                    }
                 }
                 else {
                     if (value + 1 == time_value[0] || value - 1 == time_value[1]) {
                         $(this).addClass("unclickable")
                     }
-                }
 
-                if (value >= time_value[0] && value <= time_value[1]) {
-                    $(this).addClass("unclickable");
-                    $(this).addClass("unclickable use-time");
+                    if (value >= time_value[0] && value <= time_value[1]) {
+                        $(this).addClass("unclickable");
+                        $(this).addClass("unclickable use-time");
+                    }
                 }
             })
         }
@@ -288,17 +293,21 @@ function setUseTime(response) {
                             if (value + 1 == time_value[0] || value - 1 == time_value[0]) {
                                 $(this).addClass("unclickable")
                             }
+
+                            if (value == time_value[0]) {
+                                $(this).addClass("unclickable");
+                                $(this).addClass("unclickable use-time");
+                            }
                         }
                         else {
                             if (value + 1 == time_value[0] || value - 1 == time_value[1]) {
                                 $(this).addClass("unclickable")
                             }
-                        }
 
-
-                        if (value >= time_value[0] && value <= time_value[1]) {
-                            $(this).addClass("unclickable")
-                            $(this).addClass("unclickable use-time");
+                            if (value >= time_value[0] && value <= time_value[1]) {
+                                $(this).addClass("unclickable")
+                                $(this).addClass("unclickable use-time");
+                            }
                         }
                     })
                 }

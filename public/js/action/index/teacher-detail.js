@@ -212,13 +212,13 @@ function initUseHours() {
     var use_hours = $("#time-panel").find(".use-time");
 
     tmp_max_hours = max_hours;
-
+    alert(tmp_max_hours);
     tmp_max_hours = tmp_max_hours - use_hours.length;
-
+    alert(tmp_max_hours);
     if (select_date != str_Today) {
         return;
     }
-
+    alert(tmp_max_hours);
     var tmp_date = new Date();
 
     var cur_hour = tmp_date.getHours() + 1;

@@ -424,7 +424,13 @@ class Angel_ApiController extends Angel_Controller_Action {
 
             $tmp1 = intval(explode('-', $tmp_time[1])[1]);
             $tmp2 = intval(explode('-', $tmp_time[1])[0]);
-            $time = $tmp1 - $tmp2 + 1;
+
+            if ($tmp1) {
+                $time = $tmp1 - $tmp2 + 1;
+            }
+            else {
+                $time = 1;
+            }
 
             $orders[] = array("id"=>$o->id, "rundate"=>$o->rundate, "time"=>$o->time, "user_time"=>$time, "state"=>$o->state, "customer_id"=> $o->customer->id, "teacher_id"=> $o->teacher->id, "created_date"=>date_format($o->created_at, 'Y-m-d H:i:s'), "update_at"=>date_format($o->updated_at, 'Y-m-d H:i:s'));
         }

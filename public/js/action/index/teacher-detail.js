@@ -257,8 +257,15 @@ function setUseTime(response) {
             $.each(list, function() {
                 var value = parseInt($(this).attr("val"));
 
-                if (value + 1 == time_value[0] || value - 1 == time_value[1]) {
-                    $(this).addClass("unclickable")
+                if (time_value.length == 1) {
+                    if (value + 1 == time_value[0] || value - 1 == time_value[0]) {
+                        $(this).addClass("unclickable")
+                    }
+                }
+                else {
+                    if (value + 1 == time_value[0] || value - 1 == time_value[1]) {
+                        $(this).addClass("unclickable")
+                    }
                 }
 
                 if (value >= time_value[0] && value <= time_value[1]) {
@@ -277,9 +284,17 @@ function setUseTime(response) {
                     $.each(list, function() {
                         var value = parseInt($(this).attr("val"));
 
-                        if (value + 1 == time_value[0] || value - 1 == time_value[1]) {
-                            $(this).addClass("unclickable")
+                        if (time_value.length == 1) {
+                            if (value + 1 == time_value[0] || value - 1 == time_value[0]) {
+                                $(this).addClass("unclickable")
+                            }
                         }
+                        else {
+                            if (value + 1 == time_value[0] || value - 1 == time_value[1]) {
+                                $(this).addClass("unclickable")
+                            }
+                        }
+
 
                         if (value >= time_value[0] && value <= time_value[1]) {
                             $(this).addClass("unclickable")

@@ -29,7 +29,21 @@
                     }
 
                     echo  $tmp_text;
-                    ?> <?php echo explode("|",$order->time)[0] ?></span></span></div>
+                    ?>
+                    <?php
+                        $str_time1 = explode("|",$order->time)[0];
+                        $str_time2 = explode("|",$order->time)[1];
+                        $tmp_time = explode("-", $str_time1);
+
+                        if (count($tmp_time) == 1) {
+                            $tmp_time1 = intval($str_time2) + 1;
+                            echo $str_time1 .' - '.$tmp_time1 . ':00';
+                        }
+                        else {
+                            echo $str_time1;
+                        }
+
+                    ?></span></span></div>
             <div class="holder arr">
                 <img src="/img/arr-r.png" class="icoin" />
             </div>

@@ -535,9 +535,6 @@ function initUseHours() {
 
     tmp_max_hours = tmp_max_hours - use_hours.length;
 
-    if (select_date != str_Today) {
-        return;
-    }
 
     var tmp_date = new Date();
 
@@ -549,11 +546,13 @@ function initUseHours() {
         $(td).addClass("unclickable");
     }
     else {
-        $.each(td, function() {
-            if ($(this).attr('val') <= cur_hour) {
-                $(this).addClass("unclickable");
-            }
-        })
+        if (select_date != str_Today) {
+            $.each(td, function() {
+                if ($(this).attr('val') <= cur_hour) {
+                    $(this).addClass("unclickable");
+                }
+            });
+        }
     }
 }
 

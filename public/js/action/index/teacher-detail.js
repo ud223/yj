@@ -212,10 +212,7 @@ function initUseHours() {
     var use_hours = $("#time-panel").find(".use-time");
 
     tmp_max_hours = max_hours;
-
     tmp_max_hours = tmp_max_hours - use_hours.length;
-
-    //
 
     var tmp_date = new Date();
 

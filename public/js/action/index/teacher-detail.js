@@ -215,9 +215,9 @@ function initUseHours() {
 
     tmp_max_hours = tmp_max_hours - use_hours.length;
 
-    if (select_date != str_Today) {
-        return;
-    }
+    //if (select_date != str_Today) {
+    //    return;
+    //}
 
     var tmp_date = new Date();
 

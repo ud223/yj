@@ -68,7 +68,22 @@
             }
 
             echo  $tmp_text;
-            ?> <?php echo explode("|", $this->model->time)[0] ?></div>
+            ?>
+            <?php
+                //echo explode("|", $this->model->time)[0]
+                $str_time1 = explode("|",$this->model->time)[0];
+                $str_time2 = explode("|",$this->model->time)[1];
+                $tmp_time = explode("-", $str_time1);
+
+                if (count($tmp_time) == 1) {
+                    $tmp_time1 = intval($str_time2) + 1;
+                    echo $str_time1 .' - '.$tmp_time1 . ':00';
+                }
+                else {
+                    echo $str_time1;
+                }
+
+            ?></div>
     </div>
     <div class="txtbox">
         <div class="t1">授课地址</div>

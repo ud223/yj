@@ -85,14 +85,14 @@ function getOrderBy(teacher_id, rundate, fun) {
     var url = '/api/get/order/by';
 
     var  data = { 'teacher_id':teacher_id, 'rundate':rundate }
-    //alert(JSON.stringify(data)); //return;
+    alert(JSON.stringify(data)); //return;
     $.ajax({
         url: url,
         dataType: 'json',
         data: data,
         method: 'post',
         success: function (response) {
-            //alert(JSON.stringify(response)); //return;
+            alert(JSON.stringify(response)); //return;
             if (response.code == 200) {
                 if (fun) {
                     fun(response);

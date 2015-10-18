@@ -238,7 +238,7 @@ function initUseHours() {
 }
 
 function setUseTime(response) {
-    //alert(JSON.stringify(response));
+    alert(JSON.stringify(response));
     var tmp_now = new Date();
     var temp = $("#time-panel").find(".selected");
 

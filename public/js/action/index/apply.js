@@ -235,6 +235,12 @@ function saveEmail() {
         return;
     }
 
+    if (!isEmail(value)) {
+        $.toastMsg("电子邮箱格式错误!", 1500);
+
+        return;
+    }
+
     modifyValie(user_id, model, key, value, seEmail);
 }
 
@@ -430,6 +436,12 @@ function submitApply() {
     var email = $("#email").val();
     var code = $("#code").val();
     var wechat = $("#wechat").val();
+
+    if (!isEmail(email)) {
+        $.toastMsg("电子邮箱格式错误!", 1500);
+
+        return;
+    }
 
     var region_id = "";
 

@@ -49,6 +49,15 @@ function limit_money_input() {
     });
 }
 
+function isEmail(str){
+    var  re = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/
+    if(re.test(str)){
+        return true
+    }else{
+        return false;
+    }
+}
+
 function isNumber(key) {
     return key >= 48 && key <= 57
 }
@@ -124,7 +133,7 @@ function IdentityCodeValid(code) {
             }
             var last = parity[sum % 11];
             if(parity[sum % 11] != code[17]){
-                tip = "身份证校验错误";
+                tip = "身份证号错误";
                 pass =false;
             }
         }

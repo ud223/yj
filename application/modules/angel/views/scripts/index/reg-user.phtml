@@ -15,12 +15,14 @@
 </div>
 
 <div class="blackrowgall nmt">
-    <div class="row actbtn cd-slideoutbtn" rel="#pp-change-name">
+    <div class="row actbtn"><!-- cd-slideoutbtn  rel="#pp-change-name" -->
+<!--        <span class="tt">真实姓名</span>-->
+<!--        <div class="holder arr">-->
+<!--            <span id="my-name">--><?php //echo $this->model->name ?><!--</span>-->
+<!--            <img src="/img/arr-r.png" class="icoin" />-->
+<!--        </div>-->
         <span class="tt">真实姓名</span>
-        <div class="holder arr">
-            <span id="my-name"><?php echo $this->model->name ?></span>
-            <img src="/img/arr-r.png" class="icoin" />
-        </div>
+        <input id="my-name" placeholder="请填写真实姓名" name="my-name" maxlength="50" value="<?php echo $this->model->name ?>" type="text" class="holder" />
     </div>
     <div class="row actbtn cd-slideoutbtn" id="pp-change-tel-btn" rel="#pp-change-tel">
         <span class="tt">手机</span>

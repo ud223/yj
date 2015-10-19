@@ -253,7 +253,7 @@ class Angel_IndexController extends Angel_Controller_Action {
         $id = $this->getParam('id');
 
         $customer = $customerModel->getById($id);
-
+//        echo ($customer->is_reg); exit;
         if ($customer->is_reg) {
             header("location: /"); exit;
         }

@@ -81,7 +81,7 @@ function validPhoneCode() {
 
     modifyValie(user_id, model, key, value, null);
 
-    $("#pp-change-tel").find('.cd-slidepopupback').tap();
+    closePopup($("#pp-change-tel").find('.cd-slidepopupback'));
 }
 
 //---------------------设置个人介绍------------------------
@@ -132,7 +132,17 @@ function submitReg() {
     var key = "is_reg";
     var value = "1";
 
-    if ($("#my-name").html() == "") {
+    //if ($("#my-code").html() == "") {
+    //    $.toastMsg("请填写身份证号!", 1500);
+    //
+    //    return;
+    //}
+
+    var model_1 = "customer";
+    var key_1 = "name";
+    var value_1 = $("#my-name").val();
+
+    if (!value_1) {
         $.toastMsg("请填写真实姓名!", 1500);
 
         return;
@@ -144,11 +154,7 @@ function submitReg() {
         return;
     }
 
-    //if ($("#my-code").html() == "") {
-    //    $.toastMsg("请填写身份证号!", 1500);
-    //
-    //    return;
-    //}
+    modifyValie(user_id, model_1, key_1, value_1, null);
 
     modifyValie(user_id, model, key, value, setReg);
 }

@@ -881,6 +881,8 @@ class Angel_IndexController extends Angel_Controller_Action {
     function cutImg($img, $new_path, $w,$h){        //要裁减的图片，宽度，高度
         $s = imagecreatefromjpeg($img);            //这里以jpg图片为例，其他图片要修改这个方法名称，可以上网参考（就是后面那个后缀名不一样)
 
+        $s = imagerotate($s,90,0);                  //图片旋转90度
+
         $w = imagesx($s)<$w?imagesx($s):$w;        //如果图片的宽比要求的小，则以原图宽为准
         $h = imagesy($s)<$w?imagesy($s):$h;
 

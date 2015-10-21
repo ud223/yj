@@ -819,9 +819,9 @@ class Angel_IndexController extends Angel_Controller_Action {
         $code = 200;
 
         try {
-            $this->resizeImage($full_name, 200, 200, $tmp_name, $type);
+            $this->resizeImage($tmp_name, 200, 200, $full_name, $type);
 
-            $this->resizeImage($small_name, 120, 120, $tmp_name, $type);
+            $this->resizeImage($tmp_name, 120, 120, $small_name, $type);
 //            $this->cutImg($tmp_name . $type, $small_name, 120, 120);
 
             unlink($tmp_name . $type) ;

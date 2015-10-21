@@ -5200,3 +5200,16 @@
 [21-Oct-2015 16:43:59 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
 [21-Oct-2015 16:44:02 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
 [21-Oct-2015 16:44:02 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[21-Oct-2015 19:58:27 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[21-Oct-2015 19:58:27 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[21-Oct-2015 19:58:30 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[21-Oct-2015 19:58:30 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[21-Oct-2015 19:58:38 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[21-Oct-2015 19:58:38 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[21-Oct-2015 19:58:38 Asia/Chongqing] PHP Notice:  Undefined index: LOCAL_ADDR in /var/www/yj/application/modules/angel/controllers/IndexController.php on line 928
+[21-Oct-2015 19:58:38 Asia/Chongqing] PHP Notice:  Undefined index: LOCAL_PORT in /var/www/yj/application/modules/angel/controllers/IndexController.php on line 929
+[21-Oct-2015 19:58:38 Asia/Chongqing] PHP Notice:  Use of undefined constant Exception - assumed 'Exception' in /var/www/yj/application/modules/angel/models/AbstractModel.php on line 52
+[21-Oct-2015 19:58:38 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/index/change-photo.phtml on line 17
+[21-Oct-2015 19:58:38 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/index/change-photo.phtml on line 19
+[21-Oct-2015 19:58:38 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[21-Oct-2015 19:58:38 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43

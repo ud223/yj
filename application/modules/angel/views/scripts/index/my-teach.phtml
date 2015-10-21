@@ -1,0 +1,279 @@
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=8TN0gC5Rqo6cec2jroKOkNpE&v=2.0"></script>
+<script src="<?php echo $this->jsPath("swipe.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("tools/map.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("tools/sms.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("tools/String.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("api/tools.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("api/teacher.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("entity/teacher.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("action/index/my-index.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("delegate/index/my-index.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("controller/index/my-index.js"); ?>"></script>
+<div class="relativebackt">
+    <a href="/" class="arrc">返回</a>
+</div>
+<div class="menu-fix">
+    <div  id="teacher-date"  class="menu-fix-itm cd_hottap" hottap="/">预约老师</div>
+    <div id="to-me"  class="menu-fix-itm cd_hottap" hottap="/me/<?php echo $this->model->id ?>">我</div>
+    <div id="to-teach" class="menu-fix-itm grid3 selected">教学中心</div>
+</div>
+<?php //if (!$this->model->phone): ?>
+<!--    <div class="p10-head-warning" id="didntsettel">-->
+<!--        您还没有设置手机号码，前往设置-->
+<!--    </div>-->
+<?php //endif;?>
+<!---->
+<!--<div class="p10-t02">-->
+<!--    --><?php //if ($this->model->head_pic) :?>
+<!--        <a href="/change/photo/--><?php //echo $this->model->id ?><!--"><img src="/photo/image/--><?php //echo $this->model->head_pic ?><!--" style="width: 100px" class="usrgmi" /></a>-->
+<!--    --><?php //else :?>
+<!--        --><?php //if ($this->model->headimgurl) :?>
+<!--            <a href="/change/photo/--><?php //echo $this->model->id ?><!--"><img src="--><?php //echo $this->model->headimgurl ?><!--" style="width: 100px" class="usrgmi" /></a>-->
+<!--        --><?php //else :?>
+<!--            <a href="/change/photo/--><?php //echo $this->model->id ?><!--"><img src="/img/user.jpg" style="width: 100px" class="usrgmi" /></a>-->
+<!--        --><?php //endif; ?>
+<!--    --><?php //endif; ?>
+<!--    <div id="view-name" class="p10-t03">--><?php
+//        if ($this->model->name) {
+//            echo $this->model->name;
+//        }
+//        else {
+//            echo $this->model->nickname ;
+//        }
+//        ?><!--</div>-->
+<!--</div>-->
+<!---->
+<!--<div class="blackrowgall nmt">-->
+<!--    <div class="row actbtn cd-slideoutbtn" rel="#pp-change-name"><!---->
+<!--        <span class="tt">真实姓名</span>-->
+<!--        <div class="holder arr">-->
+<!--            <span id="my-name">--><?php //echo $this->model->name ?><!--</span>-->
+<!--            <img src="/img/arr-r.png" class="icoin" />-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="row actbtn cd-slideoutbtn" id="pp-change-tel-btn" rel="#pp-change-tel">-->
+<!--        <span class="tt">手机</span>-->
+<!--        <div class="holder arr">-->
+<!--            <span id="customer-phone">--><?php //echo $this->model->phone ?><!--</span>-->
+<!--            <img src="/img/arr-r.png" class="icoin" />-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="row actbtn cd-slideoutbtn my-intro-trigger" id="pp-my-intro-btn" rel="#pp-my-intro">-->
+<!--        <span class="tt">个人介绍</span>-->
+<!--        <div class="holder arr">-->
+<!--            <span id="my-description" class="lab-txt">-->
+<!--                --><?php
+//                if (mb_strlen($this->model->description,'UTF8') > 10) {
+//                    echo mb_substr($this->model->description, 0, 9, 'UTF8') . "...";
+//                }
+//                else {
+//                    echo $this->model->description;
+//                }
+//                ?><!--</span>-->
+<!--            <img src="/img/arr-r.png" class="icoin" />-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="row actbtn cd-slideoutbtn" rel="#pp-change-years">-->
+<!--        <span class="tt">练习瑜伽</span>-->
+<!--        <div class="holder arr">-->
+<!--            <span><span id="my-years">--><?php //echo $this->model->years ?><!--</span>年</span>-->
+<!--            <img src="/img/arr-r.png" class="icoin" />-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!---->
+<!--<div class="blackrowgall">-->
+<!--    <div class="row actbtn cd_hottap" hottap="/my/order/--><?php //echo $this->model->id ?><!--">-->
+<!--        <span class="tt">我的订单</span>-->
+<!--        <div class="holder arr">-->
+<!--            <img src="/img/arr-r.png" class="icoin" />-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="row actbtn" style="display: none">-->
+<!--        <span class="tt">优惠券</span>-->
+<!--        <div class="holder arr">-->
+<!--            <img src="/img/arr-r.png" class="icoin" />-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="row actbtn" style="display: none">-->
+<!--        <span class="tt">我的消息</span>-->
+<!--        <div class="holder arr">-->
+<!--            <img src="/img/arr-r.png" class="icoin" />-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<div class="blackrowgall tran unclickable">
+    <div class="row actbtn">
+        <span class="tt">我的总收入</span>
+        <div class="holder">
+            <span class="gold">￥<?php echo $this->model->amount ?></span>
+        </div>
+    </div>
+    <div class="row actbtn">
+        <span class="tt">未提现金额</span>
+        <div class="holder">
+            <span class="gold">￥<?php echo $this->model->use_amount ?></span>
+        </div>
+    </div>
+</div>
+<div class="blackrowgall">
+    <div class="row actbtn cd-slideoutbtn" rel="#pp-teach-area">
+        <span class="tt">授课区域</span>
+        <div class="holder arr">
+            <img src="/img/arr-r.png" class="icoin" />
+        </div>
+    </div>
+    <div class="row actbtn cd_hottap" hottap="/my/calendar/<?php echo $this->model->id ?>">
+        <span class="tt">日程表</span>
+        <div class="holder arr">
+            <img src="/img/arr-r.png"  class="icoin" />
+        </div>
+    </div>
+    <div class="row actbtn cd_hottap"  hottap="/my/lesson/<?php echo $this->model->id ?>">
+        <span class="tt">我的授课</span>
+        <div class="holder arr">
+            <img src="/img/arr-r.png" class="icoin" />
+        </div>
+    </div>
+    <div class="row actbtn cd_hottap"  hottap="/my/class/<?php echo $this->model->id ?>">
+        <span class="tt">我的课程</span>
+        <div class="holder arr">
+            <img src="/img/arr-r.png" class="icoin" />
+        </div>
+    </div>
+</div>
+
+<div class="bt-distance"></div>
+
+<div class="slidepopup cd-slidepopup" id="pp-change-name">
+    <div class="tt">更改真实姓名<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+    <div class="blackrowgall">
+        <div class="row">
+            <input placeholder="请填写" id="user-name" type="text" maxlength="11" value="<?php echo $this->model->name ?>" class="fulltxtinput" />
+        </div>
+    </div>
+    <div class="clear-15"></div>
+    <div id="btn-accept-name" class="fullbtn">
+        确认
+    </div>
+</div>
+
+<div class="slidepopup cd-slidepopup" id="pp-change-years">
+    <div class="tt">更改瑜伽年限<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+    <div class="blackrowgall">
+        <div class="row">
+            <input placeholder="请填写练习瑜伽的年限" id="edit-years" type="number" maxlength="11" value="<?php echo $this->model->years ?>" class="fulltxtinput" />
+        </div>
+    </div>
+    <div class="clear-15"></div>
+    <div id="send-years" class="fullbtn">
+        确认
+    </div>
+</div>
+
+<div class="slidepopup cd-slidepopup" id="pp-my-intro">
+    <div class="tt">更改个人介绍<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+    <div class="blackrowgall">
+        <div class="row auto">
+            <textarea id="edit-description" class="fulltxtinput" placeholder="请填写" style="height:150px"><?php echo $this->model->description ?></textarea>
+        </div>
+    </div>
+    <div class="clear-15"></div>
+    <div id="send-description" class="fullbtn">
+        确认
+    </div>
+</div>
+
+<div class="slidepopup cd-slidepopup" id="pp-change-tel">
+    <div class="tt">更改电话号码<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+    <div class="blackrowgall">
+        <div class="row">
+            <input placeholder="请填写手机号码"  id="phone-num" type="tel" maxlength="11" value="<?php echo $this->model->phone ?>" class="fulltxtinput" />
+            <button id="send-code" class="sendvalcodbt">发送验证码</button>
+        </div>
+        <div class="row">
+            <input placeholder="验证码" id="phone-code"  type="tel" maxlength="11" class="fulltxtinput" />
+        </div>
+    </div>
+    <div class="clear-15"></div>
+    <div id="valid-phone-code"  class="fullbtn">
+        确认
+    </div>
+</div>
+<div class="slidepopup cd-slidepopup" id="pp-teach-area">
+    <div class="tt">选择授课地址<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
+    <div class="fkd-00">
+        <div class="fkd-01">
+            <div style="padding:15px;background:#F0F0F0;">当前设置</div>
+            <div style="padding:15px;background:#F8F8F8;margin-bottom:15px;">
+
+                <div class="fkd-02">授课范围 <span class="fkd-03" id="range" value="<?php echo $this->model->range ?>"><?php echo $this->model->range / 1000  ?>公里</span></div>
+                <div class="fkd-02">授课区域中心 <span class="fkd-03" id="cell" lng="<?php echo $this->model->lng ?>"  lat="<?php echo $this->model->lat ?>"><?php echo $this->model->cell ?></span></div>
+            </div>
+            <div style="padding:15px;margin-bottom:15px;background:#F0F0F0;">修改设置</div>
+            <div style="padding:15px;">
+                <div class="fkd-05">授课范围</div>
+                <div>
+                    <select id="choose-range" class="fkd-06">
+                        <option value="5000">5公里</option>
+                        <option value="10000">10公里</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="address-list" style='overflow-y:auto;position:absolute;left:0;right:0;top:360px;bottom:40px;'>
+        <div style="margin-bottom:5px;margin-left:30px;">授课区域中心</div>
+        <div style="padding:15px 30px;">
+            <input id="edit-addr" placeholder="请输入详细地址" type="text" class="fulltxtinput" />
+            <button id="btn-addr-query" class="sendvalcodbt" style="right:30px;">查询</button>
+        </div>
+        <div id="addr-list" class="loc-ddl-bd" style="padding-top:0;">
+        </div>
+    </div>
+    <a href="javascript:void(0)" id="submit-range" class="fullbtn" style="position:absolute;bottom:0;left:0;">确认修改</a>
+
+</div>
+<!--<div class="slidepopup cd-slidepopup" id="pp-teach-area">-->
+<!--    <div class="tt">更改授课区域<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>-->
+<!--    <div class="address-list" style="position:absolute;left:0;right:0;top:60px;bottom:20;overflow-y:auto">-->
+<!--        <div style="padding:10px 15px 0 15px;">-->
+<!--            <input id="edit-addr" placeholder="请输入详细地址" type="text" class="fulltxtinput" />-->
+<!--            <button id="btn-addr-query" class="sendvalcodbt">查询</button>-->
+<!--        </div>-->
+<!--        <div class="clear-15"></div>-->
+<!--        <div id="addr-list" class="loc-ddl-bd">-->
+<!--        </div>-->
+<!--        <div class="clear-15"></div>-->
+<!--    </div>-->
+<!--    <div class="fkd-00">-->
+<!--        <div class="fkd-01">-->
+<!--            <div class="fkd-02">授课区域中心 <span class="fkd-03">--><?php //echo $this->model->cell  ?><!--</span></div>-->
+<!--            <div class="fkd-02">授课范围 <span class="fkd-03">10公里</span></div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="fkd-04">-->
+<!--        <div class="fkd-05">服务半径</div>-->
+<!--        <div>-->
+<!--            <select class="fkd-06">-->
+<!--                <option>5公里</option>-->
+<!--                <option>10公里</option>-->
+<!--            </select>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="clear-15"></div>-->
+<!--    <a href="#" class="fullbtn">确认修改</a>-->
+<!--    <div class="clear-15"></div>-->
+<!--</div>-->
+<div id="div-addr-node" style="display: none">
+    <div class="loc-ddl-itm">
+        <p class="t1"></p>
+        <div class="t2"></div>
+        <i class="ico"></i>
+    </div>
+</div>
+<script type="text/javascript">
+    var page_type = 1;
+    var user_id = '<?php echo $this->model->id ?>';
+    var usertype = '<?php echo $this->model->usertype ?>';
+</script>

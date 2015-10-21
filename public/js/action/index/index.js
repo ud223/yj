@@ -94,8 +94,10 @@ function setAddressList(response) {
 
     list.html("");
 
-    $("#address-view").html(addresses[0].name);
-    localStorage.setItem("cell", addresses[0].name);
+    if (addresses.length > 0) {
+        $("#address-view").html(addresses[0].name);
+        localStorage.setItem("cell", addresses[0].name);
+    }
 
     $.each(addresses, function() {
         var node = $("#div-addr-node").find(".loc-ddl-itm").clone();

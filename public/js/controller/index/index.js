@@ -16,6 +16,8 @@ function initBtn() {
     sortClick();
 
     toMeClick();
+
+    toTeachClick();
 }
 
 function initInput() {
@@ -41,6 +43,17 @@ function initUser() {
     if (!loadCell())
         getLocal(load);
 
+    if (usertype == 2) {
+        $("#to-teach").show();
+        $("#teacher-date").addClass("grid3");
+        $("#to-me").addClass("grid3");
+    }
+    else {
+        $("#to-teach").hide();
+        $("#teacher-date").removeClass("grid3");
+        $("#to-me").removeClass("grid3");
+    }
+
     //var regions = $(".tcfilter-filter").find(".itmbtn");
     //
     //$(regions[1]).addClass("selected");
@@ -52,5 +65,5 @@ function initUser() {
     //55ed73fc7406f7ac7f8b4567 戴炳锋
 //服务器测试：55ebe5c67406f7ba678b4573
 //测试用:55caf092d53de42d048b456c//55ced8b3d53de429048b456b//55f2d8bfd53de415048b4569
-//    localStorage.setItem('user_id', '55f2d8bfd53de415048b4569');
+//    localStorage.setItem('user_id', '55caf092d53de42d048b456c');
 }

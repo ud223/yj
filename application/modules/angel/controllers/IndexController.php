@@ -11,6 +11,7 @@ class Angel_IndexController extends Angel_Controller_Action {
         'course',
         'course-detail',
         'my-index',
+        'my-teach',
         'apply',
         'apply-history',
         'apply-success',
@@ -284,6 +285,21 @@ class Angel_IndexController extends Angel_Controller_Action {
     }
 
     public function myIndexAction() {
+        $teacherModel = $this->getModel('teacher');
+
+        $id = $this->getParam('id');
+
+        $user = $teacherModel->getById($id);
+
+        if ($user) {
+            $this->view->model = $user;
+        }
+        else {
+            exit("用户信息无效，请重新登录!");
+        }
+    }
+
+    public function myTeachAction() {
         $teacherModel = $this->getModel('teacher');
 
         $id = $this->getParam('id');

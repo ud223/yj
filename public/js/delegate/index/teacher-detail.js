@@ -41,5 +41,10 @@ function toChooseTimeClick() {
 }
 
 function back() {
-    window.history.back();
+    if (document.referrer) {
+        window.history.back();
+    }
+    else {
+        location.href = "/";
+    }
 }

@@ -35,7 +35,6 @@ function initControls() {
 //初始化测试数据
 function initUser() {
     //clearPos();
-
     //lat = "22.745052";
     //lng = "113.803324";
 
@@ -53,5 +52,5 @@ function initUser() {
     //55ed73fc7406f7ac7f8b4567 戴炳锋
 //服务器测试：55ebe5c67406f7ba678b4573
 //测试用:55caf092d53de42d048b456c//55ced8b3d53de429048b456b//55f2d8bfd53de415048b4569
-//    localStorage.setItem('user_id', '55caf092d53de42d048b456c');
+//    localStorage.setItem('user_id', '55f2d8bfd53de415048b4569');
 }

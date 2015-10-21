@@ -241,6 +241,7 @@ class Angel_IndexController extends Angel_Controller_Action {
 
             $this->view->url = $web_url;
             $this->view->user_id = $result->id;
+            $this->view->usertype = $result->usertype;
         }
         else {
             exit("注册或登陆失败,请重试!");
@@ -509,7 +510,7 @@ class Angel_IndexController extends Angel_Controller_Action {
                 $img_head_pic = file_get_contents($tmp_headPic_filename);
                 $enHeadPic = base64_encode($img_head_pic);
 
-                $headPic = $this->saveFile($enHeadPic);
+                $headPic = $this->saveHeadPic($enHeadPic);
 
                 if ($headPic === 0) {
                     $this->_redirect($this->view->url(array(), 'manage-result') . '?error=头像上传失败!'); exit;
@@ -778,6 +779,46 @@ class Angel_IndexController extends Angel_Controller_Action {
         else {
             $savename = $savename.$filetype;
             imagejpeg($im,$savename);
+        }
+    }
+
+    public function saveHeadPic($file) {
+        $base64 = $file;
+        $IMG = base64_decode( $base64 );
+
+        $filename = strtolower($this->create_guid());
+
+        $full_name = APPLICATION_PATH . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'public/photo/image/'. $filename . '.jpg';
+
+        file_put_contents($full_name, $IMG);
+        $type = '.jpg';
+        $return_file_name = "";
+
+        $return_file_name = $filename . $type;
+
+        $tmp_name = APPLICATION_PATH . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'public/photo/image/tmp_'. $filename;
+        $result_name = $filename .'_120'. $type;//jpg';//
+        $small_name = APPLICATION_PATH . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'public/photo/image/'. $result_name;
+
+        $code = 200;
+
+        try {
+            $this->resizeImage($full_name, 200, 200, $tmp_name, $type);
+
+            $this->cutImg($tmp_name . $type, $small_name, 120, 120);
+
+            unlink($tmp_name . $type) ;
+        }
+        catch (Exception $e) {
+            $code = 0;
+            $result_name = $e->getMessage();
+        }
+
+        if ($code == 0) {
+            return $code;
+        }
+        else {
+            return $result_name;
         }
     }
 

@@ -91,7 +91,7 @@
             </div>
 <!--            <div class="form-group">-->
 <!--                <label>证书：</label>-->
-<!--<!--                <input type="text" class="form-control" id="certificate" name="certificate" data-toggle="popover" value="-->--><?php ////echo $this->model->certificate ?><!--<!--" required="required" oninvalid="setCustomValidity('必须填写证书!');" oninput="setCustomValidity('');">-->-->
+<!--<!--                <input type="text" class="form-control" id="certificate" name="certificate" data-toggle="popover" value="--><?php ////echo $this->model->certificate ?><!--<!--" required="required" oninvalid="setCustomValidity('必须填写证书!');" oninput="setCustomValidity('');">-->-->
 <!--                <img id="pre-certificate-image">-->
 <!--                <input type="file" capture="camera" accept="image/*" id="upload-certificate-pic" name="upload-certificate-pic">-->
 <!--                <input id="tmp_certificate_pic" name="tmp_certificate_pic" type="text" value="--><?php //echo $this->model->certificate ?><!--" style="display: none">-->
@@ -128,37 +128,37 @@
                 <label>所在城市：</label>
                 <input type="text" class="form-control" id="location" name="location" data-toggle="popover" value="<?php echo $this->model->location ?>"  oninput="setCustomValidity('');"><!--required="required" oninvalid="setCustomValidity('必须填写所在城市!');"-->
             </div>
-            <div class="form-group">
-                <label>授课区域：</label>
-            </div>
-            <div class="form-group">
-                <?php foreach ($this->regions as $region): ?>
-                    <div  style="float:left" >
-                        <input id="<?php echo $region->id ?>" type="checkbox" name="region[]" value="<?php echo $region->id ?>"
-                        <?php
-                            if ($this->model->region) {
-                                foreach ($this->model->region as $r) {
-                                    if (empty($r)) {
-                                        continue;
-                                    }
-
-                                    if ($region->id == $r->id) {
-                                        echo "checked='checked'";
-
-                                        break;
-                                    }
-                                }
-                            }
-                        ?>
-                        /> <label class="marginright10px" for="<?php echo $region->id ?>"><?php echo $region->name ?></label>
-                    </div>
-                <?php endforeach; ?>
-                <?php
-                if (count($this->regions) == 0) {
-                    echo '<a href="' . $this->url(array(), "manage-region-list-home") . '" class="butn btn-default" target="_blank">暂时没有瑜伽种类可以授课区域， 现在添加</a>';
-                }
-                ?>
-            </div>
+<!--            <div class="form-group">-->
+<!--                <label>授课区域：</label>-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                --><?php //foreach ($this->regions as $region): ?>
+<!--                    <div  style="float:left" >-->
+<!--                        <input id="--><?php //echo $region->id ?><!--" type="checkbox" name="region[]" value="--><?php //echo $region->id ?><!--"-->
+<!--                        --><?php
+//                            if ($this->model->region) {
+//                                foreach ($this->model->region as $r) {
+//                                    if (empty($r)) {
+//                                        continue;
+//                                    }
+//
+//                                    if ($region->id == $r->id) {
+//                                        echo "checked='checked'";
+//
+//                                        break;
+//                                    }
+//                                }
+//                            }
+//                        ?>
+<!--                        /> <label class="marginright10px" for="--><?php //echo $region->id ?><!--">--><?php //echo $region->name ?><!--</label>-->
+<!--                    </div>-->
+<!--                --><?php //endforeach; ?>
+<!--                --><?php
+//                if (count($this->regions) == 0) {
+//                    echo '<a href="' . $this->url(array(), "manage-region-list-home") . '" class="butn btn-default" target="_blank">暂时没有瑜伽种类可以授课区域， 现在添加</a>';
+//                }
+//                ?>
+<!--            </div>-->
             <div class="clear-10"></div>
             <div class="form-group">
                 <label>擅长瑜伽：</label>
@@ -344,7 +344,7 @@
         loadImage('/photo/image/<?php echo $this->model->head_pic ?>', 'pre-image');
     <?php endif; ?>
 
-    <?php if ($this->model->certificate) :?>
-        loadImage('/photo/image/<?php echo $this->model->certificate ?>', 'pre-certificate-image')
-    <?php endif; ?>
+<!--    --><?php //if ($this->model->certificate) :?>
+//        loadImage('/photo/image/<?php //echo $this->model->certificate ?>//', 'pre-certificate-image')
+//    <?php //endif; ?>
 </script>

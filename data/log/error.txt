@@ -9591,3 +9591,230 @@
 [26-Oct-2015 03:55:57 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
 [26-Oct-2015 03:55:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
 [26-Oct-2015 03:55:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:14:17 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:14:17 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:14:20 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:14:24 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:14:24 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:14:27 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:14:27 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:14:48 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:14:48 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:14:50 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:14:50 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:14:50 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:15:23 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:15:23 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:15:33 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:15:33 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:15:33 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:16:54 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:16:54 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:17:03 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:17:03 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:17:03 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:17:48 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:17:48 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:17:52 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:17:52 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:18:06 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:18:06 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:18:10 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:18:10 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:18:22 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:18:22 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:18:26 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:18:26 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:18:43 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:18:43 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:18:47 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:18:47 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:19:06 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:19:06 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:19:10 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:19:10 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:19:10 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:20:35 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:20:35 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:20:39 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:20:39 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:20:40 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:20:59 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:20:59 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:21:03 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:21:03 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:21:03 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:21:30 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:21:30 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:21:36 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:21:36 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:21:36 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:22:18 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:22:18 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:22:22 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:22:22 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:22:22 Asia/Chongqing] PHP Notice:  Undefined variable: range in /var/www/yj/application/modules/angel/controllers/ApiController.php on line 118
+[26-Oct-2015 04:22:22 Asia/Chongqing] PHP Notice:  Undefined variable: tmp_range in /var/www/yj/application/modules/angel/controllers/ApiController.php on line 118
+[26-Oct-2015 04:22:22 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:23:17 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:23:17 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:23:21 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:23:21 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:23:21 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:24:21 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:24:21 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:24:25 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:24:25 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:24:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:24:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:24:48 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:24:48 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:24:48 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:27:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:27:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:28:03 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:28:03 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:28:03 Asia/Chongqing] PHP Fatal error:  Call to undefined method Doctrine\ODM\MongoDB\Cursor::getCurrentPageNumber() in /var/www/yj/application/modules/angel/controllers/ApiController.php on line 69
+[26-Oct-2015 04:28:37 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:28:37 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:28:41 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:28:41 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:28:41 Asia/Chongqing] PHP Fatal error:  Call to undefined method Doctrine\ODM\MongoDB\Cursor::getCurrentPageNumber() in /var/www/yj/application/modules/angel/controllers/ApiController.php on line 69
+[26-Oct-2015 04:30:02 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:30:02 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:30:06 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:30:06 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:31:49 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:31:49 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:31:53 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:31:53 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:32:07 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:32:07 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:32:07 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:32:07 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:32:09 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:32:09 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:32:09 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:32:09 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:32:10 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:32:10 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:32:10 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:32:15 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:32:15 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:32:15 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:32:16 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:32:16 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:32:16 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:32:17 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:32:17 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:32:17 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:32:29 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:32:29 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:32:29 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:36:15 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:36:15 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:36:15 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:36:15 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:36:18 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:36:18 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:36:18 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:36:18 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:36:20 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:36:20 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:36:20 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:36:24 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:36:24 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:36:25 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:36:25 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:36:25 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 141
+[26-Oct-2015 04:36:25 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 141
+[26-Oct-2015 04:36:25 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 141
+[26-Oct-2015 04:36:25 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 141
+[26-Oct-2015 04:36:25 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 141
+[26-Oct-2015 04:36:25 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 141
+[26-Oct-2015 04:36:28 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:36:28 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:36:29 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:36:29 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:36:30 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:36:30 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:36:32 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:36:32 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:36:33 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:36:33 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:37:34 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:37:34 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:37:34 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:38:18 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:38:18 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:38:18 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:38:20 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:38:20 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:38:20 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:38:21 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:38:21 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:38:21 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:38:23 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:38:23 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:38:23 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:38:23 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:38:23 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:38:23 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 141
+[26-Oct-2015 04:38:23 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 141
+[26-Oct-2015 04:38:23 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 141
+[26-Oct-2015 04:38:23 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 141
+[26-Oct-2015 04:38:23 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 141
+[26-Oct-2015 04:38:23 Asia/Chongqing] PHP Warning:  Invalid argument supplied for foreach() in /var/www/yj/application/modules/angel/views/scripts/manage/teacher-create.phtml on line 141
+[26-Oct-2015 04:38:25 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:38:25 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:38:25 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:38:32 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:38:32 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:38:34 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:38:34 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:38:34 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:38:36 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:38:36 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:38:36 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:41:10 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:41:10 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:41:10 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:42:14 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:42:14 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:42:14 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:44:24 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:44:24 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:44:24 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:44:36 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:44:36 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:45:48 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:45:48 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:45:48 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:46:08 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:46:08 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:46:08 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:46:30 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:46:30 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:46:30 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:46:48 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:46:48 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:46:48 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:47:02 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:47:02 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:47:02 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:47:22 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:47:22 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:47:37 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:47:37 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:47:37 Asia/Chongqing] PHP Catchable fatal error:  Argument 1 passed to Doctrine\ODM\MongoDB\PersistentCollection::setMongoData() must be of the type array, string given, called in /var/www/yj/data/cache/hydrator/DocumentsUserInfoHydrator.php on line 181 and defined in /var/www/yj/library/Doctrine/ODM/MongoDB/PersistentCollection.php on line 129
+[26-Oct-2015 04:47:53 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:47:53 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:59:34 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:59:34 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:59:35 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:59:35 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:59:46 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:59:46 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[26-Oct-2015 04:59:58 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[26-Oct-2015 04:59:58 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43

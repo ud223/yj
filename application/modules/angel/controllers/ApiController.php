@@ -61,7 +61,6 @@ class Angel_ApiController extends Angel_Controller_Action {
         }
 
         $paginator = $teacherModel->getByAndSort(true, $condition, $sort);
-
         $paginator->setItemCountPerPage(150);
         $paginator->setCurrentPageNumber(1);
 
@@ -70,18 +69,19 @@ class Angel_ApiController extends Angel_Controller_Action {
             $page_count = $paginator->count();
 
             $teacherList = array();
-
+//            $this->_helper->json(array('data' => count($paginator), 'code' => 0));
             foreach ($paginator as $p) {
-//                if (!$p->lat) {
-//                    continue;
-//                }
+//                $this->_helper->json(array('data' => $p->name, 'code' => 0));
+                if (!$p->lat) {
+                    continue;
+                }
 
                 $range = $this->getDistance($lat, $lng, $p->lat, $p->lng) * 1000;
                 $tmp_range = $p->range;
 
-//                if ($range > $tmp_range) {
-//                    continue;
-//                }
+                if ($range > $tmp_range) {
+                    continue;
+                }
 
                 $path = "";
                 $category_text = "";
@@ -97,14 +97,19 @@ class Angel_ApiController extends Angel_Controller_Action {
                         // 图片被删除的情况
                     }
                 }
-//                $this->_helper->json(array('data' => count($p->category), 'code' => 0));
+                $this->_helper->json(array('data' => count($p->category), 'code' => 0));
                 if (!$p->category && count($p->category)) {
                     foreach ($p->category as $category) {
-                        if ($category_text != "") {
-                            $category_text = $category_text . " / ";
-                        }
+                        try {
+                            if ($category_text != "") {
+                                $category_text = $category_text . " / ";
+                            }
 
-                        $category_text = $category_text . $category->name;
+                            $category_text = $category_text . $category->name;
+                        }
+                        catch (Doctrine\ODM\MongoDB\DocumentNotFoundException $e) {
+
+                        }
                     }
                 }
 

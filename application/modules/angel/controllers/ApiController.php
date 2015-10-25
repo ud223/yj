@@ -35,8 +35,6 @@ class Angel_ApiController extends Angel_Controller_Action {
 //        $this->_helper->json(array('data' => $search, 'code' => 0)); exit;
         $condition = false;
 
-
-
         if (!$search) {
             $this->_helper->json(array('data' => "坐标刷新失败!", 'code' => 0)); exit;
         }
@@ -74,16 +72,16 @@ class Angel_ApiController extends Angel_Controller_Action {
             $teacherList = array();
 
             foreach ($paginator as $p) {
-                if (!$p->lat) {
-                    continue;
-                }
+//                if (!$p->lat) {
+//                    continue;
+//                }
 
                 $range = $this->getDistance($lat, $lng, $p->lat, $p->lng) * 1000;
                 $tmp_range = $p->range;
 
-                if ($range > $tmp_range) {
-                    continue;
-                }
+//                if ($range > $tmp_range) {
+//                    continue;
+//                }
 
                 $path = "";
                 $category_text = "";

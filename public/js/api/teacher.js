@@ -54,11 +54,12 @@ function getTeacherBusy(teacher_id, date, control, fun, fun1) {
     });
 }
 
-function applyTeacher(customer_id, sex, birthday, code, email, wechat, region_id, category_id, bank, bank_code, description, location, fun) {
+function applyTeacher(customer_id, sex, birthday, code, email, wechat, region_id, category_id, bank, bank_code, description, location, cer, show, fun) {
     var url = '/api/teacher/apply';
-
-    var  data = { 'teacher_id':customer_id, 'sex':sex, 'birthday':birthday, 'code':code, 'email':email, 'wechat':wechat, 'region_id':region_id, 'category_id':category_id, 'bank':bank, 'bank_code':bank_code, 'description':description, 'location': location }
-    //alert(JSON.stringify(data)); return;
+    //alert(show);
+    var  data = { 'teacher_id':customer_id, 'sex':sex, 'birthday':birthday, 'code':code, 'email':email, 'wechat':wechat, 'region_id':region_id, 'category_id':category_id, 'bank':bank, 'bank_code':bank_code, 'description':description, 'location': location, 'cer': cer, 'show':show }
+    //alert(JSON.stringify(data));
+    //return;
     $.ajax({
         url: url,
         dataType: 'json',

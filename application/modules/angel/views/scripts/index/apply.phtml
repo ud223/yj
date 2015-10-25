@@ -1,4 +1,5 @@
 <script src="<?php echo $this->jsPath("swipe.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("tools/pic.js"); ?>"></script>
 <script src="<?php echo $this->jsPath("tools/sms.js"); ?>"></script>
 <script src="<?php echo $this->jsPath("tools/String.js"); ?>"></script>
 <script src="<?php echo $this->jsPath("api/tools.js"); ?>"></script>
@@ -156,29 +157,29 @@
     </div>
 
 <!--    <div class="row cd-slideoutbtn" id="pp-change-region-btn">-->
-    <div class="blackrowgall" style="display: none">
-        <div class="row">
-            <span class="tt">授课区域</span>
-        </div>
-        <div class="arblk-cl">
-            <?php foreach ($this->region as $region) :?>
-                <div class="al-ciiel">
-                    <input type="checkbox" name="region" id="<?php echo $region->id ?>" value="<?php echo $region->id ?>"
-                    <?php
-//                        if ($this->model->region) {
-//                            foreach ($this->model->region as $my_region) {
-//                                if ($my_region->id == $region->id) {
-//                                    echo 'checked="checked"';
-//                                }
-//                            }
-//                        }
-                    ?>
-                    />
-                    <label for="<?php echo $region->id ?>"><?php echo $region->name ?></label>
-                </div>
-            <?php endforeach; ?>
-        </div>
-    </div>
+<!--    <div class="blackrowgall" style="display: none">-->
+<!--        <div class="row">-->
+<!--            <span class="tt">授课区域</span>-->
+<!--        </div>-->
+<!--        <div class="arblk-cl">-->
+<!--            --><?php //foreach ($this->region as $region) :?>
+<!--                <div class="al-ciiel">-->
+<!--                    <input type="checkbox" name="region" id="--><?php //echo $region->id ?><!--" value="--><?php //echo $region->id ?><!--"-->
+<!--                    --><?php
+////                        if ($this->model->region) {
+////                            foreach ($this->model->region as $my_region) {
+////                                if ($my_region->id == $region->id) {
+////                                    echo 'checked="checked"';
+////                                }
+////                            }
+////                        }
+//                    ?>
+<!--                    />-->
+<!--                    <label for="--><?php //echo $region->id ?><!--">--><?php //echo $region->name ?><!--</label>-->
+<!--                </div>-->
+<!--            --><?php //endforeach; ?>
+<!--        </div>-->
+<!--    </div>-->
     <div class="blackrowgall">
         <div class="row">
             <span class="tt">授课类别</span>
@@ -209,6 +210,183 @@
             <?php endforeach; ?>
         </div>
     </div>
+<div class="upld-bigfrm">
+    <div class="btt">上传证书（最多3张）：</div>
+    <div>
+        <div class="imginner">
+<!--            <div class="upled-imgitm" id="sciici0001">-->
+<!--                <div class="col1">-->
+<!--                    <div class='diimg'>-->
+<!--                        <img id="img_certificate_1"  style="width:50px; height:50px">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col2">-->
+<!--                    <div class="actbtnx delete">&times;</div>-->
+<!--                    <div class="actbtnx up">-->
+<!--                        <div class="ico"></div>-->
+<!--                    </div>-->
+<!--                    <div class="actbtnx down">-->
+<!--                        <div class="ico"></div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="upled-imgitm" id="sciici0002">-->
+<!--                <div class="col1">-->
+<!--                    <input type="hidden" />-->
+<!--                    <div class='diimg'>-->
+<!--                        <img id="img_certificate_2" style="width:50px; height:50px">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col2">-->
+<!--                    <div class="actbtnx delete">&times;</div>-->
+<!--                    <div class="actbtnx up">-->
+<!--                        <div class="ico"></div>-->
+<!--                    </div>-->
+<!--                    <div class="actbtnx down">-->
+<!--                        <div class="ico"></div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="upled-imgitm" id="sciici0003">-->
+<!--                <div class="col1">-->
+<!--                    <div class='diimg'>-->
+<!--                        <img id="img_certificate_3" style="width:50px; height:50px">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col2">-->
+<!--                    <div class="actbtnx delete">&times;</div>-->
+<!--                    <div class="actbtnx up">-->
+<!--                        <div class="ico"></div>-->
+<!--                    </div>-->
+<!--                    <div class="actbtnx down">-->
+<!--                        <div class="ico"></div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+            <?php foreach ($this->model->certificate as $certificate) :?>
+                <div id="<?php echo $certificate->id ?>" class="upled-imgitm">
+                    <div class="col1">
+                        <div class='diimg'>
+                            <img class="img-certificate" src='/photo/image/<?php echo $certificate->name . $certificate->type ?>' style="width:50px; height:50px">
+                        </div>
+                    </div>
+                    <div class="col2">
+                        <div class="actbtnx delete certificate_del" for="<?php echo $certificate->id ?>">&times;</div>
+                        <div class="actbtnx up certificate_up" for="<?php echo $certificate->id ?>">
+                            <div class="ico"  for="<?php echo $certificate->id ?>"></div>
+                        </div>
+                        <div class="actbtnx down certificate_down" for="<?php echo $certificate->id ?>">
+                            <div class="ico" for="<?php echo $certificate->id ?>"></div>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+        <a href="/upload/image/<?php echo $this->model->id ?>/1" class="mwbtn">+ 添加图片</a>
+        <input type="hidden" id="certificate_index" name="certificate_index" value="<?php
+                $i = 0;
+                foreach ($this->model->certificate as $certificate) {
+                    if ($i > 0) {
+                        echo ",";
+                    }
+
+                    echo $certificate->id;
+
+                    $i++;
+                }
+            ?>">
+    </div>
+    <input type="hidden" value="" />
+</div>
+
+<div class="upld-bigfrm">
+    <div class="btt">图片（最多3张）：</div>
+    <div>
+        <div class="imginner">
+<!--            <div class="upled-imgitm" id="sciici0004">-->
+<!--                <div class="col1">-->
+<!--                    <div class='diimg'>-->
+<!--                        <img id="img_show_1"  style="width:50px; height:50px">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col2">-->
+<!--                    <div class="actbtnx delete">&times;</div>-->
+<!--                    <div class="actbtnx up">-->
+<!--                        <div class="ico"></div>-->
+<!--                    </div>-->
+<!--                    <div class="actbtnx down">-->
+<!--                        <div class="ico"></div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="upled-imgitm" id="sciici0005">-->
+<!--                <div class="col1">-->
+<!--                    <div class='diimg'>-->
+<!--                        <img id="img_show_2"  style="width:50px; height:50px">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col2">-->
+<!--                    <div class="actbtnx delete">&times;</div>-->
+<!--                    <div class="actbtnx up">-->
+<!--                        <div class="ico"></div>-->
+<!--                    </div>-->
+<!--                    <div class="actbtnx down">-->
+<!--                        <div class="ico"></div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="upled-imgitm" id="sciici0006">-->
+<!--                <div class="col1">-->
+<!--                    <div class='diimg'>-->
+<!--                        <img id="img_show_3"  style="width:50px; height:50px">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col2">-->
+<!--                    <div class="actbtnx delete">&times;</div>-->
+<!--                    <div class="actbtnx up">-->
+<!--                        <div class="ico"></div>-->
+<!--                    </div>-->
+<!--                    <div class="actbtnx down">-->
+<!--                        <div class="ico"></div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+            <?php foreach ($this->model->photo as $photo) :?>
+                <div id="<?php echo $photo->id ?>"  class="upled-imgitm">
+                    <div class="col1">
+                        <div class='diimg'>
+                            <img class="img-photo" src='/photo/image/<?php echo $photo->name . $photo->type ?>' style="width:50px; height:50px">
+                        </div>
+                    </div>
+                    <div class="col2">
+                        <div class="actbtnx delete photo_del" for="<?php echo $photo->id ?>">&times;</div>
+                        <div class="actbtnx up photo_up" for="<?php echo $photo->id ?>">
+                            <div class="ico"></div>
+                        </div>
+                        <div class="actbtnx down photo_down" for="<?php echo $photo->id ?>">
+                            <div class="ico" for="<?php echo $photo->id ?>"></div>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+        <a href="/upload/image/<?php echo $this->model->id ?>/2" class="mwbtn">+ 添加图片</a>
+        <input type="hidden" id="photo_index" name="photo_index" value="<?php
+                $l = 0;
+                foreach ($this->model->photo as $photo) {
+                    if ($l > 0) {
+                        echo ",";
+                    }
+
+                    echo $photo->id;
+
+                    $l++;
+                }
+            ?>">
+        <input type="file" class="upld-input" />
+    </div>
+    <input type="hidden" value="" />
+</div>
 
     <div class="blackrowgall">
         <div class="row">

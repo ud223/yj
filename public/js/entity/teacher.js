@@ -75,7 +75,7 @@ var Teacher = function() {
         queryTeacherList(search, sort, page);
     }
 
-    obj.apply = function(customer_id, sex, birthday, code, email, wechat, region_id, category_id, bank, bank_code, description, location, fun) {
+    obj.apply = function(customer_id, sex, birthday, code, email, wechat, region_id, category_id, bank, bank_code, description, location, cer, photo, fun) {
         if (!obj.check(code, email, bank, bank_code)) {
             $.toastMsg(obj.message, 1500);
 
@@ -89,7 +89,7 @@ var Teacher = function() {
         else
             birthday = "19" + code.substr(6, 2) + "-"  + code.substr(8, 2) + "-" +  code.substr(10, 2);
 
-        applyTeacher(customer_id, sex, birthday, code, email, wechat, region_id, category_id, bank, bank_code, description, location, fun);
+        applyTeacher(customer_id, sex, birthday, code, email, wechat, region_id, category_id, bank, bank_code, description, location, cer, photo, fun);
     }
 
     obj.saveRange = function(teacher_id, cell, range, lat, lng, fun) {

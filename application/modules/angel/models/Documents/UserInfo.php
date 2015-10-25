@@ -65,11 +65,11 @@ class UserInfo extends AbstractDocument {
     /** @ODM\String */
     protected $educational;
 
-//    /** @ODM\ReferenceMany(targetDocument="\Documents\Photo") */
-//    protected $certificate = array();
+    /** @ODM\ReferenceMany(targetDocument="\Documents\Photo") */
+    protected $certificate = array();
 
-    /** @ODM\String */
-    protected $certificate;
+//    /** @ODM\String */
+//    protected $certificate;
 
     /** @ODM\String */
     protected $phone;

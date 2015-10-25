@@ -58,5 +58,4 @@ class Angel_Model_UserInfo extends Angel_Model_AbstractModel {
 
         return $result;
     }
-
 }

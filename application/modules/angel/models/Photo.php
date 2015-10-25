@@ -74,6 +74,33 @@ class Angel_Model_Photo extends Angel_Model_AbstractModel {
         return $result;
     }
 
+    public function insertPhoto($file) {
+        $result = false;
+        $photo = new $this->_document_class();
+        $imageService = $this->_container->get('image');
+
+        if (!$imageService->isAcceptedImage($file)) {
+            throw new Angel_Exception_Common(Angel_Exception_Common::IMAGE_NOT_ACCEPTED);
+        } else {
+            $extension = $imageService->getImageTypeExtension($file);
+            $name = basename($file, $extension);
+
+            $photo->name = $name;
+            $photo->type = $extension;
+
+            try {
+                $this->_dm->persist($photo);
+                $this->_dm->flush();
+
+                $result = $photo->id;
+            } catch (Exception $e) {
+                $this->_logger->info(__CLASS__, __FUNCTION__, $e->getMessage() . "\n" . $e->getTraceAsString());
+            }
+        }
+
+        return $result;
+    }
+
     /**
      * 根据name获取photo document
      * 

@@ -1,4 +1,4 @@
-function ImageOpt(file, img_id) {
+function ImageOpt(file, img_id, fun) {
     // 参数，最大高度
     var MAX_HEIGHT = 120;
     var path = URL.createObjectURL(file);
@@ -17,6 +17,10 @@ function ImageOpt(file, img_id) {
     };
 
     image.src = path;
+
+    if (fun) {
+        fun(img_id);
+    }
 }
 
 function loadImage(path, img_id) {
@@ -37,4 +41,20 @@ function loadImage(path, img_id) {
     };
 
     image.src = path;
+}
+
+function convertImgToBase64(url, callback, outputFormat){
+    var canvas = document.createElement('CANVAS'),
+        ctx = canvas.getContext('2d'),
+        img = new Image;
+    img.crossOrigin = 'Anonymous';
+    img.onload = function(){
+        canvas.height = img.height;
+        canvas.width = img.width;
+        ctx.drawImage(img,0,0);
+        var dataURL = canvas.toDataURL(outputFormat || 'image/jpg');
+        callback.call(this, dataURL);
+        canvas = null;
+    };
+    img.src = url;
 }

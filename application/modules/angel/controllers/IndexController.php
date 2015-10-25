@@ -39,7 +39,8 @@ class Angel_IndexController extends Angel_Controller_Action {
         'menu-delete',
         'order-pay',
         'order-notify',
-        'change-photo'
+        'change-photo',
+        'upload-image'
     );
 
     public function init() {
@@ -460,6 +461,130 @@ class Angel_IndexController extends Angel_Controller_Action {
         $this->view->model = $customer;
         $this->view->region = $regions;
         $this->view->category = $categorys;
+    }
+
+    public function uploadImageAction() {
+        $customerModel = $this->getModel('customer');
+        $photoModel = $this->getModel('photo');
+
+        $id = $this->getParam('id');
+        $type = $this->getParam('type');
+
+        if ($this->request->isPost()) {
+            $headPic = "";
+
+            if(is_uploaded_file($_FILES['upload-head-pic']['tmp_name'])) {
+                $tmp_headPic_filename = '/tmp/'. $_FILES['upload-head-pic']['name'];
+                $tmp_headPic_path = $_FILES['upload-head-pic']['tmp_name'];
+
+                move_uploaded_file($tmp_headPic_path, $tmp_headPic_filename);
+
+                $img_head_pic = file_get_contents($tmp_headPic_filename);
+                $enHeadPic = base64_encode($img_head_pic);
+
+                $pic = $this->saveFile($enHeadPic);
+
+                if ($pic === 0) {
+                    $this->_redirect($this->view->url(array(), 'manage-result') . '?error=头像上传失败!'); exit;
+                }
+
+                $tmp_pic = APPLICATION_PATH . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'public/photo/image/'.$pic;
+
+                $pic_id = $photoModel->insertPhoto($tmp_pic);
+
+                if (!$pic_id) {
+                    $this->_redirect($this->view->url(array(), 'manage-result') . '?error=头像上传失败!'); exit;
+                }
+
+                $photo = $photoModel->getById($pic_id);
+
+                $customer = $customerModel->getById($id);
+
+                if (!$customer) {
+                    $this->_redirect($this->view->url(array(), 'manage-result') . '?error=用户信息获取失败!'); exit;
+                }
+
+                if ($type == 1) {
+                    $array_certificate = array();
+
+                    $tmp_certificate = $customer->certificate;
+
+                    //判断
+                    if ($tmp_certificate) {
+                        if (count($tmp_certificate) > 2) {
+                            $index = 1;
+
+                            foreach ($tmp_certificate as $c) {
+                                if ($index == 3) {
+                                    continue;
+                                }
+
+                                $array_certificate[] = $c;
+
+                                $index++;
+                            }
+                        }
+                        else {
+                            foreach ($tmp_certificate as $c) {
+                                $array_certificate[] = $c;
+                            }
+                        }
+
+                        $array_certificate[] = $photo;
+                    }
+                    else {
+                        $array_certificate[] = $photo;
+                    }
+
+                    $result = $customerModel->saveCertificate($id, $array_certificate);
+                }
+                else {
+                    $array_photo = array();
+
+                    $tmp_photo = $customer->photo;
+                    //判断
+                    if ($tmp_photo) {
+                        if (count($tmp_photo) > 2) {
+                            $index = 1;
+
+                            foreach ($tmp_photo as $c) {
+                                if ($index == 3) {
+                                    continue;
+                                }
+
+                                $array_photo[] = $c;
+
+                                $index++;
+                            }
+                        }
+                        else {
+                            foreach ($tmp_photo as $c) {
+                                $array_photo[] = $c;
+                            }
+                        }
+
+                        $array_photo[] = $photo;
+                    }
+                    else {
+                        $array_photo[] = $photo;
+                    }
+
+                    $result = $customerModel->savePhoto($id, $array_photo);
+                }
+
+                if (!$result) {
+                    $this->_redirect($this->view->url(array(), 'manage-result') . '?error=图片上传失败!'); exit;
+                }
+                else {
+                    header("location:/apply/". $id);
+                }
+            }
+        }
+        else {
+            $result = $customerModel->getById($id);
+
+            $this->view->model = $result;
+        }
     }
 
     public function applyHistoryAction() {

@@ -182,6 +182,9 @@ class Angel_ApiController extends Angel_Controller_Action {
         $description = $this->getParam('description');
         $location = $this->getParam('location');
 
+        $cer = $this->getParam('cer');
+        $show = $this->getParam('show');
+
         $region = array();
 
         if ($region_id) {
@@ -206,10 +209,43 @@ class Angel_ApiController extends Angel_Controller_Action {
             }
         }
 
-        $result = $customerModel->saveApplyUser($id, $sex, $birthday, $code, $email,  $wechat, $region, $category, $bank, $bank_code, $description, $location);
+        $customer = $customerModel->getById($id);
+
+        if ($cer) {
+//            $this->_helper->json(array('data' => $cer, 'code' => 200)); exit;
+            $certificate_index = explode(',', $cer);
+            $certificate = array();
+
+            foreach ($certificate_index as $c_id) {
+                foreach ($customer->certificate as $c) {
+                    if ($c->id == $c_id) {
+                        $certificate[] = $c;
+
+                        break;
+                    }
+                }
+            }
+        }
+
+        if ($show) {
+            $show_index = explode(',', $show);
+            $show_photo = array();
+
+            foreach ($show_index as $p_id) {
+                foreach ($customer->photo as $p) {
+                    if ($p->id == $p_id) {
+                        $show_photo[] = $p;
+
+                        break;
+                    }
+                }
+            }
+        }
+
+        $result = $customerModel->saveApplyUser($id, $sex, $birthday, $code, $email,  $wechat, $region, $category, $bank, $bank_code, $description, $location, $certificate, $show_photo);
 
         if ($result) {
-            $this->_helper->json(array('data' => "保存成功!!", 'code' => 200));
+            $this->_helper->json(array('data' => "保存成功!", 'code' => 200));
         }
         else {
             $this->_helper->json(array('data' => "保存失败!", 'code' => 0));
@@ -790,5 +826,111 @@ class Angel_ApiController extends Angel_Controller_Action {
         $s = $s *$EARTH_RADIUS;
         $s = round($s * 10000) / 10000;
         return $s;
+    }
+
+    public function savePic($file) {
+        $base64 = $file;
+        $IMG = base64_decode( $base64 );
+
+        $filename = strtolower($this->create_guid());
+
+        $full_name = APPLICATION_PATH . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'public/photo/image/'. $filename . '.jpg';
+
+        file_put_contents($full_name, $IMG);
+        $type = '.jpg';
+        $return_file_name = "";
+        $return_file_name = $filename . $type;
+
+        $tmp_name = APPLICATION_PATH . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'public/photo/image/tmp_'. $filename;
+        $result_name = $filename .'_120'. $type;//jpg';//
+        $small_name = APPLICATION_PATH . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'public/photo/image/'. $result_name;
+
+        $code = 200;
+
+        try {
+            $this->resizeImage($full_name, 200, 200, $tmp_name, $type);
+
+            $this->cutImg($tmp_name . $type, $small_name, 120, 120);
+
+            unlink($tmp_name . $type) ;
+        }
+        catch (Exception $e) {
+            $code = 0;
+            $result_name = $e->getMessage();
+        }
+
+        if ($code == 0) {
+            return $code;
+        }
+        else {
+            return $tmp_name;
+        }
+    }
+
+    function cutImg($img, $new_path, $w,$h){        //要裁减的图片，宽度，高度
+        $s = imagecreatefromjpeg($img);            //这里以jpg图片为例，其他图片要修改这个方法名称，可以上网参考（就是后面那个后缀名不一样)
+
+        $s = imagerotate($s,-90,0);                  //图片旋转90度
+
+        $w = imagesx($s)<$w?imagesx($s):$w;        //如果图片的宽比要求的小，则以原图宽为准
+        $h = imagesy($s)<$w?imagesy($s):$h;
+
+        $bg = imagecreatetruecolor($w,$h);        //创建$w*$h的空白图像
+
+        $top = 0;
+        $left = 0;
+        $right = 0;
+        $bottom = 0;
+        $p = imagesx($s);
+        //获取从中间往左上偏移坐标
+        if (imagesx($s)> $w) {
+            $left = (imagesx($s) / 2) - ($w / 2);
+        }
+
+        if (imagesy($s)> $h) {
+            $top = (imagesy($s) / 2) - ($h / 2);
+        }
+
+        if(imagecopy($bg, $s, 0, 0, $left, $top, $w, $h)){
+            if(imagejpeg($bg, $new_path)){            //将生成的图片保存到img/new_img.jpg
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }
+        /*
+        *imagecopy ($dst_im,$src_im,$dst_x,$dst_y,$src_x,$src_y,$src_w,$src_h)
+        将 src_im 图像中坐标从 src_x，src_y 开始，宽度为 src_w，高度为 src_h 的一部分拷贝到 dst_im 图像中坐标为 dst_x 和 dst_y 的位置上。
+        */
+        imagedestroy($s);                //关闭图片
+        imagedestroy($bg);
+        //这里只写了几个主要操作，你可以再加上开始裁减的坐标，也就是imagecopy中的第5，第6两个参数，那么在判断$w和$h的地方也要相应的剪掉开始没算进去的部分，
+        //然后保存路径是否存在的判断等
+    }
+
+    public function create_guid($namespace = '') {
+        static $guid = '';
+        $uid = uniqid("", true);
+        $data = $namespace;
+        $data .= $_SERVER['REQUEST_TIME'];
+        $data .= $_SERVER['HTTP_USER_AGENT'];
+        $data .= $_SERVER['LOCAL_ADDR'];
+        $data .= $_SERVER['LOCAL_PORT'];
+        $data .= $_SERVER['REMOTE_ADDR'];
+        $data .= $_SERVER['REMOTE_PORT'];
+        $hash = strtoupper(hash('ripemd128', $uid . $guid . md5($data)));
+        $guid = substr($hash, 0, 8) .
+            '-' .
+            substr($hash, 8, 4) .
+            '-' .
+            substr($hash, 12, 4) .
+            '-' .
+            substr($hash, 16, 4) .
+            '-' .
+            substr($hash, 20, 12);
+
+        return $guid;
     }
 }

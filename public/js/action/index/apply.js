@@ -475,11 +475,144 @@ function submitApply() {
     var description = $("#description").val();
     var location = $("#location").val();
 
+    var certificate_index = $("#certificate_index").val();
+    var photo_index = $("#photo_index").val();
+
     var teacher = new Teacher();
 
-    teacher.apply(customer_id, sex, birthday, code, email, wechat, region_id, category_id, bank, bank_code, description, location, toApply)
+    teacher.apply(customer_id, sex, birthday, code, email, wechat, region_id, category_id, bank, bank_code, description, location, certificate_index, photo_index, toApply)
 }
 
 function toApply() {
     location.href = '/applysuccess/'+ user_id;
+}
+
+function deleteCertificate(id) {
+    $("#"+id).remove();
+    var tmp_certificates = $("#certificate_index").val();
+    tmp_certificates = tmp_certificates.replace(id, "");
+    tmp_certificates = tmp_certificates.replace(",,", ",");
+
+    if (tmp_certificates.substr(tmp_certificates.length - 1, 1) == ",") {
+        tmp_certificates = tmp_certificates.substr(0, tmp_certificates.length - 1);
+    }
+
+    if (tmp_certificates.substr(0, 1) == ",") {
+        tmp_certificates = tmp_certificates.substr(1, tmp_certificates.length - 1);
+    }
+
+    $("#certificate_index").val(tmp_certificates);
+}
+
+function deletePhoto(id) {
+    $("#"+id).remove();
+    var tmp_photo = $("#photo_index").val();
+    tmp_photo = tmp_photo.replace(id, "");
+    tmp_photo = tmp_photo.replace(",,", ",");
+
+    if (tmp_photo.substr(tmp_photo.length - 1, 1) == ",") {
+        tmp_photo = tmp_photo.substr(0, tmp_photo.length - 1);
+    }
+
+    if (tmp_photo.substr(0, 1) == ",") {
+        tmp_photo = tmp_photo.substr(1, tmp_photo.length - 1);
+    }
+
+    $("#photo_index").val(tmp_photo);
+}
+
+function certificateUp(id) {
+    var node = $("#"+ id).clone();
+    var pre_node = $("#"+ id).prev();
+
+    if($(pre_node).html()) {
+        $("#"+ id).remove();
+
+        $(pre_node).before(node);
+
+        certificateUpClick();
+        certificateDownClick();
+        deleteCertificateClick();
+
+        var tmp_certificates = $("#certificate_index").val();
+        //alert(tmp_certificates)
+        var tmp1 = $(pre_node).attr("id") +","+ $(node).attr("id");
+        var tmp2 = $(node).attr("id") +","+ $(pre_node).attr("id");
+
+        tmp_certificates = tmp_certificates.replace(tmp1, tmp2);
+
+        $("#certificate_index").val(tmp_certificates);
+    }
+}
+
+function certificateDown(id) {
+    var node = $("#"+ id).clone();
+    var aft_node = $("#"+ id).next();
+
+    if($(aft_node).html()) {
+        $("#"+ id).remove();
+
+        $(aft_node).after(node);
+
+        certificateUpClick();
+        certificateDownClick();
+        deleteCertificateClick();
+
+        var tmp_certificates = $("#certificate_index").val();
+        //alert(tmp_certificates)
+        var tmp1 = $(aft_node).attr("id") +","+ $(node).attr("id");
+        var tmp2 = $(node).attr("id") +","+ $(aft_node).attr("id");
+
+        tmp_certificates = tmp_certificates.replace(tmp2, tmp1);
+
+        $("#certificate_index").val(tmp_certificates);
+    }
+}
+
+function photoUp(id) {
+    var node = $("#"+ id).clone();
+    var pre_node = $("#"+ id).prev();
+
+    if($(pre_node).html()) {
+        $("#"+ id).remove();
+
+        $(pre_node).before(node);
+
+        photoUpClick();
+        photoDownClick();
+        deletePhotoClick();
+
+        var tmp_photo = $("#photo_index").val();
+        //alert(tmp_certificates)
+        var tmp1 = $(pre_node).attr("id") +","+ $(node).attr("id");
+        var tmp2 = $(node).attr("id") +","+ $(pre_node).attr("id");
+
+        tmp_photo = tmp_photo.replace(tmp1, tmp2);
+
+        $("#photo_index").val(tmp_photo);
+    }
+}
+
+function photoDown(id) {
+    var node = $("#"+ id).clone();
+    var aft_node = $("#"+ id).next();
+
+    if($(aft_node).html()) {
+        $("#"+ id).remove();
+
+        $(aft_node).after(node);
+
+        photoUpClick();
+        photoDownClick();
+        deletePhotoClick();
+
+        var tmp_photo = $("#photo_index").val();
+        //alert(tmp_certificates)
+        var tmp1 = $(aft_node).attr("id") +","+ $(node).attr("id");
+        var tmp2 = $(node).attr("id") +","+ $(aft_node).attr("id");
+
+        tmp_photo = tmp_photo.replace(tmp2, tmp1);
+
+        $("#photo_index").val(tmp_photo);
+    }
 }

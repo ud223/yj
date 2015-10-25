@@ -171,13 +171,17 @@ class DocumentsUserInfoHydrator implements HydratorInterface
             $hydratedData['educational'] = $return;
         }
 
-        /** @Field(type="string") */
-        if (isset($data['certificate'])) {
-            $value = $data['certificate'];
-            $return = (string) $value;
-            $this->class->reflFields['certificate']->setValue($document, $return);
-            $hydratedData['certificate'] = $return;
+        /** @Many */
+        $mongoData = isset($data['certificate']) ? $data['certificate'] : null;
+        $return = new \Doctrine\ODM\MongoDB\PersistentCollection(new \Doctrine\Common\Collections\ArrayCollection(), $this->dm, $this->unitOfWork, '$');
+        $return->setHints($hints);
+        $return->setOwner($document, $this->class->fieldMappings['certificate']);
+        $return->setInitialized(false);
+        if ($mongoData) {
+            $return->setMongoData($mongoData);
         }
+        $this->class->reflFields['certificate']->setValue($document, $return);
+        $hydratedData['certificate'] = $return;
 
         /** @Field(type="string") */
         if (isset($data['phone'])) {

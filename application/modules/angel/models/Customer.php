@@ -53,7 +53,7 @@ class Angel_Model_Customer extends Angel_Model_AbstractModel {
         return $result;
     }
 
-    public function saveApplyUser($id, $sex, $birthday, $code, $email,  $wechat, $region, $category, $bank, $bank_code, $description, $location) {
+    public function saveApplyUser($id, $sex, $birthday, $code, $email,  $wechat, $region, $category, $bank, $bank_code, $description, $location, $certificate, $photo) {
         $data = array('sex' => $sex,
             'birthday' => $birthday,
             'code' => $code,
@@ -64,6 +64,8 @@ class Angel_Model_Customer extends Angel_Model_AbstractModel {
             'bank' => $bank,
             'bank_code' => $bank_code,
             'location' => $location,
+            'certificate'=> $certificate,
+            'photo' => $photo,
             'description' => $description);
 
         $result = $this->save($id, $data);
@@ -161,6 +163,22 @@ class Angel_Model_Customer extends Angel_Model_AbstractModel {
         $query = $this->_dm->createQueryBuilder($this->_document_class)->field('openid')->equals($openid)->sort("created_at", -1);
 
         $result = $query->getQuery();
+
+        return $result;
+    }
+
+    public function saveCertificate($id, $certificate) {
+        $data = array('certificate' => $certificate);
+
+        $result = $this->save($id, $data);
+
+        return $result;
+    }
+
+    public function savePhoto($id, $photo) {
+        $data = array('photo' => $photo);
+
+        $result = $this->save($id, $data);
 
         return $result;
     }

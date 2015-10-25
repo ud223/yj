@@ -113,3 +113,39 @@ function applyClick() {
         submitApply();
     })
 }
+
+function deleteCertificateClick() {
+    $(".certificate_del").tapA(function() {
+        deleteCertificate($(this).attr("for"));
+    })
+}
+
+function deletePhotoClick() {
+    $(".photo_del").tapA(function() {
+        deletePhoto($(this).attr("for"));
+    })
+}
+
+function certificateUpClick() {
+    $(".certificate_up").tapA(function() {
+        certificateUp($(this).attr("for"));
+    })
+}
+
+function certificateDownClick() {
+    $(".certificate_down").tapA(function() {
+        certificateDown($(this).attr("for"));
+    })
+}
+
+function photoUpClick() {
+    $(".photo_up").tapA(function() {
+        photoUp($(this).attr("for"));
+    })
+}
+
+function photoDownClick() {
+    $(".photo_down").tapA(function() {
+        photoDown($(this).attr("for"));
+    })
+}

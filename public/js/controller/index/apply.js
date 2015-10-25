@@ -42,6 +42,19 @@ function initBtn() {
     saveBankCodeClick();
 
     setDescriptionClick();
+
+    deleteCertificateClick();
+
+    deletePhotoClick();
+
+    certificateUpClick();
+
+    certificateDownClick();
+
+    photoUpClick();
+
+    photoDownClick();
+
     //
     //setYearsClick();
 

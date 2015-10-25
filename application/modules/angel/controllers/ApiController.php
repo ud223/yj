@@ -97,7 +97,7 @@ class Angel_ApiController extends Angel_Controller_Action {
                         // 图片被删除的情况
                     }
                 }
-                $this->_helper->json(array('data' => count($p->category), 'code' => 0));
+//                $this->_helper->json(array('data' => count($p->category), 'code' => 0));
                 if (!$p->category && count($p->category)) {
                     foreach ($p->category as $category) {
                         try {

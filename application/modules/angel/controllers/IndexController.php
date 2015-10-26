@@ -481,13 +481,13 @@ class Angel_IndexController extends Angel_Controller_Action {
                 $enHeadPic = base64_encode($img_head_pic);
 
                 $pic = $this->saveFile($enHeadPic);
-                exit($pic);
+
                 if ($pic === 0) {
                     $this->_redirect($this->view->url(array(), 'manage-result') . '?error=头像上传失败!'); exit;
                 }
 
                 $tmp_pic = APPLICATION_PATH . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'public/photo/image/'.$pic;
-
+                exit($tmp_pic);
                 $pic_id = $photoModel->insertPhoto($tmp_pic);
                 exit($pic_id);
                 if (!$pic_id) {

@@ -12,6 +12,7 @@ function validEnvironment() {
 
 function userLogin() {
     var user_id = localStorage.getItem('user_id');
+    alert(user_id);
     //var url = encodeURIComponent("http://www.yujiaqu.com/reg");
     var tmp_url = location.href;
 

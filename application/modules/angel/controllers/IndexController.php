@@ -487,7 +487,7 @@ class Angel_IndexController extends Angel_Controller_Action {
                 }
 
                 $tmp_pic = APPLICATION_PATH . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'public/photo/image/'.$pic;
-                exit($tmp_pic);
+
                 $pic_id = $photoModel->insertPhoto($tmp_pic);
                 exit($pic_id);
                 if (!$pic_id) {

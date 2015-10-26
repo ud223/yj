@@ -23,7 +23,16 @@
             <button type="button" id="btn-choose" class="p0x-c2">选择图片 ...</button>
         </div>
         <div>
-            <button type="submit" id="btn-submit" class="p0x-c2 upload" disabled="disabled">上传</button>
+            <button type="submit" id="btn-submit" class="p0x-c2 upload" onclick="postWaiting(); return true;" disabled="disabled">上传</button>
         </div>
     </div>
 </form>
+<script type="text/javascript">
+    function postWaiting() {
+        $.waiting();
+
+        setTimeout(function(){
+            $.endWaiting();
+        }, 40000)
+    }
+</script>

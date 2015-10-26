@@ -25,6 +25,35 @@ function queryTeacherList(search, sort, page) {
     });
 }
 
+function queryTeacherByName(search) {
+    var url = '/api/teacher/name/get';
+
+    var  data = { 'search': search }
+    //alert(JSON.stringify(data));
+    $.ajax({
+        url: url,
+        dataType: 'json',
+        data: data,
+        method: 'post',
+        success: function (response) {
+            //alert(JSON.stringify(response));
+            // return;
+            if (response.code == 200) {
+                //加载活动集合
+                loadTeacher(response.data, response.current_page_no, response.page_count);
+            }
+            else {
+                $.toastMsg(response.data, 1500);
+            }
+
+            closePopup($("#pp-change-loc").find('.cd-slidepopupback'));
+        },
+        error: function () {
+
+        }
+    });
+}
+
 function getTeacherBusy(teacher_id, date, control, fun, fun1) {
     var url = '/api/teacher/is/busy';
 

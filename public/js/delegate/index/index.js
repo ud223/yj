@@ -82,3 +82,13 @@ function getLocClick() {
         getLocal(load);
     })
 }
+
+function editTeacherName() {
+    $("#btn-teacher-query").tap(function() {
+        if ($("#edit-teacher-name").val() == "") {
+            return;
+        }
+
+        queryTeacherByName($("#edit-teacher-name").val());
+    });
+}

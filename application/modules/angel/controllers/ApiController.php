@@ -4,6 +4,7 @@ class Angel_ApiController extends Angel_Controller_Action {
     protected $login_not_required = array(
        'customer-list',
         'get-teacher',
+        'get-teachername',
         'sms-valid',
         'add-order',
         'confirm-order',
@@ -24,6 +25,68 @@ class Angel_ApiController extends Angel_Controller_Action {
         parent::init();
 
         $this->_helper->layout->setLayout('manage');
+    }
+
+    public function getTeachernameAction() {
+        $teacherModel = $this->getModel('teacher');
+
+        $search = $this->getParam("search");
+
+//        $this->_helper->json(array('data' => $search, 'code' => 0)); exit;
+        $condition = false;
+
+        if (!$search) {
+            $this->_helper->json(array('data' => "没有得到老师名字条件!", 'code' => 0)); exit;
+        }
+
+        $param = new MongoRegex("/" . $search . "/i");
+
+        $condition[] = array('usertype' => '2', 'delete' => 0, "name"=>$param);
+
+        $paginator = $teacherModel->getBy(false, $condition);
+
+        if ($paginator) {
+            $teacherList = array();
+
+            foreach ($paginator as $p) {
+                $path = "";
+                $category_text = "";
+
+                if ($p->photo && count($p->photo)) {
+                    try {
+                        if ($p->photo[0]->name) {
+                            $path = $this->bootstrap_options['image.photo_path'];
+
+                            $path = $this->view->photoImage($p->photo[0]->name . $p->photo[0]->type, 'main');
+                        }
+                    } catch (Doctrine\ODM\MongoDB\DocumentNotFoundException $e) {
+                        // 图片被删除的情况
+                    }
+                }
+//                $this->_helper->json(array('data' => count($p->category), 'code' => 0));
+                if (!$p->category && count($p->category)) {
+                    foreach ($p->category as $category) {
+                        try {
+                            if ($category_text != "") {
+                                $category_text = $category_text . " / ";
+                            }
+
+                            $category_text = $category_text . $category->name;
+                        }
+                        catch (Doctrine\ODM\MongoDB\DocumentNotFoundException $e) {
+
+                        }
+                    }
+                }
+
+                $teacherList[] = array("id"=>$p->id, "openid"=>$p->openid, "nickname"=>$p->nickname, "sex"=>$p->sex, "head_pic"=>$p->head_pic, "name"=>$p->name, "score"=>$p->teacher_score, "photo"=>$path, "price"=>$p->price, "category"=>$category_text, "range"=>$range, "tmp_range"=>$tmp_range);
+            }
+
+            $this->_helper->json(array('data' => $teacherList, "current_page_no"=>1, "page_count"=>1, 'code' => 200));
+        }
+        else {
+            $this->_helper->json(array('data' => "读取失败!", 'code' => 0));
+        }
     }
 
     public function getTeacherAction() {

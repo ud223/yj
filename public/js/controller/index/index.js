@@ -18,6 +18,8 @@ function initBtn() {
     toMeClick();
 
     toTeachClick();
+
+    editTeacherName();
 }
 
 function initInput() {

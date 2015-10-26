@@ -67,31 +67,31 @@ class Angel_ManageController extends Angel_Controller_Action {
                 }
             }
 
-            $certificate = "";
+//            $certificate = "";
 //            var_dump($_FILES['upload-certificate-pic']); exit;
-            if(is_uploaded_file($_FILES['upload-certificate-pic']['tmp_name'])) {
-
-                $tmp_certificatePic_filename = '/tmp/'. $_FILES['upload-certificate-pic']['name'];
-                $tmp_certificatePic_path = $_FILES['upload-certificate-pic']['tmp_name'];
-
-                move_uploaded_file($tmp_certificatePic_path, $tmp_certificatePic_filename);
-
-                $img_certificate_pic = file_get_contents($tmp_certificatePic_filename);
-                $enCertificatePic = base64_encode($img_certificate_pic);
-//                exit($enHeadPic);
-                $certificate = $this->saveFile($enCertificatePic);
-
-                if ($certificate === 0) {
-                    $this->_redirect($this->view->url(array(), 'manage-result') . '?error=证书上传失败!'); exit;
-                }
-            }
-            else {
-                $certificate = $this->getParam('tmp_certificate_pic');
-            }
-
-            if (!$certificate) {
-                $certificate = "";
-            }
+//            if(is_uploaded_file($_FILES['upload-certificate-pic']['tmp_name'])) {
+//
+//                $tmp_certificatePic_filename = '/tmp/'. $_FILES['upload-certificate-pic']['name'];
+//                $tmp_certificatePic_path = $_FILES['upload-certificate-pic']['tmp_name'];
+//
+//                move_uploaded_file($tmp_certificatePic_path, $tmp_certificatePic_filename);
+//
+//                $img_certificate_pic = file_get_contents($tmp_certificatePic_filename);
+//                $enCertificatePic = base64_encode($img_certificate_pic);
+////                exit($enHeadPic);
+//                $certificate = $this->saveFile($enCertificatePic);
+//
+//                if ($certificate === 0) {
+//                    $this->_redirect($this->view->url(array(), 'manage-result') . '?error=证书上传失败!'); exit;
+//                }
+//            }
+//            else {
+//                $certificate = $this->getParam('tmp_certificate_pic');
+//            }
+//
+//            if (!$certificate) {
+//                $certificate = "";
+//            }
 
             $wxid = $this->getParam('wxid');
             $name = $this->getParam('name');
@@ -99,7 +99,7 @@ class Angel_ManageController extends Angel_Controller_Action {
             $birthday = $this->getParam('birthday');
             $place = $this->getParam('place');
             $educational = $this->getParam('educational');
-//            $certificate = $this->getParam('certificate');
+            $certificate = $this->decodePhoto('certificate');
             $phone = $this->getParam('phone');
             $code = $this->getParam('code');
             $email = $this->getParam('email');
@@ -239,32 +239,6 @@ class Angel_ManageController extends Angel_Controller_Action {
                 $headPic = "";
             }
 
-            $certificate = "";
-//            var_dump($_FILES['upload-certificate-pic']); exit;
-            if(is_uploaded_file($_FILES['upload-certificate-pic']['tmp_name'])) {
-
-                $tmp_certificatePic_filename = '/tmp/'. $_FILES['upload-certificate-pic']['name'];
-                $tmp_certificatePic_path = $_FILES['upload-certificate-pic']['tmp_name'];
-
-                move_uploaded_file($tmp_certificatePic_path, $tmp_certificatePic_filename);
-
-                $img_certificate_pic = file_get_contents($tmp_certificatePic_filename);
-                $enCertificatePic = base64_encode($img_certificate_pic);
-//                exit($enHeadPic);
-                $certificate = $this->saveFile($enCertificatePic);
-
-                if ($certificate === 0) {
-                    $this->_redirect($this->view->url(array(), 'manage-result') . '?error=证书上传失败!'); exit;
-                }
-            }
-            else {
-                $certificate = $this->getParam('tmp_certificate_pic');
-            }
-
-            if (!$certificate) {
-                $certificate = "";
-            }
-
             $wxid = $this->getParam('wxid');
 
             $id = $this->getParam('id');
@@ -274,7 +248,7 @@ class Angel_ManageController extends Angel_Controller_Action {
             $birthday = $this->getParam('birthday');
             $place = $this->getParam('place');
             $educational = $this->getParam('educational');
-//            $certificate = $this->getParam('certificate');
+            $certificate = $this->decodePhoto('certificate');
             $phone = $this->getParam('phone');
             $code = $this->getParam('code');
             $email = $this->getParam('email');
@@ -402,14 +376,35 @@ class Angel_ManageController extends Angel_Controller_Action {
                                 $this->view->imageBroken = true;
                                 continue;
                             }
-                            $saveObj[$name] = $this->view->photoImage($p->name . $p->type, 'small');
-                            if (!$p->thumbnail) {
+//                            $saveObj[$name] = $this->view->photoImage($p->name . $p->type, 'small');
+//                            if (!$p->thumbnail) {
                                 $saveObj[$name] = $this->view->photoImage($p->name . $p->type);
-                            }
+//                            }
                         }
                         if (!count($saveObj))
                             $saveObj = false;
                         $this->view->photo = $saveObj;
+                    }
+
+                    $certificate = $result->certificate;
+
+                    if ($certificate) {
+                        $saveObj = array();
+                        foreach ($certificate as $c) {
+                            try {
+                                $name = $c->name;
+                            } catch (Doctrine\ODM\MongoDB\DocumentNotFoundException $e) {
+                                $this->view->imageBroken = true;
+                                continue;
+                            }
+//                            $saveObj[$name] = $this->view->photoImage($c->name . $c->type, 'small');
+//                            if (!$p->thumbnail) {
+                                $saveObj[$name] = $this->view->photoImage($c->name . $c->type);
+//                            }
+                        }
+                        if (!count($saveObj))
+                            $saveObj = false;
+                        $this->view->certificate = $saveObj;
                     }
                 }
 
@@ -691,6 +686,7 @@ class Angel_ManageController extends Angel_Controller_Action {
      * ********************************************************/
     protected function decodePhoto($paramName = 'photo') {
         $paramPhoto = $this->request->getParam($paramName);
+//        exit($paramPhoto);
         if ($paramPhoto) {
             $paramPhoto = json_decode($paramPhoto);
             $photoModel = $this->getModel('photo');

@@ -89,13 +89,15 @@
                 <label>学历：</label>
                 <input type="text" class="form-control" id="educational" name="educational" data-toggle="popover" value="<?php echo $this->model->educational ?>"  oninput="setCustomValidity('');"><!--required="required" oninvalid="setCustomValidity('必须填写学历!');"-->
             </div>
-<!--            <div class="form-group">-->
-<!--                <label>证书：</label>-->
-<!--<!--                <input type="text" class="form-control" id="certificate" name="certificate" data-toggle="popover" value="--><?php ////echo $this->model->certificate ?><!--<!--" required="required" oninvalid="setCustomValidity('必须填写证书!');" oninput="setCustomValidity('');">-->-->
-<!--                <img id="pre-certificate-image">-->
-<!--                <input type="file" capture="camera" accept="image/*" id="upload-certificate-pic" name="upload-certificate-pic">-->
-<!--                <input id="tmp_certificate_pic" name="tmp_certificate_pic" type="text" value="--><?php //echo $this->model->certificate ?><!--" style="display: none">-->
-<!--            </div>-->
+            <div class="form-group">
+                <label>证书：</label>
+<!--                <input type="text" class="form-control" id="certificate" name="certificate" data-toggle="popover" value="<?php //echo $this->model->certificate ?><!--" required="required" oninvalid="setCustomValidity('必须填写证书!');" oninput="setCustomValidity('');">-->
+                <div class='panel panel-info'>
+                    <div id="cer-photo" class='panel-body cer-photo'>
+                    </div>
+                </div>
+                <input type="hidden" name="certificate" id="certificate"/>
+            </div>
             <div class="form-group">
                 <label>联系电话：</label>
                 <input type="number" class="form-control" id="phone" name="phone" data-toggle="popover" maxlength="11" value="<?php echo $this->model->phone ?>" required="required" oninvalid="setCustomValidity('必须填写联系电话!');" oninput="setCustomValidity('');">
@@ -329,6 +331,17 @@
 <script type="text/javascript">
     (function($) {
         $('.gy-photo').photoSelector(false, <?php echo json_encode($this->photo) ?>);
+
+        $('.cer-photo').photoSelector(false, <?php echo json_encode($this->certificate) ?>);
+
+        $('#save-btn').click(function() {
+            var save = $('#cer-photo').attr('save');
+            if (!save || save === '{}') {
+                $('#certificate').val('');
+            } else {
+                $('#certificate').val(save);
+            }
+        });
 
         $('#save-btn').click(function() {
             var save = $('#gy-photo').attr('save');

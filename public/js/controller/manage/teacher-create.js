@@ -21,6 +21,6 @@ function initInput() {
 
     initHeadPic();
 
-    initCertificatePic();
+    //initCertificatePic();
 }
 

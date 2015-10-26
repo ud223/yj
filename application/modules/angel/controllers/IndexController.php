@@ -471,8 +471,6 @@ class Angel_IndexController extends Angel_Controller_Action {
         $type = $this->getParam('type');
 
         if ($this->request->isPost()) {
-            $headPic = "";
-
             if(is_uploaded_file($_FILES['upload-head-pic']['tmp_name'])) {
                 $tmp_headPic_filename = '/tmp/'. $_FILES['upload-head-pic']['name'];
                 $tmp_headPic_path = $_FILES['upload-head-pic']['tmp_name'];
@@ -491,7 +489,7 @@ class Angel_IndexController extends Angel_Controller_Action {
                 $tmp_pic = APPLICATION_PATH . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'public/photo/image/'.$pic;
 
                 $pic_id = $photoModel->insertPhoto($tmp_pic);
-
+                exit($pic_id);
                 if (!$pic_id) {
                     $this->_redirect($this->view->url(array(), 'manage-result') . '?error=头像上传失败!'); exit;
                 }

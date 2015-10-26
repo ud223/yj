@@ -535,7 +535,7 @@ class Angel_IndexController extends Angel_Controller_Action {
                     else {
                         $array_certificate[] = $photo;
                     }
-
+                    exit("xixi");
                     $result = $customerModel->saveCertificate($id, $array_certificate);
                 }
                 else {

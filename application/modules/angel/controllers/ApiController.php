@@ -453,9 +453,9 @@ class Angel_ApiController extends Angel_Controller_Action {
         $range = $this->getDistance($lat, $lng, $order->teacher->lat, $order->teacher->lng) * 1000;
         $tmp_range = $order->teacher->range;
 
-//        if ($range > $tmp_range) {
-//            $this->_helper->json(array('data' => "授课超出老师服务范围,请检查后重新选择!", 'code' => 0)); exit;;
-//        }
+        if ($range > $tmp_range) {
+            $this->_helper->json(array('data' => "授课超出老师服务范围,请检查后重新选择!", 'code' => 0)); exit;;
+        }
 
         if ($order) {
             $result = $orderModel->saveOrder($id, $rundate, $time, $hour, $order->customer, $order->teacher, 10, $order->user_score, $order->user_appraise, $order->teacher_score, $order->teacher_appraise, $price, $amount, $pay_amount, $customer_name, $phone, $address, $address_detail);

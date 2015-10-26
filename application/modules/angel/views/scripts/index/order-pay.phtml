@@ -38,7 +38,7 @@ $input->SetOut_trade_no($out_trade_no);
 $tmp_amount = 30000;
 
 if ($this->model->pay_amount) {
-    $tmp_amount = intval($this->model->pay_amount) / 100;
+    $tmp_amount = intval($this->model->pay_amount);// / 100
 }
 
 $input->SetTotal_fee($tmp_amount);//

@@ -69,22 +69,26 @@
 
                 if ($this->model->category) {
                     foreach($this->model->category as $category) {
-                        if (!$category->name) {
-                            continue;
-                        }
+                        try {
+                            if (!$category->name) {
+                                continue;
+                            }
 
-                        if ($category_text != "") {
-                            $category_text = $category_text . " / ";
-                        }
+                            if ($category_text != "") {
+                                $category_text = $category_text . " / ";
+                            }
 
-                        $category_text = $category_text . $category->name;
+                            $category_text = $category_text . $category->name;
+                        }
+                        catch (Doctrine\ODM\MongoDB\DocumentNotFoundException $e) {
+
+                        }
                     }
                 }
-
                 echo $category_text;
             ?>
         </span></div>
-        <div style="display: none">授课区域： <span class="dt">
+<!--        <div style="display: none">授课区域： <span class="dt">-->
                 <?php
 //                    $region_text = "";
 //
@@ -104,7 +108,7 @@
 //
 //                    echo $region_text;
                 ?>
-        </span></div>
+<!--        </span></div>-->
     </div>
 
     <div class="t3col-group">
@@ -129,7 +133,7 @@
         <div class="t1col">
             <div class="wp">
                 <div class="t1">授课次数</div>
-                <div class="t2"><?php echo $this->model->teacher_count ?><span>次</span></div>
+                <div class="t2"><?php  echo $this->model->teacher_count ?><span>次</span></div>
             </div>
         </div>
     </div>

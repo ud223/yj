@@ -40,7 +40,7 @@ $tmp_amount = 30000;
 if ($this->model->pay_amount) {
     $tmp_amount = intval($this->model->pay_amount);// / 100
 }
-exit($tmp_amount . "||||3333333333333333333333333333333333333333333333333333333333333333333333");
+
 $input->SetTotal_fee($tmp_amount);//
 
 $input->SetTime_start(date("YmdHis"));
@@ -52,7 +52,8 @@ $input->SetTrade_type("JSAPI");
 $input->SetOpenid($openId);
 
 $order = WxPayApi::unifiedOrder($input);
-
+var_dump($order);
+exit("44444444444444444444444444444444444444444444444444444");
 //echo '<font color="#f00"><b>统一下单支付单信息</b></font><br/>';
 //printf_info($order);
 

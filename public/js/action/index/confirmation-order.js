@@ -566,7 +566,7 @@ function submitOrder() {
     var rundate = $("#select_date").val();
     var hour = $("#hour").html();
     var time = $("#time_range").val();
-    var amount = $("#amount").html();
+    var amount = $("#pay-amount").html();
     var pay_amount = $("#pay-amount").html();
     var lat = $("#address-view").attr("lat");
     var lng = $("#address-view").attr("lng");

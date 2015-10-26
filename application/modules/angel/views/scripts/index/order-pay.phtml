@@ -18,7 +18,7 @@ function printf_info($data) {
         echo "<font color='#00ff55;'>$key</font> : $value <br/>";
     }
 }
-exit("xixi1111111111111111111111111111111");
+
 //①、获取用户openid
 $tools = new JsApiPay();
 
@@ -50,7 +50,7 @@ $input->SetGoods_tag("");
 $input->SetNotify_url("http://www.yujiaqu.com/order/notify/". $this->model->id);
 $input->SetTrade_type("JSAPI");
 $input->SetOpenid($openId);
-
+exit("2222222222222222222222222222222222222222222222");
 $order = WxPayApi::unifiedOrder($input);
 
 //echo '<font color="#f00"><b>统一下单支付单信息</b></font><br/>';

@@ -489,7 +489,7 @@ class Angel_IndexController extends Angel_Controller_Action {
                 $tmp_pic = APPLICATION_PATH . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'public/photo/image/'.$pic;
 
                 $pic_id = $photoModel->insertPhoto($tmp_pic);
-                exit($pic_id);
+//                exit($pic_id);
                 if (!$pic_id) {
                     $this->_redirect($this->view->url(array(), 'manage-result') . '?error=头像上传失败!'); exit;
                 }
@@ -533,7 +533,7 @@ class Angel_IndexController extends Angel_Controller_Action {
                     else {
                         $array_certificate[] = $photo;
                     }
-                    exit("xixi");
+//                    exit("xixi");
                     $result = $customerModel->saveCertificate($id, $array_certificate);
                 }
                 else {

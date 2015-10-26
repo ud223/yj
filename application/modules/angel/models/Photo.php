@@ -78,7 +78,7 @@ class Angel_Model_Photo extends Angel_Model_AbstractModel {
         $result = false;
         $photo = new $this->_document_class();
         $imageService = $this->_container->get('image');
-
+        exit("haha");
         if (!$imageService->isAcceptedImage($file)) {
             throw new Angel_Exception_Common(Angel_Exception_Common::IMAGE_NOT_ACCEPTED);
         } else {
@@ -87,7 +87,7 @@ class Angel_Model_Photo extends Angel_Model_AbstractModel {
 
             $photo->name = $name;
             $photo->type = $extension;
-            exit($name);
+
             try {
                 $this->_dm->persist($photo);
                 $this->_dm->flush();

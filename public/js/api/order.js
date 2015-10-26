@@ -29,14 +29,14 @@ function confirmOrder(rundate, time, hour, amount, pay_amount, address, address_
     var url = '/api/order/confirm';
 
     var  data = { 'id':order_id, 'pay_amount':pay_amount, 'rundate':rundate, 'time':time, 'hour':hour, 'price': order_price, 'amount':amount, 'customer_name':customer_name, 'address':address, 'address_detail':address_detail, 'phone':phone, 'lat':lat, 'lng':lng }
-    //alert(JSON.stringify(data)); //return;
+    alert(JSON.stringify(data)); //return;
     $.ajax({
         url: url,
         dataType: 'json',
         data: data,
         method: 'post',
         success: function (response) {
-            //alert(JSON.stringify(response)); //return;
+            alert(JSON.stringify(response)); //return;
             if (response.code == 200) {
                 if (fun) {
                     fun(response);

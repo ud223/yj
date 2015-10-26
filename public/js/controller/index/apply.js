@@ -43,17 +43,17 @@ function initBtn() {
 
     setDescriptionClick();
 
-    deleteCertificateClick();
-
-    deletePhotoClick();
-
-    certificateUpClick();
-
-    certificateDownClick();
-
-    photoUpClick();
-
-    photoDownClick();
+    //deleteCertificateClick();
+    //
+    //deletePhotoClick();
+    //
+    //certificateUpClick();
+    //
+    //certificateDownClick();
+    //
+    //photoUpClick();
+    //
+    //photoDownClick();
 
     //
     //setYearsClick();

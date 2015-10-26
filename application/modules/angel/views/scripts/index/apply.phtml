@@ -283,7 +283,7 @@
             <?php endforeach; ?>
         </div>
         <a href="/upload/image/<?php echo $this->model->id ?>/1" class="mwbtn">+ 添加图片</a>
-        <input type="hidden" id="certificate_index" name="certificate_index" value="<?php
+        <input type="hidden" id="certificate_index" class="upload-val"  name="certificate_index" value="<?php
                 $i = 0;
                 foreach ($this->model->certificate as $certificate) {
                     if ($i > 0) {
@@ -371,7 +371,7 @@
             <?php endforeach; ?>
         </div>
         <a href="/upload/image/<?php echo $this->model->id ?>/2" class="mwbtn">+ 添加图片</a>
-        <input type="hidden" id="photo_index" name="photo_index" value="<?php
+        <input type="hidden" id="photo_index" class="upload-val" name="photo_index" value="<?php
                 $l = 0;
                 foreach ($this->model->photo as $photo) {
                     if ($l > 0) {
@@ -904,4 +904,67 @@
 <script type="text/javascript">
     var user_id = '<?php echo $this->model->id ?>';
     var page_type = 1;
+
+    $('document').ready(function() {
+        $('.mwbtn').click(function() {
+            var $this = $(this);
+            var container = $this.closest('.upld-bigfrm');
+            container.find('.upld-input').click();
+            //					var imgitms = container.find('.upled-imgitm');
+        });
+        $('.upld-input').change(function() {
+            alert('已经选定图片');
+            // 去掉 alert， 提交已经选择好的图片
+        });
+        $('.actbtnx.delete').click(function() {
+            if (confirm('确定删除？')) {
+                var $this = $(this);
+                var container = $this.closest('.upld-bigfrm');
+                var itm = $this.closest('.upled-imgitm');
+                itm.remove();
+                // 此处是否要保存新的值到某个 hidden，或者直接发ajax到服务器保存，请自行考虑
+
+                // 再次排序并保存值到hidden中
+                var new_itms = container.find('.upled-imgitm');
+                var arr = new Array();
+                $.each(new_itms, function(){
+                    var i = $(this);
+                    var id = i.attr('id');
+                    arr.push(id);
+                });
+                var arr_str = arr.join(',');
+//                console.log(arr_str);
+
+                container.find(".upload-val").val(arr_str);
+            }
+        });
+        $('.actbtnx.up, .actbtnx.down').click(function() {
+            var $this = $(this).closest('.actbtnx');
+            var itm = $this.closest('.upled-imgitm');
+            var container = $this.closest('.upld-bigfrm');
+            var n = itm.prev();
+            if ($this.hasClass('up')) {
+                if (n.length) {
+                    itm.insertBefore(n);
+                }
+            } else if ($this.hasClass('down')) {
+                n = itm.next();
+                if (n.length) {
+                    n.insertBefore(itm);
+                }
+            }
+
+            // 再次排序并保存值到hidden中
+            var new_itms = container.find('.upled-imgitm');
+            var arr = new Array();
+            $.each(new_itms, function(){
+                var i = $(this);
+                var id = i.attr('id');
+                arr.push(id);
+            });
+            var arr_str = arr.join(',');
+//            console.log(arr_str);
+            container.find(".upload-val").val(arr_str);
+        });
+    });
 </script>

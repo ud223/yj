@@ -528,7 +528,7 @@ function certificateUp(id) {
     if($(pre_node).html()) {
         $("#"+ id).remove();
 
-        $(pre_node).before(node);
+        $(pre_node).insertBefore(node);
 
         certificateUpClick();
         certificateDownClick();
@@ -552,7 +552,7 @@ function certificateDown(id) {
     if($(aft_node).html()) {
         $("#"+ id).remove();
 
-        $(aft_node).after(node);
+        $(aft_node).insertAfter(node);
 
         certificateUpClick();
         certificateDownClick();

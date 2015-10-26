@@ -474,14 +474,14 @@ class Angel_IndexController extends Angel_Controller_Action {
             if(is_uploaded_file($_FILES['upload-head-pic']['tmp_name'])) {
                 $tmp_headPic_filename = '/tmp/'. $_FILES['upload-head-pic']['name'];
                 $tmp_headPic_path = $_FILES['upload-head-pic']['tmp_name'];
-                exit("haha");
+
                 move_uploaded_file($tmp_headPic_path, $tmp_headPic_filename);
 
                 $img_head_pic = file_get_contents($tmp_headPic_filename);
                 $enHeadPic = base64_encode($img_head_pic);
 
                 $pic = $this->saveFile($enHeadPic);
-
+                exit($pic);
                 if ($pic === 0) {
                     $this->_redirect($this->view->url(array(), 'manage-result') . '?error=头像上传失败!'); exit;
                 }

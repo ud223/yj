@@ -40,7 +40,7 @@ $tmp_amount = 30000;
 if ($this->model->pay_amount) {
     $tmp_amount = intval($this->model->pay_amount);// / 100
 }
-
+exit($tmp_amount . "||||3333333333333333333333333333333333333333333333333333333333333333333333");
 $input->SetTotal_fee($tmp_amount);//
 
 $input->SetTime_start(date("YmdHis"));
@@ -61,7 +61,7 @@ $jsApiParameters = $tools->GetJsApiParameters($order);
 
 //获取共享收货地址js函数参数
 $editAddress = $tools->GetEditAddressParameters();
-exit("3333333333333333333333333333333333333333333333333333333333333333333333");
+
 //③、在支持成功回调通知中处理成功之后的事宜，见 notify.php
 /**
  * 注意：

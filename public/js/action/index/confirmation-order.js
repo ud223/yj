@@ -418,7 +418,7 @@ function setUseTime(response) {
     if (temp.length == 0) {
         $(".rtselectedtime").removeClass("selected");
     }
-
+    alert(JSON.stringify(response.data));
     $.each(response.data, function() {
         var tmp_time = this.time.split("|")[1];
         var time_value = tmp_time.split("-");

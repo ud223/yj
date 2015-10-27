@@ -418,7 +418,7 @@ function setUseTime(response) {
     if (temp.length == 0) {
         $(".rtselectedtime").removeClass("selected");
     }
-    alert(JSON.stringify(response.data));
+    //alert(JSON.stringify(response.data));
     $.each(response.data, function() {
         var tmp_time = this.time.split("|")[1];
         var time_value = tmp_time.split("-");
@@ -552,7 +552,7 @@ function initUseHours() {
         $(td).addClass("unclickable");
     }
     else {
-        if (select_date != str_Today) {
+        if (select_date == str_Today) {
             $.each(td, function() {
                 if ($(this).attr('val') <= cur_hour) {
                     $(this).addClass("unclickable");

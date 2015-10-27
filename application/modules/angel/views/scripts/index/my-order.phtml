@@ -48,11 +48,16 @@
                 <img src="/img/arr-r.png" class="icoin" />
             </div>
              <span class="status-for-order-sm status <?php
-                if ($order->state > 10) {
+                if ($order->state == 50) {
                     echo "completed";
                 }
                 else {
-                    echo "pending";
+                    if ($order->state > 10) {
+                        echo "paid";
+                    }
+                    else {
+                        echo "pending";
+                    }
                 }
              ?>">
              <?php

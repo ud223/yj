@@ -2108,3 +2108,11 @@ p:after {
     right:15px;
     width:115px;
 }
+
+.status-for-order.completed, .status-for-order-sm.completed {
+    background:#aaa;
+}
+
+.status-for-order.paid, .status-for-order-sm.paid {
+    background:#40BF43;
+}

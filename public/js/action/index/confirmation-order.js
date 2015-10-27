@@ -413,6 +413,12 @@ function setUseTime(response) {
     var tmp_now = new Date();
     var user_id = localStorage.getItem('user_id');
 
+    var temp = $("#time-panel").find(".selected");
+
+    if (temp.length == 0) {
+        $(".rtselectedtime").removeClass("selected");
+    }
+
     $.each(response.data, function() {
         var tmp_time = this.time.split("|")[1];
         var time_value = tmp_time.split("-");

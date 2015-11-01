@@ -71,7 +71,7 @@ function loadTeacher(data, current_page_no, page_count) {
 
         node.find(".user-intro-skill").html(tmp_category);
         node.find(".price").html(this.price);
-        node.find(".teacher-img-big").attr("src", this.photo);
+        node.find(".teacher-img-big").css("background-image", 'url(' + this.photo + ')');
         node.find(".cd_hottap").attr("hottap", "/teacher/" + this.id);
 
         list.append(node);

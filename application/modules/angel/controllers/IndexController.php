@@ -6,6 +6,7 @@ class Angel_IndexController extends Angel_Controller_Action {
     private $access_token = '';
 
     protected $login_not_required = array(
+        'home',
         'index',
         'teacher-detail',
         'course',
@@ -47,7 +48,9 @@ class Angel_IndexController extends Angel_Controller_Action {
         $this->_helper->layout->setLayout('main');
         parent::init();
     }
+    public function homeAction() {
 
+    }
     public function aboutAction() {
 
     }

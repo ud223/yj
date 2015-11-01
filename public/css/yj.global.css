@@ -611,7 +611,8 @@ p:after {
     color: #888;
 }
 .menu-fix-itm.selected {
-    background: #ff7286;
+    background: url(../img/za-bg.jpg) left center no-repeat;
+    background-size: cover;
     color: #FFF;
     /*box-shadow: 0 0 5px rgba(0,0,0,.2);*/
 }
@@ -2153,3 +2154,4 @@ p:after {
 .detailddlx-open:active {
     background: rgba(0, 0, 0, .05);
 }
+

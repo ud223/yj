@@ -1482,6 +1482,8 @@ p:after {
 .p10-t02 .usrgmi {
     border-radius: 100px;
     border: 2px solid #FFF;
+    width:100px;
+    height:100px;
 }
 .p10-t03 {
     margin: 8px 0 0;

@@ -141,7 +141,10 @@
 <div class="dipu1">
     <div class="dipu2">
         <div class="dipu3">个人简介</div>
-        <div class="dipu4"><?php echo $this->model->description ?></div>
+        <div class="dipu4 detailddlx">
+            <div><?php echo $this->model->description ?></div>
+        </div>
+        <div class="detailddlx-open" alt="收起">展开</div>
     </div>
     <div class="dipu2">
         <div class="dipu3">执教经历</div>
@@ -275,6 +278,16 @@
                 }
                 $('.swipe .gl').append(new_pager);
             }
+        }
+
+        $('.detailddlx-open').tapA(function() {
+            $('.detailddlx').toggleClass('open');
+            var txt = $(this).text();
+            $(this).text($(this).attr('alt'));
+            $(this).attr('alt', txt);
+        });
+        if ($('.detailddlx').outerHeight() < 170) {
+            $('.detailddlx-open').hide();
         }
     });
 </script>

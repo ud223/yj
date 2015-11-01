@@ -1,0 +1,119 @@
+<script src="<?php echo $this->jsPath("swipe.js"); ?>"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=8TN0gC5Rqo6cec2jroKOkNpE&v=2.0"></script>
+<script src="<?php echo $this->jsPath("tools/String.js"); ?>"></script>
+
+<div style="height:60px;background:url(/img/za-bg.jpg);line-height:60px;font-weight:bold;text-align:center;color:#FFF;background-size: cover">
+<img src="/img/txtlogo.png" style="width:120px;margin-top:-2px;"/>
+</div>
+<!--此段为滑动多图的html部分，写死在这里-->
+<div id="cd_mentor_img_slider" class="swipe homex">
+    <div class="swipe-wrap">
+        <!--<div class="figure"></div>-->
+    </div>
+    <!-- 放置索引标签的地方 -->
+    <div class="gl">
+        <!--<div class="pgitm"></div>-->
+    </div>
+</div>
+
+<style>
+    .iueici {
+        padding-top:20px;
+    }
+    .iueici .itm {
+        display:block;
+        width:50%;
+        float:left;
+    }
+    .iueici .itm .wp {
+        margin:0 5px 10px 10px;
+        display:block;
+        height:120px;
+        background:red;
+    }
+    .iueici .itm:nth-child(even) .wp {
+        margin-right:10px;
+        margin-left:5px;
+    }
+
+    .homex .swipe-wrap > .figure {
+        height:150px;
+    }
+</style>
+<div class="iueici">
+    <div class="itm">
+        <a href="#" class="wp">精品课程</a>
+    </div>
+    <div class="itm">
+        <a href="#" class="wp">推荐老师</a>
+    </div>
+    <div class="itm">
+        <a href="#" class="wp">公益课</a>
+    </div>
+    <div class="itm">
+        <a href="#" class="wp">沙龙</a>
+    </div>
+</div>
+
+<div class="menu-fix">
+    <div id="teacher-date" class="menu-fix-itm cd_hottap selected" hottap="/">预约老师</div>
+    <div id="to-me" class="menu-fix-itm">我</div>
+    <div id="to-teach" class="menu-fix-itm grid3" style="display: none">教学中心</div>
+</div>
+
+<div class="tcfilter-container">
+
+</div>
+
+<script type="text/javascript">
+    var page_type = 0;
+    var user_id = localStorage.getItem('user_id');
+    var usertype = localStorage.getItem('usertype');
+
+    var lat = false;
+    var lng = false;
+
+
+
+    // 此处是php代码渲染输出而成，一次性把该导师所有的图片路径都加载至此。
+    var imgs_json = [{
+        url: '/img/photocase/tpp01.jpg', link: 'p02-1_xinwen.html'
+    }, {
+        url: '/img/photocase/tpp02.jpg', link: 'p02-1_xinwen.html'
+    }, {
+        url: '/img/photocase/tpp03.jpg', link: 'p02-1_xinwen.html'
+    }];
+
+
+    if (imgs_json.length) {
+        // 根据imgs_json的长度和内容循环加载图片
+        $.each(imgs_json, function() {
+            var new_img = $('<a>').addClass('figure').css('display', 'block').attr('href', this.link);
+            new_img.css('background-image', 'url(' + this.url + ')');
+            $('#cd_mentor_img_slider .swipe-wrap').append(new_img);
+        });
+        // 初始化swipe
+        var slider = Swipe(document.getElementById('cd_mentor_img_slider'), {
+            startSlide: 0,
+            speed: 400,
+            auto: false,
+            continuous: false,
+            disableScroll: false,
+            stopPropagation: false,
+            callback: function(index, elem) {},
+            transitionEnd: function(index, elem) {
+                $('.gl .pgitm.selected').removeClass('selected');
+                $('.gl .pgitm[index="' + index + '"]').addClass('selected');
+            }
+        });
+        // 初始化pager
+        var n = slider.getNumSlides();
+        for (var i = 0; i < n; i++) {
+            var new_pager = $('<div>').addClass('pgitm').attr('index', i);
+            if(i === 0) {
+                new_pager.addClass('selected');
+            }
+            $('.swipe .gl').append(new_pager);
+        }
+    }
+</script>

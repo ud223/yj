@@ -495,7 +495,7 @@ p:after {
 .user-intro-tag {
     border-bottom: 1px solid #ddd;
     font-size: 12px;
-    padding: 0 10px 15px 10px;
+    padding: 0 10px 10px 10px;
 }
 .user-intro-tag .t1 {
     color: #ff7286;
@@ -536,7 +536,7 @@ p:after {
     background-position:center center;
     background-repeat: no-repeat;
     background-size: cover;
-    margin-bottom:4px;
+    margin-bottom:7px;
 }
 .teacher-itm .teacher-score {
     color: #ff7286;

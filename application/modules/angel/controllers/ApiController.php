@@ -127,24 +127,32 @@ class Angel_ApiController extends Angel_Controller_Action {
         $paginator->setItemCountPerPage(150);
         $paginator->setCurrentPageNumber(1);
 
+
+
         if ($paginator) {
             $current_page_no = $paginator->getCurrentPageNumber();
             $page_count = $paginator->count();
 
+            $tmp_teacherList = array();
             $teacherList = array();
 //            $this->_helper->json(array('data' => count($paginator), 'code' => 0));
             foreach ($paginator as $p) {
-                $this->_helper->json(array('data' => $p->name, 'code' => 0));
+//                $this->_helper->json(array('data' => $p->name, 'code' => 0));
+
+
                 if (!$p->lat) {
-                    continue;
+                    $range = 0;
+                    $tmp_range = 0;
+                }
+                else {
+                    $range = $this->getDistance($lat, $lng, $p->lat, $p->lng) * 1000;
+                    $tmp_range = $p->range;
                 }
 
-                $range = $this->getDistance($lat, $lng, $p->lat, $p->lng) * 1000;
-                $tmp_range = $p->range;
 
-                if ($range > $tmp_range) {
-                    continue;
-                }
+//                if ($range > $tmp_range) {
+//                    continue;
+//                }
 
                 $path = "";
                 $category_text = "";
@@ -176,10 +184,113 @@ class Angel_ApiController extends Angel_Controller_Action {
                     }
                 }
 
-                $teacherList[] = array("id"=>$p->id, "openid"=>$p->openid, "nickname"=>$p->nickname, "sex"=>$p->sex, "head_pic"=>$p->head_pic, "name"=>$p->name, "score"=>$p->teacher_score, "photo"=>$path, "price"=>$p->price, "category"=>$category_text, "range"=>$range, "tmp_range"=>$tmp_range);
+                if (!$p->lat) {
+                    $tmp_teacherList[] = array("id"=>$p->id, "openid"=>$p->openid, "nickname"=>$p->nickname, "sex"=>$p->sex, "head_pic"=>$p->head_pic, "name"=>$p->name, "score"=>$p->teacher_score, "photo"=>$path, "price"=>$p->price, "category"=>$category_text, "range"=>$range, "tmp_range"=>$tmp_range);
+                }
+                else {
+                    $teacherList[] = array("id"=>$p->id, "openid"=>$p->openid, "nickname"=>$p->nickname, "sex"=>$p->sex, "head_pic"=>$p->head_pic, "name"=>$p->name, "score"=>$p->teacher_score, "photo"=>$path, "price"=>$p->price, "category"=>$category_text, "range"=>$range, "tmp_range"=>$tmp_range);
+                }
+
+            }
+
+            $len = count($teacherList);
+
+            for($i = 1; $i < $len; $i++) {//最多做n-1趟排序
+                $flag = false;    //本趟排序开始前，交换标志应为假
+
+                for ($j = $len - 1; $j >= $i; $j--) {
+                    if($teacherList[$j]['range'] < $teacherList[$j - 1]['range']) {//交换记录
+                        //如果是从大到小的话，只要在这里的判断改成if($arr[$j]>$arr[$j-1])就可以了
+                        $x = $teacherList[$j];
+                        $teacherList[$j] = $teacherList[$j - 1];
+                        $teacherList[$j - 1] = $x;
+                        $flag = true;//发生了交换，故将交换标志置为真
+                    }
+                }
+
+                if(!$flag)//本趟排序未发生交换，提前终止算法
+                    break;
+            }
+
+            //将没有服务坐标的老师放到最后
+            foreach ($tmp_teacherList as $tmp_t) {
+                $teacherList[] = $tmp_t;
             }
 
             $this->_helper->json(array('data' => $teacherList, "current_page_no"=>$current_page_no, "page_count"=>$page_count, 'code' => 200));
+        }
+        else {
+            $this->_helper->json(array('data' => "读取失败!", 'code' => 0));
+        }
+    }
+
+    public function consumeListAction() {
+        $customerModel = $this->getModel('customer');
+        $orderModel = $this->getModel('order');
+        $couponModel = $this->getModel('coupon');
+
+        $page = $this->getParam('page');
+        $nickname = $this->getParam('nickname');
+
+        if (!$page) {
+            $page = 1;
+        }
+
+        if ($nickname) {
+            $param = new MongoRegex("/" . $nickname . "/i");
+
+            $paginator = $customerModel->getBy(true, array("usertype"=> "1", "nickname"=>$param));
+
+        }
+        else {
+            $paginator = $customerModel->getBy(true, array("usertype"=> "1"));
+        }
+
+        $paginator->setItemCountPerPage($this->bootstrap_options['default_page_size']);//
+        $paginator->setCurrentPageNumber($page);
+
+        if ($paginator) {
+            $current_page_no = $paginator->getCurrentPageNumber();
+            $page_count = $paginator->count();
+
+            $customerList = array();
+
+            foreach ($paginator as $p) {
+                $tmp_order = $orderModel->getBy(false, array('customer.id'=>new MongoId($p->id)));
+
+                $order_count = count($tmp_order);
+                $tmp_amount = 0;
+
+                foreach ($tmp_order as $tmp_o) {
+                    if ($tmp_o->state < 20)
+                        continue;
+
+                    $tmp_amount = $tmp_o->pay_amount + $tmp_amount;
+                }
+
+                $customerList[] = array("id"=>$p->id, "nickname"=>$p->nickname, "name"=>$p->name, "order_count"=>$order_count, "amount"=>$tmp_amount);
+            }
+
+            $len = count($customerList);
+
+            for($i = 1; $i < $len; $i++) {//最多做n-1趟排序
+                $flag = false;    //本趟排序开始前，交换标志应为假
+
+                for ($j = $len - 1; $j >= $i; $j--) {
+                    if($customerList[$j]['amount'] < $customerList[$j - 1]['amount']) {//交换记录
+                        //如果是从大到小的话，只要在这里的判断改成if($arr[$j]>$arr[$j-1])就可以了
+                        $x = $customerList[$j];
+                        $customerList[$j] = $customerList[$j - 1];
+                        $customerList[$j - 1] = $x;
+                        $flag = true;//发生了交换，故将交换标志置为真
+                    }
+                }
+
+                if(!$flag)//本趟排序未发生交换，提前终止算法
+                    break;
+            }
+
+            $this->_helper->json(array('data' => $customerList, "current_page_no"=>$current_page_no, "page_count"=>$page_count, 'code' => 200));
         }
         else {
             $this->_helper->json(array('data' => "读取失败!", 'code' => 0));

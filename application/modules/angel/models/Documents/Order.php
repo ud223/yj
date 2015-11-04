@@ -39,6 +39,8 @@ class Order extends AbstractDocument {
     /** @ODM\ReferenceOne(targetDocument="\Documents\UserInfo") */
     protected $teacher;
 
+    /** @ODM\ReferenceOne(targetDocument="\Documents\Coupon") */
+    protected $coupon;
     //0：创建订单 10：下单(最终修改日期，时间段，等待支付) 20： 已接单（已支付） 30：授课中(老师点击开始授课) 40：评分(授课结束等待评分) 50：完成（评分完成，结束）
     /** @ODM\Int */
     protected $state = 0;

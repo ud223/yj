@@ -94,9 +94,11 @@ class Angel_IndexController extends Angel_Controller_Action {
         $this->view->orders = $orders;
     }
 
+
     public function confirmationOrderAction() {
         $orderModel = $this->getModel('order');
         $workModel = $this->getModel('work');
+        $customerModel = $this->getModel('customer');
 
         $id = $this->getParam('id');
 
@@ -108,6 +110,23 @@ class Angel_IndexController extends Angel_Controller_Action {
             $work = $w;
         }
 
+        $customer = $customerModel->getById($order->customer->id);
+        $coupon = false;
+
+        if ($customer) {
+            foreach ($customer->coupon as $c) {
+                if (!$coupon) {
+                    $coupon = $c;
+                }
+                else {
+                    if ($coupon->amount < $c->amount) {
+                        $coupon = $c;
+                    }
+                }
+            }
+        }
+
+        $this->view->coupon = $coupon;
         $this->view->max_hours = $work->hour;
         $this->view->model = $order;
     }

@@ -62,6 +62,14 @@ class Angel_Model_Order extends Angel_Model_AbstractModel
         return $result;
     }
 
+    public function saveCoupon($id, $coupon) {
+        $data = array('coupon' => $coupon);
+
+        $result = $this->save($id, $data);
+
+        return $result;
+    }
+
     public function submitRating($id, $time_score, $content_score, $way_score, $teacher_score, $teacher_appraise) {
         $data = array('time_score'=>$time_score, 'content_score'=>$content_score, 'way_score'=>$way_score, 'teacher_score'=>$teacher_score, 'teacher_appraise'=>$teacher_appraise);
 

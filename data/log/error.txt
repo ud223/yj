@@ -26611,3 +26611,48 @@
 [05-Nov-2015 02:31:59 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
 [05-Nov-2015 02:32:02 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
 [05-Nov-2015 02:32:02 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[05-Nov-2015 03:48:18 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[05-Nov-2015 03:48:18 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[05-Nov-2015 03:48:18 Asia/Chongqing] PHP Fatal error:  Class '\Documents\Coupon' not found in /var/www/yj/application/modules/angel/models/Coupon.php on line 10
+[05-Nov-2015 03:49:05 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[05-Nov-2015 03:49:05 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[05-Nov-2015 03:49:05 Asia/Chongqing] PHP Fatal error:  Class '\Documents\Coupon' not found in /var/www/yj/application/modules/angel/models/Coupon.php on line 10
+[05-Nov-2015 03:49:24 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[05-Nov-2015 03:49:24 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[05-Nov-2015 03:49:24 Asia/Chongqing] PHP Fatal error:  Class '\Documents\Coupon' not found in /var/www/yj/application/modules/angel/models/Coupon.php on line 10
+[05-Nov-2015 03:49:44 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[05-Nov-2015 03:49:44 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[05-Nov-2015 03:50:08 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[05-Nov-2015 03:50:08 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[05-Nov-2015 03:50:36 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[05-Nov-2015 03:50:36 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[05-Nov-2015 03:50:36 Asia/Chongqing] PHP Fatal error:  Class '\Documents\Coupon' not found in /var/www/yj/application/modules/angel/models/Coupon.php on line 10
+[05-Nov-2015 03:51:06 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[05-Nov-2015 03:51:06 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[05-Nov-2015 03:51:06 Asia/Chongqing] PHP Fatal error:  Class '\Documents\Coupon' not found in /var/www/yj/application/modules/angel/models/Coupon.php on line 10
+[05-Nov-2015 03:51:48 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[05-Nov-2015 03:51:48 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[05-Nov-2015 03:55:01 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[05-Nov-2015 03:55:01 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[05-Nov-2015 03:55:16 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[05-Nov-2015 03:55:16 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[05-Nov-2015 03:55:16 Asia/Chongqing] PHP Fatal error:  Call to undefined method Angel_Model_Customer::saveCoupon() in /var/www/yj/application/modules/angel/controllers/ManageController.php on line 705
+[05-Nov-2015 03:55:27 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[05-Nov-2015 03:55:27 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[05-Nov-2015 03:55:54 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[05-Nov-2015 03:55:54 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[05-Nov-2015 03:56:05 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[05-Nov-2015 03:56:05 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[05-Nov-2015 03:56:22 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[05-Nov-2015 03:56:22 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[05-Nov-2015 03:57:33 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[05-Nov-2015 03:57:33 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[05-Nov-2015 03:58:59 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[05-Nov-2015 03:58:59 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[05-Nov-2015 03:58:59 Asia/Chongqing] PHP Notice:  Use of undefined constant Exception - assumed 'Exception' in /var/www/yj/application/modules/angel/models/AbstractModel.php on line 52
+[05-Nov-2015 03:58:59 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[05-Nov-2015 03:58:59 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[05-Nov-2015 03:59:00 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[05-Nov-2015 03:59:00 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[05-Nov-2015 03:59:01 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[05-Nov-2015 03:59:01 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43

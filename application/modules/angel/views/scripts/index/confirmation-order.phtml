@@ -71,19 +71,26 @@
 <div class="blackrowgall">
     <div class="row">
         <span class="tt">价格（<span id="hour"><?php echo $this->model->hour ?></span>小时）</span>
-        <span class="holder"><strong class="green">￥<span id="pay-amount"><?php echo $this->model->amount ?></span></strong></span>
+        <?php if ($this->coupon) :?>
+            <span class="holder"><strong class="green">￥<span id="amount"><?php echo $this->model->amount ?></span></strong></span>
+        <?php else :?>
+            <span class="holder"><strong class="green">￥<span id="pay-amount"><?php echo $this->model->amount ?></span></strong></span>
+        <?php endif; ?>
     </div>
-    <div class="row actbtn cd-slideoutbtn" rel="#pp-change-coupon" style="display: none">
-        <span class="tt">优惠券</span>
-        <div class="holder arr">
-            <span>200元优惠券</span>
-            <img src="/img/arr-r.png" class="icoin" />
+    <?php if ($this->coupon) :?>
+        <div class="row actbtn cd-slideoutbtn" rel="#pp-change-coupon" style="">
+            <span class="tt">优惠券</span>
+            <div class="holder arr">
+                <span><?php echo $this->coupon->amount ?>元优惠券</span>
+                <img src="/img/arr-r.png" class="icoin" />
+            </div>
         </div>
-    </div>
-    <div class="row" style="display: none">
-        <span class="tt">优惠价</span>
-<!--        <span class="holder"><strong class="green">￥<span id="pay-amount">--><?php //echo $this->model->amount ?><!--</span></strong></span><!--这里减200只是做一个测试-->-->
-    </div>
+        <div class="row" style="display: none">
+            <span class="tt">优惠价</span>
+            <span class="holder"><strong class="green">￥<span id="pay-amount"><?php echo $this->model->amount - $this->coupon->amount ?></span></strong></span><!--这里减200只是做一个测试-->
+        </div>
+    <?php endif; ?>
+    <input type="hidden" id="coupon_id" name="coupon_id" value="<?php  if ($this->coupon) { echo $this->coupon->id; } ?>">
 </div>
 <div class="clear-15"></div>
 <div id="submit-order" class="fullbtn">

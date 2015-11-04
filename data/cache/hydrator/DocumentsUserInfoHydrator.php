@@ -340,6 +340,18 @@ class DocumentsUserInfoHydrator implements HydratorInterface
         }
 
         /** @Many */
+        $mongoData = isset($data['coupon']) ? $data['coupon'] : null;
+        $return = new \Doctrine\ODM\MongoDB\PersistentCollection(new \Doctrine\Common\Collections\ArrayCollection(), $this->dm, $this->unitOfWork, '$');
+        $return->setHints($hints);
+        $return->setOwner($document, $this->class->fieldMappings['coupon']);
+        $return->setInitialized(false);
+        if ($mongoData) {
+            $return->setMongoData($mongoData);
+        }
+        $this->class->reflFields['coupon']->setValue($document, $return);
+        $hydratedData['coupon'] = $return;
+
+        /** @Many */
         $mongoData = isset($data['skill']) ? $data['skill'] : null;
         $return = new \Doctrine\ODM\MongoDB\PersistentCollection(new \Doctrine\Common\Collections\ArrayCollection(), $this->dm, $this->unitOfWork, '$');
         $return->setHints($hints);

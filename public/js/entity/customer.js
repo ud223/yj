@@ -5,5 +5,10 @@ var Customer = function() {
         queryCustomerList(page, name);
     }
 
+    obj.consumeList = function(page, name) {
+        queryCustomerConsumeList(page, name);
+    }
+
+
     return obj;
 }

@@ -15,7 +15,7 @@ class Angel_ManageController extends Angel_Controller_Action {
     }
 
     public function indexAction() {
-        
+
     }
 
     /*******************************************
@@ -24,7 +24,7 @@ class Angel_ManageController extends Angel_Controller_Action {
      * ****************************************/
     public function registerAction() {
         $this->userRegister('manage-login', "注册成为管理员", "admin");
-        
+
         $this->view->ismanage = true;
     }
 
@@ -378,7 +378,7 @@ class Angel_ManageController extends Angel_Controller_Action {
                             }
 //                            $saveObj[$name] = $this->view->photoImage($p->name . $p->type, 'small');
 //                            if (!$p->thumbnail) {
-                                $saveObj[$name] = $this->view->photoImage($p->name . $p->type);
+                            $saveObj[$name] = $this->view->photoImage($p->name . $p->type);
 //                            }
                         }
                         if (!count($saveObj))
@@ -399,7 +399,7 @@ class Angel_ManageController extends Angel_Controller_Action {
                             }
 //                            $saveObj[$name] = $this->view->photoImage($c->name . $c->type, 'small');
 //                            if (!$p->thumbnail) {
-                                $saveObj[$name] = $this->view->photoImage($c->name . $c->type);
+                            $saveObj[$name] = $this->view->photoImage($c->name . $c->type);
 //                            }
                         }
                         if (!count($saveObj))
@@ -667,6 +667,55 @@ class Angel_ManageController extends Angel_Controller_Action {
         }
         else {
             $this->view->title = "新增普通用户(测试)";
+        }
+    }
+
+    /************************************************************************
+     *优惠卷发放
+     *
+     ************************************************************************/
+    public function couponListAction() {
+        $this->view->title = "用户消费列表";
+    }
+
+    public function couponSetAction() {
+        $customerModel = $this->getModel('customer');
+        $id = $this->getParam('id');
+
+        $model = $customerModel->getById($id);
+
+        if ($this->request->isPost()) {
+            $couponModel = $this->getModel('coupon');
+
+            $amount = $this->getParam('amount');
+
+            $coupon_id = $couponModel->addCoupon($amount);
+
+            $coupon = $couponModel->getById($coupon_id);
+
+            $coupons = array();
+
+            foreach ($model->coupon as $c) {
+                $coupons[] = $c;
+            }
+
+            $coupons[] = $coupon;
+
+            try {
+                $result = $customerModel->saveCoupon($id, $coupons);
+            } catch (Exception $e) {
+                $error = $e->getMessage();
+            }
+
+            if ($result) {
+                $this->_redirect($this->view->url(array(), 'manage-result') . '?redirectUrl=' . $this->view->url(array(), 'manage-coupon-list-home'));
+            } else {
+                $this->_redirect($this->view->url(array(), 'manage-result') . '?error=' . $error);
+            }
+        }
+        else {
+            $this->view->model = $model;
+            $this->view->title = "优惠卷发放";
         }
     }
 
@@ -1089,7 +1138,7 @@ class Angel_ManageController extends Angel_Controller_Action {
             $id = $this->request->getParam('id');
             $name = $this->request->getParam('name');
             $description = $this->request->getParam('description');
-            
+
             try {
                 $result = $categoryModel->saveCategory($id, $name, $description);
             } catch (Angel_Exception_Category $e) {

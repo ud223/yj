@@ -1,13 +1,6 @@
 $(document).ready(function() {
     initUser();
 
-
-    toMeClick();
-
-    toTeachClick();
-
-    toOrderClick();
-
     initControls();
 
     initInput();
@@ -18,7 +11,10 @@ $(document).ready(function() {
 });
 
 function initBtn() {
+    toMeClick();
 
+    toTeachClick();
+    toOrderClick();
 }
 
 function initInput() {
@@ -35,6 +31,5 @@ function initControls() {
 
 //初始化测试数据
 function initUser() {
-    var user_id = localStorage.getItem('user_id')
-    resetBottomBar(usertype, 'to-order');
+    resetBottomBar(usertype, 'to-home');
 }

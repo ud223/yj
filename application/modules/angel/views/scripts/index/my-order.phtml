@@ -1,9 +1,9 @@
 <script src="<?php echo $this->jsPath("controller/index/my-order.js"); ?>"></script>
-<div class="relativebackt">
-    <a href="/me/<?php echo $this->user_id ?>" class="arrc">返回</a>
-</div>
-<div class="p16-xeet">
-    找到<span id="order-num"><?php echo $this->count ?></span>条记录
+<div class="blkkwe">
+    <div class="itms">
+        <div class="itm selected">所有订单</div>
+        <div class="itm">待评价</div>
+    </div>
 </div>
 
 <div class="blackrowgall nmt">
@@ -87,11 +87,14 @@
 </div>
 
 <div class="clear-15"></div>
-<div id="to-me" class="fullbtn normal cd_hottap" hottap="">返回</div>
 <div class="bt-distance"></div>
 <!--completed pending -->
 <div id="order-node" style="display: none">
 </div>
+
 <script type="text/javascript">
     var page_type = 1;
+    var user_id = localStorage.getItem('user_id');
+    var usertype = localStorage.getItem('usertype');
+
 </script>

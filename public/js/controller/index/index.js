@@ -19,6 +19,8 @@ function initBtn() {
 
     toTeachClick();
 
+    toOrderClick();
+
     editTeacherName();
 }
 
@@ -45,16 +47,7 @@ function initUser() {
     if (!loadCell())
         getLocal(load);
 
-    if (usertype == 2) {
-        $("#to-teach").show();
-        $("#teacher-date").addClass("grid3");
-        $("#to-me").addClass("grid3");
-    }
-    else {
-        $("#to-teach").hide();
-        $("#teacher-date").removeClass("grid3");
-        $("#to-me").removeClass("grid3");
-    }
+    resetBottomBar(usertype, 'teacher-date');
 
     //var regions = $(".tcfilter-filter").find(".itmbtn");
     //

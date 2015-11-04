@@ -134,7 +134,7 @@ class Angel_ApiController extends Angel_Controller_Action {
             $teacherList = array();
 //            $this->_helper->json(array('data' => count($paginator), 'code' => 0));
             foreach ($paginator as $p) {
-//                $this->_helper->json(array('data' => $p->name, 'code' => 0));
+                $this->_helper->json(array('data' => $p->name, 'code' => 0));
                 if (!$p->lat) {
                     continue;
                 }

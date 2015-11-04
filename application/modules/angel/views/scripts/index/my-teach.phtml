@@ -9,14 +9,8 @@
 <script src="<?php echo $this->jsPath("action/index/my-index.js"); ?>"></script>
 <script src="<?php echo $this->jsPath("delegate/index/my-index.js"); ?>"></script>
 <script src="<?php echo $this->jsPath("controller/index/my-index.js"); ?>"></script>
-<div class="relativebackt">
-    <a href="/" class="arrc">返回</a>
-</div>
-<div class="menu-fix">
-    <div  id="teacher-date"  class="menu-fix-itm cd_hottap" hottap="/">预约老师</div>
-    <div id="to-me"  class="menu-fix-itm cd_hottap" hottap="/me/<?php echo $this->model->id ?>">我</div>
-    <div id="to-teach" class="menu-fix-itm grid3 selected">教学中心</div>
-</div>
+<script src="<?php echo $this->jsPath("controller/index/my-teach.js"); ?>"></script>
+
 <?php //if (!$this->model->phone): ?>
 <!--    <div class="p10-head-warning" id="didntsettel">-->
 <!--        您还没有设置手机号码，前往设置-->

@@ -12,11 +12,7 @@
 <div class="relativebackt">
     <a href="/" class="arrc">返回</a>
 </div>
-<div class="menu-fix">
-    <div  id="teacher-date"  class="menu-fix-itm cd_hottap" hottap="/">预约老师</div>
-    <div id="to-me"  class="menu-fix-itm cd_hottap selected" hottap="/me/<?php echo $this->model->id ?>">我</div>
-    <div id="to-teach" class="menu-fix-itm cd_hottap grid3" hottap="/my/teach/<?php echo $this->model->id ?>" style="display: none">教学中心</div>
-</div>
+
 <?php if (!$this->model->phone): ?>
     <div class="p10-head-warning" id="didntsettel">
         您还没有设置手机号码，前往设置
@@ -83,13 +79,8 @@
 </div>
 
 <div class="blackrowgall">
-    <div class="row actbtn cd_hottap" hottap="/my/order/<?php echo $this->model->id ?>">
-        <span class="tt">我的订单</span>
-        <div class="holder arr">
-            <img src="/img/arr-r.png" class="icoin" />
-        </div>
-    </div>
-    <div class="row actbtn" style="display: none">
+
+    <div class="row actbtn" style="">
         <span class="tt">优惠券</span>
         <div class="holder arr">
             <img src="/img/arr-r.png" class="icoin" />

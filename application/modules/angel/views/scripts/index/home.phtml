@@ -1,9 +1,11 @@
 <script src="<?php echo $this->jsPath("swipe.js"); ?>"></script>
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=8TN0gC5Rqo6cec2jroKOkNpE&v=2.0"></script>
 <script src="<?php echo $this->jsPath("tools/String.js"); ?>"></script>
-
+<script src="<?php echo $this->jsPath("delegate/index/home.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("controller/index/home.js"); ?>"></script>
 <div style="height:60px;background:url(/img/za-bg.jpg);line-height:60px;font-weight:bold;text-align:center;color:#FFF;background-size: cover">
 <img src="/img/txtlogo.png" style="width:120px;margin-top:-2px;"/>
+    <a href="#" id="to-me"></a>
 </div>
 <!--此段为滑动多图的html部分，写死在这里-->
 <div id="cd_mentor_img_slider" class="swipe homex">
@@ -72,12 +74,6 @@
     <div class="itm i04">
         <a href="#" class="wp"></a>
     </div>
-</div>
-
-<div class="menu-fix">
-    <div id="teacher-date" class="menu-fix-itm cd_hottap selected" hottap="/">预约老师</div>
-    <div id="to-me" class="menu-fix-itm">我</div>
-    <div id="to-teach" class="menu-fix-itm grid3" style="display: none">教学中心</div>
 </div>
 
 <div class="tcfilter-container">

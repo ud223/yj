@@ -366,3 +366,50 @@ function closePopup(popup) {
     container.addClass('hide').removeClass('show');
     $('html').removeClass('html-no-scroll');
 }
+
+function resetBottomBar(usertype, id) {
+    if (usertype == 2) {
+        $('.menu-fix-itm').removeClass('grid3').show();
+    }
+    $('#' + id).addClass('selected');
+    $('.menu-fix').show();
+}
+
+function toMeClick() {
+    $("#to-me").click(function() {
+        var user_id = localStorage.getItem('user_id');
+        //alert(user_id);
+        if (user_id) {
+            location.href = "/me/"+ user_id;
+        }
+        else {
+            userLogin();
+        }
+    });
+}
+
+function toTeachClick() {
+    $("#to-teach").click(function() {
+        var user_id = localStorage.getItem('user_id');
+        //alert(user_id);
+        if (user_id) {
+            location.href = "/my/teach/"+ user_id;
+        }
+        else {
+            userLogin();
+        }
+    });
+}
+
+function toOrderClick() {
+    $("#to-order").click(function() {
+        var user_id = localStorage.getItem('user_id');
+        //alert(user_id);
+        if (user_id) {
+            location.href = "/my/order/"+ user_id;
+        }
+        else {
+            userLogin();
+        }
+    });
+}

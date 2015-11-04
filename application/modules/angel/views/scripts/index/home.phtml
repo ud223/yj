@@ -33,28 +33,44 @@
         background:#ff9ba7;
         color:#FFF;
         line-height: 120px;
+        background-position: center center;
+        background-repeat:no-repeat;
+        background-size: cover;
     }
+    .iueici .itm.i01 .wp {
+        background-image:url(/img/home/jpkc.jpg);
+    }
+    .iueici .itm.i02 .wp {
+        background-image:url(/img/home/gyk.jpg);
+    }
+    .iueici .itm.i03 .wp {
+        background-image:url(/img/home/yjsl.jpg);
+    }
+    .iueici .itm.i04 .wp {
+        background-image:url(/img/home/yyds.jpg);
+    }
+
     .iueici .itm:nth-child(even) .wp {
         margin-right:10px;
         margin-left:5px;
     }
 
     .homex .swipe-wrap > .figure {
-        height:150px;
+        height:270px;
     }
 </style>
 <div class="iueici">
-    <div class="itm">
-        <a href="#" class="wp">精品课程</a>
+    <div class="itm i01">
+        <a href="#" class="wp"></a>
     </div>
-    <div class="itm">
-        <a href="#" class="wp">推荐老师</a>
+    <div class="itm i02">
+        <a href="#" class="wp"></a>
     </div>
-    <div class="itm">
-        <a href="#" class="wp">公益课</a>
+    <div class="itm i03">
+        <a href="#" class="wp"></a>
     </div>
-    <div class="itm">
-        <a href="#" class="wp">沙龙</a>
+    <div class="itm i04">
+        <a href="#" class="wp"></a>
     </div>
 </div>
 
@@ -80,11 +96,11 @@
 
     // 此处是php代码渲染输出而成，一次性把该导师所有的图片路径都加载至此。
     var imgs_json = [{
-        url: '/img/photocase/tpp01.jpg', link: 'p02-1_xinwen.html'
+        url: '/img/home/banner-01.jpg', link: '#'
     }, {
-        url: '/img/photocase/tpp02.jpg', link: 'p02-1_xinwen.html'
+        url: '/img/home/banner-02.jpg', link: '#'
     }, {
-        url: '/img/photocase/tpp03.jpg', link: 'p02-1_xinwen.html'
+        url: '/img/home/banner03.jpg', link: '#'
     }];
 
 
@@ -119,4 +135,10 @@
             $('.swipe .gl').append(new_pager);
         }
     }
+
+    $(document).ready(function(){
+        // 大按钮的高度设置成功
+        var w = $('.iueici .itm .wp').width();
+        $('.iueici .itm .wp').height(w);
+    });
 </script>

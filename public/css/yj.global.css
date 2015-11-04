@@ -606,7 +606,7 @@ p:after {
     height: 100%;
     text-align: center;
     font-size: 16px;
-    width: 50%;
+    width: 25%;
     float: left;
     color: #888;
 }
@@ -2155,3 +2155,41 @@ p:after {
     background: rgba(0, 0, 0, .05);
 }
 
+#to-me {
+    background:url(../img/bt-fix-me-w.png);display:inline-block;width:40px;height:40px;background-color:rgba(0,0,0,.15);border-radius:100px;position:absolute;right:15px;top:50%;margin-top:-20px;background-size:contain
+}
+.blkkwe {
+    background:url(../img/za-bg.jpg) center bottom;
+    background-size: contain;
+    text-align: center;
+    height:60px;
+    position: relative;
+}
+.blkkwe .itms {
+    height:100%;
+}
+.blkkwe .itm {
+    display:inline-block;
+    width:120px;
+    height:30px;
+    line-height:30px;
+    border:2px solid #FFF;
+    color:#FFF;
+    position:absolute;
+    top:50%;
+    margin-top:-17px;
+    left:50%;
+    margin-left:-123px;
+    border-radius: 100px 0 0 100px;
+}
+.blkkwe .itm:nth-child(even) {
+    left:auto;
+    margin-left:auto;
+    right:50%;
+    margin-right:-123px;
+    border-radius: 0 100px 100px 0;
+}
+.blkkwe .itm.selected {
+    background:#FFF;
+    color:#ff7286;
+}

@@ -30,7 +30,7 @@ function confirmOrder(rundate, time, hour, amount, pay_amount, address, address_
 
     var  data = { 'id':order_id, 'pay_amount':pay_amount, 'rundate':rundate, 'time':time, 'hour':hour, 'price': order_price, 'amount':amount, 'customer_name':customer_name, 'address':address, 'address_detail':address_detail, 'phone':phone, 'lat':lat, 'lng':lng, 'coupon_id': coupon_id }
     alert(JSON.stringify(data));
-    return;
+    //return;
     $.ajax({
         url: url,
         dataType: 'json',

@@ -35,12 +35,12 @@ $out_trade_no = substr($tmp, 0, 32);
 
 $input->SetOut_trade_no($out_trade_no);
 
-$tmp_amount = 30000;
+$tmp_amount = 0;
 
 if ($this->model->pay_amount) {
     $tmp_amount = intval($this->model->pay_amount);// / 100
 }
-
+echo $tmp_amount; exit;
 $input->SetTotal_fee($tmp_amount);//
 
 $input->SetTime_start(date("YmdHis"));

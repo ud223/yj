@@ -390,9 +390,13 @@ function setTimeSelected(time) {
     });
 }
 
-function toPay() {
+function toPay(data, pay_amount) {
+
     var url = '/order/pay/' + order_id + '?showwxpaytitle=1';
-    //var url = '/pay/success/'+ order_id;
+    //如果支付为0分,就直接支付成功
+    if (pay_amount == 0) {
+        url = '/pay/success/'+ order_id;
+    }
 
     location.href = url;
 }

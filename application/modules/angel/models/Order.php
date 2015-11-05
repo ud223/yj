@@ -54,6 +54,15 @@ class Angel_Model_Order extends Angel_Model_AbstractModel
         return $result;
     }
 
+    public function uploadPos($id, $lat, $lng) {
+        $data = array('lat' => $lat,
+            'lng' => $lng);
+
+        $result = $this->save($id, $data);
+
+        return $result;
+    }
+
     public function updateState($id, $state) {
         $data = array('state' => $state);
 

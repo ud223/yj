@@ -40,7 +40,7 @@ $tmp_amount = 0;
 if ($this->model->pay_amount) {
     $tmp_amount = intval($this->model->pay_amount);// / 100
 }
-echo $tmp_amount; exit;
+//echo $tmp_amount; exit;
 $input->SetTotal_fee($tmp_amount);//
 
 $input->SetTime_start(date("YmdHis"));

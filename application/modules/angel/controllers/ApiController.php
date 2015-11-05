@@ -577,10 +577,6 @@ class Angel_ApiController extends Angel_Controller_Action {
                 $coupon = $couponModel->getById($coupon_id);
 
                 $orderModel->saveCoupon($id, $coupon);
-
-                $today = date("Y-m-d");
-
-                $couponModel->usedCoupon($coupon->id, $today);
             }
 
             if ($result) {

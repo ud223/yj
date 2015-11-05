@@ -137,12 +137,17 @@ class Angel_IndexController extends Angel_Controller_Action {
 
     public function paySuccessAction() {
         $orderModel = $this->getModel('order');
+        $couponModel = $this->getModel('coupon');
 
         $id = $this->getParam('id');
 
         $orderModel->updateState($id, 20);
 
         $order = $orderModel->getById($id);
+
+        $today = date("Y-m-d");
+
+        $couponModel->usedCoupon($order->coupon->id, $today);
 
         $this->view->model = $order;
     }

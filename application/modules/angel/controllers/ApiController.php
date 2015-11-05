@@ -574,7 +574,7 @@ class Angel_ApiController extends Angel_Controller_Action {
             $result = $orderModel->saveOrder($id, $rundate, $time, $hour, $order->customer, $order->teacher, 10, $order->user_score, $order->user_appraise, $order->teacher_score, $order->teacher_appraise, $price, $amount, $pay_amount, $customer_name, $phone, $address, $address_detail);
 
             $result = $orderModel->uploadPos($id, $lat, $lng);
-            
+
             if ($coupon_id) {
                 $coupon = $couponModel->getById($coupon_id);
 

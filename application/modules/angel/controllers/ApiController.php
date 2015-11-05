@@ -239,11 +239,11 @@ class Angel_ApiController extends Angel_Controller_Action {
         if ($nickname) {
             $param = new MongoRegex("/" . $nickname . "/i");
 
-            $paginator = $customerModel->getBy(true, array("usertype"=> "1", "nickname"=>$param));
+            $paginator = $customerModel->getBy(true, array("nickname"=>$param));
 
         }
         else {
-            $paginator = $customerModel->getBy(true, array("usertype"=> "1"));
+            $paginator = $customerModel->getAll(true);
         }
 
         $paginator->setItemCountPerPage($this->bootstrap_options['default_page_size']);//

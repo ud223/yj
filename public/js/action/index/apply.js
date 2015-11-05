@@ -478,6 +478,26 @@ function submitApply() {
     var certificate_index = $("#certificate_index").val();
     var photo_index = $("#photo_index").val();
 
+    if (code) {
+        var tmpStr = "";
+
+        if (code.length == 15) {
+            tmpStr = code.substring(6, 12);
+            tmpStr = "19" + tmpStr;
+            tmpStr = tmpStr.substring(0, 4) + "-" + tmpStr.substring(4, 6) + "-" + tmpStr.substring(6)
+
+            birthday = tmpStr;
+        }
+        else {
+            tmpStr = code.substring(6, 14);
+            tmpStr = tmpStr.substring(0, 4) + "-" + tmpStr.substring(4, 6) + "-" + tmpStr.substring(6)
+
+
+        }
+
+        birthday = tmpStr;
+    }
+
     var teacher = new Teacher();
 
     teacher.apply(customer_id, sex, birthday, code, email, wechat, region_id, category_id, bank, bank_code, description, location, certificate_index, photo_index, toApply)

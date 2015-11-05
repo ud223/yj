@@ -55,7 +55,7 @@ class wechatCallbackapiTest
             }else{
                 if ($ev == "subscribe"){
                     $msgType = "text";
-                    $contentStr = "欢迎来到瑜伽去！";
+                    $contentStr = "Hi，终于等到你，欢迎来到瑜伽去！这里能为你提供专业的瑜伽导师上门授课服务，一键即可预约，大师就在你身边。";
                     $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
                     echo $resultStr;
                 }

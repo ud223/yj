@@ -30,6 +30,7 @@ class Angel_IndexController extends Angel_Controller_Action {
         'lesson-success',
         'my-calendar',
         'my-class',
+        'my-coupon',
         'rating',
         'rating-success',
         'about',
@@ -115,6 +116,9 @@ class Angel_IndexController extends Angel_Controller_Action {
 
         if ($customer) {
             foreach ($customer->coupon as $c) {
+                if ($c->is_user == 3)
+                    continue;
+
                 if (!$coupon) {
                     $coupon = $c;
                 }
@@ -335,6 +339,16 @@ class Angel_IndexController extends Angel_Controller_Action {
         else {
             exit("用户信息无效，请重新登录!");
         }
+    }
+
+    public function myCouponAction() {
+        $customerModel = $this->getModel('customer');
+
+        $id = $this->getParam('id');
+
+        $customer = $customerModel->getById($id);
+
+        $this->view->model = $customer;
     }
 
     public function myOrderAction() {

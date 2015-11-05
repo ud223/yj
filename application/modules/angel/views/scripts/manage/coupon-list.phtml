@@ -1,0 +1,91 @@
+<script src="<?php echo $this->jsPath("tools/String.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("tools/pic.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("action/manage/coupon-list.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("api/customer.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("entity/customer.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("delegate/manage/coupon-list.js"); ?>"></script>
+<script src="<?php echo $this->jsPath("controller/manage/coupon-list.js"); ?>"></script>
+<style>
+    .itm {
+        padding:20px;
+    }
+    .itm:hover {
+        background:#F0F0F0;
+    }
+    label.xs {
+        color:#aaa;
+        font-size:smaller;
+        margin-left:5px;
+    }
+    .child-itm {
+        border-left: 1px dotted #aaa;
+        margin-top:10px;
+        padding-left:30px;
+    }
+    .table-bordered>thead>tr>td,
+    .table-bordered>thead>tr>th {
+        border-bottom-width: 1px;
+    }
+    .mbtable>thead>tr>td,
+    .table>thead>tr>th {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background: linear-gradient(top, rgb(255, 255, 255), rgb(240, 240, 240) 100%);
+        background: -o-linear-gradient(top, rgb(255, 255, 255), rgb(240, 240, 240) 100%);
+        background: -ms-linear-gradient(top, rgb(255, 255, 255), rgb(240, 240, 240) 100%);
+        background: -moz-linear-gradient(top, rgb(255, 255, 255), rgb(240, 240, 240) 100%);
+        background: -webkit-linear-gradient(top, rgb(255, 255, 255), rgb(240, 240, 240) 100%);
+    }
+    .mblk {
+        padding: 15px;
+        border-bottom: 1px solid #E4E4E4;
+    }
+    .wb {
+        background: #FFF;
+    }
+</style>
+
+<h1 class="page-title"><?php echo $this->title ?></h1>
+<div class="row">
+    <label>微信昵称：</label>
+    <input type="text" id="wx-name" data-toggle="popover" value=""><button type="button" id="bang-customer" >查询</button>
+    <table id="customer-list" class="table table-bordered table-hover wb mbtable table-striped">
+        <thead>
+        <tr>
+            <th>昵称</th>
+            <th>姓名</th>
+            <th>消费次数</th>
+            <th>消费总金额</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody id="customer-body">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+    <nav id="page-controller" class="clearfix">
+        <ul class="pagination pull-right">
+
+        </ul>
+    </nav>
+</div>
+<div id="table-row" style="display: none">
+    <tr class="customer-row">
+        <td class="nickname"></td>
+        <td class="sex"></td>
+        <td class="city"></td>
+        <td class="status"></td>
+        <td class="opt"></td>
+    </tr>
+</div>
+<script type="text/javascript">
+    $('.remove-list').click(function() {
+        removeObject($(this).parent(), '<?php echo $this->url(array(), 'manage-customer-frozen') ?>');
+    });
+</script>

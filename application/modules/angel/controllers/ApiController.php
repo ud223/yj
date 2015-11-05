@@ -277,7 +277,7 @@ class Angel_ApiController extends Angel_Controller_Action {
                 $flag = false;    //本趟排序开始前，交换标志应为假
 
                 for ($j = $len - 1; $j >= $i; $j--) {
-                    if($customerList[$j]['amount'] < $customerList[$j - 1]['amount']) {//交换记录
+                    if($customerList[$j]['amount'] > $customerList[$j - 1]['amount']) {//交换记录
                         //如果是从大到小的话，只要在这里的判断改成if($arr[$j]>$arr[$j-1])就可以了
                         $x = $customerList[$j];
                         $customerList[$j] = $customerList[$j - 1];
@@ -538,6 +538,7 @@ class Angel_ApiController extends Angel_Controller_Action {
 
     public function confirmOrderAction() {
         $orderModel = $this->getModel('order');
+        $couponModel = $this->getModel('coupon');
 
         $id = $this->getParam('id');
         $rundate = $this->getParam('rundate');
@@ -552,6 +553,7 @@ class Angel_ApiController extends Angel_Controller_Action {
         $address_detail = $this->getParam('address_detail');
         $lat = $this->getParam('lat');
         $lng = $this->getParam('lng');
+        $coupon_id = $this->getParam('coupon_id');
 
         $order = $orderModel->getById($id);
 
@@ -570,6 +572,16 @@ class Angel_ApiController extends Angel_Controller_Action {
 
         if ($order) {
             $result = $orderModel->saveOrder($id, $rundate, $time, $hour, $order->customer, $order->teacher, 10, $order->user_score, $order->user_appraise, $order->teacher_score, $order->teacher_appraise, $price, $amount, $pay_amount, $customer_name, $phone, $address, $address_detail);
+
+            if ($coupon_id) {
+                $coupon = $couponModel->getById($coupon_id);
+
+                $orderModel->saveCoupon($id, $coupon);
+
+                $today = date("Y-m-d");
+
+                $couponModel->usedCoupon($coupon->id, $today);
+            }
 
             if ($result) {
                 $this->_helper->json(array('data' => "订单保存成功!", 'code' => 200));

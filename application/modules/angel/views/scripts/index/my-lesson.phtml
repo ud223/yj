@@ -7,8 +7,16 @@
 
 <div>
     <?php foreach ($this->order_list as $order):?>
-        <div class="p23-itm waiting">
-            <img src="/img/user02.jpg" class="usrium" />
+        <div class="p23-itm waiting  cd_hottap" hottap="/lesson/start/<?php echo $order->id ?>">
+            <?php if ($this->model->head_pic) :?>
+                <img src=/photo/image/<?php echo $this->model->head_pic ?>" class="usrium" />
+            <?php else :?>
+                <?php if ($this->model->headimgurl) :?>
+                    <img src=/photo/image/<?php echo $this->model->headimgurl ?>" class="usrium" />
+                <?php else :?>
+                    <img src=""/img/user.jpg" class="usrium" />
+                <?php endif; ?>
+            <?php endif; ?>
             <div class="ct">
                 <div class="t t1">客户：<span class="rx"><?php echo $order->customer->name ?></span></div>
                 <div class="t t2">手机：<span class="rx"><?php echo $order->phone ?></span></div>
@@ -58,7 +66,7 @@
                 ?>
             </div>
             <?php if ($order->state == "20"):?>
-                <div class="btb cd_hottap" hottap="/lesson/start/<?php echo $order->id ?>">
+                <div class="btb">
                     点击开始上课
                 </div>
             <?php endif; ?>

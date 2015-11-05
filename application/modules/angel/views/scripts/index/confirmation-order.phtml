@@ -72,22 +72,29 @@
     <div class="row">
         <span class="tt">价格（<span id="hour"><?php echo $this->model->hour ?></span>小时）</span>
         <?php if ($this->coupon) :?>
-            <span class="holder"><strong class="green">￥<span id="amount"><?php echo $this->model->amount ?></span></strong></span>
+            <span class="holder"><del>￥<span id="amount"><?php echo $this->model->amount ?></span></del></span>
         <?php else :?>
             <span class="holder"><strong class="green">￥<span id="pay-amount"><?php echo $this->model->amount ?></span></strong></span>
         <?php endif; ?>
     </div>
     <?php if ($this->coupon) :?>
-        <div class="row actbtn cd-slideoutbtn" rel="#pp-change-coupon" style="">
+        <div class="row actbtn" style=""><!-- cd-slideoutbtn" rel="#pp-change-coupon-->
             <span class="tt">优惠券</span>
             <div class="holder arr">
-                <span><?php echo $this->coupon->amount ?>元优惠券</span>
-                <img src="/img/arr-r.png" class="icoin" />
+                <span><span id="coupon_amount"><?php echo $this->coupon->amount ?></span>元优惠券</span>
+<!--                <img src="/img/arr-r.png" class="icoin" />-->
             </div>
         </div>
-        <div class="row" style="display: none">
+        <div class="row"><!--style="display: none"-->
             <span class="tt">优惠价</span>
-            <span class="holder"><strong class="green">￥<span id="pay-amount"><?php echo $this->model->amount - $this->coupon->amount ?></span></strong></span><!--这里减200只是做一个测试-->
+            <span class="holder"><strong class="green">￥<span id="pay-amount"><?php
+                        if ($this->model->amount > $this->coupon->amount) {
+                            echo $this->model->amount - $this->coupon->amount;
+                        }
+                       else {
+                           echo 0;
+                       }
+                    ?></span></strong></span><!--这里减200只是做一个测试-->
         </div>
     <?php endif; ?>
     <input type="hidden" id="coupon_id" name="coupon_id" value="<?php  if ($this->coupon) { echo $this->coupon->id; } ?>">

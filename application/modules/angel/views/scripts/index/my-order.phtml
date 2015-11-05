@@ -2,13 +2,21 @@
 <div class="blkkwe">
     <div class="itms">
         <div class="itm selected">所有订单</div>
-        <div class="itm">待评价</div>
+        <div class="itm btn_appraise">待评价</div>
     </div>
 </div>
 
 <div class="blackrowgall nmt">
     <?php foreach ($this->order_list as $order):?>
-        <div class="row actbtn cd_hottap" hottap="/order/detail/<?php echo $order->id ?>">
+        <?php
+            if ($order->state <  20)
+                continue;
+        ?>
+        <?php if ($order->state == 40) :?>
+            <div class="row actbtn cd_hottap appraise" hottap="/order/detail/<?php echo $order->id ?>">
+        <?php else :?>
+            <div class="row actbtn cd_hottap" hottap="/order/detail/<?php echo $order->id ?>">
+        <?php endif; ?>
             <div class="tt"><span class="user-name"><?php echo $order->teacher->name ?></span><span class="p17-t01 rundate-time"><?php
                     $tmp_date = explode("-", $order->rundate);
 
@@ -97,4 +105,20 @@
     var user_id = localStorage.getItem('user_id');
     var usertype = localStorage.getItem('usertype');
 
+    $(document).ready(function() {
+        $(".blkkwe").find(".itm").tapA(function() {
+            $(".blkkwe").find(".itm").removeClass("selected");
+
+            $(this).addClass("selected");
+
+            if ($(this).hasClass("btn_appraise")) {
+                $(".actbtn").hide();
+
+                $(".appraise").show();
+            }
+            else {
+                $(".actbtn").show();
+            }
+        })
+    });
 </script>

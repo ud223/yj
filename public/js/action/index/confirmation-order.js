@@ -238,7 +238,7 @@ function acceptTime() {
             $("#time_range").val(first_html + "|" + first_time);
             $("#hour").html("1");
             $("#amount").html(order_price);
-            $("#pay-amount").html(order_price - 200);
+            $("#pay-amount").html(order_price);
         }
         else if (selected_time.length > 1) {
             var first_html = $(selected_time[0]).html();
@@ -259,9 +259,23 @@ function acceptTime() {
             $("#pay-amount").html(order_price * hour);
         }
 
-        $("#select-timespan").show();
+        var coupon = $("#coupon_amount");
 
-        //$("#pp-change-time").find(".cd-slidepopupback").tap();
+        if (coupon) {
+            var pay_amount = parseInt($("#pay-amount").html());
+            var coupon_amount = parseInt(coupon.html());
+
+            if (pay_amount < coupon_amount) {
+                $("#pay-amount").html("0");
+            }
+            else {
+                var tmp_pay_amount = pay_amount - coupon_amount;
+
+                $("#pay-amount").html(tmp_pay_amount);
+            }
+        }
+
+        $("#select-timespan").show();
 
         closePopup($("#pp-change-time").find('.cd-slidepopupback'));
     }
@@ -572,12 +586,13 @@ function submitOrder() {
     var rundate = $("#select_date").val();
     var hour = $("#hour").html();
     var time = $("#time_range").val();
-    var amount = $("#pay-amount").html();
+    var amount = $("#amount").html();
     var pay_amount = $("#pay-amount").html();
     var lat = $("#address-view").attr("lat");
     var lng = $("#address-view").attr("lng");
+    var coupon_id = $("#coupon_id").val();
 
-    order.confrim(rundate, time, hour, amount, pay_amount, address, address_detail, phone, customer_name, lat, lng, toPay);
+    order.confrim(rundate, time, hour, amount, pay_amount, address, address_detail, phone, customer_name, lat, lng, coupon_id, toPay);
 }
 
 

@@ -1,0 +1,158 @@
+<style>
+    .cplst {
+        padding:15px;
+    }
+    .cplstitm {
+        margin-bottom:15px;
+        background:#EE7286;
+        color:#FFF;
+        padding:20px;
+        border-radius: 5px;
+        border-bottom:2px solid #DD3050;
+        box-shadow: 0 1px 4px rgba(0,0,0,.12);
+    }
+    .cplstitm .t2 {
+        position:absolute;
+        right:15px;
+        top:15px;
+        font-size:42px;
+    }
+    .cplstitm .t2 sup {
+        font-size:14px;
+        top:-14px;
+    }
+    .cplstitm .t3 {
+        font-size:14px;
+        opacity: .7;
+        text-shadow: 0 1px 0 rgba(0,0,0,.2);
+        margin-top:10px;
+    }
+
+
+
+    .cplstitm.gold {
+        background:#FFD800;
+        color:rgba(0,0,0,.7);
+        border-color:#EEB000;
+        font-weight: bold;
+    }
+    .cplstitm.gold .t3 {
+        text-shadow: none;
+    }
+    .cplst .tpiie {
+        background:rgba(0,0,0,.2);
+        color:#FFF;
+        text-shadow: 0 1px 0 rgba(0,0,0,.2);
+        padding:15px;
+        border-radius: 5px;
+        margin-bottom:15px;
+        box-shadow: 0 1px 0 rgba(255,255,255,.8);
+    }
+
+    .cplstitm.used {
+        background:#ccc;
+        border:none;
+        box-shadow: none;
+    }
+    .cplstitm .usedtag {
+        margin-right:10px;
+    }
+</style>
+<div class="relativebackt">
+    <a href="/me/<?php echo $this->model->id?>" class="arrc">返回</a>
+</div>
+<div class="cplst">
+    <div class="tpiie">
+        优惠券会在消费的时候被使用，且我们会自动选取您拥有的最大金额优惠券
+    </div>
+    <?php foreach ($this->model->coupon as $c) :?>
+        <?php if ($c->is_user == 2) :?>
+            <div class="cplstitm gold">
+        <?php elseif ($c->is_user == 3) : ?>
+            <div class="cplstitm used">
+        <?php else :?>
+            <div class="cplstitm normal">
+        <?php endif; ?>
+            <div class="t1">优惠券</div>
+            <div class="t2"><sup>￥</sup><span><?php echo $c->amount?></span></div>
+            <div class="t3">获取时间：<?php
+                $temp_date = date_format($c->created_at, 'Y-m-d');
+
+                $tmp_date = explode("-", $temp_date);
+
+                $tmp_text = "";
+
+                if (substr($tmp_date[1], 0, 1) == "0") {
+                    $tmp_text = $tmp_date[0]. '年' .substr($tmp_date[1], 1, 1) . "月";
+                }
+                else {
+                    $tmp_text = $tmp_date[0]. '年' .$tmp_text = $tmp_date[1] . "月";
+                }
+
+                if (substr($tmp_date[2], 0, 1) == "0") {
+                    $tmp_text = $tmp_text . substr($tmp_date[2], 1, 1) . "日";
+                }
+                else {
+                    $tmp_text = $tmp_text . $tmp_date[2] . "日";
+                }
+
+                echo  $tmp_text;
+            ?></div>
+            <?php if ($c->is_user == 3) : ?>
+                <div class="t3">使用时间：<?php
+//                    echo date('Y年m月d日', $c->use_date)
+                    $tmp_date = explode("-", $c->use_date);
+
+                    $tmp_text = "";
+
+                    if (substr($tmp_date[1], 0, 1) == "0") {
+                        $tmp_text = $tmp_date[0]. '年' .substr($tmp_date[1], 1, 1) . "月";
+                    }
+                    else {
+                        $tmp_text = $tmp_date[0]. '年' .$tmp_text = $tmp_date[1] . "月";
+                    }
+
+                    if (substr($tmp_date[2], 0, 1) == "0") {
+                        $tmp_text = $tmp_text . substr($tmp_date[2], 1, 1) . "日";
+                    }
+                    else {
+                        $tmp_text = $tmp_text . $tmp_date[2] . "日";
+                    }
+
+                    echo  $tmp_text;
+                    ?></div>
+            <?php endif; ?>
+        </div>
+    <?php endforeach;?>
+
+<!--    <div class="cplstitm gold">-->
+<!--        <div class="t1">优惠券</div>-->
+<!--        <div class="t2"><sup>￥</sup><span>98</span></div>-->
+<!--        <div class="t3">获取时间：2015年4月13日</div>-->
+<!--    </div>-->
+<!---->
+<!--    <div class="cplstitm normal">-->
+<!--        <div class="t1">优惠券</div>-->
+<!--        <div class="t2"><sup>￥</sup><span>23</span></div>-->
+<!--        <div class="t3">获取时间：2015年4月13日</div>-->
+<!--    </div>-->
+<!--    <div class="cplstitm normal">-->
+<!--        <div class="t1">优惠券</div>-->
+<!--        <div class="t2"><sup>￥</sup><span>23</span></div>-->
+<!--        <div class="t3">获取时间：2015年4月13日</div>-->
+<!--    </div>-->
+<!---->
+<!--    <div class="cplstitm used">-->
+<!--        <div class="t1"><span class="usedtag">已使用</span>优惠券</div>-->
+<!--        <div class="t2"><sup>￥</sup><span>23</span></div>-->
+<!--        <div class="t3">获取时间：2015年4月13日</div>-->
+<!--        <div class="t3">使用时间：2015年5月12日</div>-->
+<!--    </div>-->
+
+</div>
+
+<div class="clear-15"></div>
+
+<!--<script type="text/javascript" src="js/jquery-1.11.0.js"></script>-->
+<!--<script type="text/javascript" src="js/jquery-mobile.js"></script>-->
+<!--<script type="text/javascript" src="js/global.js"></script>-->

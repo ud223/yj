@@ -77,6 +77,14 @@ function loadTeacher(data, current_page_no, page_count) {
         node.find(".teacher-img-big").css("background-image", 'url(' + this.photo + ')');
         node.find(".cd_hottap").attr("hottap", "/teacher/" + this.id);
 
+        if (this.is_range == 1 || this.is_range == 0) {
+            node.find(".cd_hottap").attr("is_range", this.is_range);
+        }
+
+        if (!this.is_range) {
+            node.find(".is-range").html('不在服务区');
+        }
+
         list.append(node);
     });
 

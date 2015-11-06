@@ -359,3 +359,12 @@ function todayIsBusy() {
     getTeacherBusy(teacher_id, date, week, chooseDay, busyDay);
 }
 
+function loadIsRange() {
+    var is_range = localStorage.getItem('is_range');
+
+    if (is_range == 0) {
+        $("#submit-order").html("不在服务区");
+
+        $("#submit-order").attr("disabled",false);
+    }
+}

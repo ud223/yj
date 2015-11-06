@@ -138,7 +138,7 @@ class Angel_ApiController extends Angel_Controller_Action {
 //            $this->_helper->json(array('data' => count($paginator), 'code' => 0));
             foreach ($paginator as $p) {
 //                $this->_helper->json(array('data' => $p->name, 'code' => 0));
-
+                $is_range = 1;
 
                 if (!$p->lat) {
                     $range = 0;
@@ -149,10 +149,10 @@ class Angel_ApiController extends Angel_Controller_Action {
                     $tmp_range = $p->range;
                 }
 
-
-//                if ($range > $tmp_range) {
+                if ($range > $tmp_range) {
+                    $is_range = 0;
 //                    continue;
-//                }
+                }
 
                 $path = "";
                 $category_text = "";
@@ -185,10 +185,10 @@ class Angel_ApiController extends Angel_Controller_Action {
                 }
 
                 if (!$p->lat) {
-                    $tmp_teacherList[] = array("id"=>$p->id, "openid"=>$p->openid, "nickname"=>$p->nickname, "sex"=>$p->sex, "head_pic"=>$p->head_pic, "name"=>$p->name, "score"=>$p->teacher_score, "photo"=>$path, "price"=>$p->price, "category"=>$category_text, "range"=>$range, "tmp_range"=>$tmp_range);
+                    $tmp_teacherList[] = array("id"=>$p->id, "openid"=>$p->openid, "nickname"=>$p->nickname, "sex"=>$p->sex, "head_pic"=>$p->head_pic, "name"=>$p->name, "score"=>$p->teacher_score, "photo"=>$path, "price"=>$p->price, "category"=>$category_text, "range"=>$range, "tmp_range"=>$tmp_range, 'is_range'=> 0);
                 }
                 else {
-                    $teacherList[] = array("id"=>$p->id, "openid"=>$p->openid, "nickname"=>$p->nickname, "sex"=>$p->sex, "head_pic"=>$p->head_pic, "name"=>$p->name, "score"=>$p->teacher_score, "photo"=>$path, "price"=>$p->price, "category"=>$category_text, "range"=>$range, "tmp_range"=>$tmp_range);
+                    $teacherList[] = array("id"=>$p->id, "openid"=>$p->openid, "nickname"=>$p->nickname, "sex"=>$p->sex, "head_pic"=>$p->head_pic, "name"=>$p->name, "score"=>$p->teacher_score, "photo"=>$path, "price"=>$p->price, "category"=>$category_text, "range"=>$range, "tmp_range"=>$tmp_range, 'is_range'=>$is_range);
                 }
 
             }

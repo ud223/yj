@@ -94,6 +94,11 @@ $.toastMsg = function(msg, duration, direction){
 (function() {
     $('body').on('tap', '.cd_hottap', function() {
         var url = $(this).attr('hottap');
+
+        if ($(this).attr('is_range') == 1 || $(this).attr('is_range') == 0) {
+            localStorage.setItem('is_range', $(this).attr('is_range'));
+        }
+
         location.href = url;
         $.waiting('加载中 ...');
     });

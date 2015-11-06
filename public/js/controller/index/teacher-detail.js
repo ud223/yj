@@ -16,6 +16,8 @@ function initBtn() {
     initSubmitOrder();
 
     toChooseTimeClick();
+
+    loadIsRange();
 }
 
 function initInput() {

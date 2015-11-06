@@ -83,6 +83,8 @@ function loadTeacher(data, current_page_no, page_count) {
 
         if (!this.is_range) {
             node.find(".is-range").html('不在服务区');
+        } else {
+            node.find(".is-range").hide();
         }
 
         list.append(node);

@@ -2193,3 +2193,13 @@ p:after {
     background:#FFF;
     color:#ff7286;
 }
+.is-range {
+    display:inline-block;
+    position:absolute;
+    padding:8px 10px;
+    background:rgba(255,255,255,.9);
+    border-radius:0 0 0 5px;
+    right:0;
+    top:0;
+    font-size: 10px;
+}

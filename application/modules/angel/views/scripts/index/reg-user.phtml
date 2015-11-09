@@ -10,45 +10,54 @@
 </div>
 
 <div class="p10-t02">
-    <img src="<?php echo $this->model->headimgurl ?>" style="" class="usrgmi" />
+    <img src="<?php echo $this->model->headimgurl ?>" style="" class="usrgmi"/>
+
     <div class="p10-t03"><?php echo $this->model->nickname ?></div>
 </div>
 
 <div class="blackrowgall nmt">
     <div class="row actbtn"><!-- cd-slideoutbtn  rel="#pp-change-name" -->
-<!--        <span class="tt">真实姓名</span>-->
-<!--        <div class="holder arr">-->
-<!--            <span id="my-name">--><?php //echo $this->model->name ?><!--</span>-->
-<!--            <img src="/img/arr-r.png" class="icoin" />-->
-<!--        </div>-->
+        <!--        <span class="tt">真实姓名</span>-->
+        <!--        <div class="holder arr">-->
+        <!--            <span id="my-name">--><?php //echo $this->model->name ?><!--</span>-->
+        <!--            <img src="/img/arr-r.png" class="icoin" />-->
+        <!--        </div>-->
         <span class="tt">真实姓名</span>
-        <input id="my-name" placeholder="请填写真实姓名" name="my-name" maxlength="50" value="<?php echo $this->model->name ?>" type="text" class="holder" />
+        <input id="my-name" placeholder="请填写真实姓名" name="my-name" maxlength="50" value="<?php echo $this->model->name ?>"
+               type="text" class="holder"/>
     </div>
     <div class="row actbtn cd-slideoutbtn" id="pp-change-tel-btn" rel="#pp-change-tel">
         <span class="tt">手机</span>
+
         <div class="holder arr">
             <span id="my-phone"><?php echo $this->model->phone ?></span>
-            <img src="/img/arr-r.png" class="icoin" />
+            <img src="/img/arr-r.png" class="icoin"/>
         </div>
     </div>
-<!--    <div class="row cd-slideoutbtn" id="pp-change-code-btn" rel="#pp-change-code">-->
-<!--        <span class="tt">身份证号码</span>-->
-<!--        <div class="holder arr">-->
-<!--            <span id="my-code">--><?php //echo $this->model->code ?><!--</span>-->
-<!--            <img src="/img/arr-r.png" class="icoin" />-->
-<!--        </div>-->
-<!--    </div>-->
+    <!--    <div class="row cd-slideoutbtn" id="pp-change-code-btn" rel="#pp-change-code">-->
+    <!--        <span class="tt">身份证号码</span>-->
+    <!--        <div class="holder arr">-->
+    <!--            <span id="my-code">--><?php //echo $this->model->code ?><!--</span>-->
+    <!--            <img src="/img/arr-r.png" class="icoin" />-->
+    <!--        </div>-->
+    <!--    </div>-->
 </div>
 
 
 <div class="clear-15"></div>
+<div style="font-size:12px;padding:15px;">
+    <input type="checkbox" checked="checked" id="usertermcbk"/> <label for="usertermcbk">注册前请阅读并遵守<a id="viewtermnow" href="#" onclick="$('.termsheetboard').show();">《瑜伽去学员服务协议》</a></label>
+</div>
+<div class="clear-15"></div>
 <button id="submit-reg" type="button" class="fullbtn" style="height: 50px; font-size: medium">确认提交</button>
+
 
 <div class="slidepopup cd-slidepopup" id="pp-change-name">
     <div class="tt">更改真实姓名<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
     <div class="blackrowgall">
         <div class="row">
-            <input placeholder="请填写" id="user-name" type="text" maxlength="11" value="<?php echo $this->model->name ?>" class="fulltxtinput" />
+            <input placeholder="请填写" id="user-name" type="text" maxlength="11" value="<?php echo $this->model->name ?>"
+                   class="fulltxtinput"/>
         </div>
     </div>
     <div class="clear-15"></div>
@@ -61,15 +70,16 @@
     <div class="tt">更改电话号码<span class="back rt cd-slidepopupback"><i class="ico"></i></span></div>
     <div class="blackrowgall">
         <div class="row">
-            <input placeholder="请填写手机号码"  id="phone-num" type="tel" maxlength="11" value="<?php echo $this->model->phone ?>" class="fulltxtinput" />
+            <input placeholder="请填写手机号码" id="phone-num" type="tel" maxlength="11"
+                   value="<?php echo $this->model->phone ?>" class="fulltxtinput"/>
             <button id="send-code" class="sendvalcodbt">发送验证码</button>
         </div>
         <div class="row">
-            <input placeholder="验证码" id="phone-code"  type="tel" maxlength="11" class="fulltxtinput" />
+            <input placeholder="验证码" id="phone-code" type="tel" maxlength="11" class="fulltxtinput"/>
         </div>
     </div>
     <div class="clear-15"></div>
-    <div id="valid-phone-code"  class="fullbtn">
+    <div id="valid-phone-code" class="fullbtn">
         确认
     </div>
 </div>
@@ -79,12 +89,13 @@
     <div class="blackrowgall">
         <div class="row">
             <div class="holder">
-                <input placeholder="填写正确身份证号码" id="code" name="code" width="150px" maxlength="18" value="<?php echo $this->model->code ?>" type="text" class="holder" />
+                <input placeholder="填写正确身份证号码" id="code" name="code" width="150px" maxlength="18"
+                       value="<?php echo $this->model->code ?>" type="text" class="holder"/>
             </div>
         </div>
     </div>
     <div class="clear-15"></div>
-    <div id="valid-code-code"  class="fullbtn">
+    <div id="valid-code-code" class="fullbtn">
         确认
     </div>
     <div class="clear-15"></div>
@@ -92,13 +103,124 @@
     <div class="clear-15"></div>
 </div>
 
+<div class="termsheetboard">
+    <a href="#" onclick="$('.termsheetboard').hide();" class="fullbtn">关闭</a>
+    <div class="tt">瑜伽去学员服务协议</div>
+    <p>
+        欢迎您访问瑜伽去！在您完成瑜伽去用户注册之前，建议您认真阅读并遵守《瑜伽去学员服务协议》（以下简称“本协议”）。本协议在您接受注册时生效，将成为您和深圳市瑜家网络科技有限公司（以下简称：瑜家）之间具有法律意义的文件，您和瑜家将同时受到本协议条款的约束。</p>
+
+    <p>一、总则</p>
+
+    <div>1、“瑜伽去”是指瑜家创建的用于连接教练员和学员的互联网技术平台，包含APP和微信公众号，其所有权和运营权归瑜家所有。</div>
+    <div>2、“会员”是指按照瑜伽去的要求完成注册的瑜伽去用户。用户可以通过移动设备注册和网上注册成为瑜伽去会员，享受瑜伽去为会员提供的服务。</div>
+    <div>
+        3、瑜家有权根据需要不时地制订、修改本协议及/或各类规则，并以公示的方式进行变更公告，无需另行单独通知瑜伽去会员。变更后的协议和规则一经在公布后，立即或在公告明确的特定时间自动生效。若会员在前述变更公告后继续使用瑜伽去服务的，即表示已经阅读、理解并接受经修订的协议和规则。若会员不同意相关变更，应当立即停止使用瑜伽去服务。本站的通知、公告、声明或其它类似内容是本协议的一部分。
+    </div>
+    <p>二、会员享受的服务</p>
+
+    <div>瑜伽去会员可享受如下服务：</div>
+    <div>1、在完成预约、支付等相关程序并接受瑜伽去学员服务协议的基础上接受瑜伽去提供的教练员个人瑜伽培训信息服务。</div>
+    <div>2、拥有会员信息管理系统，长期有效地保存在瑜伽去数据库。</div>
+    <div>3、随时查询历史订单记录。</div>
+    <div>4、享受最新的教练信息及优惠政策。</div>
+    <div>5、享受瑜伽去根据互联网和移动互联网平台规划随时增添的其它服务。</div>
+    <p>三、使用规则</p>
+
+    <div>1、注册及账户</div>
+    <div>
+        为了使用瑜伽去提供的服务，用户需要注册一个瑜伽去账户，成为瑜伽去会员。账户名即为用户所提供的常用手机号码，用户需设置密码并确认，通过瑜伽去下发的验证码进行账户验证后，该账户即完成初步注册。在用户中心里，用户需要设置相关个人信息。会员可以在“我的订单”中查询到自己的历史订单，并设置自己的地点和培训偏好。
+    </div>
+    <div>2、会员的ID及密码的保管</div>
+    <div>会员的ID和密码由会员自行保管。禁止会员将自己的ID及密码交付第三人使用，若第三者凭正确的用户ID密码进行网络活动（网络预订等），将被瑜伽去视为该会员自身行为，该行为引起的一切法律后果由会员承担。</div>
+    <div>3、报名与订单</div>
+    <div>本条款所述“订单”，是指会员在瑜伽去平台上根据自身需求自行匹配达成的教练与学员之间的服务协议。会员在平台上搜索到合适的教练后，订单在下述时刻同时满足时正式成立：</div>
+    <div>（1） 学员通过瑜伽去支付相关教学费用；</div>
+    <div>（2） 学员通过瑜伽去联系到能够提供服务的教练并商定授课时间、地点、方式等服务信息。</div>
+    <div>4、授课、确认、付款及点评</div>
+    <div>
+        瑜伽去教练以线下方式对会员进行授课。当授课完毕并由系统确认后，系统将上课费用支付给授课教练。同时，会员可在瑜伽去上做出相应的评价，以便瑜伽去进一步改进服务。会员可以在瑜伽去平台发表对教练的评论、意见和其他内容，以及向平台提出建议、意见或其他信息，但相关内容不得违反中国现行法律法规及其他规范性文件的要求，不得含有非法、淫秽、威胁、侮辱、诽谤、侵犯隐私、侵犯知识产权的内容或以其他形式对第三方权利构成侵犯。瑜伽去在接到有关权利人的投诉与举报后将采取合理的删除或屏蔽等措施。基于会员的过错给瑜伽去造成损失时，会员须对瑜伽去承担赔偿责任。
+    </div>
+    <p>四、会员义务</p>
+
+    <div>会员不得从事以下行为，若发生下列行为，则会员应承担相应的法律责任。瑜伽去有权限制或取消其会员权限：</div>
+    <div>1、申请或者变更会员信息时提供虚假信息。</div>
+    <div>2、盗用他人信息。</div>
+    <div>3、利用任何方式方法危害“瑜伽去”网站系统的安全。</div>
+    <div>4、利用瑜伽去损害任何第三人的合法权益。</div>
+    <div>5、在瑜伽去网站上复制、发布任何形式的虚假信息，或复制、发布含有下列内容的信息：</div>
+    <div>（1）危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一；</div>
+    <div>（2）损害国家荣誉和利益；</div>
+    <div>（3）煽动民族仇恨、民族歧视，破坏民族团结；</div>
+    <div>（4）破坏国家宗教政策，宣扬邪教和封建迷信；</div>
+    <div>（5）散布谣言，扰乱社会秩序，破坏社会稳定；</div>
+    <div>（6）散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪；</div>
+    <div>（7）含有法律、行政法规禁止的其他内容。</div>
+    <p>五、瑜伽去平台义务</p>
+
+    <div>1、瑜伽去保证遵守其在瑜伽去网站上公布的所有服务承诺，努力创建高效便捷的教练个人营销服务平台。</div>
+    <div>2、在会员完整履行预约、支付等程序后，在瑜伽去协议的框架下，联络教练员为会员提供优质的个人瑜伽培训服务。</div>
+    <div>3、瑜伽去为保障会员安全地使用其提供的网络服务，将建立保护会员信息（包括信用信息）的安全系统并定期进行维护。非经国家有关机关的指令，瑜伽去绝不向任何人泄漏会员的任何信息。</div>
+    <p>六、学员须知</p>
+
+    <div>1、参加培训学员身体必须健康，无任何疾病，不满12岁儿童训练，需家长监护、接送。</div>
+    <div>2、训练前不宜过饱，请穿着舒适的瑜伽服和瑜伽鞋，准备好瑜伽培训的相关工具。</div>
+    <div>3、训练期间必须遵守培训班管理规定，服从教练及相关管理人员的管理，不擅自行动，严防安全事故发生。</div>
+    <div>4、学员及监护人清楚学员的身体状况，没有任何不适合参与该运动项目的疾病。学员在培训中发现、注意到任何风险及潜在风险，或身体不能承受运动强度，应当向教练请假终止训练。</div>
+    <div>5、如因非主办方责任，在培训内及往返培训场地途中发生的伤害事故，由学员及监护人自行承担，并承诺不追究瑜家及教练人员的任何责任。</div>
+    <div>6、学员在上课期间严格遵守上课时间，如遇到迟到、旷课的情况，不另行补课。</div>
+    <div>7、培训学习由学员自愿报名，上课时间过半之后，因学员自身原因终止课程，概不退款。</div>
+    <p>七、隐私声明</p>
+
+    <div>瑜家承诺将按照本隐私声明收集、使用和披露会员信息，除本声明另有规定外，不会在未经会员许可的情况下向第三方或公众披露会员信息：</div>
+    <div>1、会员信息的范围包括：会员注册的账户信息、会员上传的信息、瑜伽去自动接收的会员信息、瑜伽去通过合法方式收集的会员信息等。</div>
+    <div>2、会员信息的收集、使用和披露： 为了给会员提供更优质的服务，瑜伽去保留收集会员的信息等权利，瑜伽去不会向第三方披露任何可以识别会员个人身份的信息。</div>
+    <div>3、会员信息的保护：瑜家将采取技术措施和其他必要措施，确保会员个人隐私信息安全，防止在本平台中收集的会员个人隐私信息泄露、毁损或丢失。在发生前述情形或者瑜家发现存在发生前述情形的可能时，将及时采取补救措施。</div>
+    <div>4、会员同意瑜家可在以下事项中使用会员的个人隐私信息：</div>
+    <div>（1）瑜家向会员及时发送重要通知，如软件更新、本协议条款的变更；</div>
+    <div>（2）瑜家内部进行审计、数据分析和研究等，以改进瑜家的产品、服务和与会员之间的沟通；</div>
+    <div>（3）依本协议约定，瑜家管理、审查会员信息及进行处理措施。</div>
+    <div>5、在如下情况下，瑜家将不对您的隐私泄露承担责任：</div>
+    <div>（1）您同意让第三方共享资料；</div>
+    <div>（2）您同意公开你的个人资料，享受为您提供的产品和服务；</div>
+    <div>（3）瑜家需要听从法庭传票、法律命令或遵循法律程序；</div>
+    <div>（4）因黑客行为或会员的保管疏忽导致帐号、密码遭他人非法使用。</div>
+    <p>八、免责条款</p>
+
+    <div>如发生以下情况，瑜伽去不对会员的直接或间接损失承担法律责任：</div>
+    <div>1、不可抗力事件导致的服务中断或瑜伽去无法控制的原因所导致的会员损失，瑜伽去不承担任何责任。</div>
+    <div>2、会员使用本网站（包括链接到第三方网站或自第三方网站链接）而可能产生的计算机病毒、黑客入侵、系统失灵或功能紊乱等导致的会员损失，瑜伽去不承担任何责任。</div>
+    <div>3、由于会员将个人注册账号信息告知他人或与他人共享注册帐号，由此导致的任何风险或损失，由会员自行承担。</div>
+    <div>4、如因系统维护或升级而需要暂停网络服务，瑜伽去将尽可能事先进行通知。</div>
+    <p>九、通知</p>
+
+    <div>瑜伽去将通过会员注册时指定的邮箱、手机号码以及APP/微信公众号中通知栏向会员发送通知。瑜伽去向多数会员发送通知时，可以在网站公告栏上公布该通知，该种通知模式与向会员发送个别通知具有同样的法律效力。</div>
+    <p>十、其他</p>
+
+    <div>1、本协议的履行与解释均适用中华人民共和国法律。</div>
+    <div>2、瑜伽去与会员之间的任何争议应友好协商解决，协商不成的，任一方有权将争议提交瑜家注册所在地有管辖权的法院诉讼解决。</div>
+    <div>3、本协议条款中任何一条被视为无效或因任何理由不可执行，不影响任何其余条款的有效性和可执行性。</div>
+    <div>4、本协议自学员注册瑜伽去之日起生效，瑜伽去在法律允许范围内对本协议拥有解释权。</div>
+    <div class="clear-20"></div>
+    <a href="#" onclick="$('.termsheetboard').hide();" class="fullbtn">关闭</a>
+</div>
+
+
 <script type="text/javascript">
     var user_id = '<?php echo $this->model->id ?>';
-    var usertype =  '<?php echo $this->model->usertype ?>';
+    var usertype = '<?php echo $this->model->usertype ?>';
     var page_type = 0;
 
     if (user_id) {
         localStorage.setItem('user_id', user_id);
         localStorage.setItem('usertype', usertype);
     }
+
+    $('#usertermcbk').change(function () {
+        var cked = $(this).prop('checked');
+        if (!cked) {
+            $('#submit-reg').addClass('unuse');
+        } else {
+            $('#submit-reg').removeClass('unuse');
+        }
+    });
 </script>

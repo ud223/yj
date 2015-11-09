@@ -1481,7 +1481,7 @@ p:after {
     padding: 30px 15px;
 }
 .p10-t02 .usrgmi {
-    border-radius: 100px;
+    border-radius: 10px;
     border: 2px solid #FFF;
     width:100px;
     height:100px;
@@ -2204,3 +2204,21 @@ p:after {
     font-size: 10px;
     z-index: 5;
 }
+
+#submit-reg.unuse {
+    background:#bbb;
+}
+#viewtermnow {
+    font-weight: bold;
+    color:#285e8e;
+}
+.termsheetboard {
+    display:none;
+    background:#FFF;position:fixed;left:0;top:0;width:100%;height:100%;box-sizing: border-box;padding:15px;
+    overflow-y:auto;
+    z-index:11;
+}
+.termsheetboard .tt {
+    margin:20px 0;font-size:18px;font-weight:bold;
+}
+

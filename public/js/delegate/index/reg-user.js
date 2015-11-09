@@ -23,7 +23,13 @@ function saveCodeClick() {
 }
 
 function submitRegClick() {
+    //    接受条款才给按
     $("#submit-reg").tapA(function() {
-        submitReg();
+        if($(this).hasClass('unuse')) {
+            alert('注册前请阅读并遵守《瑜伽去学员服务协议》');
+            return;
+        } else {
+            submitReg();
+        }
     })
 }

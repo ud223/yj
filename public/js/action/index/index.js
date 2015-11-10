@@ -9,9 +9,9 @@ function load() {
 
     localStorage.setItem("lat", lat);
     localStorage.setItem("lng", lng);
-
     var tmp_search = localStorage.getItem("teacher_search");
     var tmp_sort = localStorage.getItem("teacher_sort");
+
 
     //如果条件不变，加载就翻页
     if (search == tmp_search && sort == tmp_sort) {
@@ -58,11 +58,7 @@ function loadTeacher(data, current_page_no, page_count) {
         var node = $("#teacher-item").find(".teacher-itm").clone();
 
         node.find(".cd_hottap").attr("hottap", "/mentordetail/" + this.id);
-
-        if (this.head_pic) {
-            node.find(".user-intro-img").attr("src", '/photo/image/'+ this.head_pic);
-        }
-
+        // node.find(".user-intro-img").attr("src", '/photo/image/'+ this.head_pic);
         node.find(".teacher-name").html(this.name);
         node.find(".this-teacher-score").html(this.score);
 

@@ -1057,6 +1057,9 @@ p:after {
     background: #FF7286;
     color: #FFF;
 }
+.btbookbtn.outofservice {
+    background:#ddd !important;
+}
 .rtselectedtime {
     box-sizing: border-box;
     font-size: 12px;

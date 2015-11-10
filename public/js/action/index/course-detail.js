@@ -7,11 +7,11 @@ function load() {
     var search = "lat:"+ lat +";lng:"+ lng + ";lesson_id:"+lesson_id;
     var sort = $(tmp_sort).attr("sort");
 
+    localStorage.setItem("lat", lat);
+    localStorage.setItem("lng", lng);
     var tmp_search = localStorage.getItem("teacher_search");
     var tmp_sort = localStorage.getItem("teacher_sort");
 
-    localStorage.setItem("lat", lat);
-    localStorage.setItem("lng", lng);
 
     //如果条件不变，加载就翻页
     if (search == tmp_search && sort == tmp_sort) {
@@ -33,7 +33,6 @@ function load() {
 }
 
 function loadTeacher(data, current_page_no, page_count) {
-    //alert(JSON.stringify(data));
     var list = $(".tcfilter-container");
     //如果当前页为 1 则表示第一次查询或更换了条件，清空一次里面的html
     if (current_page_no == 1) {
@@ -59,7 +58,7 @@ function loadTeacher(data, current_page_no, page_count) {
         var node = $("#teacher-item").find(".teacher-itm").clone();
 
         node.find(".cd_hottap").attr("hottap", "/mentordetail/" + this.id);
-        node.find(".user-intro-img").attr("src", '/photo/image/'+ this.head_pic);
+        // node.find(".user-intro-img").attr("src", '/photo/image/'+ this.head_pic);
         node.find(".teacher-name").html(this.name);
         node.find(".this-teacher-score").html(this.score);
 
@@ -80,6 +79,8 @@ function loadTeacher(data, current_page_no, page_count) {
 
         if (!this.is_range) {
             node.find(".is-range").html('不在服务区');
+        } else {
+            node.find(".is-range").hide();
         }
 
         list.append(node);
@@ -99,8 +100,10 @@ function setAddressList(response) {
 
     list.html("");
 
-    localStorage.setItem("cell", addresses[0].name);
-    $("#address-view").html(addresses[0].name);
+    if (addresses.length > 0) {
+        $("#address-view").html(addresses[0].name);
+        localStorage.setItem("cell", addresses[0].name);
+    }
 
     $.each(addresses, function() {
         var node = $("#div-addr-node").find(".loc-ddl-itm").clone();
@@ -118,7 +121,6 @@ function setAddressList(response) {
 }
 
 function chooseAddr(node) {
-    ///$("#edit-addr").val(text);
     if (node.find(".t1").html().length > 5) {
         $("#address-view").html(node.find(".t1").html().substr(0, 5) +  "...");
     }
@@ -151,7 +153,6 @@ function loadCell() {
 
     if (cell) {
         $("#address-view").html(cell);
-
         load();
 
         return true;

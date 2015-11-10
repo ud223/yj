@@ -5,7 +5,17 @@
 <div class="blackrowgall">
     <div class="row">
         <span class="tt">授课老师</span>
-        <span class="holder"><?php echo $this->model->teacher->name ?><span class="lightgray">（<?php echo $this->model->teacher->teacher_score ?>分）</span><img src="/img/user04.jpg" width="25" /></span>
+        <span class="holder"><?php echo $this->model->teacher->name ?><span class="lightgray">（<?php echo $this->model->teacher->teacher_score ?>分）</span>
+            <?php if ($this->model->teacher->head_pic) :?>
+                <img src="/photo/image/<?php echo $this->model->teacher->head_pic ?>" width="25" />
+            <?php else :?>
+                <?php if ($this->model->teacher->headimgurl) :?>
+                    <img src="/photo/image/<?php echo $this->model->teacher->headimgurl ?>" width="25" />
+                <?php else :?>
+                    <img src="/img/user.jpg" width="25" />
+                <?php endif; ?>
+            <?php endif; ?>
+        </span>
     </div>
 </div>
 <div class="blackrowgall">

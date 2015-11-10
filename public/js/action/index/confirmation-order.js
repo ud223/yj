@@ -261,7 +261,8 @@ function acceptTime() {
 
         var coupon = $("#coupon_amount");
 
-        if (coupon) {
+
+        if (coupon && coupon.html()) {
             var pay_amount = parseInt($("#pay-amount").html());
             var coupon_amount = parseInt(coupon.html());
 
@@ -391,7 +392,6 @@ function setTimeSelected(time) {
 }
 
 function toPay(data, pay_amount) {
-
     var url = '/order/pay/' + order_id + '?showwxpaytitle=1';
     //如果支付为0分,就直接支付成功
     if (pay_amount == 0) {

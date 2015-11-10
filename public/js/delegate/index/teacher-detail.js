@@ -21,6 +21,10 @@ function initTimeClick() {
 
 function initSubmitOrder() {
     $("#submit-order").tapA(function() {
+        if ($(this).html() == "不在服务区") {
+            return ;
+        }
+
         var user_id = localStorage.getItem('user_id');
 
         if (user_id) {

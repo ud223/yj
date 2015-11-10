@@ -147,7 +147,9 @@ class Angel_IndexController extends Angel_Controller_Action {
 
         $today = date("Y-m-d");
 
-        $couponModel->usedCoupon($order->coupon->id, $today);
+        if ($order->coupon) {
+            $couponModel->usedCoupon($order->coupon->id, $today);
+        }
 
         $this->view->model = $order;
     }

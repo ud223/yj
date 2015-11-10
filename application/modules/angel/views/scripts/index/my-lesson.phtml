@@ -9,12 +9,12 @@
     <?php foreach ($this->order_list as $order):?>
         <div class="p23-itm waiting  cd_hottap" hottap="/lesson/start/<?php echo $order->id ?>">
             <?php if ($this->model->head_pic) :?>
-                <img src=/photo/image/<?php echo $this->model->head_pic ?>" class="usrium" />
+                <img src="/photo/image/<?php echo $this->model->head_pic ?>" class="usrium" />
             <?php else :?>
                 <?php if ($this->model->headimgurl) :?>
-                    <img src=/photo/image/<?php echo $this->model->headimgurl ?>" class="usrium" />
+                    <img src="/photo/image/<?php echo $this->model->headimgurl ?>" class="usrium" />
                 <?php else :?>
-                    <img src=""/img/user.jpg" class="usrium" />
+                    <img src="/img/user.jpg" class="usrium" />
                 <?php endif; ?>
             <?php endif; ?>
             <div class="ct">

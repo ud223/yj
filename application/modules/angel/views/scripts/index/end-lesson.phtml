@@ -1,7 +1,17 @@
 <div class="blackrowgall">
     <div class="row">
         <span class="tt">学员</span>
-        <span class="holder">><?php echo $this->model->customer->name ?> <img src="/img/user04.jpg" width="25" /></span>
+        <span class="holder"> <?php echo $this->model->customer->name ?>
+            <?php if ($this->model->customer->head_pic) :?>
+                <img src="/photo/image/<?php echo $this->model->customer->head_pic ?>" width="25" />
+            <?php else :?>
+                <?php if ($this->model->customer->headimgurl) :?>
+                    <img src="/photo/image/<?php echo $this->model->customer->headimgurl ?>" width="25" />
+                <?php else :?>
+                    <img src="/img/user.jpg" width="25" />
+                <?php endif; ?>
+            <?php endif; ?>
+            </span>
     </div>
     <div class="row">
         <span class="tt">手机</span>

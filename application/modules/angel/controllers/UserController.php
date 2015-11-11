@@ -8,7 +8,6 @@ class Angel_UserController extends Angel_Controller_Action {
     }
 
     public function indexAction() {
-        $usermodel = $this->getModel('user');
         $this->view->user = $this->me->getUser();
 
         if ($this->me->isStartup()) {
@@ -16,78 +15,6 @@ class Angel_UserController extends Angel_Controller_Action {
         } else {
             $this->investorIndex();
         }
-    }
-
-    public function hobbyAction() {
-        $categoryModel = $this->getModel('category');
-        $userModel = $this->getModel('user');
-        
-        $uid = $this->me->getUser()->id;//$this->request->getParam('uid');
-        
-        $user = $userModel->getUserById($uid);
-               
-        $this->view->model = $user;
-        $this->view->userId = $uid;
-        $this->view->categories = $categoryModel->getAll(false);
-        $this->view->title = "我的兴趣";    
-    }
-
-    /**
-     * 更改保存用户收看/收听习惯
-     */
-    public function playerModeAction() {
-        if ($this->request->isPost()) {
-            $key = "player_mode";
-            $value = $this->request->getParam('value');
-            $result = false;
-            if (in_array($value, array('audio', 'video'))) {
-                $result = $userMode = $this->getModel('user')->setAttribute($this->me->getUser(), $key, $value);
-            }
-
-            // JSON FORMAT RESPONSE
-            $code = 200;
-            if (!result) {
-                $code = 500;
-            }
-            $this->_helper->json(array('code' => $code));
-        }
-    }
-
-    private function startUpIndex() {
-        $company = $this->getModel('company')->getCompanyByUser($this->me->getId());
-        $this->view->company = $company;
-        $this->_helper->viewRenderer->render('startup-index');
-    }
-
-    public function myCompanyAction() {
-        $company = $this->getModel('company')->getCompanyByUser($this->me->getId());
-        $this->view->company = $company;
-    }
-
-    private function investorIndex() {
-        $this->view->funding_companies = $this->getModel('company')->getCompanyInFunding();
-
-        $this->_helper->viewRenderer->render('investor-index');
-    }
-
-    public function resetPasswordAction() {
-        if ($this->request->isPost()) {
-            $old_pwd = $this->_request->getParam('password');
-            $new_pwd = $this->_request->getParam('new-password');
-
-            try {
-                $result = $this->getModel('user')->resetPassword($this->me->getId(), $old_pwd, $new_pwd);
-            } catch (\Angel_Exception_User $e) {
-                $result = $e->getDetail();
-            }
-
-            if ($result == 1) {
-                $this->view->reset = 'success';
-            } else {
-                $this->view->error = $result;
-            }
-        }
-        $this->view->title = "修改密码";
     }
 
     public function personalThumbnailAction() {

@@ -36,7 +36,7 @@ $out_trade_no = substr($tmp, 0, 32);
 $input->SetOut_trade_no($out_trade_no);
 
 $tmp_amount = 1;
-
+//测试没有对付款金额乘以100
 if ($this->model->pay_amount) {
     $tmp_amount = intval($this->model->pay_amount);// / 100
 }

@@ -11,9 +11,9 @@ use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
 /** @ODM\Document */
 class User extends AbstractDocument{
     
-    const USER_TYPE_INVESTOR = 'investor';
-    const USER_TYPE_STARTUP = 'startup';
-    const USER_TYPE_GUARANTEE = 'guarantee';
+    const USER_TYPE_INVESTOR = '';
+    const USER_TYPE_STARTUP = '';
+    const USER_TYPE_GUARANTEE = '';
 
     const IDENTITY_TYPE_ID = 'identity';
     const IDENTITY_TYPE_PASSPORT = 'passport';

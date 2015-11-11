@@ -689,7 +689,7 @@
                 });
             },
             showLabel: function(element, message) {
-                // edited by wyx 2014.6.25
+                // edited by 2014.6.25
                 var label = this.errorsFor(element);
                 if (label.length) {
                     // refresh error/success class

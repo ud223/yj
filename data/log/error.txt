@@ -1,0 +1,44 @@
+[11-Nov-2015 12:31:20 Asia/Chongqing] PHP Fatal error:  Uncaught exception 'Zend_Log_Exception' with message '"/var/www/yj/application/../data/log/logger.txt" cannot be opened with mode "a"' in /var/www/yj/library/Zend/Log/Writer/Stream.php:81
+Stack trace:
+#0 /var/www/yj/library/Angel/Application/Resource/Logger.php(30): Zend_Log_Writer_Stream->__construct('/var/www/yj/app...')
+#1 /var/www/yj/library/Zend/Application/Bootstrap/BootstrapAbstract.php(683): Angel_Application_Resource_Logger->init()
+#2 /var/www/yj/library/Zend/Application/Bootstrap/BootstrapAbstract.php(626): Zend_Application_Bootstrap_BootstrapAbstract->_executeResource('logger')
+#3 /var/www/yj/library/Zend/Application/Bootstrap/BootstrapAbstract.php(586): Zend_Application_Bootstrap_BootstrapAbstract->_bootstrap(NULL)
+#4 /var/www/yj/library/Zend/Application.php(355): Zend_Application_Bootstrap_BootstrapAbstract->bootstrap(NULL)
+#5 /var/www/yj/public/index.php(43): Zend_Application->bootstrap()
+#6 {main}
+  thrown in /var/www/yj/library/Zend/Log/Writer/Stream.php on line 81
+[11-Nov-2015 12:31:25 Asia/Chongqing] PHP Fatal error:  Uncaught exception 'Zend_Log_Exception' with message '"/var/www/yj/application/../data/log/logger.txt" cannot be opened with mode "a"' in /var/www/yj/library/Zend/Log/Writer/Stream.php:81
+Stack trace:
+#0 /var/www/yj/library/Angel/Application/Resource/Logger.php(30): Zend_Log_Writer_Stream->__construct('/var/www/yj/app...')
+#1 /var/www/yj/library/Zend/Application/Bootstrap/BootstrapAbstract.php(683): Angel_Application_Resource_Logger->init()
+#2 /var/www/yj/library/Zend/Application/Bootstrap/BootstrapAbstract.php(626): Zend_Application_Bootstrap_BootstrapAbstract->_executeResource('logger')
+#3 /var/www/yj/library/Zend/Application/Bootstrap/BootstrapAbstract.php(586): Zend_Application_Bootstrap_BootstrapAbstract->_bootstrap(NULL)
+#4 /var/www/yj/library/Zend/Application.php(355): Zend_Application_Bootstrap_BootstrapAbstract->bootstrap(NULL)
+#5 /var/www/yj/public/index.php(43): Zend_Application->bootstrap()
+#6 {main}
+  thrown in /var/www/yj/library/Zend/Log/Writer/Stream.php on line 81
+[11-Nov-2015 12:31:26 Asia/Chongqing] PHP Fatal error:  Uncaught exception 'Zend_Log_Exception' with message '"/var/www/yj/application/../data/log/logger.txt" cannot be opened with mode "a"' in /var/www/yj/library/Zend/Log/Writer/Stream.php:81
+Stack trace:
+#0 /var/www/yj/library/Angel/Application/Resource/Logger.php(30): Zend_Log_Writer_Stream->__construct('/var/www/yj/app...')
+#1 /var/www/yj/library/Zend/Application/Bootstrap/BootstrapAbstract.php(683): Angel_Application_Resource_Logger->init()
+#2 /var/www/yj/library/Zend/Application/Bootstrap/BootstrapAbstract.php(626): Zend_Application_Bootstrap_BootstrapAbstract->_executeResource('logger')
+#3 /var/www/yj/library/Zend/Application/Bootstrap/BootstrapAbstract.php(586): Zend_Application_Bootstrap_BootstrapAbstract->_bootstrap(NULL)
+#4 /var/www/yj/library/Zend/Application.php(355): Zend_Application_Bootstrap_BootstrapAbstract->bootstrap(NULL)
+#5 /var/www/yj/public/index.php(43): Zend_Application->bootstrap()
+#6 {main}
+  thrown in /var/www/yj/library/Zend/Log/Writer/Stream.php on line 81
+[11-Nov-2015 12:31:57 Asia/Chongqing] PHP Fatal error:  Uncaught exception 'Zend_Log_Exception' with message '"/var/www/yj/application/../data/log/logger.txt" cannot be opened with mode "a"' in /var/www/yj/library/Zend/Log/Writer/Stream.php:81
+Stack trace:
+#0 /var/www/yj/library/Angel/Application/Resource/Logger.php(30): Zend_Log_Writer_Stream->__construct('/var/www/yj/app...')
+#1 /var/www/yj/library/Zend/Application/Bootstrap/BootstrapAbstract.php(683): Angel_Application_Resource_Logger->init()
+#2 /var/www/yj/library/Zend/Application/Bootstrap/BootstrapAbstract.php(626): Zend_Application_Bootstrap_BootstrapAbstract->_executeResource('logger')
+#3 /var/www/yj/library/Zend/Application/Bootstrap/BootstrapAbstract.php(586): Zend_Application_Bootstrap_BootstrapAbstract->_bootstrap(NULL)
+#4 /var/www/yj/library/Zend/Application.php(355): Zend_Application_Bootstrap_BootstrapAbstract->bootstrap(NULL)
+#5 /var/www/yj/public/index.php(43): Zend_Application->bootstrap()
+#6 {main}
+  thrown in /var/www/yj/library/Zend/Log/Writer/Stream.php on line 81
+[11-Nov-2015 12:34:06 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[11-Nov-2015 12:34:06 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43
+[11-Nov-2015 12:34:09 Asia/Chongqing] PHP Notice:  Undefined index: currency in /var/www/yj/library/Angel/Controller/Action.php on line 42
+[11-Nov-2015 12:34:09 Asia/Chongqing] PHP Notice:  Undefined index: currency_symbol in /var/www/yj/library/Angel/Controller/Action.php on line 43

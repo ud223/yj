@@ -232,7 +232,7 @@ class Angel_Model_Company extends Angel_Model_AbstractModel{
     /**
      * 添加公司的一些文档，比如融资需求计划书，营业执照等
      * @param \Documents\Company $company
-     * @param string $filetype - 对应的angelhere的文件类型
+     * @param string $filetype - a
      * @param string $filepath - 上传的文件地址
      * @param string $filename - 上传的文件名
      * @return mix, when the file is added success, return the \Documents\UserDoc document
@@ -923,7 +923,7 @@ class Angel_Model_Company extends Angel_Model_AbstractModel{
                             throw new Angel_Exception_Company(Angel_Exception_Company::INVALID_INVEST_PERCENT);
                         }
 //                        else if(!$company->isValidUnit($unit)){
-//                            // 输入的投资额超过了天使圈规定的上线
+//                            // 输入的投资额超过了admin规定的上线
 //                            throw new Angel_Exception_Company(Angel_Exception_Company::INVEST_PERCENT_OVER_MAXIMUM);
 //                        }
                         else {

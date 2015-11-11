@@ -690,7 +690,7 @@ class Angel_Model_User extends Angel_Model_AbstractModel {
     /**
      * 添加用户的一些文档，比如个人的信用文件，身份证的正反
      * @param \Documents\User $user
-     * @param string $filetype - 对应的angelhere的文件类型
+     * @param string $filetype - a
      * @param string $filepath - 上传的文件地址
      * @param string $filename - 上传的文件名
      * @return mix, when the file is added success, return the \Documents\UserDoc document

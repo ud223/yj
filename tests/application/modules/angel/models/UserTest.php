@@ -43,7 +43,7 @@ class Angel_Model_UserTest extends AngelTestAbstract{
             $this->assertEquals(Angel_Exception_User::USERTYPE_INVALID, $e->getMessageCode());
         }
                                         
-        $id = $this->_instance->addUser('investor', 'wuc@angelhere.com', 'wu', 'password', 'salt');
+        $id = $this->_instance->addUser('investor', 'a@a.com', 'wu', 'password', 'salt');
         $this->assertEquals(24, strlen($id));
     }
     

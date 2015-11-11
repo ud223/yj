@@ -16,7 +16,7 @@ class AngelTestAbstract extends PHPUnit_Framework_Testcase{
         parent::setUp();
         
         $config = new \Zend_Config_Ini(APPLICATION_PATH . '/configs/application.ini', null, true);
-        $system_ini = new \Zend_Config_Ini('/var/angelhere.ini');
+        $system_ini = new \Zend_Config_Ini('/var/yujiaqu.ini');
         $config->merge($system_ini);
         
         $application = new Zend_Application(

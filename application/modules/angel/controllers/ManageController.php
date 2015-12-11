@@ -437,10 +437,10 @@ class Angel_ManageController extends Angel_Controller_Action {
         if ($name) {
             $param = new MongoRegex("/" . $name . "/i");
 
-            $paginator = $teacherModel->getBy(true, array("usertype"=> "2", "delete"=>"0", "name"=>$param));
+            $paginator = $teacherModel->getBy(true, array("usertype"=> "2", "name"=>$param));
         }
         else {
-            $paginator = $teacherModel->getBy(true, array("usertype"=> "2", "delete"=>0));
+            $paginator = $teacherModel->getBy(true, array("usertype"=> "2"));
         }
 
         $paginator->setItemCountPerPage($this->bootstrap_options['default_page_size']);
